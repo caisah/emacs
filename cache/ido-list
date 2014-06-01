@@ -1,0 +1,260 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/vlad/Documents/" . "scheme/")
+ ("/home/vlad/Documents/smalltalk/" . "computerProgrammingUsingGNUSmalltalk/")
+ ("/home/" . "vlad/")
+ ("/home/vlad/.emacs.d/" . "themes/")
+ ("/home/vlad/" . ".emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/vlad/Documents/javascript/angular/ch-01/hello-world/"
+ "/home/vlad/Documents/projects/blog/test-files/"
+ "/home/vlad/Documents/scheme/HtDP/ch-06/"
+ "/home/vlad/Documents/github-repos/my_first_git_project/first_directory/"
+ "/home/vlad/Documents/github-repos/my_first_git_project/"
+ "/home/vlad/Documents/projects/chrome-knav/simple-example/"
+ "/home/vlad/Documents/projects/blog/"
+ "/home/vlad/Documents/javascript/learn-js-the-proper-way/#007/"
+ "/home/vlad/Documents/javascript/learn-js-the-proper-way/#005/project/"
+ "/home/vlad/Documents/javascript/node.js/ch-02/"
+ "/home/vlad/Documents/javascript/node.js/"
+ "/home/vlad/Documents/javascript/learn-js-the-proper-way/#005/"
+ "/home/vlad/Documents/scheme/SICP/3.5.3-exploiting_the_stream_paradigm/"
+ "/home/vlad/.emacs.d/configs/"
+ "/home/vlad/"
+ "/home/vlad/Documents/javascript/learn-js-the-proper-way/#004/"
+ "/home/vlad/Documents/scheme/SICP/3.5.2-infinite-streams/"
+ "/home/vlad/.emacs.d/"
+ "/home/vlad/Documents/scheme/SICP/3.5.1-streams_are_delayed_lists/"
+ "/home/vlad/Documents/projects/s-lib/"
+ "/home/vlad/Documents/c/beej_sockets/"
+ "/home/vlad/Documents/scheme/SICP/3.4.2-mechanisms_for_controlling_concurrency/"
+ "/home/vlad/Documents/scheme/SICP/3.3.5-propagation_of_constraints/"
+ "/home/vlad/Documents/scheme/SICP/3.3.4-a_simulator_for_digital_circuits/"
+ "/home/vlad/Documents/scheme/SICP/3.3.3-representing_tables/"
+ "/home/vlad/Documents/scheme/SICP/3.3.2-representing_queues/"
+ "/home/vlad/Documents/scheme/SICP/3.3.1-mutable_list_structure/"
+ "/home/vlad/Documents/javascript/learn-js-the-proper-way/#003/"
+ "/home/vlad/Documents/javascript/learn-js-the-proper-way/#002/"
+ "/home/vlad/Documents/scheme/SICP/3.2.4-internal_definitions/"
+ "/home/vlad/Documents/scheme/SICP/3.1.3-the_cost_of_introducing_assignment/"
+ "/home/vlad/Documents/scheme/SICP/3.1.2-benefits_fo_introducing_assignment/"
+ "/home/vlad/Documents/javascript/learn-js-the-proper-way/#001/"
+ "/home/vlad/Documents/competitive_programming/project_euler/#0013/"
+ "/home/vlad/Documents/scheme/SICP/2.5.3-example_symbolic_algebra/"
+ "/home/vlad/Documents/competitive_programming/project_euler/#0022/"
+ "/home/vlad/Documents/javascript/learn-js-the-proper-way/"
+ "/home/vlad/Documents/scheme/SICP/2.5.2-combining_data_of_different_types/"
+ "/home/vlad/.emacs.d/themes/"
+ "/home/vlad/Documents/scheme/SICP/2.4.3-data_directed_programming_and_additivity/"
+ "/home/vlad/Documents/projects/gnu-smalltalk-doc/"
+ "/home/vlad/Documents/scheme/SICP/2.4.2-tagged_data/"
+ "/home/vlad/Documents/scheme/SICP/2.3.4-huffman_encoding_trees/"
+ "/home/vlad/Documents/projects/scraper/"
+ "/home/vlad/Documents/competitive_programming/codeeval/moderate-sequence_transformation/"
+ "/home/vlad/Documents/competitive_programming/project_euler/#0010/"
+ "/home/vlad/Documents/scheme/"
+ "/home/vlad/Documents/c/sedgewick_algorithms_in_c/14-hashing/14.03-linear_probing/examples/prog_14.05-deletion_in_linear_probing/"
+ "/home/vlad/Documents/competitive_programming/codeeval/#031-rightmost_char/"
+ "/home/vlad/Documents/competitive_programming/project_euler/#0005/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "hello.html"
+ "t.rkt"
+ "posn.rkt"
+ "third_file.txt"
+ "file.txt"
+ "manifest.json"
+ "md-parser2.rkt"
+ "ch-9.js"
+ "jquery.cookie.js"
+ "data.json"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/vlad/Documents/github-repos/learning-git/explore_california/" (21385 52222 304887 796000) "./" "._mission.html" "contact.html" ".git/" "explorers/" "._explorers.html" "assets/" "../" "._tours.html" "resources/" "tours/" "index.html" "explorers.html" "support.html" "._resources.html" "resources.html" "._support.html" "._index.html" "tours.html" "._contact.html" "mission.html")
+
+ ("/home/vlad/.emacs.d/themes/" (21384 4667 778093 529000) "./" "../" "liso-theme.el" "#marine.el#" "#lethe.el#")
+
+ ("/home/vlad/.emacs.d/" (21383 39905 364584 624000) "./" "custom-packages/" ".mc-lists.el" "../" "Cask" "tramp" "tutorial/" "init.el" "configs/" "eshell/" "auto-save-list/" "cache/" "url/" ".cask/" "themes/")
+
+ ("/home/vlad/" (21384 51972 457817 997000) ".icedtea/" ".geiser_history.racket" ".mysql_history" ".speech-dispatcher/" "./" ".xsession-errors" ".ssh/" ".furiusisomount/" ".cache/" ".gnupg/" ".gnome/" ".mplayer/" ".gorillarc" ".git/" ".config/" ".compiz/" ".kchmviewer/" ".gconf/" ".dbus/" ".ICEauthority" ".xchat2/" ".local/" "Templates/" ".Xauthority" ".gstreamer-0.10/" "../" "tmp/" ".st/" ".apport-ignore.xml" ".swp" ".java/" ".ddd/" ".pki/" ".macromedia/" ".syncdrive/" ".kde/" ".filezilla/" ".profile" ".bzr.log" "Public/" "Pictures/" ".emacs.d/" "Documents/" ".goldendict/" ".dmrc" ".gnome2/" ".dartEditor/" ".npm/" ".gksu.lock" ".bash_history" ".gvfs/" ".opera/" ".pulse-cookie" ".thumbnails/" ".xsession-errors.old" ".gimp-2.8/" ".bashrc" ".bash_logout" ".adobe/" ".gitconfig" ".mtab.fuseiso" ".eclipse/" "Desktop/" ".gitignore" ".gnome2_private/" ".mozilla/" ".Skype/" "SyncDrive/" ".racket/" "Downloads/" ".android/" ".cask/" ".lesshst")
+
+ ("/home/vlad/.emacs.d/configs/" (21384 11029 494056 474000) "programming-languages.el" "./" "../" "looks.el" "settings.el" "custom.el" "keys.el")
+
+ ("/home/vlad/Documents/projects/blog/" (21384 30906 481940 698000) "./" "md-parser2.rkt" "plan.org" "init.rkt" "../" "md-parser.rkt" "test-files/" "option-parser.rkt")
+
+ ("/home/vlad/Documents/scheme/HtDP/ch-06/" (21384 51962 681818 54000) "6.2.rkt" "./" "6.5.rkt" "../" "6.6.rkt" "6.1.rkt" "6.3.rkt" "6.4.rkt")
+
+ ("/home/vlad/Documents/projects/blog/test-files/" (21384 22716 365988 403000) "simple.md" "./" "t.rkt" "../")
+
+ ("/home/vlad/Documents/javascript/angular/ch-01/hello-world/" (21384 54894 237800 979000) "./" "../")
+
+ ("/home/vlad/Documents/scheme/" (21383 22362 140686 807000) "./" "SICP/" "../" "introduction-to-systematic-program-design-01/" "HtDP/")
+
+ ("/home/vlad/Documents/github-repos/my_first_git_project/first_directory/" (21383 8775 252765 945000) "./" "../" "third_file.txt")
+
+ ("/home/vlad/Documents/github-repos/my_first_git_project/" (21383 8626 48766 814000) "./" ".git/" "../" "primary_file.txt" "first_directory/" "second_file.txt")
+
+ ("/home/vlad/Documents/projects/chrome-extensions/chrome-knav/" (21381 59795 262468 626000) "./" "../")
+
+ ("/home/vlad/Documents/projects/chrome-knav/simple-example/" (21381 59733 262468 987000) "./" "../" "manifest.json")
+
+ ("/home/vlad/Documents/projects/gnu-smalltalk-doc/" (21376 10772 52267 440000) "./" "../" "packages.org" "doc.st" "class-hierarchy.org")
+
+ ("/home/vlad/Documents/javascript/learn-js-the-proper-way/#007/" (21376 40825 98661 545000) "./" "../" "ch-9.js")
+
+ ("/home/vlad/Documents/javascript/learn-js-the-proper-way/" (21375 27715 869200 676000) "./" "#006/" "#005/" "index.html~" "../" "index.html" "#003/" "#007/" "#002/" "#004/" "#001/")
+
+ ("/home/vlad/Documents/javascript/node.js/" (21374 8091 905192 761000) "./" "../" "nodejs-the-right-way/" "nodejs-in-action/")
+
+ ("/home/vlad/Documents/javascript/learn-js-the-proper-way/#005/project/" (21374 7665 21195 247000) "./" "../" "ex.js" "index.html" "jquery.cookie.js" "data.json")
+
+ ("/home/vlad/Documents/javascript/learn-js-the-proper-way/#005/" (21371 16009 622659 248000) "./" "../" "ch-14.js" "project/" "ch-17.js" "ch-10.js")
+
+ ("/home/vlad/Documents/javascript/learn-js-the-proper-way/#004/" (21370 12216 753974 856000) "ch-13.js" "ch-13.ex13.3.html" "./" "styled-with-css.html" "jquery.html" "../" "index.html" "ch-15.js" "project/" "ch-13-ex13.2.5.html" "ch-13-ex13.2.html" "ch-19.js")
+
+ ("/home/vlad/Documents/javascript/node.js/ch-02/" (21370 4497 768930 840000) "./" "watcher-argv.js" "target.txt" "../" "watcher.js")
+
+ ("/home/vlad/Documents/scheme/SICP/" (21368 20066 644168 691000) "2.5.3-example_symbolic_algebra/" "1.1.7-example_square_roots_by_newtons_method/" "./" "2.5.1-generic_arithmetic_operations/" "3.5.1-streams_are_delayed_lists/" "2.4.1-representations_for_complex_numbers/" "2.2.2-heirarchical_structures/" "2.5.2-combining_data_of_different_types/" "3.1.1-local_state_variables/" ".git/" "3.5.2-infinite-streams/" "2.2.1-representing_sequences/" "3.2.2-applying_simple_procedures/" "2.3.3-representing_sets/" "1.1.2-naming_the_environment/" "1.2.1-linear_recursion_and_iteration/" "2.4.2-tagged_data/" "1.3.1-procedures_as_arguments/" "../" "1.3.2-constructing_procedures_using_lambda/" "1.1.4-compound_procedures/" "2.1.4-extended_exercise_interval_arithmetic/" "3.3.2-representing_queues/" "3.5.3-exploiting_the_stream_paradigm/" "1.2.6-testing_for_primality/" "2.1.2-abstraction_barriers/" "2.3.4-huffman_encoding_trees/" "2.3.1-quotation/" "2.1.3-what_is_meant_by_data/" "1.2.5-greatest_common_divisors/" "1.1.6-conditional_expression_and_predicates/" "2.3.2-symbolic_differentiation/" "3.3.4-a_simulator_for_digital_circuits/" "3.1.3-the_cost_of_introducing_assignment/" "1.2.4-exponentiation/" "1.3.4-procedures_as_returned_values/" "1.1.8-procedures_as_black_box_abstractions/" "3.3.1-mutable_list_structure/" "3.5.5-modularity_of_functional_programs_and_modularity_of_objects/" "3.3.3-representing_tables/" "2.2.3-sequences_as_conventional_interfaces/" "1.3.3-procedures_as_general_methods/" "4.1.1-the_core_of_the_evaluator/" "1.2.2-tree_recursion/" "3.2.3-frames_as_the_repository_of_local_state/" "3.1.2-benefits_fo_introducing_assignment/" "3.4.2-mechanisms_for_controlling_concurrency/" "3.3.5-propagation_of_constraints/" ".gitignore" "2.4.3-data_directed_programming_and_additivity/" "README.md" "3.2.4-internal_definitions/" "2.1.1-example_arithmetic_operations_for_rational_numbers/")
+
+ ("/home/vlad/Documents/scheme/SICP/4.1.1-the_core_of_the_evaluator/" (21368 23323 844149 719000) "./" "../" "eval.scm")
+
+ ("/home/vlad/Documents/scheme/SICP/3.1.2-benefits_fo_introducing_assignment/" (21364 29874 325214 914000) "./" "../" "monte-carlo.scm" "ex.3.6.scm" "ex.3.5.scm")
+
+ ("/home/vlad/Documents/scheme/SICP/3.5.5-modularity_of_functional_programs_and_modularity_of_objects/" (21364 29869 949214 940000) "./" "../" "ex.3.81.scm" "pi.scm")
+
+ ("/home/vlad/Documents/javascript/learn-js-the-proper-way/#004/project/" (21363 22055 849764 586000) "./" "../" "index.html")
+
+ ("/home/vlad/Documents/scheme/SICP/3.5.1-streams_are_delayed_lists/" (21361 53200 910538 355000) "./" "ex.3.51.scm" "../" "ex.3.52.scm" "stream-in-action.scm" "stream.scm" "ex.3.50.scm")
+
+ ("/home/vlad/Documents/scheme/SICP/3.5.2-infinite-streams/" (21361 52840 278540 945000) "./" "ex.3.56.scm" "../" "infinite-streams.scm" "ex.3.55.scm" "ex.3.54.scm" "ex.3.53.scm" "ex.3.58.scm")
+
+ ("/home/vlad/Documents/scheme/SICP/3.5.3-exploiting_the_stream_paradigm/" (21363 6482 429855 295000) "./" "ex.3.71.scm" "usage.scm" "../" "ex.3.67.scm" "ex.3.65.scm" "ex.3.69.scm" "streams-of-pairs.scm" "ex.3.70.scm" "ex.3.64.scm")
+
+ ("/home/vlad/Documents/projects/" (21354 16756 583095 765000) "./" "gnu-smalltalk-doc/" "irc-bot/" "../" "s-lib/" "scraper/" "blog/")
+
+ ("/home/vlad/Documents/projects/s-lib/" (21354 35010 266989 444000) "info.rkt" "./" ".git/" "../" "s-lib/" "README.md")
+
+ ("/home/vlad/Documents/scheme/SICP/3.4.2-mechanisms_for_controlling_concurrency/" (21353 56952 95243 363000) "./" "../" "ex.3.47.scm" "serializer-implementation.scm" "serialization.scm" "multiple-sahred-resources.scm")
+
+ ("/home/vlad/Documents/javascript/" (21315 47995 347312 258000) "./" "../" "learn-js-the-proper-way/")
+
+ ("/home/vlad/Documents/c/beej_sockets/" (21352 41066 823381 535000) "./" "structures_and_functions.org" ".git/" "../" "bind_example.c" "accept_example.c" "socket_example.c" "getaddrinfo_server.c" "getaddrinfo_client.c" "connect_example.c" "showip.c" "README.md")
+
+ ("/home/vlad/Documents/scheme/SICP/3.3.5-propagation_of_constraints/" (21351 11273 591467 635000) "ex.3.33.scm" "./" "ex.3.35.scm" "../" "ex.3.37.scm" "celsius_fahrenheit.scm")
+
+ ("/home/vlad/Documents/projects/racket-strings/" (21350 29164 293955 171000) "./" "../" ".#s-lib.rkt" "#s-lib.rkt#" "s-lib.rkt")
+
+ ("/home/vlad/Documents/scheme/SICP/3.3.4-a_simulator_for_digital_circuits/" (21348 38593 41412 266000) "./" "../" "circuit.scm" "ex.3.30.scm" "ex.3.28.scm" "ex.3.29.scm")
+
+ ("/home/vlad/Documents/javascript/learn-js-the-proper-way/#003/" (21347 23058 172319 956000) "./" "../" "ch-7.js" "ch-6.js" "ch-8.js")
+
+ ("/home/vlad/Documents/scheme/SICP/3.3.3-representing_tables/" (21346 9249 255317 7000) "./" "../" "ex.3.24.scm" "table.scm" "two-dimensional-tables.scm" "ex.3.25.scm")
+
+ ("/home/vlad/Documents/c/" (21343 37130 219702 802000) "./" "unix_network_programming/" "../" "sedgewick_algorithms_in_c/" "k&r_book/" "beej_sockets/")
+
+ ("/home/vlad/Documents/scheme/SICP/3.3.2-representing_queues/" (21343 35802 451691 139000) "./" "queue.scm" "ex.3.21.scm" "../" "ex.3.22.scm" "ex.3.23.scm")
+
+ ("/home/vlad/Documents/scheme/SICP/3.3.1-mutable_list_structure/" (21341 62397 281558 480000) "./" "set.scm" "ex.3.17.scm" "ex.3.19.scm" "../" "ex.3.13.scm" "mutation.scm" "sharing_and_identity.scm" "ex.3.12.scm" "ex_3.18.scm" "ex.3.16.scm")
+
+ ("/home/vlad/Documents/javascript/learn-js-the-proper-way/#002/" (21336 64018 58472 561000) "./" "ch-5.js" "../" "ch-3.js" "ch-4.js")
+
+ ("/home/vlad/Documents/scheme/SICP/3.1.3-the_cost_of_introducing_assignment/" (21323 39369 302898 71000) "./" "make-withdraw.scm" "../" "imperative_vs_functional.scm" "ex_3.7.scm" "ex_3.8.scm")
+
+ ("/home/vlad/Documents/scheme/SICP/3.2.4-internal_definitions/" (21323 37736 522883 730000) "./" "../" "sqrt.scm")
+
+ ("/home/vlad/Documents/scheme/SICP/3.2.3-frames_as_the_repository_of_local_state/" (21323 36898 894876 372000) "./" "../")
+
+ ("/home/vlad/Documents/scheme/SICP/3.2.2-applying_simple_procedures/" (21323 35005 410859 741000) "./" "../")
+
+ ("/home/vlad/Documents/" (21315 47978 291312 108000) "./" "projects/" "org/" "../" "notes/" "assembly/" "chrome-extensions/" "c/" "1mportant/" "ubuntu_translations/" "javascript/" "github-repos/" "smalltalk/" "scheme/" "competitive_programming/" "emacs/")
+
+ ("/home/vlad/Documents/javascript/learn-js-the-proper-way/#001/" (21318 40146 409592 298000) "./" "../" "name.js")
+
+ ("/home/vlad/Documents/scheme/SICP/2.5.3-example_symbolic_algebra/" (21318 12630 882519 190000) "./" "../" "polinomials.scm")
+
+ ("/home/vlad/Documents/scheme/SICP/2.4.3-data_directed_programming_and_additivity/" (21315 45771 623292 726000) "./" "../" "package.scm" "!supplement.scm" "message-passing.scm" "ex_2.73.scm" "ex_2.75.scm")
+
+ ("/home/vlad/Documents/scheme/SICP/2.5.2-combining_data_of_different_types/" (21316 59189 197953 534000) "./" "ex.2.81.scm" "ex_2.86.scm" "../" "ex_2.83.scm" "ex_2.82.scm" "ex_2.85.scm" "coercion.scm" "ex.2.84.scm")
+
+ ("/home/vlad/Documents/competitive_programming/project_euler/#0022/" (21316 57855 153918 707000) "./" "solution.rkt" "names.txt" "../" "problem.txt")
+
+ ("/home/vlad/Documents/competitive_programming/project_euler/#0023/" (21317 23221 130725 445000) "./" "solution.rkt" "../" "problem.txt" "solution.rkt~" "problem.txt~")
+
+ ("/home/vlad/Documents/competitive_programming/project_euler/#0021/" (21314 60614 543608 166000) "./" "solution.rkt" "../" "problem.txt" "test.rkt~" "solution.rkt~" "comment.txt" "test.rkt" "problem.txt~")
+
+ ("/home/vlad/Documents/scheme/SICP/2.5.1-generic_arithmetic_operations/" (21314 19784 7845 988000) "./" "generics.scm" "ex_2.78.scm" "../" "generics.scm~" "ex_2.79.scm~" "ex_2.79.scm")
+
+ ("/home/vlad/Documents/scheme/SICP/2.4.2-tagged_data/" (21313 2872 602176 745000) "./" "tags.scm" "../")
+
+ ("/home/vlad/Documents/projects/scraper/" (21310 37178 63863 392000) "./" "plan.org" "documentation.org" "lexer.org" "../" "dom.org" "start.st")
+
+ ("/home/vlad/Documents/scheme/SICP/2.3.4-huffman_encoding_trees/" (21310 25543 247745 400000) "./" "ex_2.68.scm" "../" "tree.scm" "ex_2.67.scm" "ex_2.69.scm" "ex_2.70.scm")
+
+ ("/home/vlad/Documents/competitive_programming/project_euler/#0020/" (21312 15772 889188 408000) "./" "solution.rkt" "../" "problem.txt" "solution.rkt~" "comment.txt" "problem.txt~")
+
+ ("/home/vlad/Documents/scheme/SICP/2.4.1-representations_for_complex_numbers/" (21311 39765 522587 844000) "./" "../")
+
+ ("/home/vlad/Documents/competitive_programming/project_euler/#0013/" (21310 18614 863675 138000) "./" "solution.rkt" "garbage.rkt" "../" "problem.txt" "comment.txt")
+
+ ("/home/vlad/Documents/competitive_programming/project_euler/#0018/" (21309 38698 427634 875000) "./" "solution.rkt" "../" "problem.txt" "comment.txt~" "solution.rkt~" "comment.txt")
+
+ ("/home/vlad/.emacs.d/elpa/" (21289 32680 101381 130000) "./" "rainbow-delimiters-20131015.1304/" "smart-mode-line-20140313.1040/" "json-mode-20140120.129/" "hexrgb-20131226.1855/" "browse-kill-ring-20131116.2113/" "popwin-20140309.745/" "../" "magit-20140312.1621/" "undo-tree-20140110.616/" "dired-details-20130824.1158/" "nyan-mode-20120710.2200/" "move-text-20140307.1644/" "multiple-cursors-20140105.259/" "geiser-20140307.425/" "flx-ido-20131030.1243/" "git-rebase-mode-20140313.1504/" "rainbow-blocks-20140306.1033/" "smex-20140131.1006/" "quack-0.42/" "guide-key-20140219.531/" "ido-yes-or-no-1.1/" "git-commit-mode-20140313.1504/" "page-break-lines-20140128.1017/" "archives/" "ido-vertical-mode-20140222.934/" "expand-region-20140315.2326/" "dash-20140308.656/" "anzu-20140308.136/" "pretty-lambdada-20131227.148/" "dired+-20140216.1552/" "smart-compile-20130917.347/" "ido-ubiquitous-20140225.1639/" "flx-20130728.820/" "cl-lib-0.5/" "smartparens-20140316.658/")
+
+ ("/home/vlad/Documents/competitive_programming/" (21296 28041 961598 869000) "./" "codeeval/" "infoarena/" "reddit_dailyprogrammer/" "../" "project_euler/" "3n+1_problem/")
+
+ ("/home/vlad/Documents/competitive_programming/project_euler/" (21308 17273 904695 89000) "#0007/" "./" "#0006/" "#0016/" "#0012/" "#0003/" "../" "#0013/" "#0014/" "#0015/" "#0017/" "#0004/" "#0010/" "#0009/" "#0008/" "#0001/" "#0011/" "#0005/" "#0002/")
+
+ ("/home/vlad/Documents/competitive_programming/codeeval/moderate-sequence_transformation/" (21303 7034 62408 144000) "./" "solution.c" "solution" "in~" "../" "problem.txt" "in" "solution.c~" "problem.txt~")
+
+ ("/home/vlad/Documents/competitive_programming/project_euler/#0015/" (21305 44431 258333 700000) "./" "solution.rkt" "../" "problem.txt" "solution.rkt~" "comment.txt" "problem.txt~")
+
+ ("/home/vlad/Documents/competitive_programming/project_euler/#0012/" (21302 37356 989536 629000) "./" "solution.rkt" "../" "problem.txt" "solution.rkt~" "comment.txt" "problem.txt~")
+
+ ("/home/vlad/Documents/competitive_programming/project_euler/#0010/" (21300 10052 791414 308000) "./" "solution.rkt" "../" "optimized-solution.rkt" "problem.txt" "comment.txt")
+
+ ("/home/vlad/Documents/c/sedgewick_algorithms_in_c/14-hashing/" (21299 56052 139216 183000) "./" "14.04-double_hashing/" "14.03-linear_probing/" "../" "14.05-dynamic_hash_tables/" "14.01-hash_functions/" "14.02-separate_chaining/")
+
+ ("/home/vlad/Documents/c/sedgewick_algorithms_in_c/14-hashing/14.03-linear_probing/examples/prog_14.05-deletion_in_linear_probing/" (21297 12041 272354 312000) "Makefile" "st.c" "./" "item.h" "../" "st.h" "main.c" "item.c")
+
+ ("/home/vlad/Documents/competitive_programming/codeeval/moderate-double_squares/" (21299 16858 34881 854000) "./" "solution.c" "../" "problem.txt")
+
+ ("/home/vlad/Documents/c/sedgewick_algorithms_in_c/14-hashing/14.03-linear_probing/examples/prog_14.04-linear_probing/" (21297 12058 640354 488000) "Makefile" "st.c" "./" "item.h" "../" "st.h" "main.c" "item.c")
+
+ ("/home/vlad/Documents/competitive_programming/codeeval/#031-rightmost_char/" (21296 33015 117649 303000) "./" "solution.c" "solution" "in~" "../" "problem.txt" "in" "solution.c~")
+
+ ("/home/vlad/Documents/competitive_programming/codeeval/#031/" (21296 28213 901600 613000) "./" "../" "problem.txt" "in")
+
+ ("/home/vlad/Documents/smalltalk/computerProgrammingUsingGNUSmalltalk/" (21154 9401 66362 656000) "./" ".git/" "examples/" "../" "exercises/" "gnu_smalltalk_book_code/" ".gitignore")
+
+ ("/home/vlad/Documents/c/sedgewick_algorithms_in_c/14-hashing/14.01-hash_functions/examples/" (21295 55290 437210 587000) "prog_14.02-universal_hash_function.c" "./" "prog_14.01-hash_function_for_string_keys.c" "../")
+
+ ("/home/vlad/Documents/c/sedgewick_algorithms_in_c/" (21290 40181 509436 752000) "./" "04-abstract_data_types/" ".git/" "06-elementary_sorting_methods/" "01-introduction/" "../" "03-elementary_data_structures/" "09-priority_queues_and_heapsort/" "12-symbol_tables_and_binary_search_trees/" "14-hashing/" "08-merging_and_mergesort/" "02-principles_of_algorithms_analysis/" "11-special_purpose_sorting_methods/" "05-recursion_and_trees/" "07-quicksort/" ".gitignore" "README.md")
+
+ ("/home/vlad/Documents/c/sedgewick_algorithms_in_c/14-hashing/14.02-separate_chaining/" (21294 31348 426362 105000) "./" "examples/" "../")
+
+ ("/home/vlad/Documents/c/sedgewick_algorithms_in_c/14-hashing/14.02-separate_chaining/examples/" (21294 33473 898414 710000) "./" "../" "prog_14.03-hashing_with_separate_chaining/")
+
+ ("/home/vlad/Documents/c/sedgewick_algorithms_in_c/14-hashing/14.02-separate_chaining/examples/prog_14.03-hashing_with_separate_chaining/" (21294 38409 390536 862000) "Makefile" "st.c" "./" "item.h" "st.h~" "../" "item.h~" "item.c~" "st.h" "st.c~" "item.o" "out" "main.c" "main.o" "st.o" "main.c~" "item.c")
+
+ ("/home/vlad/Documents/competitive_programming/project_euler/#0005/" (21293 48238 77397 244000) "./" "solution.rkt" "../" "problem.txt" "comment.txt")
+
+ ("/home/" (20880 55914 730661 962000) "./" "../" "vlad/")
+
+ ("/home/vlad/Documents/smalltalk/" (21291 12644 673215 421000) "./" "test.st~" "smalltalkObjectsAndDesign/" "../" "test.st" "gst_source_code/" "smalltalkObjectOrientation/" "computerProgrammingUsingGNUSmalltalk/" "class-hierarchy.org" "smalltalkBestPractices/")
+
+ ("/home/vlad/Documents/smalltalk/computerProgrammingUsingGNUSmalltalk/examples/" (21160 49012 797432 796000) "./" "11-super.st" "08-repetitive_controlling.st" "05-dictionary.st" "../" "07-selective_controlling.st" "03-array.st" "09-class_example.st" "06-blocks.st" "10-extending_and_modifying_classes.st" "04-set.st" "01-hello_world.st" "02-user_input.st")
+
+ ("/home/vlad/Desktop/" (21157 2009 245971 166000) "./" "../")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

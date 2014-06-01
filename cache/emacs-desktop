@@ -1,0 +1,29 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Sun Jun  1 08:20:27 2014
+;; Desktop file format version 206
+;; Emacs version 24.3.1
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("draw-re" "cond" "make-pos" "green" "start" "nav" "inline-ima" "img" "x" "split-img" "emm" "draw-bu" "if you" "con" "img" "img-re"))
+(setq regexp-search-ring '("em"))
+(setq register-alist nil)
+(setq file-name-history '("/home/vlad/.emacs.d/.git/COMMIT_EDITMSG" "~/.emacs.d/" "/home/vlad/.emacs.d/.git/COMMIT_EDITMSG" "~/.emacs.d/" "~" "~/Documents/scheme/HtDP/ch-06/" "/home/vlad/Documents/github-repos/learning-git/explore_california/.git/COMMIT_EDITMSG" "~/Documents/github-repos/learning-git/explore_california/junk3" "~/Documents/github-repos/learning-git/explore_california/junk2" "~/Documents/github-repos/learning-git/explore_california/junk1" "/home/vlad/Documents/github-repos/learning-git/explore_california/.git/COMMIT_EDITMSG" "~/Documents/github-repos/learning-git/explore_california/" "~/Documents/projects/blog/" "/home/vlad/Documents/javascript/angular/ch-01/hello-world/hello.html" "~/Documents/javascript/angular/ch-01/hello-world" "~/Documents/javascript/angular/ch-01" "~/Documents/javascript/angular/#01" "~/Documents/scheme/HtDP/ch-06/6.6.rkt" "~/Documents/scheme/HtDP/ch-06/6.5.rkt" "~/Documents/scheme/HtDP/ch-06/6.4.rkt" "~/Documents/projects/blog/" "/home/vlad/Documents/github-repos/learning-git/explore_california/.git/COMMIT_EDITMSG" "~/Documents/github-repos/learning-git/explore_california/" "" "~/Documents/github-repos/learning-git/explore_california/tours/tour_detail_backpack_cal.html" "/home/vlad/Documents/github-repos/learning-git/explore_california/.git/COMMIT_EDITMSG" "~/Documents/github-repos/learning-git/explore_california/" "/home/vlad/Documents/github-repos/learning-git/explore_california/.git/COMMIT_EDITMSG" "~/Documents/github-repos/learning-git/explore_california/" "~/Documents/"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  nil
+  ".emacs.d"
+  'dired-mode
+  '(flx-ido-mode guide-key-mode anzu-mode magit-auto-revert-mode)
+  416
+  '(nil nil)
+  t
+  '("/home/vlad/.emacs.d/")
+  nil)
+

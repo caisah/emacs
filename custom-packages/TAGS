@@ -1,0 +1,124 @@
+
+gst-mode.el,1179
+(defvar smalltalk-prompt-pattern 30,1197
+(defvar *gst-process* 33,1290
+(defvar gst-program-name 35,1353
+(defvar smalltalk-command-string 38,1470
+(defvar smalltalk-eval-data 41,1573
+(defvar smalltalk-ctl-t-map44,1613
+(defvar gst-mode-map52,1951
+(defun gst 66,2504
+(defun read-smalltalk-command 80,3095
+(defun smalltalk-file-name 86,3392
+(defun parse-smalltalk-command 89,3487
+(defun make-gst 101,4101
+(defun gst-filter 129,5130
+(defun smalltalk-accum-command 169,6962
+(defun smalltalk-handle-command 184,7522
+(defun gst-mode 187,7582
+(defun smalltalk-print-region 214,8540
+(defun smalltalk-eval-region 240,9489
+(defun smalltalk-doit 257,10138
+(defun smalltalk-print 267,10454
+(defun smalltalk-bound-expr 277,10775
+(defun smalltalk-pos 287,11056
+(defun smalltalk-compile 291,11177
+(defun smalltalk-quote-strings 303,11580
+(defun smalltalk-snapshot 315,11897
+(defun smalltalk-quit 324,12313
+(defun smalltalk-filein 330,12498
+(defun smalltalk-filein-buffer 337,12767
+(defun smalltalk-toggle-decl-tracing 341,12886
+(defun smalltalk-toggle-exec-tracing 346,13032
+(defun smalltalk-toggle-verbose-exec-tracing 352,13176
+(defun send-to-smalltalk 357,13322
+
+smalltalk-mode.el,4007
+(defvar smalltalk-name-regexp 31,1257
+(defvar smalltalk-keyword-regexp 34,1368
+(defvar smalltalk-name-chars 37,1496
+(defvar smalltalk-whitespace 40,1608
+(defconst smalltalk-indent-amount 42,1649
+(defvar smalltalk-mode-syntax-table 53,2106
+(defvar smalltalk-mode-abbrev-table 105,4431
+(define-abbrev-table 'smalltalk-mode-abbrev-table smalltalk-mode-abbrev-table107,4523
+(defvar smalltalk-template-map 111,4650
+(defvar smalltalk-mode-map119,4939
+(defconst smalltalk-binsel 148,6234
+(defconst smalltalk-font-lock-keywords151,6335
+(defconst smalltalk-font-lock-keywords-1161,6727
+(defconst smalltalk-font-lock-keywords-2165,6856
+(defvar smalltalk-last-category 176,7258
+(defun smalltalk-mode 181,7395
+(defun smalltalk-tab 229,8934
+(defun smalltalk-bang-begin-of-defun 238,9201
+(defun smalltalk-scope-begin-of-defun 260,10025
+(defun smalltalk-begin-of-defun 295,11317
+(defun smalltalk-begin-of-scope 304,11615
+(defun smalltalk-forward-sexp 313,11888
+(defun smalltalk-backward-sexp 327,12292
+(defun smalltalk-reindent 341,12700
+(defun smalltalk-newline-and-indent 345,12773
+(defun smalltalk-colon 356,13287
+(defun smalltalk-bang 383,14597
+(defun smalltalk-end-of-defun 395,15017
+(defun smalltalk-last-category-name 409,15464
+(defun smalltalk-insert-indented-line 412,15531
+(defun smalltalk-maybe-insert-spacing-line 418,15684
+(defun smalltalk-insert-method-body 424,15851
+(defun smalltalk-instance-template-fn 444,16600
+(defun smalltalk-class-template-fn 453,16938
+(defun smalltalk-private-template-fn 466,17551
+(defun smalltalk-maybe-read-class 471,17794
+(defun smalltalk-instance-template 476,17966
+(defun smalltalk-class-template 483,18205
+(defun smalltalk-private-template 493,18644
+(defun smalltalk-comment-indent 504,19015
+(defun smalltalk-indent-line 512,19350
+(defun smalltalk-toplevel-indent 523,19709
+(defun smalltalk-statement-indent 538,20245
+(defun smalltalk-at-end-of-statement 610,23752
+(defun smalltalk-calculate-indent 625,24290
+(defun smalltalk-in-string 632,24513
+(defun smalltalk-in-comment 640,24801
+(defun smalltalk-forward-whitespace 646,24990
+(defun smalltalk-backward-whitespace 661,25556
+(defun smalltalk-current-column 667,25814
+(defun smalltalk-current-indent 673,26032
+(defun smalltalk-find-statement-begin 682,26285
+(defun smalltalk-match-paren 720,27911
+(defun smalltalk-parse-sexp-and-narrow-to-paren 769,29652
+(defun smalltalk-at-begin-of-scope 779,30105
+(defun smalltalk-at-begin-of-defun 792,30616
+(defun smalltalk-indent-for-colon 805,31114
+(defun smalltalk-end-of-paren 855,33620
+(defun smalltalk-indent-to-column 862,33845
+(defun smalltalk-narrow-to-method 873,34194
+(defun smalltalk-forward-keyword-selector 937,37098
+(defun smalltalk-white-to-bolp 953,37671
+(defun smalltalk-backward-comment 976,38414
+(defun smalltalk-current-class 982,38624
+(defun smalltalk-current-scope-point 1030,40634
+(defun smalltalk-current-class-point 1047,41428
+(defun smalltalk-current-class-name 1050,41506
+(defun smalltalk-in-bang-syntax 1053,41583
+(defun smalltalk-in-class-scope-of 1061,41827
+(defun smalltalk-in-class-scope 1075,42308
+(defun smalltalk-exit-class-scope 1080,42491
+(defun smalltalk-find-message 1087,42698
+(defun smalltalk-safe-backward-sexp 1101,43299
+(defun smalltalk-safe-forward-sexp 1109,43513
+(defun smalltalk-goto-beginning-of-statement 1117,43725
+(defun smalltalk-has-sender 1121,43850
+(defun smalltalk-looking-at-binary-send 1126,43975
+(defun smalltalk-looking-at-unary-send 1129,44072
+(defun smalltalk-looking-at-keyword-send 1132,44161
+(defun smalltalk-looking-back-keyword-send 1135,44247
+(defun smalltalk-find-end-of-keyword-send 1138,44331
+(defun smalltalk-find-beginning-of-keyword-send 1148,44741
+(defun smalltalk-goto-previous-keyword 1162,45326
+(defun smalltalk-goto-next-keyword 1166,45472
+(defun smalltalk-previous-keyword-1 1170,45606
+(defun smalltalk-next-keyword-1 1182,46026
+(defun smalltalk-previous-keyword 1195,46426
+(defun smalltalk-next-keyword 1198,46528

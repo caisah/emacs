@@ -1,0 +1,41 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("javascript"
+ (filename . "~/Documents/javascript/")
+ (front-context-string . "learn-js-the-pro")
+ (rear-context-string . "96 apr 11 14:46 ")
+ (position . 220))
+("sicp"
+ (filename . "~/Documents/scheme/SICP/")
+ (front-context-string . "..\n  drwxrwxr-x ")
+ (rear-context-string . "96 apr  8 08:47 ")
+ (position . 175))
+("competitive_programming"
+ (filename . "~/Documents/competitive_programming/")
+ (front-context-string . "3n+1_problem\n  d")
+ (rear-context-string . "96 sep  6  2013 ")
+ (position . 234))
+("projects"
+ (filename . "~/Documents/projects/")
+ (front-context-string . "irc-bot\n  drwxr-")
+ (rear-context-string . "96 feb 24 22:06 ")
+ (position . 219))
+("documents"
+ (filename . "~/Documents/")
+ (front-context-string . "1mportant\n  drwx")
+ (rear-context-string . "96 ian 30 12:40 ")
+ (position . 210)
+ (annotation . ""))
+("smalltalk"
+ (filename . "~/Documents/smalltalk/")
+ (front-context-string . "..\n  drwxr-xr-x ")
+ (rear-context-string . "96 ian 16 21:40 ")
+ (position . 173))
+("emacs"
+ (filename . "~/.emacs.d/configs/")
+ (front-context-string . "auto-save-list\n ")
+ (rear-context-string . "96 ian 18 11:04 ")
+ (position . 209))
+)
