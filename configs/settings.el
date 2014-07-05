@@ -31,9 +31,6 @@
 (setq desktop-path (list desktop-dirname))
 (setq desktop-base-file-name "emacs-desktop")
 
-;; Activate all the packages (in particular autoloads)
-(package-initialize)
-
 ;; Desktop mode (save buffers on exit)
 ;; Autosave buffers
 (require 'desktop)
@@ -48,12 +45,6 @@
 ;; Save desktop on exit
 (add-hook 'auto-save-hook 'my-desktop-save)
 
-;; Package Archive
-(require 'package)
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-			 ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")
-			 ("org" . "http://orgmode.org/elpa/")))
 
 ;; Enable
 (put 'downcase-region 'disabled nil)
@@ -100,6 +91,8 @@
     (lambda () (interactive) (find-alternate-file "..")))
   ; was dired-up-directory
  ))
+
+(setq dired-listing-switches "-la --group-directories-first")
 
 ;; Sort by different criterion
 (defun dired-sort-criteria (criteria)
@@ -148,7 +141,7 @@
 (ido-mode t)
 
 ;; IDO vertical 
- (require 'ido-vertical-mode)
+(require 'ido-vertical-mode)
  (ido-vertical-mode 1)
 
 ;; Enable Yes or No
@@ -186,6 +179,7 @@
 			     " A" " Guide"  " Undo-Tree" " PgLn" " MRev"
 			     " skewer" " skewer-html" " skewer-css"" Emmet" " hs"
 			     ))
+  
 
 ;; Move region
 (require 'move-text)
@@ -249,9 +243,6 @@
 
 (require 'rainbow-delimiters)
 
-;; Pretty lambda:
-
-(require 'pretty-lambdada)
 
 ;; Re-builder
 
@@ -280,7 +271,7 @@
 ;; Emmet
 
 (require 'emmet-mode)
-(setq emmet-preview-default nil)
+(setq emmet-preview-default nil) 
 
 ;; Node
 
@@ -290,3 +281,14 @@
 
 ;; Imenu
 (global-set-key (kbd "C-.") 'imenu-anywhere)
+
+;; Mongo
+(require 'inf-mongo)
+(setq inf-mongo-command "/usr/bin/mongo")
+
+;; Org
+(require 'org)
+
+;; Help
+(require 'apropos)
+(add-hook 'help-mode-hook '(lambda () (switch-to-buffer-other-window "*Help*")))

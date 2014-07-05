@@ -5,20 +5,18 @@
 (define-abbrev-table 'scheme-mode-abbrev-table '(
  ("lam" "lambda")
  ("def" "define")
- ("newl" "(newline)")
  ("dis" "display")
- ("che" "check-equal?")
- ("req" "require")))
+ ("che" "check-equal?")))
 
 (add-hook 'scheme-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'scheme-mode-hook 'pretty-lambda)
+(add-hook 'scheme-mode-hook 'pretty-symbols-mode)
 (add-hook 'scheme-mode-hook 'smartparens-strict-mode)
 (add-hook 'scheme-mode-hook 'abbrev-mode)
-(add-hook 'scheme-mode-hook 'geiser-local-keys)
+(add-hook 'geiser-mode-hook 'geiser-local-keys)
 (add-hook 'find-file-hook 'disable-geiser-and-add-keys)
 
-;; ;; The binary of the interpreter
-;; (setq scheme-program-name "mit-scheme-x86-64")
+;; The binary of the interpreter
+(setq scheme-program-name "mit-scheme-x86-64")
 
 (defun scheme-local-keys ()
   (local-set-key (kbd "C-x C-r") 'scheme-send-region))
@@ -75,7 +73,7 @@
 ;; Enable rainbow delimiters
 (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'emacs-lisp-mode-hook 'smartparens-strict-mode)
-(add-hook 'emacs-lisp-mode-hook 'pretty-lambda)
+(add-hook 'emacs-lisp-mode-hook 'pretty-symbols-mode) 
 (add-hook 'emacs-lisp-mode-hook 'abbrev-mode)
 (add-hook 'emacs-lisp-mode-hook 'local-elisp-keys)
 
@@ -105,6 +103,7 @@
 			    ;; JavaScript
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'pretty-symbol-patterns '(?ƒ lambda "\\<function\\>" (js2-mode)))
 
 (define-abbrev-table 'js2-mode-abbrev-table '(
   ("fun" "function")                                     
@@ -120,6 +119,7 @@
 
 ;; Skewer
 (add-hook 'js2-mode-hook 'skewer-mode)
+(add-hook 'js2-mode-hook 'pretty-symbols-mode)
 (add-hook 'js2-mode-hook 'linum-mode)
 (add-hook 'js2-mode-hook 'abbrev-mode)
 (add-hook 'js2-mode-hook 'js-keys)
@@ -150,7 +150,6 @@
 (add-hook 'web-mode-hook 'skewer-css-mode)
 (add-hook 'css-mode-hook 'skewer-css-mode)
 
-
 ;; Auto-start on any markup modes
 (add-hook 'sgml-mode-hook 'emmet-mode)
 (add-hook 'html-mode-hook 'emmet-mode)
@@ -166,8 +165,5 @@
   (interactive) 
   (backward-word)
   (web-mode-element-kill))
-
-
-
 
 

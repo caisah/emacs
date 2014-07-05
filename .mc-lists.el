@@ -12,6 +12,7 @@
 
 (setq mc/cmds-to-run-once
       '(
+	delete-region
 	sp--self-insert-command
 	sp-backward-kill-sexp
 	sp-backward-kill-word

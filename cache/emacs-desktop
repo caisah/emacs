@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sun Jun  1 08:20:27 2014
+;; Created Sat Jul  5 15:48:39 2014
 ;; Desktop file format version 206
 ;; Emacs version 24.3.1
 
@@ -10,20 +10,42 @@
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring '("draw-re" "cond" "make-pos" "green" "start" "nav" "inline-ima" "img" "x" "split-img" "emm" "draw-bu" "if you" "con" "img" "img-re"))
-(setq regexp-search-ring '("em"))
+(setq search-ring '("smart" "smart-mode" "rainbow-mode" "skew" "exte" "rainbow-mod" "rainbow-mode" "border" "li" "12" "a tar" "img" "css"))
+(setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("/home/vlad/.emacs.d/.git/COMMIT_EDITMSG" "~/.emacs.d/" "/home/vlad/.emacs.d/.git/COMMIT_EDITMSG" "~/.emacs.d/" "~" "~/Documents/scheme/HtDP/ch-06/" "/home/vlad/Documents/github-repos/learning-git/explore_california/.git/COMMIT_EDITMSG" "~/Documents/github-repos/learning-git/explore_california/junk3" "~/Documents/github-repos/learning-git/explore_california/junk2" "~/Documents/github-repos/learning-git/explore_california/junk1" "/home/vlad/Documents/github-repos/learning-git/explore_california/.git/COMMIT_EDITMSG" "~/Documents/github-repos/learning-git/explore_california/" "~/Documents/projects/blog/" "/home/vlad/Documents/javascript/angular/ch-01/hello-world/hello.html" "~/Documents/javascript/angular/ch-01/hello-world" "~/Documents/javascript/angular/ch-01" "~/Documents/javascript/angular/#01" "~/Documents/scheme/HtDP/ch-06/6.6.rkt" "~/Documents/scheme/HtDP/ch-06/6.5.rkt" "~/Documents/scheme/HtDP/ch-06/6.4.rkt" "~/Documents/projects/blog/" "/home/vlad/Documents/github-repos/learning-git/explore_california/.git/COMMIT_EDITMSG" "~/Documents/github-repos/learning-git/explore_california/" "" "~/Documents/github-repos/learning-git/explore_california/tours/tour_detail_backpack_cal.html" "/home/vlad/Documents/github-repos/learning-git/explore_california/.git/COMMIT_EDITMSG" "~/Documents/github-repos/learning-git/explore_california/" "/home/vlad/Documents/github-repos/learning-git/explore_california/.git/COMMIT_EDITMSG" "~/Documents/github-repos/learning-git/explore_california/" "~/Documents/"))
+(setq file-name-history '("~/Documents/projects/my-site/js/about.js" "~/Documents/javascript/backbone-fundamentals/02-backbone-basics/" "~/Documents/projects/" "/home/vlad/Documents/javascript/backbone-fundamentals/02-backbone-basics/validation.html" "/home/vlad/Documents/javascript/backbone-fundamentals/02-backbone-basics/listening-individually.html" "~/Documents/javascript/backbone-fundamentals/02-backbone-basics/listening-changes.html" "/home/vlad/Documents/javascript/backbone-fundamentals/02-backbone-basics/listening-changes.js" "/home/vlad/Documents/javascript/backbone-fundamentals/02-backbone-basics/direct-access.html" "/home/vlad/Documents/javascript/backbone-fundamentals/02-backbone-basics/set.html" "/home/vlad/Documents/javascript/backbone-fundamentals/02-backbone-basics/cloning.html" "/home/vlad/Documents/javascript/backbone-fundamentals/02-backbone-basics/get.html" "/home/vlad/Documents/javascript/backbone-fundamentals/02-backbone-basics/defaults.html" "/home/vlad/Documents/javascript/backbone-fundamentals/02-backbone-basics/initialize.html" "~/Documents/javascript/backbone-fundamentals/02-backbone-basics/model.html" "~/Documents/javascript/backbone-fundamentals/02-backbone-basics/backbone.model.js" "~/Documents/javascript/backbone-fundamentals/02-backbone-basics/index.html" "~/Documents/javascript/backbone-fundamentals/02-backbone-basics/main.js" "~/Documents/javascript/backbone-fundamentals/02-backbone-basics/models.js" "~/Documents/javascript/backbone-fundamentals/02-backbone-basics/" "/home/vlad/Documents/javascript/backbone-fundamentals/02-backbone-basics/boilerplate.html" "~/Documents/javascript/backbone-fundamentals/02-backbone-basics" "~/Documents/javascript/backbone-fundamentals" "/home/vlad/Documents/projects/my-site/css/home-page.css" "~/Documents/projects/my-site/js/page.js" "/home/vlad/Documents/projects/my-site/css/home-page.css" "~/Documents/projects/my-site/css/page.css"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
+  "/home/vlad/Documents/projects/my-site/about.html"
+  "about.html"
+  'web-mode
+  '(flx-ido-mode smartparens-mode guide-key-mode undo-tree-mode anzu-mode emmet-mode skewer-css-mode skewer-html-mode flycheck-mode)
+  3240
+  '(794 nil)
   nil
-  ".emacs.d"
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "js"
   'dired-mode
-  '(flx-ido-mode guide-key-mode anzu-mode magit-auto-revert-mode)
-  416
+  '(flx-ido-mode guide-key-mode anzu-mode)
+  226
   '(nil nil)
   t
-  '("/home/vlad/.emacs.d/")
+  '("/home/vlad/Documents/projects/my-site/js/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "my-site"
+  'dired-mode
+  '(flx-ido-mode guide-key-mode anzu-mode)
+  317
+  '(nil nil)
+  t
+  '("/home/vlad/Documents/projects/my-site/")
   nil)
 

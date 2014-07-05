@@ -187,3 +187,5 @@
 (set-face-attribute 'web-mode-block-delimiter-face nil
 		    :foreground "brown4"
 		    :weight 'normal)
+
+

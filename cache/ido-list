@@ -2,6 +2,9 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/home/vlad/Documents/projects/my-site/" . "css/")
+ ("/home/vlad/Documents/projects/" . "my-site/")
+ ("/home/vlad/Documents/javascript/mongo-course/01/" . "get_express/")
  ("/home/vlad/Documents/" . "scheme/")
  ("/home/vlad/Documents/smalltalk/" . "computerProgrammingUsingGNUSmalltalk/")
  ("/home/" . "vlad/")
@@ -11,13 +14,39 @@
 
 ;; ----- ido-work-directory-list -----
 (
+ "/home/vlad/Documents/javascript/backbone-fundamentals/02-backbone-basics/"
+ "/home/vlad/Documents/projects/my-site/css/"
+ "/home/vlad/"
+ "/home/vlad/Documents/projects/my-site/"
+ "/home/vlad/Documents/projects/blog/parsers/state-machine/"
+ "/home/vlad/Documents/emacs/writing-emacs-extensions/02/"
+ "/home/vlad/Documents/javascript/mongo-course/02/"
+ "/home/vlad/Documents/scheme/"
+ "/home/vlad/Documents/javascript/emacs-theme-customizer/"
+ "/home/vlad/Documents/javascript/softvision-project/"
+ "/home/vlad/Documents/javascript/mongo-course/01/express_handling_post_requests/views/"
+ "/home/vlad/Documents/projects/blog/options/test-files/"
+ "/home/vlad/Documents/projects/blog/options/"
+ "/home/vlad/Documents/javascript/node.js/nodejs-the-right-way/ch-03/"
+ "/home/vlad/Documents/javascript/node.js/nodejs-the-right-way/ch-02/"
+ "/home/vlad/Documents/javascript/mongo-course/01/get_express/"
+ "/home/vlad/Documents/javascript/mongo-course/01/hello_world_combined/"
+ "/home/vlad/Documents/javascript/mongo-course/01/hello_world_swig/"
+ "/home/vlad/Documents/javascript/mongo-course/01/hello_world_express/"
+ "/home/vlad/Documents/javascript/mongo-course/01/hello_world_mongodb/"
+ "/home/vlad/Documents/projects/blog/md-parser/"
+ "/home/vlad/Documents/projects/emacs-theme-customizer/"
+ "/home/vlad/Documents/scheme/HtDP/ch-10/"
+ "/home/vlad/Documents/projects/blog/"
+ "/home/vlad/Documents/scheme/HtDP/ch-09/"
+ "/home/vlad/Documents/scheme/HtDP/"
+ "/home/vlad/Documents/scheme/HtDP/ch-08/"
  "/home/vlad/Documents/javascript/angular/ch-01/hello-world/"
  "/home/vlad/Documents/projects/blog/test-files/"
  "/home/vlad/Documents/scheme/HtDP/ch-06/"
  "/home/vlad/Documents/github-repos/my_first_git_project/first_directory/"
  "/home/vlad/Documents/github-repos/my_first_git_project/"
  "/home/vlad/Documents/projects/chrome-knav/simple-example/"
- "/home/vlad/Documents/projects/blog/"
  "/home/vlad/Documents/javascript/learn-js-the-proper-way/#007/"
  "/home/vlad/Documents/javascript/learn-js-the-proper-way/#005/project/"
  "/home/vlad/Documents/javascript/node.js/ch-02/"
@@ -25,7 +54,6 @@
  "/home/vlad/Documents/javascript/learn-js-the-proper-way/#005/"
  "/home/vlad/Documents/scheme/SICP/3.5.3-exploiting_the_stream_paradigm/"
  "/home/vlad/.emacs.d/configs/"
- "/home/vlad/"
  "/home/vlad/Documents/javascript/learn-js-the-proper-way/#004/"
  "/home/vlad/Documents/scheme/SICP/3.5.2-infinite-streams/"
  "/home/vlad/.emacs.d/"
@@ -36,68 +64,147 @@
  "/home/vlad/Documents/scheme/SICP/3.3.5-propagation_of_constraints/"
  "/home/vlad/Documents/scheme/SICP/3.3.4-a_simulator_for_digital_circuits/"
  "/home/vlad/Documents/scheme/SICP/3.3.3-representing_tables/"
- "/home/vlad/Documents/scheme/SICP/3.3.2-representing_queues/"
- "/home/vlad/Documents/scheme/SICP/3.3.1-mutable_list_structure/"
- "/home/vlad/Documents/javascript/learn-js-the-proper-way/#003/"
- "/home/vlad/Documents/javascript/learn-js-the-proper-way/#002/"
- "/home/vlad/Documents/scheme/SICP/3.2.4-internal_definitions/"
- "/home/vlad/Documents/scheme/SICP/3.1.3-the_cost_of_introducing_assignment/"
- "/home/vlad/Documents/scheme/SICP/3.1.2-benefits_fo_introducing_assignment/"
- "/home/vlad/Documents/javascript/learn-js-the-proper-way/#001/"
- "/home/vlad/Documents/competitive_programming/project_euler/#0013/"
- "/home/vlad/Documents/scheme/SICP/2.5.3-example_symbolic_algebra/"
- "/home/vlad/Documents/competitive_programming/project_euler/#0022/"
- "/home/vlad/Documents/javascript/learn-js-the-proper-way/"
- "/home/vlad/Documents/scheme/SICP/2.5.2-combining_data_of_different_types/"
- "/home/vlad/.emacs.d/themes/"
- "/home/vlad/Documents/scheme/SICP/2.4.3-data_directed_programming_and_additivity/"
- "/home/vlad/Documents/projects/gnu-smalltalk-doc/"
- "/home/vlad/Documents/scheme/SICP/2.4.2-tagged_data/"
- "/home/vlad/Documents/scheme/SICP/2.3.4-huffman_encoding_trees/"
- "/home/vlad/Documents/projects/scraper/"
- "/home/vlad/Documents/competitive_programming/codeeval/moderate-sequence_transformation/"
- "/home/vlad/Documents/competitive_programming/project_euler/#0010/"
- "/home/vlad/Documents/scheme/"
- "/home/vlad/Documents/c/sedgewick_algorithms_in_c/14-hashing/14.03-linear_probing/examples/prog_14.05-deletion_in_linear_probing/"
- "/home/vlad/Documents/competitive_programming/codeeval/#031-rightmost_char/"
- "/home/vlad/Documents/competitive_programming/project_euler/#0005/"
 )
 
 ;; ----- ido-work-file-list -----
 (
- "hello.html"
- "t.rkt"
- "posn.rkt"
- "third_file.txt"
- "file.txt"
- "manifest.json"
- "md-parser2.rkt"
- "ch-9.js"
- "jquery.cookie.js"
- "data.json"
+ "boilerplate.html"
+ "home-page.css"
+ "about.html"
+ "styles.css"
+ "helpers.rkt"
+ "parser2.rkt"
+ "find-file-hooks.el"
+ "other-window-backward.el"
+ "reddit.json"
+ "index.html"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/home/vlad/Documents/javascript/backbone-fundamentals/02-backbone-basics/" (21431 48369 719901 751000) "./" "../" "main.js" "boilerplate.html")
+
+ ("/home/vlad/.emacs.d/" (21430 13875 569222 291000) "./" "custom-packages/" ".git/" "session.1030f9d959c6339c5140363487889088400000014060059" ".mc-lists.el" "../" "Cask" "tramp" "session.10dcd9ba838f431b3b14020535626776100000013960057" "tutorial/" "init.el" "configs/" "eshell/" "session.10198494307cc157d9140220569153303900000013890058" "auto-save-list/" "image-dired/" "cache/" "url/" ".gitignore" ".cask/" "themes/")
+
+ ("/home/vlad/.emacs.d/configs/" (21430 13905 469222 553000) "programming-languages.el" "./" "../" "looks.el" "settings.el" "custom.el" "keys.el")
+
+ ("/home/vlad/Documents/projects/my-site/" (21431 39354 480110 465000) "./" "css/" "js/" "../" "index.html" "img/" "about.html")
+
+ ("/home/vlad/" (21431 30588 886677 769000) ".icedtea/" ".mongorc.js" ".geiser_history.racket" ".mysql_history" ".speech-dispatcher/" "./" ".xsession-errors" ".ssh/" ".furiusisomount/" ".cache/" ".gnupg/" ".gnome/" ".mplayer/" ".gorillarc" ".config/" ".compiz/" ".kchmviewer/" ".gconf/" ".dbus/" ".ICEauthority" ".xchat2/" ".local/" "Templates/" ".Xauthority" ".gstreamer-0.10/" ".dbshell" "../" "tmp/" ".st/" ".apport-ignore.xml" ".swp" ".java/" ".ddd/" ".pki/" ".macromedia/" ".syncdrive/" ".kde/" ".filezilla/" ".profile" ".bzr.log" "Public/" ".node-gyp/" "Pictures/" ".gphoto/" ".emacs.d/" "Documents/" ".goldendict/" ".dmrc" ".gnome2/" ".dartEditor/" ".npm/" ".gksu.lock" ".bash_history" ".gvfs/" ".opera/" ".pulse-cookie" ".thumbnails/" ".xsession-errors.old" ".gimp-2.8/" ".bashrc" ".bash_logout" ".adobe/" ".gitconfig" ".mtab.fuseiso" ".eclipse/" "Desktop/" ".gnome2_private/" ".mozilla/" ".Skype/" "SyncDrive/" ".racket/" "Downloads/" ".android/" ".cask/" ".lesshst")
+
+ ("/home/vlad/Documents/projects/my-site/css/" (21431 39177 404114 565000) "page.css" "./" "../" "home-page.css")
+
+ ("/home/vlad/Documents/projects/" (21426 47180 264489 381000) "./" "gnu-smalltalk-doc/" "irc-bot/" "my-site/" "../" "s-lib/" "chrome-extensions/" "scraper/" "blog/")
+
+ ("/home/vlad/.emacs.d/custom-packages/" (21237 56457 632858 54000) "./" "kill-ring-ido.el" "../" "gst-mode.el" "smalltalk-mode.el" "TAGS")
+
+ ("/home/vlad/Documents/projects/blog/" (21422 23447 602392 265000) "./" "parsers/" "plan.org" "../" "test-files/" "options/")
+
+ ("/home/vlad/Documents/projects/blog/options/" (21413 18487 826838 499000) "info.rkt" "./" "cmdln-options.rkt" "main.rkt" "../" "compiled/" "helpers.rkt" "test-files/")
+
+ ("/home/vlad/Documents/projects/blog/options/test-files/" (21410 35577 691998 551000) "./" "test.md" "../" "config.txt")
+
+ ("/home/vlad/Documents/javascript/mongo-course/02/" (21418 47651 294347 766000) "./" "multi-update.js" "grades.json" "find-bis.js" "hw2.js" "insert3.js" "lt-gt.js" "../" "remove.js" "field.js" "sls.js" "find.js" "insert.js" "hw3/" "dot.js" "reddit.json" "find-and-modify.js" "nsa.js" "insert2.js" "inplace-update.js" "update.js" "upsert.js" "weather_data.csv" "import.js" "findone.js")
+
+ ("/home/vlad/Documents/emacs/writing-emacs-extensions/02/" (21421 50956 601359 85000) "./" "../" "other-window-backward.el" "find-file-hooks.el")
+
+ ("/home/vlad/Documents/projects/blog/parsers/state-machine/" (21426 47154 152488 734000) "./" "../" "helpers.rkt" "parser2.rkt" "escape.rkt" "parser.rkt")
+
+ ("/home/vlad/Documents/projects/scraper/src/requests/" (21424 10507 135084 19000) "./" "get.js" ".#get.js" "../" "index.js" "#get.js#")
+
+ ("/home/vlad/Documents/projects/scraper/tests/" (21424 209 327308 420000) "./" "../")
+
+ ("/home/vlad/Documents/emacs/writing-emacs-extensions/01/" (21418 57846 70600 84000) "./" "../")
+
+ ("/home/vlad/Documents/projects/blog/parsers/" (21413 15672 610813 772000) "template-parser.rkt" "./" ".#template-parser.rkt" "file-options.rkt" "../" "test-files/" "md-parser/")
+
+ ("/home/vlad/Documents/projects/blog/parsers/test-files/" (21413 14668 166804 949000) "./" "../")
+
+ ("/home/vlad/Documents/scheme/" (21411 64285 399284 792000) "./" "SICP/" "macros.rkt" "../" "introduction-to-systematic-program-design-01/" "HtDP/")
+
+ ("/home/vlad/Documents/javascript/softvision-project/" (21409 44201 542186 226000) "#index.html#" "./" ".#index.html" "styles.css" "../" "index.html" "main.js" "data.json")
+
+ ("/home/vlad/Documents/javascript/mongo-course/01/express_handling_post_requests/views/" (21409 35190 166107 75000) "./" "fruitPicker.html" "../")
+
+ ("/home/vlad/Documents/javascript/node.js/" (21408 16373 944066 637000) "./" "../" "nodejs-the-right-way/" "nodejs-in-action/")
+
+ ("/home/vlad/Documents/javascript/mongo-course/01/express_handling_post_requests/" (21409 32764 530085 769000) "./" "../")
+
+ ("/home/vlad/Documents/javascript/mongo-course/01/express_handeling_get_requests/views/" (21409 32144 722080 325000) "./" "../")
+
+ ("/home/vlad/Documents/javascript/mongo-course/01/express_handeling_get_requests/" (21409 31036 58070 587000) "./" "../")
+
+ ("/home/vlad/Documents/javascript/node.js/Exercise Files/" (21406 56315 131121 701000) "./" "chap04/" "chap07/" "../" "chap03/" "chap09/" "chap10/" "chap05/" "chap06/" "chap08/" "chap02/")
+
+ ("/home/vlad/Documents/javascript/node.js/nodejs-the-right-way/ch-03/" (21402 65227 856144 475000) "./" "target.txt" "net-watcher-unix.js" "net-watcher-json-client.js" "../" "ldj.js" "net-watcher.js" "server.js" "net-watcher-ldj-client.js" "net-watcher-json-test-service.js" "net-watcher-json-service.js")
+
+ ("/home/vlad/Documents/javascript/node.js/lynda/airline/" (21406 58629 795071 262000) "node_modules/" "./" "../" "package.json")
+
+ ("/home/vlad/Documents/projects/blog/options/test/" (21404 628 183057 548000) "./" "../")
+
+ ("/home/vlad/Documents/scheme/HtDP/ch-11/" (21403 7127 11982 455000) "11.4.rkt" "./" "../" "11.3.rkt" "11.2.rkt")
+
+ ("/home/vlad/Documents/github-repos/liso-theme/" (21401 59407 358949 137000) "./" ".git/" "../" "liso-theme.el" "img/" "README.md")
+
+ ("/home/vlad/Documents/javascript/node.js/nodejs-the-right-way/" (21402 58954 632281 176000) "./" "ch-03/" "../" "ch-02/")
+
+ ("/home/vlad/Documents/javascript/learn-js-the-proper-way/#005/project/" (21401 56331 175056 932000) "#index.html#" "./" "../" "ex.js" "index.html" "jquery.cookie.js" "data.json")
+
+ ("/home/vlad/Documents/scheme/HtDP/ch-09/" (21401 51485 683226 726000) "./" "9.3.rkt" "../" "9.5.rkt" "9.1.rkt")
+
+ ("/home/vlad/Documents/scheme/HtDP/ch-10/" (21401 49816 559285 215000) "./" "10.2.rkt" "../" "10.1.rkt" "10.3.rkt")
+
+ ("/home/vlad/Documents/projects/blog/md-parser/" (21402 48608 436506 632000) "premark-uls.rkt" "./" "tokenization.rkt" "mark-rimgs.rkt" "mark-headers.rkt" "../" "mark-iimgs.rkt" "mark-line.rkt" "rx-predicates.rkt" "mark-break.rkt" "mark-emphasis.rkt" "mark-rlinks.rkt" "helpers.rkt" "premark-ols.rkt" "premark-quotes.rkt" "mark-ilinks.rkt" "premark-ps.rkt" "escape.rkt" "mark-references.rkt" "mark-alinks.rkt" "mark-icode.rkt" "parser.rkt")
+
+ ("/home/vlad/Documents/javascript/node.js/nodejs-the-right-way/ch-02/" (21401 41862 603563 934000) "read-sync.js" "./" "read-simple.js" "read-stream.js" "watcher-argv.js" "target.txt" "watcher-spawn.js" "../" "cat.js" "watcher-spawn-parse.js" "watcher.js" "write-simple.js")
+
+ ("/home/vlad/Documents/" (21381 59281 254471 620000) "./" "projects/" "org/" "../" "notes/" "assembly/" "c/" "1mportant/" "ubuntu_translations/" "javascript/" "github-repos/" "smalltalk/" "ubuntu/" "scheme/" "competitive_programming/" "emacs/")
+
+ ("/home/vlad/Documents/scheme/HtDP/ch-06/" (21400 29791 113945 143000) "6.2.rkt" "./" "6.5.rkt" "../" "6.6.rkt" "6.1.rkt" "6.3.rkt" "6.4.rkt")
+
+ ("/home/vlad/Documents/scheme/HtDP/" (21400 33332 649924 515000) "./" "ch-07/" "ch-09/" "../" "ch-08/" "ch-06/" "ch-11/" "ch-10/")
+
+ ("/home/vlad/Documents/javascript/node.js/nodejs-in-action/project/" (21400 24485 465976 46000) "node_modules/" "./" ".#server.js" "../" "lib/" "package.json" "#server.js#" "server.js" "public/")
+
+ ("/home/vlad/Documents/javascript/node.js/nodejs-in-action/project/lib/" (21400 18047 806013 543000) "./" "../")
+
+ ("/home/vlad/Documents/javascript/node.js/nodejs-in-action/project/public/stylesheets/" (21400 18085 786013 322000) "./" "../")
+
+ ("/home/vlad/Documents/javascript/node.js/nodejs-in-action/project/public/" (21400 18085 786013 322000) "./" "javascripts/" "../" "stylesheets/")
+
+ ("/home/vlad/Documents/javascript/node.js/nodejs-in-action/ch-01/" (21399 1039 583103 62000) "./" "../" "1.5.2.js" "1.5.2b.js" "1.5.3.js" "resource.json")
+
+ ("/home/vlad/Documents/javascript/mongo-course/01/hello_world_combined/" (21397 59105 64361 325000) "app.js" "./" "views/" "../")
+
+ ("/home/vlad/Documents/javascript/mongo-course/01/get_express/" (21398 2874 280591 627000) "app.js" "#app.js#" "./" "views/" "../")
+
+ ("/home/vlad/Documents/javascript/mongo-course/01/" (21397 59704 384376 158000) "./" "hello_world_combined/" "../" "get_express/" "hello_world_swig/" "hello_world_express/" "intro_to_npm/" "hello_world_mongodb/")
+
+ ("/home/vlad/Documents/javascript/mongo-course/01/hello_world_swig/" (21001 5912 0 0) "app.js" "./" "views/" "../")
+
+ ("/home/vlad/Documents/javascript/mongo-course/01/hello_world_express/" (21001 5912 0 0) "app.js" "./" "../")
+
+ ("/home/vlad/Documents/javascript/mongo-course/" (21397 55272 340266 466000) "./" "../" "01/")
+
+ ("/home/vlad/Documents/javascript/mongo-course/01/hello_world_mongodb/" (21397 57252 328315 471000) "app.js" "./" "../")
+
+ ("/home/vlad/.emacs.d/themes/" (21397 19429 535379 366000) "#pierson.el#" "./" "#mistyday.el#" "#ramangalahy.el#" "../" "#parus.el#" "montz.el" "liso-theme.el" "#oswald.el#" "#midnight.el#")
+
+ ("/home/vlad/Documents/projects/blog/test-files/" (21396 42 598805 988000) "simple.md" "./" "t.rkt" "../")
+
+ ("/home/vlad/Documents/javascript/emacs-theme-customizer/" (21392 49891 858315 122000) "#index.html#" "./" "python.py" "../" "c.c" "index.html" "style.css" "lisp.cl" "ruby.rb")
+
+ ("/home/vlad/Documents/projects/emacs-theme-customizer/" (21390 50312 148311 401000) "./" "python.py" "../" "c.c" "lisp.cl" "ruby.rb")
+
+ ("/home/vlad/Documents/scheme/HtDP/ch-08/" (21389 64008 991011 726000) "./" "8.6.rkt" "../" "8.7.rkt")
+
+ ("/home/vlad/Documents/javascript/learn-js-the-proper-way/" (21388 52169 333444 623000) "./" "#006/" "#005/" "../" "index.html" "#003/" "#007/" "#002/" "#004/" "#001/")
+
+ ("/home/vlad/Documents/javascript/angular/ch-01/hello-world/" (21384 57756 853784 305000) "./" "../" "hello.html")
+
+ ("/home/vlad/Documents/scheme/HtDP/ch-07/" (21387 23769 901619 759000) "./" "7.4.rkt" "7.3.rkt" "../" "7.2.rkt" "7.1.rkt")
+
  ("/home/vlad/Documents/github-repos/learning-git/explore_california/" (21385 52222 304887 796000) "./" "._mission.html" "contact.html" ".git/" "explorers/" "._explorers.html" "assets/" "../" "._tours.html" "resources/" "tours/" "index.html" "explorers.html" "support.html" "._resources.html" "resources.html" "._support.html" "._index.html" "tours.html" "._contact.html" "mission.html")
-
- ("/home/vlad/.emacs.d/themes/" (21384 4667 778093 529000) "./" "../" "liso-theme.el" "#marine.el#" "#lethe.el#")
-
- ("/home/vlad/.emacs.d/" (21383 39905 364584 624000) "./" "custom-packages/" ".mc-lists.el" "../" "Cask" "tramp" "tutorial/" "init.el" "configs/" "eshell/" "auto-save-list/" "cache/" "url/" ".cask/" "themes/")
-
- ("/home/vlad/" (21384 51972 457817 997000) ".icedtea/" ".geiser_history.racket" ".mysql_history" ".speech-dispatcher/" "./" ".xsession-errors" ".ssh/" ".furiusisomount/" ".cache/" ".gnupg/" ".gnome/" ".mplayer/" ".gorillarc" ".git/" ".config/" ".compiz/" ".kchmviewer/" ".gconf/" ".dbus/" ".ICEauthority" ".xchat2/" ".local/" "Templates/" ".Xauthority" ".gstreamer-0.10/" "../" "tmp/" ".st/" ".apport-ignore.xml" ".swp" ".java/" ".ddd/" ".pki/" ".macromedia/" ".syncdrive/" ".kde/" ".filezilla/" ".profile" ".bzr.log" "Public/" "Pictures/" ".emacs.d/" "Documents/" ".goldendict/" ".dmrc" ".gnome2/" ".dartEditor/" ".npm/" ".gksu.lock" ".bash_history" ".gvfs/" ".opera/" ".pulse-cookie" ".thumbnails/" ".xsession-errors.old" ".gimp-2.8/" ".bashrc" ".bash_logout" ".adobe/" ".gitconfig" ".mtab.fuseiso" ".eclipse/" "Desktop/" ".gitignore" ".gnome2_private/" ".mozilla/" ".Skype/" "SyncDrive/" ".racket/" "Downloads/" ".android/" ".cask/" ".lesshst")
-
- ("/home/vlad/.emacs.d/configs/" (21384 11029 494056 474000) "programming-languages.el" "./" "../" "looks.el" "settings.el" "custom.el" "keys.el")
-
- ("/home/vlad/Documents/projects/blog/" (21384 30906 481940 698000) "./" "md-parser2.rkt" "plan.org" "init.rkt" "../" "md-parser.rkt" "test-files/" "option-parser.rkt")
-
- ("/home/vlad/Documents/scheme/HtDP/ch-06/" (21384 51962 681818 54000) "6.2.rkt" "./" "6.5.rkt" "../" "6.6.rkt" "6.1.rkt" "6.3.rkt" "6.4.rkt")
-
- ("/home/vlad/Documents/projects/blog/test-files/" (21384 22716 365988 403000) "simple.md" "./" "t.rkt" "../")
-
- ("/home/vlad/Documents/javascript/angular/ch-01/hello-world/" (21384 54894 237800 979000) "./" "../")
-
- ("/home/vlad/Documents/scheme/" (21383 22362 140686 807000) "./" "SICP/" "../" "introduction-to-systematic-program-design-01/" "HtDP/")
 
  ("/home/vlad/Documents/github-repos/my_first_git_project/first_directory/" (21383 8775 252765 945000) "./" "../" "third_file.txt")
 
@@ -110,12 +217,6 @@
  ("/home/vlad/Documents/projects/gnu-smalltalk-doc/" (21376 10772 52267 440000) "./" "../" "packages.org" "doc.st" "class-hierarchy.org")
 
  ("/home/vlad/Documents/javascript/learn-js-the-proper-way/#007/" (21376 40825 98661 545000) "./" "../" "ch-9.js")
-
- ("/home/vlad/Documents/javascript/learn-js-the-proper-way/" (21375 27715 869200 676000) "./" "#006/" "#005/" "index.html~" "../" "index.html" "#003/" "#007/" "#002/" "#004/" "#001/")
-
- ("/home/vlad/Documents/javascript/node.js/" (21374 8091 905192 761000) "./" "../" "nodejs-the-right-way/" "nodejs-in-action/")
-
- ("/home/vlad/Documents/javascript/learn-js-the-proper-way/#005/project/" (21374 7665 21195 247000) "./" "../" "ex.js" "index.html" "jquery.cookie.js" "data.json")
 
  ("/home/vlad/Documents/javascript/learn-js-the-proper-way/#005/" (21371 16009 622659 248000) "./" "../" "ch-14.js" "project/" "ch-17.js" "ch-10.js")
 
@@ -138,8 +239,6 @@
  ("/home/vlad/Documents/scheme/SICP/3.5.2-infinite-streams/" (21361 52840 278540 945000) "./" "ex.3.56.scm" "../" "infinite-streams.scm" "ex.3.55.scm" "ex.3.54.scm" "ex.3.53.scm" "ex.3.58.scm")
 
  ("/home/vlad/Documents/scheme/SICP/3.5.3-exploiting_the_stream_paradigm/" (21363 6482 429855 295000) "./" "ex.3.71.scm" "usage.scm" "../" "ex.3.67.scm" "ex.3.65.scm" "ex.3.69.scm" "streams-of-pairs.scm" "ex.3.70.scm" "ex.3.64.scm")
-
- ("/home/vlad/Documents/projects/" (21354 16756 583095 765000) "./" "gnu-smalltalk-doc/" "irc-bot/" "../" "s-lib/" "scraper/" "blog/")
 
  ("/home/vlad/Documents/projects/s-lib/" (21354 35010 266989 444000) "info.rkt" "./" ".git/" "../" "s-lib/" "README.md")
 
@@ -175,8 +274,6 @@
 
  ("/home/vlad/Documents/scheme/SICP/3.2.2-applying_simple_procedures/" (21323 35005 410859 741000) "./" "../")
 
- ("/home/vlad/Documents/" (21315 47978 291312 108000) "./" "projects/" "org/" "../" "notes/" "assembly/" "chrome-extensions/" "c/" "1mportant/" "ubuntu_translations/" "javascript/" "github-repos/" "smalltalk/" "scheme/" "competitive_programming/" "emacs/")
-
  ("/home/vlad/Documents/javascript/learn-js-the-proper-way/#001/" (21318 40146 409592 298000) "./" "../" "name.js")
 
  ("/home/vlad/Documents/scheme/SICP/2.5.3-example_symbolic_algebra/" (21318 12630 882519 190000) "./" "../" "polinomials.scm")
@@ -184,76 +281,6 @@
  ("/home/vlad/Documents/scheme/SICP/2.4.3-data_directed_programming_and_additivity/" (21315 45771 623292 726000) "./" "../" "package.scm" "!supplement.scm" "message-passing.scm" "ex_2.73.scm" "ex_2.75.scm")
 
  ("/home/vlad/Documents/scheme/SICP/2.5.2-combining_data_of_different_types/" (21316 59189 197953 534000) "./" "ex.2.81.scm" "ex_2.86.scm" "../" "ex_2.83.scm" "ex_2.82.scm" "ex_2.85.scm" "coercion.scm" "ex.2.84.scm")
-
- ("/home/vlad/Documents/competitive_programming/project_euler/#0022/" (21316 57855 153918 707000) "./" "solution.rkt" "names.txt" "../" "problem.txt")
-
- ("/home/vlad/Documents/competitive_programming/project_euler/#0023/" (21317 23221 130725 445000) "./" "solution.rkt" "../" "problem.txt" "solution.rkt~" "problem.txt~")
-
- ("/home/vlad/Documents/competitive_programming/project_euler/#0021/" (21314 60614 543608 166000) "./" "solution.rkt" "../" "problem.txt" "test.rkt~" "solution.rkt~" "comment.txt" "test.rkt" "problem.txt~")
-
- ("/home/vlad/Documents/scheme/SICP/2.5.1-generic_arithmetic_operations/" (21314 19784 7845 988000) "./" "generics.scm" "ex_2.78.scm" "../" "generics.scm~" "ex_2.79.scm~" "ex_2.79.scm")
-
- ("/home/vlad/Documents/scheme/SICP/2.4.2-tagged_data/" (21313 2872 602176 745000) "./" "tags.scm" "../")
-
- ("/home/vlad/Documents/projects/scraper/" (21310 37178 63863 392000) "./" "plan.org" "documentation.org" "lexer.org" "../" "dom.org" "start.st")
-
- ("/home/vlad/Documents/scheme/SICP/2.3.4-huffman_encoding_trees/" (21310 25543 247745 400000) "./" "ex_2.68.scm" "../" "tree.scm" "ex_2.67.scm" "ex_2.69.scm" "ex_2.70.scm")
-
- ("/home/vlad/Documents/competitive_programming/project_euler/#0020/" (21312 15772 889188 408000) "./" "solution.rkt" "../" "problem.txt" "solution.rkt~" "comment.txt" "problem.txt~")
-
- ("/home/vlad/Documents/scheme/SICP/2.4.1-representations_for_complex_numbers/" (21311 39765 522587 844000) "./" "../")
-
- ("/home/vlad/Documents/competitive_programming/project_euler/#0013/" (21310 18614 863675 138000) "./" "solution.rkt" "garbage.rkt" "../" "problem.txt" "comment.txt")
-
- ("/home/vlad/Documents/competitive_programming/project_euler/#0018/" (21309 38698 427634 875000) "./" "solution.rkt" "../" "problem.txt" "comment.txt~" "solution.rkt~" "comment.txt")
-
- ("/home/vlad/.emacs.d/elpa/" (21289 32680 101381 130000) "./" "rainbow-delimiters-20131015.1304/" "smart-mode-line-20140313.1040/" "json-mode-20140120.129/" "hexrgb-20131226.1855/" "browse-kill-ring-20131116.2113/" "popwin-20140309.745/" "../" "magit-20140312.1621/" "undo-tree-20140110.616/" "dired-details-20130824.1158/" "nyan-mode-20120710.2200/" "move-text-20140307.1644/" "multiple-cursors-20140105.259/" "geiser-20140307.425/" "flx-ido-20131030.1243/" "git-rebase-mode-20140313.1504/" "rainbow-blocks-20140306.1033/" "smex-20140131.1006/" "quack-0.42/" "guide-key-20140219.531/" "ido-yes-or-no-1.1/" "git-commit-mode-20140313.1504/" "page-break-lines-20140128.1017/" "archives/" "ido-vertical-mode-20140222.934/" "expand-region-20140315.2326/" "dash-20140308.656/" "anzu-20140308.136/" "pretty-lambdada-20131227.148/" "dired+-20140216.1552/" "smart-compile-20130917.347/" "ido-ubiquitous-20140225.1639/" "flx-20130728.820/" "cl-lib-0.5/" "smartparens-20140316.658/")
-
- ("/home/vlad/Documents/competitive_programming/" (21296 28041 961598 869000) "./" "codeeval/" "infoarena/" "reddit_dailyprogrammer/" "../" "project_euler/" "3n+1_problem/")
-
- ("/home/vlad/Documents/competitive_programming/project_euler/" (21308 17273 904695 89000) "#0007/" "./" "#0006/" "#0016/" "#0012/" "#0003/" "../" "#0013/" "#0014/" "#0015/" "#0017/" "#0004/" "#0010/" "#0009/" "#0008/" "#0001/" "#0011/" "#0005/" "#0002/")
-
- ("/home/vlad/Documents/competitive_programming/codeeval/moderate-sequence_transformation/" (21303 7034 62408 144000) "./" "solution.c" "solution" "in~" "../" "problem.txt" "in" "solution.c~" "problem.txt~")
-
- ("/home/vlad/Documents/competitive_programming/project_euler/#0015/" (21305 44431 258333 700000) "./" "solution.rkt" "../" "problem.txt" "solution.rkt~" "comment.txt" "problem.txt~")
-
- ("/home/vlad/Documents/competitive_programming/project_euler/#0012/" (21302 37356 989536 629000) "./" "solution.rkt" "../" "problem.txt" "solution.rkt~" "comment.txt" "problem.txt~")
-
- ("/home/vlad/Documents/competitive_programming/project_euler/#0010/" (21300 10052 791414 308000) "./" "solution.rkt" "../" "optimized-solution.rkt" "problem.txt" "comment.txt")
-
- ("/home/vlad/Documents/c/sedgewick_algorithms_in_c/14-hashing/" (21299 56052 139216 183000) "./" "14.04-double_hashing/" "14.03-linear_probing/" "../" "14.05-dynamic_hash_tables/" "14.01-hash_functions/" "14.02-separate_chaining/")
-
- ("/home/vlad/Documents/c/sedgewick_algorithms_in_c/14-hashing/14.03-linear_probing/examples/prog_14.05-deletion_in_linear_probing/" (21297 12041 272354 312000) "Makefile" "st.c" "./" "item.h" "../" "st.h" "main.c" "item.c")
-
- ("/home/vlad/Documents/competitive_programming/codeeval/moderate-double_squares/" (21299 16858 34881 854000) "./" "solution.c" "../" "problem.txt")
-
- ("/home/vlad/Documents/c/sedgewick_algorithms_in_c/14-hashing/14.03-linear_probing/examples/prog_14.04-linear_probing/" (21297 12058 640354 488000) "Makefile" "st.c" "./" "item.h" "../" "st.h" "main.c" "item.c")
-
- ("/home/vlad/Documents/competitive_programming/codeeval/#031-rightmost_char/" (21296 33015 117649 303000) "./" "solution.c" "solution" "in~" "../" "problem.txt" "in" "solution.c~")
-
- ("/home/vlad/Documents/competitive_programming/codeeval/#031/" (21296 28213 901600 613000) "./" "../" "problem.txt" "in")
-
- ("/home/vlad/Documents/smalltalk/computerProgrammingUsingGNUSmalltalk/" (21154 9401 66362 656000) "./" ".git/" "examples/" "../" "exercises/" "gnu_smalltalk_book_code/" ".gitignore")
-
- ("/home/vlad/Documents/c/sedgewick_algorithms_in_c/14-hashing/14.01-hash_functions/examples/" (21295 55290 437210 587000) "prog_14.02-universal_hash_function.c" "./" "prog_14.01-hash_function_for_string_keys.c" "../")
-
- ("/home/vlad/Documents/c/sedgewick_algorithms_in_c/" (21290 40181 509436 752000) "./" "04-abstract_data_types/" ".git/" "06-elementary_sorting_methods/" "01-introduction/" "../" "03-elementary_data_structures/" "09-priority_queues_and_heapsort/" "12-symbol_tables_and_binary_search_trees/" "14-hashing/" "08-merging_and_mergesort/" "02-principles_of_algorithms_analysis/" "11-special_purpose_sorting_methods/" "05-recursion_and_trees/" "07-quicksort/" ".gitignore" "README.md")
-
- ("/home/vlad/Documents/c/sedgewick_algorithms_in_c/14-hashing/14.02-separate_chaining/" (21294 31348 426362 105000) "./" "examples/" "../")
-
- ("/home/vlad/Documents/c/sedgewick_algorithms_in_c/14-hashing/14.02-separate_chaining/examples/" (21294 33473 898414 710000) "./" "../" "prog_14.03-hashing_with_separate_chaining/")
-
- ("/home/vlad/Documents/c/sedgewick_algorithms_in_c/14-hashing/14.02-separate_chaining/examples/prog_14.03-hashing_with_separate_chaining/" (21294 38409 390536 862000) "Makefile" "st.c" "./" "item.h" "st.h~" "../" "item.h~" "item.c~" "st.h" "st.c~" "item.o" "out" "main.c" "main.o" "st.o" "main.c~" "item.c")
-
- ("/home/vlad/Documents/competitive_programming/project_euler/#0005/" (21293 48238 77397 244000) "./" "solution.rkt" "../" "problem.txt" "comment.txt")
-
- ("/home/" (20880 55914 730661 962000) "./" "../" "vlad/")
-
- ("/home/vlad/Documents/smalltalk/" (21291 12644 673215 421000) "./" "test.st~" "smalltalkObjectsAndDesign/" "../" "test.st" "gst_source_code/" "smalltalkObjectOrientation/" "computerProgrammingUsingGNUSmalltalk/" "class-hierarchy.org" "smalltalkBestPractices/")
-
- ("/home/vlad/Documents/smalltalk/computerProgrammingUsingGNUSmalltalk/examples/" (21160 49012 797432 796000) "./" "11-super.st" "08-repetitive_controlling.st" "05-dictionary.st" "../" "07-selective_controlling.st" "03-array.st" "09-class_example.st" "06-blocks.st" "10-extending_and_modifying_classes.st" "04-set.st" "01-hello_world.st" "02-user_input.st")
-
- ("/home/vlad/Desktop/" (21157 2009 245971 166000) "./" "../")
 )
 
 ;; ----- ido-unc-hosts-cache -----

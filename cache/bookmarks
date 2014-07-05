@@ -2,7 +2,19 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("javascript"
+(("Emacs Book"
+ (front-context-string . "\n2.3.1 Integer T")
+ (rear-context-string . "ogramming Types\n")
+ (position . 98703)
+ (filename . "/usr/share/info/emacs-24/elisp")
+ (info-node . "Integer Type")
+ (handler . Info-bookmark-jump))
+("HtDP"
+ (filename . "~/Documents/scheme/HtDP/")
+ (front-context-string . "ch-06\n  drwxrwxr")
+ (rear-context-string . "96 iun  2 20:12 ")
+ (position . 218))
+("javascript"
  (filename . "~/Documents/javascript/")
  (front-context-string . "learn-js-the-pro")
  (rear-context-string . "96 apr 11 14:46 ")

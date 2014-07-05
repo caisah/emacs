@@ -1,6 +1,6 @@
 		  ;; Non -programming languages- keys:
 
-
+
 
 ;; Abbrevs
 
@@ -182,9 +182,14 @@
   (local-set-key (kbd "C-M-b") 'web-mode-attribute-previous)
   (local-set-key (kbd "C-M-k") 'web-mode-element-kill)
   (local-set-key (kbd "C-S-i") 'web-mode-element-content-select)
+  (local-set-key (kbd "C-S-c") 'web-mode-element-clone)
   (local-set-key (kbd "<C-M-backspace>") 'backward-kill-element)
   )
 
+;; Quit on Q
+(define-key help-mode-map (kbd "q") 'kill-this-buffer)
+(define-key apropos-mode-map (kbd "q") 'kill-this-buffer)
+(define-key special-mode-map (kbd "q") 'kill-this-buffer)
 
 
 ;; Macros
@@ -203,5 +208,5 @@
   (yank arg))
 (global-set-key (kbd "C-S-y") 'yank-next)
 
-
-
+;; Magit
+(global-set-key (kbd "C-x g") 'magit-status)
