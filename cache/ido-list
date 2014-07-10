@@ -2,6 +2,7 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/home/vlad/Documents/javascript/" . "beginning-backbone/")
  ("/home/vlad/Documents/projects/my-site/" . "css/")
  ("/home/vlad/Documents/projects/" . "my-site/")
  ("/home/vlad/Documents/javascript/mongo-course/01/" . "get_express/")
@@ -14,10 +15,14 @@
 
 ;; ----- ido-work-directory-list -----
 (
+ "/home/vlad/Documents/haskell/book/"
+ "/home/vlad/Documents/javascript/beginning-backbone/"
+ "/home/vlad/Documents/projects/my-site/"
+ "/sudo:root@localhost:"
  "/home/vlad/Documents/javascript/backbone-fundamentals/02-backbone-basics/"
+ "/home/vlad/Documents/javascript/backbone-fundamentals/02-backbone-basics/render/"
  "/home/vlad/Documents/projects/my-site/css/"
  "/home/vlad/"
- "/home/vlad/Documents/projects/my-site/"
  "/home/vlad/Documents/projects/blog/parsers/state-machine/"
  "/home/vlad/Documents/emacs/writing-emacs-extensions/02/"
  "/home/vlad/Documents/javascript/mongo-course/02/"
@@ -60,39 +65,49 @@
  "/home/vlad/Documents/scheme/SICP/3.5.1-streams_are_delayed_lists/"
  "/home/vlad/Documents/projects/s-lib/"
  "/home/vlad/Documents/c/beej_sockets/"
- "/home/vlad/Documents/scheme/SICP/3.4.2-mechanisms_for_controlling_concurrency/"
- "/home/vlad/Documents/scheme/SICP/3.3.5-propagation_of_constraints/"
- "/home/vlad/Documents/scheme/SICP/3.3.4-a_simulator_for_digital_circuits/"
- "/home/vlad/Documents/scheme/SICP/3.3.3-representing_tables/"
 )
 
 ;; ----- ido-work-file-list -----
 (
- "boilerplate.html"
- "home-page.css"
- "about.html"
- "styles.css"
- "helpers.rkt"
- "parser2.rkt"
- "find-file-hooks.el"
- "other-window-backward.el"
- "reddit.json"
+ "test.hs"
+ "test.hl"
  "index.html"
+ "adding-removing-models.html"
+ "collections.html"
+ "render.html"
+ "set-element.html"
+ "new-view.html"
+ "validation.html"
+ "listening-individually.html"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/vlad/Documents/javascript/backbone-fundamentals/02-backbone-basics/" (21431 48369 719901 751000) "./" "../" "main.js" "boilerplate.html")
+ ("/home/vlad/Documents/projects/my-site/css/" (21435 62526 556510 43000) "page.css" "./" "../" ".#page.css" "home-page.css" "#page.css#")
 
- ("/home/vlad/.emacs.d/" (21430 13875 569222 291000) "./" "custom-packages/" ".git/" "session.1030f9d959c6339c5140363487889088400000014060059" ".mc-lists.el" "../" "Cask" "tramp" "session.10dcd9ba838f431b3b14020535626776100000013960057" "tutorial/" "init.el" "configs/" "eshell/" "session.10198494307cc157d9140220569153303900000013890058" "auto-save-list/" "image-dired/" "cache/" "url/" ".gitignore" ".cask/" "themes/")
+ ("/home/vlad/Documents/projects/my-site/" (21435 61150 880518 55000) "./" "css/" "js/" "../" "index.html" "img/" "about.html")
 
- ("/home/vlad/.emacs.d/configs/" (21430 13905 469222 553000) "programming-languages.el" "./" "../" "looks.el" "settings.el" "custom.el" "keys.el")
+ ("/home/vlad/.emacs.d/" (21433 32906 246816 390000) "./" "custom-packages/" ".git/" "session.1030f9d959c6339c5140363487889088400000014060059" ".mc-lists.el" "../" "Cask" "tramp" "session.10dcd9ba838f431b3b14020535626776100000013960057" "tutorial/" "init.el" "configs/" "eshell/" "session.10198494307cc157d9140220569153303900000013890058" "auto-save-list/" "image-dired/" "cache/" "url/" ".gitignore" "session.1087a1d26fb5642e1a140455108875721700000014060064" ".cask/" "themes/")
 
- ("/home/vlad/Documents/projects/my-site/" (21431 39354 480110 465000) "./" "css/" "js/" "../" "index.html" "img/" "about.html")
+ ("/home/vlad/.emacs.d/configs/" (21433 33895 938826 427000) "programming-languages.el" "./" "../" "looks.el" "settings.el" "custom.el" "keys.el")
 
- ("/home/vlad/" (21431 30588 886677 769000) ".icedtea/" ".mongorc.js" ".geiser_history.racket" ".mysql_history" ".speech-dispatcher/" "./" ".xsession-errors" ".ssh/" ".furiusisomount/" ".cache/" ".gnupg/" ".gnome/" ".mplayer/" ".gorillarc" ".config/" ".compiz/" ".kchmviewer/" ".gconf/" ".dbus/" ".ICEauthority" ".xchat2/" ".local/" "Templates/" ".Xauthority" ".gstreamer-0.10/" ".dbshell" "../" "tmp/" ".st/" ".apport-ignore.xml" ".swp" ".java/" ".ddd/" ".pki/" ".macromedia/" ".syncdrive/" ".kde/" ".filezilla/" ".profile" ".bzr.log" "Public/" ".node-gyp/" "Pictures/" ".gphoto/" ".emacs.d/" "Documents/" ".goldendict/" ".dmrc" ".gnome2/" ".dartEditor/" ".npm/" ".gksu.lock" ".bash_history" ".gvfs/" ".opera/" ".pulse-cookie" ".thumbnails/" ".xsession-errors.old" ".gimp-2.8/" ".bashrc" ".bash_logout" ".adobe/" ".gitconfig" ".mtab.fuseiso" ".eclipse/" "Desktop/" ".gnome2_private/" ".mozilla/" ".Skype/" "SyncDrive/" ".racket/" "Downloads/" ".android/" ".cask/" ".lesshst")
+ ("/home/vlad/" (21433 32587 798813 161000) ".icedtea/" ".mongorc.js" ".geiser_history.racket" ".mysql_history" ".speech-dispatcher/" "./" ".xsession-errors" ".ssh/" ".furiusisomount/" ".cache/" ".gnupg/" ".gnome/" ".mplayer/" ".gorillarc" ".config/" ".compiz/" ".kchmviewer/" ".gconf/" ".dbus/" ".ICEauthority" ".xchat2/" ".local/" "Templates/" ".Xauthority" ".gstreamer-0.10/" ".dbshell" "../" "tmp/" ".st/" ".apport-ignore.xml" ".swp" ".java/" ".ddd/" ".pki/" ".macromedia/" ".syncdrive/" ".kde/" ".filezilla/" ".profile" ".bzr.log" "Public/" ".node-gyp/" "Pictures/" ".gphoto/" ".emacs.d/" "Documents/" ".goldendict/" ".dmrc" ".gnome2/" ".dartEditor/" ".npm/" ".ghc/" ".gksu.lock" ".bash_history" ".gvfs/" ".opera/" ".pulse-cookie" ".thumbnails/" ".xsession-errors.old" ".gimp-2.8/" ".bashrc" ".bash_logout" ".adobe/" ".gitconfig" ".mtab.fuseiso" ".eclipse/" "Desktop/" ".gnome2_private/" ".mozilla/" ".Skype/" "SyncDrive/" ".racket/" "Downloads/" ".android/" ".cask/" ".lesshst")
 
- ("/home/vlad/Documents/projects/my-site/css/" (21431 39177 404114 565000) "page.css" "./" "../" "home-page.css")
+ ("/home/vlad/Documents/javascript/beginning-backbone/" (21433 15278 866637 627000) "./" "../" "index.html" "main.js")
+
+ ("/home/vlad/Documents/haskell/book/" (21433 34013 478827 619000) "./" "../")
+
+ ("/home/vlad/Documents/javascript/" (21433 6895 122552 605000) "./" "mongo-course/" "../" "angular/" "backbone-fundamentals/" "learn-js-the-proper-way/" "beginning-backbone/" "node.js/" "emacs-theme-customizer/")
+
+ ("/home/vlad/Documents/javascript/backbone-fundamentals/" (21431 47900 183912 621000) "./" "02-backbone-basics/" "../")
+
+ ("/etc/nginx/" (21433 5930 490542 823000) "./" "mime.types" "scgi_params" "naxsi-ui.conf.1.4.1" "sites-enabled/" "naxsi.rules" "proxy_params" "../" "naxsi_core.rules" "sites-available/" "koi-utf" "koi-win" "fastcgi_params" "nginx-backup.conf" "uwsgi_params" "win-utf" "nginx.conf" "conf.d/")
+
+ ("/home/vlad/Documents/javascript/backbone-fundamentals/02-backbone-basics/" (21433 299 702485 720000) "./" "render.html" "listening-individually.html" "defaults.html" "adding-removing-models.html" "../" "listening-changes.html" "model.html" "cloning.html" "get.html" "new-view.html" "initialize.html" "collections.html" "direct-access.html" "set-element.html" "set.html" "validation.html")
+
+ ("/etc/" (21432 57771 518709 940000) "gnome-app-install/" "xdg/" "cowpoke.conf" "gdb/" "ufw/" "nanorc" "esound/" "mime.types" "anacrontab" "polkit-1/" "printcap" "libreoffice/" "os-release" ".pwd.lock" "mtab.fuselock" "sensors3.conf" "hostname" "dput.cf" "hosts.allow" "colord.conf" "LatexMk" "ax25/" "rpc" "netscsid.conf" "xml/" "cupshelpers/" "shells" "mailcap.order" "checkbox.d/" "iproute2/" "bash_completion" "rc3.d/" "tidy.conf" "rsyslog.d/" "rc6.d/" "rc0.d/" "upstart-xsessions" "UPower/" "mplayer/" "pam.conf" "modules" "sane.d/" "adduser.conf" "opt/" "pcmcia/" "rc.local" "networks" "updatedb.conf" "pki/" "usb_modeswitch.conf" "rc5.d/" "obex-data-server/" "inetd.conf" "kerneloops.conf" "ca-certificates.conf" "hosts.deny" "passwd-" "emacs24/" "ld.so.conf" "insserv/" "ldap/" "java-7-openjdk/" "vtrgb" "libaudit.conf" "gdm/" "apg.conf" "gshadow" "mailcap" "cron.d/" "adjtime" "gai.conf" "profile" "firefox/" "kernel-img.conf" "pkcs11/" "chatscripts/" "group" "host.conf" "sudoers.d/" "ghostscript/" "ifplugd/" "rc2.d/" "hosts" "sgml/" "timidity/" "python3.3/" "gtk-3.0/" "sysctl.conf" "modprobe.d/" "wodim.conf" "blkid.tab" "odbc.ini" "terminfo/" "pulse/" "ssl/" "apache2/" "aptdaemon/" "openal/" "cups/" "brlapi.key" ".java/" "nail.rc" "devscripts.conf" "gconf/" "magic.mime" "wildmidi/" "init.d/" "mongodb.conf" "grub.d/" "environment" "ppp/" "update-manager/" "bonobo-activation/" "odbcinst.ini" "apparmor/" "click/" "group-" "rc1.d/" "calendar/" "fstab" "fuse.conf" "pam.d/" "resolv.conf" "ca-certificates/" "cron.hourly/" "network/" "mongod.conf" "pnm2ppa.conf" "rsyslog.conf" "gtk-2.0/" "samba/" "dhcp/" "avahi/" "libnl-3/" "mtab" "rmt" "group.org" "texmf/" "localtime" "alternatives/" "system-image/" "at.deny" "python/" "sound/" "udisks2/" "gnome-vfs-2.0/" "checkinstallrc" "default/" "gimp/" "insserv.conf" "groff/" "ucf.conf" "systemd/" "apparmor.d/" "cracklib/" "python3.4/" "vdpau_wrapper.cfg" "rcS.d/" "signon-ui/" "bash.bashrc" "rarfiles.lst" "perl/" "passwd" "ConsoleKit/" "X11/" "lsb-release" "python2.7/" "wgetrc" "libao.conf" "subgid" "papersize" "ImageMagick/" "selinux/" "kbd/" "crontab" "sysctl.d/" "lightdm/" "login.defs" "pm/" "xul-ext/" "passwd.org" "issue" "services" "logcheck/" "logrotate.conf" "brltty.conf" "thunderbird/" "blkid.conf" "securetty" "wpa_supplicant/" "ltrace.conf" "fonts/" "cron.weekly/" "acpi/" "shadow-" "console-setup/" "sensors.d/" "lighttpd/" "libpaper.d/" "ld.so.conf.d/" "at-spi2/" "kernel/" "popularity-contest.conf" "gnome/" "doc-base/" "mysql/" "protocols" "apport/" "shadow" "nginx/" "usb_modeswitch.d/" "shadow.org" "vga/" "rc4.d/" "ODBCDataSources/" "lintianrc" "init/" "depmod.d/" "legal" "resolvconf/" "snmp/" "subuid" "compizconfig/" "ca-certificates.conf.dpkg-old" "vim/" "mke2fs.conf" "magic" "logrotate.d/" "dbus-1/" "manpath.config" "dconf/" "hdparm.conf" "tex4ht/" "ld.so.cache" "nsswitch.conf" "cron.monthly/" "initramfs-tools/" "mtools.conf" "dnsmasq.d/" "brltty/" "deluser.conf" "bluetooth/" "insserv.conf.d/" "gshadow-" "bindresvport.blacklist" "apm/" "ssh/" "btsync/" "ts.conf" "locale.alias" "sudoers" "signond.conf" "zsh_command_not_found" "dictionaries-common/" "foomatic/" "modules-load.d/" "drirc" "security/" "NetworkManager/" "udev/" "dpkg/" "gnome-settings-daemon/" "update-notifier/" "remote-login-service.conf" "newt/" "speech-dispatcher/" "fstab.d/" "chktexrc" "icedtea-web/" "issue.net" "apt/" "inputrc" "profile.d/" "hp/" "debconf.conf" "schroot/" "debian_version" "emacs/" "python3/" "bash_completion.d/" "update-motd.d/" "cron.daily/" "timezone" "skel/" "../" "./")
+
+ ("/home/vlad/Documents/javascript/backbone-fundamentals/02-backbone-basics/render/" (21432 62343 286450 302000) "./" "../")
 
  ("/home/vlad/Documents/projects/" (21426 47180 264489 381000) "./" "gnu-smalltalk-doc/" "irc-bot/" "my-site/" "../" "s-lib/" "chrome-extensions/" "scraper/" "blog/")
 
@@ -244,8 +259,6 @@
 
  ("/home/vlad/Documents/scheme/SICP/3.4.2-mechanisms_for_controlling_concurrency/" (21353 56952 95243 363000) "./" "../" "ex.3.47.scm" "serializer-implementation.scm" "serialization.scm" "multiple-sahred-resources.scm")
 
- ("/home/vlad/Documents/javascript/" (21315 47995 347312 258000) "./" "../" "learn-js-the-proper-way/")
-
  ("/home/vlad/Documents/c/beej_sockets/" (21352 41066 823381 535000) "./" "structures_and_functions.org" ".git/" "../" "bind_example.c" "accept_example.c" "socket_example.c" "getaddrinfo_server.c" "getaddrinfo_client.c" "connect_example.c" "showip.c" "README.md")
 
  ("/home/vlad/Documents/scheme/SICP/3.3.5-propagation_of_constraints/" (21351 11273 591467 635000) "ex.3.33.scm" "./" "ex.3.35.scm" "../" "ex.3.37.scm" "celsius_fahrenheit.scm")
@@ -269,18 +282,6 @@
  ("/home/vlad/Documents/scheme/SICP/3.1.3-the_cost_of_introducing_assignment/" (21323 39369 302898 71000) "./" "make-withdraw.scm" "../" "imperative_vs_functional.scm" "ex_3.7.scm" "ex_3.8.scm")
 
  ("/home/vlad/Documents/scheme/SICP/3.2.4-internal_definitions/" (21323 37736 522883 730000) "./" "../" "sqrt.scm")
-
- ("/home/vlad/Documents/scheme/SICP/3.2.3-frames_as_the_repository_of_local_state/" (21323 36898 894876 372000) "./" "../")
-
- ("/home/vlad/Documents/scheme/SICP/3.2.2-applying_simple_procedures/" (21323 35005 410859 741000) "./" "../")
-
- ("/home/vlad/Documents/javascript/learn-js-the-proper-way/#001/" (21318 40146 409592 298000) "./" "../" "name.js")
-
- ("/home/vlad/Documents/scheme/SICP/2.5.3-example_symbolic_algebra/" (21318 12630 882519 190000) "./" "../" "polinomials.scm")
-
- ("/home/vlad/Documents/scheme/SICP/2.4.3-data_directed_programming_and_additivity/" (21315 45771 623292 726000) "./" "../" "package.scm" "!supplement.scm" "message-passing.scm" "ex_2.73.scm" "ex_2.75.scm")
-
- ("/home/vlad/Documents/scheme/SICP/2.5.2-combining_data_of_different_types/" (21316 59189 197953 534000) "./" "ex.2.81.scm" "ex_2.86.scm" "../" "ex_2.83.scm" "ex_2.82.scm" "ex_2.85.scm" "coercion.scm" "ex.2.84.scm")
 )
 
 ;; ----- ido-unc-hosts-cache -----

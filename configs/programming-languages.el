@@ -123,6 +123,7 @@
 (add-hook 'js2-mode-hook 'linum-mode)
 (add-hook 'js2-mode-hook 'abbrev-mode)
 (add-hook 'js2-mode-hook 'js-keys)
+(add-hook 'js2-mode-hook 'smartparens-strict-mode)
 (add-hook 'js2-mode-hook 'bind-smartparens-locally)
 (add-hook 'js2-mode-hook 'hs-minor-mode)
 
@@ -149,6 +150,7 @@
 (add-hook 'web-mode-hook 'skewer-html-mode)
 (add-hook 'web-mode-hook 'skewer-css-mode)
 (add-hook 'css-mode-hook 'skewer-css-mode)
+(add-hook 'css-mode-hook 'rainbow-mode)
 
 ;; Auto-start on any markup modes
 (add-hook 'sgml-mode-hook 'emmet-mode)
@@ -167,3 +169,29 @@
   (web-mode-element-kill))
 
 
+			      ;; Haskell
+
+(add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+(add-hook 'haskell-mode-hook 'linum-mode)
+
+(custom-set-variables
+  '(haskell-process-suggest-remove-import-lines t)
+  '(haskell-process-auto-import-loaded-modules t)
+  '(haskell-process-log t))
+
+(eval-after-load "haskell-mode"
+    '(define-key haskell-mode-map (kbd "C-c C-c") 'haskell-compile))
+
+(eval-after-load "haskell-mode"
+  '(progn
+    (define-key haskell-mode-map (kbd "C-x C-d") nil)
+    (define-key haskell-mode-map (kbd "C-c C-z") 'haskell-interactive-switch)
+    (define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-file)
+    (define-key haskell-mode-map (kbd "C-c C-b") 'haskell-interactive-switch)
+    (define-key haskell-mode-map (kbd "C-c C-t") 'haskell-process-do-type)
+    (define-key haskell-mode-map (kbd "C-c C-i") 'haskell-process-do-info)
+    (define-key haskell-mode-map (kbd "C-c M-.") nil)
+    (define-key haskell-mode-map (kbd "C-c C-d") nil)))
+
+(setq haskell-interactive-popup-errors nil)

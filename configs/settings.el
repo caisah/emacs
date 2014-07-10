@@ -291,4 +291,6 @@
 
 ;; Help
 (require 'apropos)
-(add-hook 'help-mode-hook '(lambda () (switch-to-buffer-other-window "*Help*")))
+
+;; Nginx
+(require 'nginx-mode)

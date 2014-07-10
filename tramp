@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*- <14/06/29 23:04:22 /home/vlad/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <14/07/06 14:34:06 /home/vlad/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
@@ -29,4 +29,13 @@
   ("readlink" "\\readlink")
   ("stat" "\\stat")
   ("id" "/usr/bin/id")
-  ("gid-integer" 0)))
+  ("gid-integer" 0)
+  ("~root" "/root")
+  ("ls" "/bin/ls --color=never")
+  ("ls-dired" t)
+  ("uid-integer" 0)
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl"))
+ (["ssh" nil "sudo" nil nil]
+  nil))

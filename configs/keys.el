@@ -187,9 +187,9 @@
   )
 
 ;; Quit on Q
-(define-key help-mode-map (kbd "q") 'kill-this-buffer)
-(define-key apropos-mode-map (kbd "q") 'kill-this-buffer)
-(define-key special-mode-map (kbd "q") 'kill-this-buffer)
+;; (define-key help-mode-map (kbd "q") 'kill-this-buffer)
+;; (define-key apropos-mode-map (kbd "q") 'kill-this-buffer)
+;; (define-key special-mode-map (kbd "q") 'kill-this-buffer)
 
 
 ;; Macros
