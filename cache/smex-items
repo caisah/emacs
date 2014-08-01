@@ -1,19 +1,19 @@
 
 ;; ----- smex-history -----
 (
+ httpd-start
+ eshell
+ magit-log
+ magit-status
  paradox-list-packages
  center-paragraph
  linum-mode
- inferior-haskell-send-decl
- haskell-interactive-bring
- haskell-interactive-mode
- pretty-symbols-mode
 )
 
 ;; ----- smex-data -----
 (
  (delete-region . 45)
- (magit-status . 141)
+ (magit-status . 142)
  (diredp-do-grep . 5)
  (find-grep-dired . 28)
  (shell . 286)
@@ -71,7 +71,7 @@
  (Info-mode-menu . 2)
  (indent-for-tab-command . 1)
  (skewer-repl . 77)
- (httpd-start . 25)
+ (httpd-start . 26)
  (run-skewer . 53)
  (font-lock-mode . 10)
  (js2-mode . 6)
@@ -84,7 +84,7 @@
  (httpd-stop . 3)
  (goto-line . 19)
  (eval-region . 3)
- (magit-log . 20)
+ (magit-log . 21)
  (magit-remote-update . 2)
  (abbrev-mode . 1)
  (smartparens-mode . 4)
@@ -140,7 +140,7 @@
  (ibuffer-do-sort-by-mode-name . 2)
  (ibuffer-do-sort-by-major-mode . 1)
  (dired-sort-criteria . 7)
- (eshell . 100)
+ (eshell . 101)
  (package-list-packages . 1)
  (org-mark-element . 1)
  (pallet-init . 1)
