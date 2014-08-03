@@ -102,6 +102,8 @@
 
 			    ;; JavaScript
 
+(setq-default js2-global-externs '("module" "require" "buster" "sinon" "assert" "refute" "setTimeout" "clearTimeout" "setInterval" "clearInterval" "location" "__dirname" "console" "JSON" "$" "jQuery" "doT" "_" "Backbone"))
+
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'pretty-symbol-patterns '(?ƒ lambda "\\<function\\>" (js2-mode)))
 
@@ -109,7 +111,6 @@
   ("fun" "function")                                     
   ("ret" "return")
 ))
-
 
 (defun skewer-eval-region (beg end)
   "Execute the region as JavaScript code in the attached browsers."
