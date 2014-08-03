@@ -33,6 +33,7 @@
 (depends-on "js2-mode")
 (depends-on "json-mode")
 (depends-on "json-reformat")
+(depends-on "less-css-mode")
 (depends-on "list-processes+")
 (depends-on "magit")
 (depends-on "markdown-mode")
