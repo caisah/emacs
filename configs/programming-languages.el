@@ -144,7 +144,7 @@
 
 (setq web-mode-markup-indent-offset 2)
 
-;; 
+;; Web mode
 (add-hook 'web-mode-hook 'emmet-mode)
 (add-hook 'web-mode-hook 'flycheck-mode)
 (add-hook 'web-mode-hook 'html-keys)
@@ -157,6 +157,10 @@
 (add-hook 'sgml-mode-hook 'emmet-mode)
 (add-hook 'html-mode-hook 'emmet-mode)
 (add-hook 'css-mode-hook  'emmet-mode)
+
+;; LESS
+(add-hook 'less-css-mode-hook 'linum-mode)
+(add-hook 'less-css-mode-hook 'flycheck-mode)
 
 
 (defun open-file-in-browser()
