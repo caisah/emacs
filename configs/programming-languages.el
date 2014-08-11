@@ -153,6 +153,7 @@
 (add-hook 'web-mode-hook 'skewer-css-mode)
 (add-hook 'css-mode-hook 'skewer-css-mode)
 (add-hook 'css-mode-hook 'rainbow-mode)
+(add-hook 'css-mode-hook 'linum-mode)
 
 ;; Auto-start on any markup modes
 (add-hook 'sgml-mode-hook 'emmet-mode)
