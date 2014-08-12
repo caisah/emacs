@@ -128,6 +128,7 @@
 (add-hook 'js2-mode-hook 'bind-smartparens-locally)
 (add-hook 'js2-mode-hook 'hs-minor-mode)
 (add-hook 'js2-mode-hook 'js2-imenu-extras-mode)
+(add-hook 'js2-mode-hook 'flycheck-mode)
 
 
 			       ;; HTML
