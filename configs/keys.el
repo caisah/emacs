@@ -76,7 +76,7 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; Kill ring
-(global-set-key (kbd "M-y") 'kill-ring-ido)
+(global-set-key (kbd "M-y") 'browse-kill-ring)
 
 ; Delete
 (global-set-key (kbd "C-S-d") 'delete-region)

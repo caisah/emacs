@@ -5,6 +5,7 @@
 
 (depends-on "anzu")
 (depends-on "browse-kill-ring")
+(depends-on "browse-kill-ring")
 (depends-on "cask")
 (depends-on "cl-lib")
 (depends-on "dash")

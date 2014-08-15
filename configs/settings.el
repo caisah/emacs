@@ -217,9 +217,10 @@
 
 ;; Kill Ring
 
-(require 'kill-ring-ido)
-;; Change maximum length
-(setq kill-ring-ido-shortage-length 60)
+(require 'browse-kill-ring)
+;; (require 'kill-ring-ido)
+;; ;; Change maximum length
+;; (setq kill-ring-ido-shortage-length 60)
 
 ;; Undo Tree
 
