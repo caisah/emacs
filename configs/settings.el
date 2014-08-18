@@ -29,7 +29,7 @@
 (setq desktop-dirname "~/.emacs.d/cache")
 (setq desktop-path (list desktop-dirname))
 (setq desktop-base-file-name "emacs-desktop")
-
+(setq-default indent-tabs-mode nil)
 ;; Desktop mode (save buffers on exit)
 ;; Autosave buffers
 (require 'desktop)

@@ -129,10 +129,6 @@
 (add-hook 'js2-mode-hook 'hs-minor-mode)
 (add-hook 'js2-mode-hook 'js2-imenu-extras-mode)
 (add-hook 'js2-mode-hook 'flycheck-mode)
-(add-hook 'js2-mode-hook 'my-disable-indent-tabs-mode)
-
-(defun my-disable-indent-tabs-mode ()
-  (set-variable 'indent-tabs-mode nil))
 
 
 			       ;; HTML
