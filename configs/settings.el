@@ -3,7 +3,6 @@
 (setq user-full-name "Vlad Piersec"
       user-mail-address "vlad.piersec@gmail.com")
 
-
 		     ;; Initialization and Paths:
 
 ;; Cask & Pallet
