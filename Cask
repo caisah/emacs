@@ -1,10 +1,8 @@
-(source gnu)
-(source marmalade)
+(source gnu)(source marmalade)
 (source melpa)
 (source org)
 
 (depends-on "anzu")
-(depends-on "browse-kill-ring")
 (depends-on "browse-kill-ring")
 (depends-on "cask")
 (depends-on "cl-lib")
