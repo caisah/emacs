@@ -30,6 +30,7 @@
 (setq desktop-path (list desktop-dirname))
 (setq desktop-base-file-name "emacs-desktop")
 (setq-default indent-tabs-mode nil)
+(global-visual-line-mode t)
 ;; Desktop mode (save buffers on exit)
 ;; Autosave buffers
 (require 'desktop)
@@ -177,7 +178,7 @@
 (setq sml/hidden-modes (list " Anzu" " ARev" " SP/s" " SP" " Abbrev" " Isearch"
 			     " A" " Guide"  " Undo-Tree" " PgLn" " MRev"
 			     " skewer" " skewer-html" " skewer-css"" Emmet" " hs"
-			     " λ" " Rbow"
+			     " λ" " Rbow" " vl"
 			     ))
   
 
