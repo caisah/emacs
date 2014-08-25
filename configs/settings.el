@@ -178,7 +178,7 @@
 (setq sml/hidden-modes (list " Anzu" " ARev" " SP/s" " SP" " Abbrev" " Isearch"
 			     " A" " Guide"  " Undo-Tree" " PgLn" " MRev"
 			     " skewer" " skewer-html" " skewer-css"" Emmet" " hs"
-			     " λ" " Rbow" " vl"
+			     " λ" " Rbow" " vl" " Wrap"
 			     ))
   
 
