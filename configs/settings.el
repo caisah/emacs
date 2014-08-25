@@ -149,7 +149,7 @@
 
 ;; IDO ubiquitous
 (require 'ido-ubiquitous)
-(ido-ubiquitous t)
+(ido-ubiquitous-mode)
 
 ;; IDO flx
 (require 'flx-ido)
@@ -173,9 +173,9 @@
 ;; Smart mode line (hide modes in bar)
 
 (require 'smart-mode-line)
-(if after-init-time (sml/setup)
-  (add-hook 'after-init-hook 'sml/setup))
-(setq sml/hidden-modes (list " Anzu" " ARev" " SP/s" " SP" " Abbrev" " Isearch"
+(sml/setup)
+(sml/apply-theme 'dark)
+(setq rm-excluded-modes (list " Anzu" " ARev" " SP/s" " SP" " Abbrev" " Isearch"
 			     " A" " Guide"  " Undo-Tree" " PgLn" " MRev"
 			     " skewer" " skewer-html" " skewer-css"" Emmet" " hs"
 			     " λ" " Rbow" " vl" " Wrap"
