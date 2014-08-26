@@ -288,14 +288,10 @@
 ;; Mongo
 (require 'inf-mongo)
 (setq inf-mongo-command "/usr/bin/mongo")
-
 ;; Org
 (require 'org)
-
 ;; Help
 (require 'apropos)
-
 ;; Nginx
 (require 'nginx-mode)
-
 
