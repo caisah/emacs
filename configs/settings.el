@@ -173,6 +173,7 @@
 ;; Smart mode line (hide modes in bar)
 
 (require 'smart-mode-line)
+(setq sml/no-confirm-load-theme t)
 (sml/setup)
 (sml/apply-theme 'dark)
 (setq rm-excluded-modes (list " Anzu" " ARev" " SP/s" " SP" " Abbrev" " Isearch"
@@ -180,7 +181,7 @@
 			     " skewer" " skewer-html" " skewer-css"" Emmet" " hs"
 			     " λ" " Rbow" " vl" " Wrap"
 			     ))
-  
+
 
 ;; Move region
 (require 'move-text)
@@ -296,3 +297,5 @@
 
 ;; Nginx
 (require 'nginx-mode)
+
+
