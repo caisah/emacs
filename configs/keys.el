@@ -208,5 +208,11 @@
   (yank arg))
 (global-set-key (kbd "C-S-y") 'yank-next)
 
+(defun next-line-and-indent ()
+  (interactive)
+  (end-of-line)
+  (newline-and-indent))
+(global-set-key (kbd "C-j") 'next-line-and-indent)
+
 ;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
