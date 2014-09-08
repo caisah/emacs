@@ -5,7 +5,7 @@
 (define-abbrev-table 'scheme-mode-abbrev-table '(
  ("lam" "lambda")
  ("def" "define")
- ("dis" "display")
+n ("dis" "display")
  ("che" "check-equal?")))
 
 (add-hook 'scheme-mode-hook 'rainbow-delimiters-mode)
@@ -143,8 +143,9 @@
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jst\\'" . web-mode))
 
-(setq web-mode-markup-indent-offset 2)
+(setq web-mode-markup-indent-offset 4)
 
 ;; Web mode
 (add-hook 'web-mode-hook 'emmet-mode)
