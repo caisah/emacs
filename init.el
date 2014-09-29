@@ -24,9 +24,3 @@
 (load-theme 'liso t)
 ;; ugly temporary fix until the problem is resolved
 (load "~/.emacs.d/themes/liso-theme.el")
-
-;; Message loading time
-(autoload 'time-passed-since "functions" nil t)
-(message "\n\nMy .init loaded in %.3f seconds\n" (time-passed-since *start-time*))
-
-(current-local-map)

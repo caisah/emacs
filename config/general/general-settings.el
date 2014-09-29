@@ -49,15 +49,17 @@
 ;; Package settings
 (require 'desktop-settings)
 (require 'dired-settings)
-(require 'ibuffer-settings)
-(require 'smartparens-settings)
-(require 'sml-settings)
-(require 'markdown-settings)
-(require 'tramp-settings)
 (require 'flycheck-config)
 (require 'helm-settings)
+(require 'ibuffer-settings)
+(require 'magit-settings)
+(require 'markdown-settings)
+(require 'smartparens-settings)
+(require 'sml-settings)
+(require 'tramp-settings)
 (require 'othermodes-settings)
 (require 'programming-settings)
+(require 'snippets)
 
 
 (provide 'general-settings)

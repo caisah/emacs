@@ -30,10 +30,6 @@
 (global-set-key (kbd "C-.") 'helm-semantic-or-imenu) 
 (define-key helm-map (kbd "C-z")  'helm-select-action)
 
-;; Dired+ keys
-(define-key ctl-x-map   "d" 'diredp-dired-files)
-(define-key ctl-x-4-map "d" 'diredp-dired-files-other-window)
-
 ; Ibuffer instead of Buffer menu
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
