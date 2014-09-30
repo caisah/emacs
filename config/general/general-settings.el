@@ -7,7 +7,6 @@
 (add-to-list 'load-path "~/.emacs.d/custom-packages/")
 
 ;; Set cache folder
-(setq smex-save-file "~/.emacs.d/cache/smex-items") 
 (setq ido-save-directory-list-file "~/.emacs.d/cache/ido-list")
 (setq bookmark-default-file "~/.emacs.d/cache/bookmarks")
 

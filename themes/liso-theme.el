@@ -157,7 +157,8 @@
    `(diredp-no-priv ((t (:foreground ,foreground))))
    
    `(helm-action ((t (:foreground ,foreground :underline nil))))
-   `(helm-selection ((t (:foreground ,paren-red :background ,highlight-yellow :weight bold))))
+   ;; `(helm-selection ((t (:foreground ,paren-red :background ,highlight-yellow :weight bold))))
+   `(helm-selection ((t (:background ,ml-grey-darker :weight bold))))
    `(helm-source-header ((t (:background: ,background :foreground ,ml-yellow :family "Ubuntu Mono" :weight normal :height: 1.1))))
    `(helm-visible-mark ((t (:inherit (diredp-flag-mark)))))
    `(helm-candidate-number ((t (:inherit (match)))))
@@ -182,9 +183,7 @@
    `(magit-log-date ((t (:foreground ,comment))))
    `(diff-removed ((t (:background ,diff-dark-red))))
    `(diff-added ((t (:background ,diff-dark-green))))
-   )
-
-  )
+   ))
 
 ;; Ibuffer
 (setq ibuffer-marked-face 'diredp-flag-mark)

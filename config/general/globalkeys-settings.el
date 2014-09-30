@@ -13,6 +13,10 @@
 
 (global-set-key (kbd "C-c C-f") 'hs-toggle-hiding)
 
+(global-set-key (kbd "C-x C-b") '(lambda ()
+                                   (interactive)
+                                   (helm-resume t)))
+
 (defun kill-other-buffer ()
   (interactive)
   (other-window 1)
@@ -29,9 +33,6 @@
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-.") 'helm-semantic-or-imenu) 
 (define-key helm-map (kbd "C-z")  'helm-select-action)
-
-; Ibuffer instead of Buffer menu
-(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; Smart-compile
 (global-set-key (kbd "<f9>") 'smart-compile)
