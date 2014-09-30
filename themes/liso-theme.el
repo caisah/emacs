@@ -1,4 +1,4 @@
-;;; liso-theme.el Eclectic Dark Theme for GNU Emacs
+        ;;; liso-theme.el Eclectic Dark Theme for GNU Emacs
 
 ;; Inspired by TangoTango Theme https://github.com/juba/color-theme-tangotango
 
@@ -57,7 +57,9 @@
       (ml-grey "#C7C7AB")
       (ml-grey-darker "#414B4E")
       (paren-blue "#7AD9FF")
-      (paren-red "#9D005C"))
+      (paren-red "#9D005C")
+      (diff-dark-red "#372121")
+      (diff-dark-green "#233721"))
 
   (custom-theme-set-faces
    'liso
@@ -169,6 +171,17 @@
    `(helm-match ((t (:foreground ,liso-green))))
    `(helm-separator ((t (:foreground ,liso-dark-green))))
 
+   `(magit-item-highlight ((t (:background ,ml-grey-darker))))
+   `(magit-diff-file-header ((t (:background ,foreground-black :foreground ,ml-yellow))))
+   `(magit-diff-hunk-header ((t (:background ,foreground-black :foreground ,ml-black))))
+   `(magit-log-head-label-head ((t (:foreground ,liso-orange :box (:width 1)))))
+   `(magit-log-head-label-remote ((t (:foreground ,liso-yellow :box (:width 1)))))
+   `(magit-log-head-label-local ((t (:foreground ,liso-green :box (:width 1)))))
+   `(magit-log-sha1 ((t (:foreground ,liso-red))))
+   `(magit-log-author ((t (:foreground ,comment))))
+   `(magit-log-date ((t (:foreground ,comment))))
+   `(diff-removed ((t (:background ,diff-dark-red))))
+   `(diff-added ((t (:background ,diff-dark-green))))
    )
 
   )
