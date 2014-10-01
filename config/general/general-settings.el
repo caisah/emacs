@@ -43,6 +43,7 @@
 
 ;; Global modes
 (global-visual-line-mode t)
+(projectile-global-mode)
 (show-paren-mode t)
 
 ;; Package settings

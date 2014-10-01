@@ -1,5 +1,5 @@
 ;; Global Keys 
-(global-set-key (kbd "C-r") 'query-replace)
+(global-set-key (kbd "C-S-s") 'query-replace)
 
 (global-set-key (kbd "C-S-d") 'delete-region)
 
@@ -16,7 +16,6 @@
 (global-set-key (kbd "C-x C-b") '(lambda ()
                                    (interactive)
                                    (helm-resume t)))
-
 (defun kill-other-buffer ()
   (interactive)
   (other-window 1)

@@ -1,4 +1,4 @@
-        ;;; liso-theme.el Eclectic Dark Theme for GNU Emacs
+;;; liso-theme.el Eclectic Dark Theme for GNU Emacs
 
 ;; Inspired by TangoTango Theme https://github.com/juba/color-theme-tangotango
 
@@ -157,7 +157,6 @@
    `(diredp-no-priv ((t (:foreground ,foreground))))
    
    `(helm-action ((t (:foreground ,foreground :underline nil))))
-   ;; `(helm-selection ((t (:foreground ,paren-red :background ,highlight-yellow :weight bold))))
    `(helm-selection ((t (:background ,ml-grey-darker :weight bold))))
    `(helm-source-header ((t (:background: ,background :foreground ,ml-yellow :family "Ubuntu Mono" :weight normal :height: 1.1))))
    `(helm-visible-mark ((t (:inherit (diredp-flag-mark)))))
@@ -169,8 +168,10 @@
    `(helm-ff-file ((t (:inherit (diredp-file-name)))))
    `(helm-ff-symlink ((t (:inherit (diredp-symlink)))))
    `(helm-M-x-key ((t (:foreground ,liso-red :weight bold))))
-   `(helm-match ((t (:foreground ,liso-green))))
+   `(helm-match ((t (:foreground ,prompt-green))))
    `(helm-separator ((t (:foreground ,liso-dark-green))))
+   `(helm-grep-file ((t (:foreground ,liso-dark-green))))
+   `(helm-grep-match ((t (:foreground ,prompt-green))))
 
    `(magit-item-highlight ((t (:background ,ml-grey-darker))))
    `(magit-diff-file-header ((t (:background ,foreground-black :foreground ,ml-yellow))))
@@ -184,6 +185,7 @@
    `(diff-removed ((t (:background ,diff-dark-red))))
    `(diff-added ((t (:background ,diff-dark-green))))
    ))
+
 
 ;; Ibuffer
 (setq ibuffer-marked-face 'diredp-flag-mark)
