@@ -5,7 +5,7 @@
 
 (global-set-key (kbd "M-/") 'hippie-expand)
 
-(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x m") 'magit-status)
 
 (global-set-key (kbd "C-`") 'er/expand-region)
 
@@ -13,9 +13,6 @@
 
 (global-set-key (kbd "C-c C-f") 'hs-toggle-hiding)
 
-(global-set-key (kbd "C-x C-b") '(lambda ()
-                                   (interactive)
-                                   (helm-resume t)))
 (defun kill-other-buffer ()
   (interactive)
   (other-window 1)
@@ -30,8 +27,21 @@
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-.") 'helm-semantic-or-imenu) 
-(define-key helm-map (kbd "C-z")  'helm-select-action)
+(global-set-key (kbd "C-.") 'helm-semantic-or-imenu)
+(global-set-key (kbd "M-i") 'helm-swoop)
+(global-set-key (kbd "M-I") 'helm-swoop-back-to-last-point)
+(global-set-key (kbd "C-c M-i") 'helm-multi-swoop)
+(global-set-key (kbd "C-x M-i") 'helm-multi-swoop-all)
+;; When doing isearch, hand the word over to helm-swoop
+(define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
+;; From helm-swoop to helm-multi-swoop-all
+(define-key helm-swoop-map (kbd "M-i") 'helm-multi-swoop-all-from-helm-swoop)
+(global-set-key (kbd "C-x C-S-f") 'helm-projectile)
+(global-set-key (kbd "C-x g") 'helm-do-grep)
+(global-set-key (kbd "C-x C-b") '(lambda ()
+                                   (interactive)
+                                   (helm-resume t)))
+
 
 ;; Smart-compile
 (global-set-key (kbd "<f9>") 'smart-compile)

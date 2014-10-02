@@ -57,7 +57,9 @@
 (require 'smartparens-settings)
 (require 'sml-settings)
 (require 'tramp-settings)
+(require 'projectile-settings)
 (require 'othermodes-settings)
+;; Other settings
 (require 'programming-settings)
 (require 'snippets)
 

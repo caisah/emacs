@@ -93,6 +93,7 @@
    `(secondary-selection ((t (:background ,search-brown))))
    `(trailing-whitespace ((t (:background ,fail-dark-red))))
    `(whitespace-trailing ((t (:background ,fail-dark-red :foreground ,foreground-black))))
+   
    `(font-lock-builtin-face ((t (:foreground ,liso-purple))))
    `(font-lock-comment-face ((t (:foreground ,comment))))
    `(font-lock-comment-delimiter-face ((t (:inherit (font-lock-comment-face)))))
@@ -108,6 +109,7 @@
    `(font-lock-type-face ((t (:foreground ,liso-blue))))
    `(font-lock-variable-name-face ((t (:foreground ,liso-orange))))
    `(font-lock-warning-face ((t (:weight bold :foreground ,warning :inherit (error)))))
+   
    `(button ((t (:inherit (link)))))
    `(link ((t (:underline (:color foreground-color :style line) :foreground ,link-blue)))) 
    `(link-visited ((t (:underline (:color foreground-color :style line) :foreground ,link-dark-blue :inherit (link)))))
@@ -136,7 +138,28 @@
    `(linum ((t (:foreground "#6F8085" :weight light :height 0.9))))
    `(vertical-border ((t (:foreground ,ml-black)))) 
    `(error ((t (:foreground ,error-red :weight semi-bold)))) 
-   `(completions-first-difference ((t (:inherit (highlight))))) 
+   `(completions-first-difference ((t (:inherit (highlight)))))
+ 
+   `(helm-action ((t (:foreground ,foreground :underline nil))))
+   `(helm-selection ((t (:background ,ml-grey-darker :weight bold))))
+   `(helm-source-header ((t (:background: ,background :foreground ,ml-yellow :family "Ubuntu Mono" :weight normal :height: 1.1))))
+   `(helm-visible-mark ((t (:inherit (diredp-flag-mark)))))
+   `(helm-candidate-number ((t (:inherit (match)))))
+   `(helm-buffer-directory ((t (:inherit (diredp-dir-priv)))))
+   `(helm-buffer-size ((t (:foreground ,comment))))
+   `(helm-buffer-process ((t (:inherit (font-lock-doc-face)))))
+   `(helm-buffer-file ((t (:foreground ,foreground :weight bold))))
+   `(helm-ff-directory ((t (:inherit (diredp-dir-priv)))))
+   `(helm-ff-file ((t (:inherit (diredp-file-name)))))
+   `(helm-ff-symlink ((t (:inherit (diredp-symlink)))))
+   `(helm-M-x-key ((t (:foreground ,liso-red :weight bold))))
+   `(helm-match ((t (:foreground ,prompt-green))))
+   `(helm-separator ((t (:foreground ,liso-dark-green))))
+   `(helm-grep-file ((t (:foreground ,liso-dark-green))))
+   `(helm-grep-match ((t (:foreground ,prompt-green))))
+   `(helm-swoop-target-word-face ((t (:inherit (isearch)))))
+   `(helm-swoop-target-line-face ((t (:background ,ml-grey-darker))))
+   
    `(diredp-dir-priv ((t (:foreground ,liso-yellow :weight bold))))
    `(diredp-file-name ((t (:foreground ,foreground :weight normal))))
    `(diredp-file-suffix ((t (:foreground ,comment :slant italic))))
@@ -155,23 +178,6 @@
    `(diredp-date-time ((t (:foreground ,comment))))
    `(diredp-number ((t (:foreground ,comment))))
    `(diredp-no-priv ((t (:foreground ,foreground))))
-   
-   `(helm-action ((t (:foreground ,foreground :underline nil))))
-   `(helm-selection ((t (:background ,ml-grey-darker :weight bold))))
-   `(helm-source-header ((t (:background: ,background :foreground ,ml-yellow :family "Ubuntu Mono" :weight normal :height: 1.1))))
-   `(helm-visible-mark ((t (:inherit (diredp-flag-mark)))))
-   `(helm-candidate-number ((t (:inherit (match)))))
-   `(helm-buffer-directory ((t (:inherit (diredp-dir-priv)))))
-   `(helm-buffer-size ((t (:foreground ,comment))))
-   `(helm-buffer-process ((t (:inherit (font-lock-doc-face)))))
-   `(helm-ff-directory ((t (:inherit (diredp-dir-priv)))))
-   `(helm-ff-file ((t (:inherit (diredp-file-name)))))
-   `(helm-ff-symlink ((t (:inherit (diredp-symlink)))))
-   `(helm-M-x-key ((t (:foreground ,liso-red :weight bold))))
-   `(helm-match ((t (:foreground ,prompt-green))))
-   `(helm-separator ((t (:foreground ,liso-dark-green))))
-   `(helm-grep-file ((t (:foreground ,liso-dark-green))))
-   `(helm-grep-match ((t (:foreground ,prompt-green))))
 
    `(magit-item-highlight ((t (:background ,ml-grey-darker))))
    `(magit-diff-file-header ((t (:background ,foreground-black :foreground ,ml-yellow))))
@@ -185,6 +191,7 @@
    `(diff-removed ((t (:background ,diff-dark-red))))
    `(diff-added ((t (:background ,diff-dark-green))))
    ))
+
 
 
 ;; Ibuffer

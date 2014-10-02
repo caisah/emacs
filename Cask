@@ -19,6 +19,7 @@
 (depends-on "haskell-mode")
 (depends-on "helm")
 (depends-on "helm-projectile")
+(depends-on "helm-swoop")
 (depends-on "hexrgb")
 (depends-on "ido-vertical-mode")
 (depends-on "imenu-anywhere")

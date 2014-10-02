@@ -13,5 +13,18 @@
 
 (helm-mode t)
 
+;; Helm Swoop
+(require 'helm-swoop)
+(setq helm-multi-swoop-edit-save t)
+(setq helm-swoop-split-direction 'split-window-vertically)
+
+(defun helm-do-grep-recursive (&optional non-recursive)
+  "Like `helm-do-grep', but greps recursively by default."
+  (interactive "P")
+  (let* ((current-prefix-arg (not non-recursive))
+         (helm-current-prefix-arg non-recursive))
+    (call-interactively 'helm-do-grep)))
+
+
 
 (provide 'helm-settings)
