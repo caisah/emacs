@@ -23,6 +23,7 @@
 ;; Helm
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-x C-S-f") 'helm-projectile)
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-x b") 'helm-mini)
@@ -37,7 +38,7 @@
 ;; From helm-swoop to helm-multi-swoop-all
 (define-key helm-swoop-map (kbd "M-i") 'helm-multi-swoop-all-from-helm-swoop)
 (global-set-key (kbd "C-x C-S-f") 'helm-projectile)
-(global-set-key (kbd "C-x g") 'helm-do-grep)
+(global-set-key (kbd "C-x g") 'helm-do-grep-recursive)
 (global-set-key (kbd "C-x C-b") '(lambda ()
                                    (interactive)
                                    (helm-resume t)))
