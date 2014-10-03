@@ -13,6 +13,10 @@
 
 (helm-mode t)
 
+;; Helm Projectile
+(require 'helm-projectile)
+(setq projectile-mode-line " Projectile")
+
 ;; Helm Swoop
 (require 'helm-swoop)
 (setq helm-multi-swoop-edit-save t)
@@ -24,7 +28,6 @@
   (let* ((current-prefix-arg (not non-recursive))
          (helm-current-prefix-arg non-recursive))
     (call-interactively 'helm-do-grep)))
-
 
 
 (provide 'helm-settings)

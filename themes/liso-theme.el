@@ -59,7 +59,10 @@
       (paren-blue "#7AD9FF")
       (paren-red "#9D005C")
       (diff-dark-red "#372121")
-      (diff-dark-green "#233721"))
+      (diff-dark-green "#233721")
+      (web-dark-blue "#4C677A")
+      (web-dim-blue "#6790AB")
+      (web-dark-purple "#656691"))
 
   (custom-theme-set-faces
    'liso
@@ -139,6 +142,9 @@
    `(vertical-border ((t (:foreground ,ml-black)))) 
    `(error ((t (:foreground ,error-red :weight semi-bold)))) 
    `(completions-first-difference ((t (:inherit (highlight)))))
+
+   `(flycheck-error ((t (:background ,ml-black :underline (:color ,error-red :style wave)))))
+   `(flycheck-warning ((t (:underline (:color ,warning :style wave)))))
  
    `(helm-action ((t (:foreground ,foreground :underline nil))))
    `(helm-selection ((t (:background ,ml-grey-darker :weight bold))))
@@ -148,7 +154,7 @@
    `(helm-buffer-directory ((t (:inherit (diredp-dir-priv)))))
    `(helm-buffer-size ((t (:foreground ,comment))))
    `(helm-buffer-process ((t (:inherit (font-lock-doc-face)))))
-   `(helm-buffer-file ((t (:foreground ,foreground :weight bold))))
+   `(helm-buffer-file ((t (:foreground ,foreground :weight normal))))
    `(helm-ff-directory ((t (:inherit (diredp-dir-priv)))))
    `(helm-ff-file ((t (:inherit (diredp-file-name)))))
    `(helm-ff-symlink ((t (:inherit (diredp-symlink)))))
@@ -190,6 +196,11 @@
    `(magit-log-date ((t (:foreground ,comment))))
    `(diff-removed ((t (:background ,diff-dark-red))))
    `(diff-added ((t (:background ,diff-dark-green))))
+
+   `(web-mode-html-tag-face ((t (:foreground ,web-dark-blue))))
+   `(web-mode-html-tag-bracket-face ((t (:inherit (web-mode-html-tag-face)))))
+   `(web-mode-html-attr-name-face ((t (:foreground ,web-dim-blue))))
+   `(web-mode-html-attr-value-face ((t (:foreground ,web-dark-purple))))
    ))
 
 

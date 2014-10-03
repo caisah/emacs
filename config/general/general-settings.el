@@ -50,7 +50,6 @@
 (require 'desktop-settings)
 (require 'dired-settings)
 (require 'flycheck-config)
-(require 'helm-settings)
 (require 'ibuffer-settings)
 (require 'magit-settings)
 (require 'markdown-settings)
@@ -58,6 +57,7 @@
 (require 'sml-settings)
 (require 'tramp-settings)
 (require 'projectile-settings)
+(require 'helm-settings)
 (require 'othermodes-settings)
 ;; Other settings
 (require 'programming-settings)
