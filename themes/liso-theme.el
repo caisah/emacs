@@ -195,6 +195,7 @@
    `(magit-log-author ((t (:foreground ,comment))))
    `(magit-log-date ((t (:foreground ,comment))))
    `(diff-removed ((t (:background ,diff-dark-red))))
+   `(magit-tag ((t (:background ,ml-black :foreground ,ml-yellow :box (:width 1)))))
    `(diff-added ((t (:background ,diff-dark-green))))
 
    `(web-mode-html-tag-face ((t (:foreground ,web-dark-blue))))
