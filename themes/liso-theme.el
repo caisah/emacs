@@ -59,10 +59,7 @@
       (paren-blue "#7AD9FF")
       (paren-red "#9D005C")
       (diff-dark-red "#372121")
-      (diff-dark-green "#233721")
-      (web-dark-blue "#9DA063")
-      (web-dim-blue "#6790AB")
-      (web-dark-purple "#6A6B91"))
+      (diff-dark-green "#233721"))
 
   (custom-theme-set-faces
    'liso
@@ -154,9 +151,9 @@
    `(helm-buffer-directory ((t (:inherit (diredp-dir-priv)))))
    `(helm-buffer-size ((t (:foreground ,comment))))
    `(helm-buffer-process ((t (:inherit (font-lock-doc-face)))))
-   `(helm-buffer-file ((t (:foreground ,foreground :weight normal))))
+   `(helm-buffer-file ((t (:foreground ,liso-pink :weight normal))))
    `(helm-ff-directory ((t (:inherit (diredp-dir-priv)))))
-   `(helm-ff-file ((t (:inherit (diredp-file-name)))))
+   `(helm-ff-file ((t (:inherit (helm-buffer-file)))))
    `(helm-ff-symlink ((t (:inherit (diredp-symlink)))))
    `(helm-M-x-key ((t (:foreground ,liso-red :weight bold))))
    `(helm-match ((t (:foreground ,prompt-green))))
@@ -198,17 +195,15 @@
    `(magit-tag ((t (:background ,ml-black :foreground ,ml-yellow :box (:width 1)))))
    `(diff-added ((t (:background ,diff-dark-green))))
    ;; web mode
-   `(web-mode-html-tag-face ((t (:foreground ,web-dark-blue))))
+   `(web-mode-html-tag-face ((t (:foreground ,liso-yellow))))
    `(web-mode-html-tag-bracket-face ((t (:inherit (web-mode-html-tag-face)))))
-   `(web-mode-html-attr-name-face ((t (:foreground ,web-dim-blue))))
-   `(web-mode-html-attr-value-face ((t (:foreground ,web-dark-purple))))
+   `(web-mode-html-attr-name-face ((t (:foreground ,liso-orange))))
+   `(web-mode-html-attr-value-face ((t (:foreground ,liso-purple))))
    ;; js2 mode
    `(js2-error ((t (:inherit (flycheck-error)))))
    `(js2-warning ((t (:inherit (flycheck-warning)))))
    `(js2-external-variable ((t (:foreground "HotPink1"))))
    ))
-
-
 
 ;; Ibuffer
 (setq ibuffer-marked-face 'diredp-flag-mark)
