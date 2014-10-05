@@ -57,6 +57,8 @@
 (require 'sml-settings)
 (require 'tramp-settings)
 (require 'projectile-settings)
+(require 'yas-settings)
+(require 'org-settings)
 (require 'helm-settings)
 (require 'othermodes-settings)
 ;; Other settings

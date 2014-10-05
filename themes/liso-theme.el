@@ -60,9 +60,9 @@
       (paren-red "#9D005C")
       (diff-dark-red "#372121")
       (diff-dark-green "#233721")
-      (web-dark-blue "#4C677A")
+      (web-dark-blue "#9DA063")
       (web-dim-blue "#6790AB")
-      (web-dark-purple "#656691"))
+      (web-dark-purple "#6A6B91"))
 
   (custom-theme-set-faces
    'liso
@@ -96,7 +96,7 @@
    `(secondary-selection ((t (:background ,search-brown))))
    `(trailing-whitespace ((t (:background ,fail-dark-red))))
    `(whitespace-trailing ((t (:background ,fail-dark-red :foreground ,foreground-black))))
-   
+   ;; 
    `(font-lock-builtin-face ((t (:foreground ,liso-purple))))
    `(font-lock-comment-face ((t (:foreground ,comment))))
    `(font-lock-comment-delimiter-face ((t (:inherit (font-lock-comment-face)))))
@@ -142,10 +142,10 @@
    `(vertical-border ((t (:foreground ,ml-black)))) 
    `(error ((t (:foreground ,error-red :weight semi-bold)))) 
    `(completions-first-difference ((t (:inherit (highlight)))))
-
+   ;; flycheck
    `(flycheck-error ((t (:background ,ml-black :underline (:color ,error-red :style wave)))))
    `(flycheck-warning ((t (:underline (:color ,warning :style wave)))))
- 
+   ;; helm
    `(helm-action ((t (:foreground ,foreground :underline nil))))
    `(helm-selection ((t (:background ,ml-grey-darker :weight bold))))
    `(helm-source-header ((t (:background: ,background :foreground ,ml-yellow :family "Ubuntu Mono" :weight normal :height: 1.1))))
@@ -165,7 +165,7 @@
    `(helm-grep-match ((t (:foreground ,prompt-green))))
    `(helm-swoop-target-word-face ((t (:inherit (isearch)))))
    `(helm-swoop-target-line-face ((t (:background ,ml-grey-darker))))
-   
+   ;; dired plus
    `(diredp-dir-priv ((t (:foreground ,liso-yellow :weight bold))))
    `(diredp-file-name ((t (:foreground ,foreground :weight normal))))
    `(diredp-file-suffix ((t (:foreground ,comment :slant italic))))
@@ -184,7 +184,7 @@
    `(diredp-date-time ((t (:foreground ,comment))))
    `(diredp-number ((t (:foreground ,comment))))
    `(diredp-no-priv ((t (:foreground ,foreground))))
-
+   ;; magit
    `(magit-item-highlight ((t (:background ,ml-grey-darker))))
    `(magit-diff-file-header ((t (:background ,foreground-black :foreground ,ml-yellow))))
    `(magit-diff-hunk-header ((t (:background ,foreground-black :foreground ,ml-black))))
@@ -197,11 +197,15 @@
    `(diff-removed ((t (:background ,diff-dark-red))))
    `(magit-tag ((t (:background ,ml-black :foreground ,ml-yellow :box (:width 1)))))
    `(diff-added ((t (:background ,diff-dark-green))))
-
+   ;; web mode
    `(web-mode-html-tag-face ((t (:foreground ,web-dark-blue))))
    `(web-mode-html-tag-bracket-face ((t (:inherit (web-mode-html-tag-face)))))
    `(web-mode-html-attr-name-face ((t (:foreground ,web-dim-blue))))
    `(web-mode-html-attr-value-face ((t (:foreground ,web-dark-purple))))
+   ;; js2 mode
+   `(js2-error ((t (:inherit (flycheck-error)))))
+   `(js2-warning ((t (:inherit (flycheck-warning)))))
+   `(js2-external-variable ((t (:foreground "HotPink1"))))
    ))
 
 

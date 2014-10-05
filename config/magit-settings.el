@@ -1,5 +1,8 @@
 (require 'magit)
 
+(set-default 'magit-stage-all-confirm nil)
+(set-default 'magit-unstage-all-confirm nil)
+
 (defun magit-toggle-all ()
   "Toggles all sections"
   (interactive)

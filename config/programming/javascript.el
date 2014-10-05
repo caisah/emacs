@@ -2,11 +2,15 @@
 
 (setq-default js2-global-externs '("module" "require" "buster" "sinon" "assert" "refute" "setTimeout" "clearTimeout" "setInterval" "clearInterval" "location" "__dirname" "console" "JSON" "$" "jQuery" "doT" "_" "Backbone" "skewer"))
 
+; Let flycheck handle parse errors
+(setq-default js2-show-parse-errors nil)
+(setq-default js2-strict-missing-semi-warning nil)
+(setq-default js2-strict-trailing-comma-warning t)
+(setq-default js2-basic-offset 4)
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'pretty-symbol-patterns '(?ƒ lambda "\\<function\\>" (js2-mode)))
 
 (define-abbrev-table 'js2-mode-abbrev-table '(
-  ("fun" "function")                                     
   ("ret" "return")))
 
 (defun skewer-eval-region (beg end)
@@ -23,6 +27,7 @@
 (add-hook 'js2-mode-hook 'hs-minor-mode)
 (add-hook 'js2-mode-hook 'js2-imenu-extras-mode)
 (add-hook 'js2-mode-hook 'flycheck-mode)
+(add-hook 'js2-mode-hook 'yas-minor-mode)
 
 
 (provide 'js-config)

@@ -9,7 +9,7 @@
       (list " Anzu" " ARev" " SP/s" " SP" " Abbrev" " Isearch"
             " A" " Guide"  " Undo-Tree" " PgLn" " MRev"
             " skewer" " skewer-html" " skewer-css"" Emmet" " hs"
-            " λ" " Rbow" " vl" " Wrap" " Helm" " Projectile"
+            " λ" " Rbow" " vl" " Wrap" " Helm" " Projectile" " yas"
             ))
 
 
