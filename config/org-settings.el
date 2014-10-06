@@ -1,4 +1,4 @@
-(ad-hook 'org-mode 'flyspell-mode)
+(add-hook 'org-mode-hook 'flyspell-mode)
 
 
 (provide 'org-settings)

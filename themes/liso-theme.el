@@ -153,7 +153,7 @@
    `(helm-buffer-process ((t (:inherit (font-lock-doc-face)))))
    `(helm-buffer-file ((t (:foreground ,liso-pink :weight normal))))
    `(helm-ff-directory ((t (:inherit (diredp-dir-priv)))))
-   `(helm-ff-file ((t (:inherit (helm-buffer-file)))))
+   `(helm-ff-file ((t (:inherit (diredp-file-name)))))
    `(helm-ff-symlink ((t (:inherit (diredp-symlink)))))
    `(helm-M-x-key ((t (:foreground ,liso-red :weight bold))))
    `(helm-match ((t (:foreground ,prompt-green))))
@@ -203,6 +203,11 @@
    `(js2-error ((t (:inherit (flycheck-error)))))
    `(js2-warning ((t (:inherit (flycheck-warning)))))
    `(js2-external-variable ((t (:foreground "HotPink1"))))
+   ;; eshell
+   `(eshell-prompt ((t (:foreground ,ml-yellow :background ,ml-black :weight ultra-bold))))
+   `(eshell-ls-directory ((t (:foreground ,liso-yellow :weight bold))))
+   `(eshell-ls-symlink ((t (:foreground ,link-blue))))
+   `(eshell-ls-executable ((t (:foreground ,liso-green))))
    ))
 
 ;; Ibuffer
