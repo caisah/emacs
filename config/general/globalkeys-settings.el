@@ -13,6 +13,8 @@
 
 (global-set-key (kbd "C-c C-f") 'hs-toggle-hiding)
 
+(global-set-key (kbd "C-h C-s") 'elisp-index-search)
+
 (defun kill-other-buffer ()
   (interactive)
   (other-window 1)
@@ -29,6 +31,7 @@
 (global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-.") 'helm-semantic-or-imenu)
+(global-set-key (kbd "C-/") 'helm-find)
 (global-set-key (kbd "M-i") 'helm-swoop)
 (global-set-key (kbd "M-I") 'helm-swoop-back-to-last-point)
 (global-set-key (kbd "C-c M-i") 'helm-multi-swoop)
