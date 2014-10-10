@@ -59,7 +59,9 @@
       (paren-blue "#7AD9FF")
       (paren-red "#9D005C")
       (diff-dark-red "#372121")
-      (diff-dark-green "#233721"))
+      (diff-dark-green "#233721")
+      (diff-light-green "#317A31")
+      (diff-light-red "#aa2222"))
 
   (custom-theme-set-faces
    'liso
@@ -111,7 +113,7 @@
    `(font-lock-warning-face ((t (:weight bold :foreground ,warning :inherit (error)))))
    
    `(button ((t (:inherit (link)))))
-   `(link ((t (:underline (:color foreground-color :style line) :foreground ,link-blue)))) 
+   `(link ((t (:underline (:color foreground-color :style line) :foreground ,link-blue))))
    `(link-visited ((t (:underline (:color foreground-color :style line) :foreground ,link-dark-blue :inherit (link)))))
    `(fringe ((t (:background ,background))))
    `(header-line ((t (:foreground ,comment :weight bold)))) 
@@ -137,7 +139,7 @@
    `(show-paren-mismatch ((t (:background ,paren-red :foreground "red"))))
    `(linum ((t (:foreground "#6F8085" :weight light :height 0.9))))
    `(vertical-border ((t (:foreground ,ml-black)))) 
-   `(error ((t (:foreground ,error-red :weight semi-bold)))) 
+   `(error ((t (:foreground ,error-red :weight semi-bold))))
    `(completions-first-difference ((t (:inherit (highlight)))))
    ;; flycheck
    `(flycheck-error ((t (:background ,ml-black :underline (:color ,error-red :style wave)))))
@@ -191,9 +193,16 @@
    `(magit-log-sha1 ((t (:foreground ,liso-red))))
    `(magit-log-author ((t (:foreground ,comment))))
    `(magit-log-date ((t (:foreground ,comment))))
-   `(diff-removed ((t (:background ,diff-dark-red))))
    `(magit-tag ((t (:background ,ml-black :foreground ,ml-yellow :box (:width 1)))))
+   ;; ediff
+   `(diff-removed ((t (:background ,diff-dark-red))))
    `(diff-added ((t (:background ,diff-dark-green))))
+   `(ediff-even-diff-A ((t (:background ,ml-grey-darker))))
+   `(ediff-even-diff-B ((t (:background ,ml-grey-darker))))
+   `(ediff-odd-diff-A ((t (:background ,ml-grey-darker))))
+   `(ediff-odd-diff-B ((t (:background ,ml-grey-darker))))
+   `(ediff-fine-diff-A ((t (:background ,diff-light-red))))
+   `(ediff-fine-diff-B ((t (:background ,diff-light-green))))
    ;; web mode
    `(web-mode-html-tag-face ((t (:foreground ,liso-yellow))))
    `(web-mode-html-tag-bracket-face ((t (:inherit (web-mode-html-tag-face)))))
