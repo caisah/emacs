@@ -17,7 +17,17 @@
   "Execute the region as JavaScript code in the attached browsers."
   (interactive "r")
   (skewer-eval (buffer-substring beg end) #'skewer-post-minibuffer))
- 
+
+;; Kesys for js2 mode
+(defun js-keys ()
+  "Keys used in Javascript"
+  (interactive)
+  (local-set-key (kbd "C-x C-r") 'skewer-eval-region)
+  (local-set-key (kbd "C-c C-f") 'hs-toggle-hiding)
+  (local-set-key (kbd "C-M-k") 'sp-kill-hybrid-sexp)
+  (local-set-key (kbd "C-k") 'kill-line))
+
+
 (add-hook 'js2-mode-hook 'skewer-mode)
 (add-hook 'js2-mode-hook 'pretty-symbols-mode)
 (add-hook 'js2-mode-hook 'linum-mode)

@@ -102,13 +102,6 @@
   (local-set-key (kbd "C-c b") 'js-send-buffer)
   (local-set-key (kbd "C-c C-b") 'js-send-buffer-and-go))
 
-;; Kesys for js2 mode
-(defun js-keys ()
-  "Keys used in Javascript"
-  (interactive)
-  (local-set-key (kbd "C-x C-r") 'skewer-eval-region)
-  (local-set-key (kbd "C-c C-f") 'hs-toggle-hiding))
-
 (defun delete-to-previous-line ()
   (interactive)
   (delete-horizontal-space)
