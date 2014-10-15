@@ -53,6 +53,7 @@
 (add-hook 'web-mode-hook 'flycheck-mode)
 (add-hook 'web-mode-hook 'html-keys)
 (add-hook 'web-mode-hook 'skewer-html-mode)
+(add-hook 'web-mode-hook 'linum-mode)
 (add-hook 'web-mode-hook 'skewer-css-mode)
 (add-hook 'css-mode-hook 'skewer-css-mode)
 (add-hook 'css-mode-hook 'rainbow-mode)
