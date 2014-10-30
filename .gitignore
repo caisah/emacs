@@ -31,3 +31,4 @@
 /.mc-lists.el
 /config/projectile-settings.el
 /projectile-bookmarks.eld
+/var/

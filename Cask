@@ -18,6 +18,7 @@
 (depends-on "f")
 (depends-on "flycheck")
 (depends-on "geiser")
+(depends-on "gist")
 (depends-on "git-commit-mode")
 (depends-on "git-rebase-mode")
 (depends-on "haskell-mode")
