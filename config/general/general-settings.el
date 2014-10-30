@@ -61,6 +61,7 @@
 (require 'org-settings)
 (require 'helm-settings)
 (require 'othermodes-settings)
+(require 'calendar-settings)
 ;; Other settings
 (require 'programming-settings)
 (require 'snippets)
