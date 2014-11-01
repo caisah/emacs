@@ -61,7 +61,8 @@
       (diff-dark-red "#372121")
       (diff-dark-green "#233721")
       (diff-light-green "#317A31")
-      (diff-light-red "#aa2222"))
+      (diff-light-red "#AA2222")
+      (darker-background "#1A1C1F"))
 
   (custom-theme-set-faces
    'liso
@@ -164,6 +165,16 @@
    `(helm-grep-match ((t (:foreground ,prompt-green))))
    `(helm-swoop-target-word-face ((t (:inherit (isearch)))))
    `(helm-swoop-target-line-face ((t (:background ,ml-grey-darker))))
+
+   `(company-tooltip-selection ((t (:inherit (helm-selection)))))
+   `(company-tooltip-search ((t (:background ,foreground-black))))
+   `(company-tooltip-common-selection ((t (:foreground ,prompt-green :background ,ml-grey-darker))))
+   `(company-tooltip ((t (:foreground ,foreground :background ,darker-background))))
+   `(company-tooltip-common ((t (:foreground ,prompt-green :background ,darker-background))))
+   `(company-scrollbar-fg ((t (:background ,ml-yellow))))
+   `(company-scrollbar-bg ((t (:background ,ml-black))))
+   `(company-preview-common ((t (:background ,liso-pink :foreground ,ml-black))))
+
    ;; dired plus
    `(diredp-dir-priv ((t (:foreground ,liso-yellow :weight bold))))
    `(diredp-file-name ((t (:foreground ,foreground :weight normal))))
@@ -219,11 +230,13 @@
    `(eshell-ls-executable ((t (:foreground ,liso-green))))
    ))
 
-;; Ibuffer
+;; Ibuffer 
 (setq ibuffer-marked-face 'diredp-flag-mark)
 (setq ibuffer-deletion-face 'diredp-deletion-file-name)
 
-;;; Other cusomizations
+
+
+;;; Other cusomizations isearch
 ;; Disable menu bar mode
 (menu-bar-mode -1)
 
