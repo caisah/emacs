@@ -29,4 +29,13 @@
 ;; Enable dired plus by default
 (require 'dired+)
 
+(with-eval-after-load 'dired
+  (define-key dired-mode-map (kbd "i") 'dired-subtree-insert)
+  (define-key dired-mode-map (kbd "I") nil)
+  (define-key dired-mode-map (kbd "I") 'dired-subtree-remove)
+  (define-key dired-mode-map (kbd "N") nil)
+  (define-key dired-mode-map (kbd "N") 'dired-subtree-down)
+  (define-key dired-mode-map (kbd "P") nil)
+  (define-key dired-mode-map (kbd "P") 'dired-subtree-up))
+
 (provide 'dired-settings)
