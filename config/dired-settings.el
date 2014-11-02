@@ -21,11 +21,6 @@
    (concat dired-listing-switches 
 	   (match-string 1 criteria))))
 
-;; Enable dired-details
-(require 'dired-details)
-(dired-details-install)
-(add-hook 'dired-mode-hook 'dired-details-hide)
-
 ;; Enable dired plus by default
 (require 'dired+)
 
@@ -33,9 +28,9 @@
   (define-key dired-mode-map (kbd "i") 'dired-subtree-insert)
   (define-key dired-mode-map (kbd "I") nil)
   (define-key dired-mode-map (kbd "I") 'dired-subtree-remove)
-  (define-key dired-mode-map (kbd "N") nil)
-  (define-key dired-mode-map (kbd "N") 'dired-subtree-down)
-  (define-key dired-mode-map (kbd "P") nil)
-  (define-key dired-mode-map (kbd "P") 'dired-subtree-up))
+  (define-key dired-mode-map (kbd "C-N") nil)
+  (define-key dired-mode-map (kbd "C-N") 'dired-subtree-down)
+  (define-key dired-mode-map (kbd "C-P") nil)
+  (define-key dired-mode-map (kbd "C-P") 'dired-subtree-up))
 
 (provide 'dired-settings)
