@@ -1,19 +1,20 @@
 ;; Global Keys 
 (global-set-key (kbd "C-S-s") 'query-replace)
-
 (global-set-key (kbd "C-S-d") 'delete-region)
-
 (global-set-key (kbd "M-/") 'hippie-expand)
-
 (global-set-key (kbd "C-x m") 'magit-status)
-
 (global-set-key (kbd "C-`") 'er/expand-region)
-
 (global-set-key (kbd "<C-tab>") 'indent-relative) 
-
 (global-set-key (kbd "C-c C-f") 'hs-toggle-hiding)
-
 (global-set-key (kbd "C-h C-s") 'elisp-index-search)
+(global-set-key (kbd "C-o") 'company-complete)
+
+;; Company
+(with-eval-after-load 'company
+  (define-key company-active-map (kbd "M-n") nil)
+  (define-key company-active-map (kbd "M-p") nil)
+  (define-key company-active-map (kbd "C-n") #'company-select-next)
+  (define-key company-active-map (kbd "C-n") #'company-select-previous))
 
 (defun kill-other-buffer ()
   (interactive)

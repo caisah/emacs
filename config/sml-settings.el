@@ -10,6 +10,7 @@
             " A" " Guide"  " Undo-Tree" " PgLn" " MRev"
             " skewer" " skewer-html" " skewer-css"" Emmet" " hs"
             " λ" " Rbow" " vl" " Wrap" " Helm" " Projectile" " yas"
+            " company" " Tern"
             ))
 
 
