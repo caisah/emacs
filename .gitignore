@@ -8,6 +8,6 @@
 /cache/emacs-desktop
 /themes/color-theme.el
 /.mc-lists.el
-/config/projectile-settings.el
 /projectile-bookmarks.eld
 /var/
+/projectile.cache
