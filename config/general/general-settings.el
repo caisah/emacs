@@ -47,6 +47,9 @@
 (projectile-global-mode)
 (show-paren-mode t)
 
+;; Disable electric indent mode
+(electric-indent-mode -1)
+
 ;; Package settings
 (require 'desktop-settings)
 (require 'dired-settings)
