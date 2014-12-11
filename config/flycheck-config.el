@@ -1,6 +1,10 @@
 ;; Flycheck https://github.com/flycheck/flycheck
 (require 'flycheck)
 
+(defun enable-jshint ()
+  (setq flycheck-jshintrc "~/.emacs.d/external/.jshintrc")
+  (setq flycheck-javascript-jshint-executable "jshint"))
+
 ;; Flycheck for web-mode
 (flycheck-define-checker html-tidy
   "A HTML syntax and style checker using Tidy.
@@ -16,6 +20,5 @@ See URL `https://github.com/w3c/tidy-html5'."
             " column " column
             " - Warning: " (message) line-end))
   :modes (html-mode nxhtml-mode web-mode))
-
 
 (provide 'flycheck-config)

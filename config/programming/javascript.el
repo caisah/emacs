@@ -43,5 +43,6 @@
 (add-hook 'js2-mode-hook 'flycheck-mode)
 (add-hook 'js2-mode-hook 'yas-minor-mode)
 (add-hook 'js2-mode-hook 'company-mode)
+(add-hook 'js2-mode-hook 'enable-jshint)
 
 (provide 'js-config)

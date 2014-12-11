@@ -33,4 +33,6 @@
   (define-key dired-mode-map (kbd "C-S-p") nil)
   (define-key dired-mode-map (kbd "C-S-p") 'dired-subtree-up))
 
+(setq dired-subtree-use-backgrounds nil)
+
 (provide 'dired-settings)
