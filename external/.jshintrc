@@ -1,0 +1,14 @@
+{
+    "esnext": true,
+    "curly": true,
+    "newcap": true,
+    "noempty": true,
+    "undef": true,
+    "unused": true,
+    "browser": true,
+    "node": true,
+    "predef": [
+        "_",
+        "skewer"
+    ]
+}
