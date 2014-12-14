@@ -50,6 +50,9 @@
 ;; Disable electric indent mode
 (electric-indent-mode -1)
 
+;; for eww
+(setq shr-color-visible-luminance-min 70)
+
 ;; Package settings
 (require 'desktop-settings)
 (require 'dired-settings)
