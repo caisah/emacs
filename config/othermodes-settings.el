@@ -40,5 +40,81 @@
 ;; Nginx mode https://github.com/ajc/nginx-mode
 (require 'nginx-mode)
 
+;; Calendar
+(setq calendar-latitude 46.7667)
+(setq calendar-longitude 23.5833)
+
+;; Company
+(setq company-tern-meta-as-single-line t)
+(setq company-tooltip-align-annotations t)
+
+(with-eval-after-load 'company
+  (define-key company-active-map (kbd "M-n") nil)
+  (define-key company-active-map (kbd "M-p") nil)
+  (define-key company-active-map (kbd "C-n") #'company-select-next)
+  (define-key company-active-map (kbd "C-n") #'company-select-previous))
+
+;; Ibuffer
+(defadvice ibuffer-update-title-and-summary (after remove-column-titles)
+  (save-excursion
+    (set-buffer "*Ibuffer*")
+    (toggle-read-only 0)
+    (goto-char 1)
+    (search-forward "-\n" nil t)
+    (delete-region 1 (point))
+    (let ((window-min-height 1)) 
+      ;; save a little screen estate
+      (shrink-window-if-larger-than-buffer))
+    (toggle-read-only)))
+(ad-activate 'ibuffer-update-title-and-summary)
+
+;; Kill Ring
+(require 'browse-kill-ring)
+
+;; Markdown mode 
+(autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
+
+(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+;; org mode
+(add-hook 'org-mode-hook 'flyspell-mode)
+
+;; Projectile
+(projectile-global-mode)
+(setq projectile-enable-caching t)
+
+;; SmartParens:
+(require 'smartparens-config)
+(require 'smartparens-html)
+
+(smartparens-global-mode t)
+(smartparens-strict-mode)
+(setq sp-highlight-pair-overlay nil)
+
+;; Smart Mode Line https://github.com/Bruce-Connor/smart-mode-line
+(require 'smart-mode-line)
+(setq sml/no-confirm-load-theme t)
+(sml/setup)
+(sml/apply-theme 'dark)
+(setq sml/mode-width 15)
+(setq rm-excluded-modes
+      (list " Anzu" " ARev" " SP/s" " SP" " Abbrev" " Isearch"
+            " A" " Guide"  " Undo-Tree" " PgLn" " MRev"
+            " skewer" " skewer-html" " skewer-css"" Emmet" " hs"
+            " λ" " Rbow" " vl" " Wrap" " Helm" " Projectile" " yas"
+            " company" " Tern"
+            ))
+
+;; Tramp http://www.emacswiki.org/TrampMode
+(require 'tramp)
+(setq tramp-default-method "ssh")
+
+;; Yasnippet
+(require 'yasnippet)
+(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+(yas-reload-all)
+
 
 (provide 'othermodes-settings)
