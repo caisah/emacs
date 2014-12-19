@@ -44,6 +44,9 @@
 (setq calendar-latitude 46.7667)
 (setq calendar-longitude 23.5833)
 
+;; eww
+(setq eww-search-prefix "https://google.com/search?q=")
+
 ;; Company
 (setq company-tern-meta-as-single-line t)
 (setq company-tooltip-align-annotations t)
