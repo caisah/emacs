@@ -25,11 +25,7 @@
   (local-set-key (kbd "C-x C-r") 'skewer-eval-region)
   (local-set-key (kbd "C-c C-f") 'hs-toggle-hiding)
   (local-set-key (kbd "C-M-k") 'sp-kill-hybrid-sexp)
-  (local-set-key (kbd "C-k") 'kill-line)
-  (define-key company-active-map (kbd "M-n") nil)
-  (define-key company-active-map (kbd "M-p") nil)
-  (define-key company-active-map (kbd "C-n") #'company-select-next)
-  (define-key company-active-map (kbd "C-p") #'company-select-previous))
+  (local-set-key (kbd "C-k") 'kill-line))
 
 
 (add-hook 'js2-mode-hook 'skewer-mode)
@@ -42,7 +38,6 @@
 (add-hook 'js2-mode-hook 'js2-imenu-extras-mode)
 (add-hook 'js2-mode-hook 'flycheck-mode)
 (add-hook 'js2-mode-hook 'yas-minor-mode)
-(add-hook 'js2-mode-hook 'company-mode)
 (add-hook 'js2-mode-hook 'enable-jshint)
 
 (provide 'js-config)

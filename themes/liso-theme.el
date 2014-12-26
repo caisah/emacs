@@ -196,8 +196,10 @@
    `(diredp-no-priv ((t (:foreground ,foreground))))
    ;; magit
    `(magit-item-highlight ((t (:background ,ml-grey-darker))))
+   `(magit-diff-del ((t (:background ,diff-dark-red))))
+   `(magit-diff-add ((t (:background ,diff-dark-green))))
    `(magit-diff-file-header ((t (:background ,foreground-black :foreground ,ml-yellow))))
-   `(magit-diff-hunk-header ((t (:background ,foreground-black :foreground ,ml-grey-darker))))
+   `(magit-diff-hunk-header ((t (:background ,foreground-black :foreground ,ml-yellow))))
    `(magit-log-head-label-head ((t (:foreground ,liso-orange :box (:width 1)))))
    `(magit-log-head-label-remote ((t (:foreground ,liso-yellow :box (:width 1)))))
    `(magit-log-head-label-local ((t (:foreground ,liso-green :box (:width 1)))))
