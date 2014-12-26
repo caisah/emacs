@@ -5,6 +5,7 @@
 (depends-on "anzu")
 (depends-on "async")
 (depends-on "auto-complete")
+(depends-on "browse-kill-ring")
 (depends-on "cask")
 (depends-on "cider")
 (depends-on "clojure-mode")

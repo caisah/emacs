@@ -47,6 +47,9 @@
 (projectile-global-mode)
 (show-paren-mode t)
 
+;; Start emacs server
+(unless (server-running-p) (server-start))
+
 ;; Disable electric indent mode
 (electric-indent-mode -1)
 
