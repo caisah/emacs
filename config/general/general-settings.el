@@ -48,6 +48,7 @@
 (show-paren-mode t)
 
 ;; Start emacs server
+(require 'server)
 (unless (server-running-p) (server-start))
 
 ;; Disable electric indent mode
