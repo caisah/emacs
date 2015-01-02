@@ -47,6 +47,7 @@
       (liso-pink "#FFABAB")
       (liso-purple "#B46DCC")
       (liso-red "#C04040")
+      (liso-dark-red "#9D3E3E")
       (liso-green "#C8FF03")
       (liso-dark-green "#6E8C02")
       (liso-blue "#99D6FF")
@@ -229,8 +230,8 @@
    ;; web mode
    `(web-mode-html-tag-face ((t (:foreground ,liso-yellow))))
    `(web-mode-html-tag-bracket-face ((t (:inherit (web-mode-html-tag-face)))))
-   `(web-mode-html-attr-name-face ((t (:foreground ,liso-orange))))
-   `(web-mode-html-attr-value-face ((t (:foreground ,liso-purple))))
+   `(web-mode-html-attr-name-face ((t (:foreground ,liso-dark-green))))
+   `(web-mode-html-attr-value-face ((t (:foreground ,liso-dark-red))))
    ;; js2 mode
    `(js2-error ((t (:inherit (flycheck-error)))))
    `(js2-warning ((t (:inherit (flycheck-warning)))))
