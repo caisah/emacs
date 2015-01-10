@@ -48,6 +48,12 @@
   (local-set-key (kbd "C-S-c") 'web-mode-element-clone)
   (local-set-key (kbd "<C-M-backspace>") 'backward-kill-element))
 
+
+(defun less-keys ()
+  "Keys for LESS"
+  (define-key emmet-mode-keymap (kbd "C-j") nil)
+  (local-set-key (kbd "C-j") 'newline-and-indent))
+
 ;; Hooks
 (add-hook 'web-mode-hook 'emmet-mode)
 (add-hook 'web-mode-hook 'flycheck-mode)
@@ -65,6 +71,7 @@
 ;; LESS
 (add-hook 'less-css-mode-hook 'linum-mode)
 (add-hook 'less-css-mode-hook 'flycheck-mode)
-
+(add-hook 'less-css-mode-hook 'less-keys)
+(add-hook 'less-css-mode-hook 'hs-minor-mode)
 
 (provide 'html-config)
