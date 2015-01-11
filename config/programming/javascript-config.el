@@ -2,7 +2,7 @@
 
 (setq-default js2-global-externs '("module" "require" "buster" "sinon" "assert" "refute" "setTimeout" "clearTimeout" "setInterval" "clearInterval" "location" "__dirname" "console" "JSON" "$" "jQuery" "doT" "_" "Backbone" "skewer"))
 
-; Let flycheck handle parse errors
+                                        ; Let flycheck handle parse errors
 (setq-default js2-show-parse-errors nil)
 (setq-default js2-strict-missing-semi-warning nil)
 (setq-default js2-strict-trailing-comma-warning t)
@@ -11,23 +11,23 @@
 (add-to-list 'pretty-symbol-patterns '(?ƒ lambda "\\<function\\>" (js2-mode)))
 
 (define-abbrev-table 'js2-mode-abbrev-table '(
-  ("ret" "return")))
+                                              ("ret" "return")))
 
 (defun skewer-eval-region (beg end)
   "Execute the region as JavaScript code in the attached browsers."
   (interactive "r")
   (skewer-eval (buffer-substring beg end) #'skewer-post-minibuffer))
 
-;; Keys for skewer-mode
-(defun skewer-keys ()
-  "Keys used in Javascript"
-  (interactive)
-  (local-set-key (kbd "C-x C-r") 'skewer-eval-region)
-  (local-set-key (kbd "C-c C-f") 'hs-toggle-hiding)
-  (local-set-key (kbd "C-M-k") 'sp-kill-hybrid-sexp)
-  (local-set-key (kbd "C-k") 'kill-line))
+;; Keys for js2-mode
+(defun js-keys ()
+  (define-key js2-mode-map (kbd "C-c C-f") 'hs-toggle-hiding))
 
-(defalias 'nodejs 'run-js)
+
+;; Keys for skewer
+(require 'skewer-mode)
+(define-key skewer-mode-map (kbd "C-x C-r") 'skewer-eval-region)
+(define-key skewer-mode-map (kbd "C-M-k") 'sp-kill-hybrid-sexp)
+(define-key skewer-mode-map (kbd "C-k") 'kill-line)
 
 ;; Keys for js-comint/Node.js
 (defun node-keys ()
@@ -37,6 +37,12 @@
   (local-set-key (kbd "C-M-x") 'js-send-last-sexp-and-go)
   (local-set-key (kbd "C-c b") 'js-send-buffer)
   (local-set-key (kbd "C-c C-b") 'js-send-buffer-and-go))
+
+;; JS comint
+(require 'js-comint)
+(setq inferior-js-program-command "nodejs")
+(setenv "NODE_NO_READLINE" "1")
+(defalias 'nodejs 'run-js)
 
 ;; Hooks
 (add-hook 'js2-mode-hook (lambda () (setq mode-name "JS2")))
@@ -50,13 +56,7 @@
 (add-hook 'js2-mode-hook 'flycheck-mode)
 (add-hook 'js2-mode-hook 'yas-minor-mode)
 (add-hook 'js2-mode-hook 'enable-jshint)
-
-(add-hook 'skewer-mode 'skewer-keys)
-
-;; Js coming for node
-(require 'js-comint)
-(setq inferior-js-program-command "nodejs")
-(setenv "NODE_NO_READLINE" "1")
+(add-hook 'js2-mode-hook 'js-keys)
 
 
 (provide 'javascript-config)
