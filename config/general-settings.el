@@ -60,18 +60,17 @@
 ;; Package settings
 (require 'desktop-settings)
 (require 'dired-settings)
-(require 'flycheck-config)
+(require 'flycheck-settings)
 (require 'helm-settings)
 (require 'magit-settings)
 (require 'othermodes-settings)
 
 ;; Programming
-(require 'nodejs-config "nodejs")
-(require 'mongo-config "mongo")
-(require 'js-config "javascript")
-(require 'html-config "html")
-(require 'clojure-config "clojure")
-(require 'elisp-config "elisp")
+(require 'mongo-config)
+(require 'javascript-config)
+(require 'html-config)
+(require 'clojure-config)
+(require 'elisp-config)
 
 ;; Other
 (require 'my-functions)

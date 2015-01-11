@@ -76,4 +76,4 @@
 
 
 
-(provide 'globalkeys-settings)
+(provide 'globalkeys)

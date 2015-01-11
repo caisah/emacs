@@ -21,4 +21,4 @@ See URL `https://github.com/w3c/tidy-html5'."
             " - Warning: " (message) line-end))
   :modes (html-mode nxhtml-mode web-mode))
 
-(provide 'flycheck-config)
+(provide 'flycheck-settings)

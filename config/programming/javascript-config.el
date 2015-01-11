@@ -32,7 +32,6 @@
 ;; Keys for js-comint/Node.js
 (defun node-keys ()
   (interactive)
-  (setq skewer-mode nil)
   (local-set-key (kbd "C-x C-e") 'js-send-last-sexp)
   (local-set-key (kbd "C-x C-r") 'js-send-region)
   (local-set-key (kbd "C-M-x") 'js-send-last-sexp-and-go)
@@ -54,5 +53,10 @@
 
 (add-hook 'skewer-mode 'skewer-keys)
 
+;; Js coming for node
+(require 'js-comint)
+(setq inferior-js-program-command "nodejs")
+(setenv "NODE_NO_READLINE" "1")
 
-(provide 'js-config)
+
+(provide 'javascript-config)

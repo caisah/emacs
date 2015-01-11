@@ -15,7 +15,7 @@
 (load custom-file)
 
 ;; Load keys settings
-(require 'globalkeys-settings)
+(require 'globalkeys)
 
 ;; Load Abbrevs
 (require 'abbrevs)
