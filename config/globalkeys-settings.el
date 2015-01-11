@@ -8,12 +8,6 @@
 (global-set-key (kbd "C-c C-f") 'hs-toggle-hiding)
 (global-set-key (kbd "C-h C-s") 'elisp-index-search)
 (global-set-key (kbd "C-o") 'company-complete)
-
-(defun kill-other-buffer ()
-  (interactive)
-  (other-window 1)
-  (kill-this-buffer)
-  (other-window 1))
 (global-set-key (kbd "C-x K") 'kill-other-buffer)
 
 ;; Helm
@@ -50,34 +44,25 @@
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
-;; SmartParens
-;; Wrap the next expression in a pair of parens
-(defun my-wrap-with-round-paren (&optional arg)
-  (interactive "p")
-  (sp-select-next-thing-exchange arg)
-  (execute-kbd-macro (kbd "(")))
+;; Smartparens
+(define-key sp-keymap (kbd "C-M-p") 'sp-previous-sexp)
+(define-key sp-keymap (kbd "C-M-e") 'sp-end-of-sexp)
+(define-key sp-keymap (kbd "C-M-a") 'sp-beginning-of-sexp)
+(define-key sp-keymap (kbd "C-M-k") 'sp-kill-sexp)
+(define-key sp-keymap (kbd "C-M-y") 'sp-backward-unwrap-sexp)
+(define-key sp-keymap (kbd "C-M-o") 'sp-unwrap-sexp)
+(define-key sp-keymap (kbd "C-}") 'sp-select-next-thing)
+(define-key sp-keymap (kbd "C-{") 'sp-select-previous-thing)
+(define-key sp-keymap (kbd "C-M-w") 'sp-copy-sexp)
+(define-key sp-keymap (kbd "<C-M-backspace>") 'sp-backward-kill-sexp)
+(define-key sp-keymap (kbd "C-M-0") 'sp-forward-slurp-sexp)
+(define-key sp-keymap (kbd "C-M-9") 'sp-backward-slurp-sexp)
+(define-key sp-keymap (kbd "C-M-8") 'sp-forward-barf-sexp)
+(define-key sp-keymap (kbd "C-M-7") 'sp-backward-barf-sexp)
+(define-key sp-keymap (kbd "C-M-y") 'sp-backward-unwrap-sexp)
+(define-key sp-keymap (kbd "C-M-t") 'sp-transpose-sexp)
 (define-key sp-keymap (kbd "C-(") 'my-wrap-with-round-paren)
-
-
-(defun bind-smartparens-locally ()
-  (local-set-key (kbd "C-M-n") 'sp-next-sexp)
-  (local-set-key (kbd "C-M-p") 'sp-previous-sexp)
-  (local-set-key (kbd "C-M-e") 'sp-end-of-sexp)
-  (local-set-key (kbd "C-M-a") 'sp-beginning-of-sexp)
-  (local-set-key (kbd "C-M-k") 'sp-kill-sexp)
-  (local-set-key (kbd "C-M-y") 'sp-backward-unwrap-sexp)
-  (local-set-key (kbd "C-M-o") 'sp-unwrap-sexp)
-  (local-set-key (kbd "C-}") 'sp-select-next-thing)
-  (local-set-key (kbd "C-{") 'sp-select-previous-thing)
-  (local-set-key (kbd "C-M-w") 'sp-copy-sexp)
-  (local-set-key (kbd "<C-M-backspace>") 'sp-backward-kill-sexp)
-  (local-set-key (kbd "C-M-0") 'sp-forward-slurp-sexp)
-  (local-set-key (kbd "C-M-9") 'sp-backward-slurp-sexp)
-  (local-set-key (kbd "C-M-8") 'sp-forward-barf-sexp)
-  (local-set-key (kbd "C-M-7") 'sp-backward-barf-sexp)
-  (local-set-key (kbd "C-M-y") 'sp-backward-unwrap-sexp)
-  (local-set-key (kbd "C-M-t") 'sp-transpose-sexp))
-(add-hook 'smartparens-enabled-hook 'bind-smartparens-locally)
+(define-key sp-keymap (kbd "C-M-n") 'sp-next-sexp)
 
 ;; Multiple cursors
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
@@ -96,26 +81,9 @@
   (local-set-key (kbd "C-c b") 'js-send-buffer)
   (local-set-key (kbd "C-c C-b") 'js-send-buffer-and-go))
 
-(defun delete-to-previous-line ()
-  (interactive)
-  (delete-horizontal-space)
-  (backward-delete-char 1)
-  (delete-horizontal-space)
-  (insert-char 32))
 (global-set-key (kbd "C-\\") 'delete-to-previous-line)
-
-(defun yank-next (&optional arg)
- (interactive)
-  (end-of-line)
-  (newline-and-indent)
-  (yank arg))
 (global-set-key (kbd "C-S-y") 'yank-next)
 
-(defun next-line-and-indent ()
-  (interactive)
-  (end-of-line)
-  (newline-and-indent))
-(global-set-key (kbd "C-S-j") 'next-line-and-indent)    
 
 
 (provide 'globalkeys-settings)

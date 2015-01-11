@@ -65,12 +65,16 @@
 (require 'magit-settings)
 (require 'othermodes-settings)
 
-;; Other settings
-(require 'programming-settings)
-(require 'snippets)
+;; Programming
+(require 'nodejs-config "nodejs")
+(require 'mongo-config "mongo")
+(require 'js-config "javascript")
+(require 'html-config "html")
+(require 'clojure-config "clojure")
+(require 'elisp-config "elisp")
+
+;; Other
+(require 'my-functions)
 
 
 (provide 'general-settings)
-
-
-

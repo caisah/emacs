@@ -24,8 +24,7 @@
 (defun geiser-local-keys ()
   (local-set-key (kbd "C-c C-q") 'geiser-restart-repl)
   (local-set-key (kbd "C-x C-r") 'geiser-eval-region)
-  (define-key geiser-mode-map (kbd "C-.") 'imenu-anywhere)
-  (bind-smartparens-locally))
+  (define-key geiser-mode-map (kbd "C-.") 'imenu-anywhere))
 
 (defun disable-geiser-and-add-keys ()
   (when (and (stringp buffer-file-name)

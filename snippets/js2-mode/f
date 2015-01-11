@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-#name : anonymous function
+#name : named function
 # --
-function($1) {
+function $1($2) {
     $0
 }

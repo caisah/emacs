@@ -96,6 +96,13 @@
 (smartparens-strict-mode)
 (setq sp-highlight-pair-overlay nil)
 
+;; Wrap the next expression in a pair of parens
+(defun my-wrap-with-round-paren (&optional arg)
+  (interactive "p")
+  (sp-select-next-thing-exchange arg)
+  (execute-kbd-macro (kbd "(")))
+
+
 ;; Smart Mode Line https://github.com/Bruce-Connor/smart-mode-line
 (require 'smart-mode-line)
 (setq sml/no-confirm-load-theme t)
