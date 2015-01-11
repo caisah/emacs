@@ -24,24 +24,34 @@
 
 
 ;; Keys for skewer
-(require 'skewer-mode)
-(define-key skewer-mode-map (kbd "C-x C-r") 'skewer-eval-region)
-(define-key skewer-mode-map (kbd "C-M-k") 'sp-kill-hybrid-sexp)
-(define-key skewer-mode-map (kbd "C-k") 'kill-line)
+(defun skewer-keys ()
+  (local-set-key (kbd "C-x C-r") 'skewer-eval-region)
+  (local-set-key (kbd "C-M-k") 'sp-kill-hybrid-sexp)
+  (local-set-key (kbd "C-k") 'kill-line))
 
 ;; Keys for js-comint/Node.js
 (defun node-keys ()
   (interactive)
-  (local-set-key (kbd "C-x C-e") 'js-send-last-sexp)
-  (local-set-key (kbd "C-x C-r") 'js-send-region)
-  (local-set-key (kbd "C-M-x") 'js-send-last-sexp-and-go)
-  (local-set-key (kbd "C-c b") 'js-send-buffer)
-  (local-set-key (kbd "C-c C-b") 'js-send-buffer-and-go))
+  ;; disable skewer-mode 
+  (progn
+    (if (assoc 'skewer-mode minor-mode-alist)
+        (setq skewer-mode nil))
+    (local-set-key (kbd "C-x C-e") 'js-send-last-sexp)
+    (local-set-key (kbd "C-x C-r") 'js-send-region)
+    (local-set-key (kbd "C-M-x") 'js-send-last-sexp-and-go)
+    (local-set-key (kbd "C-x l") 'js-send-buffer)
+    (local-set-key (kbd "C-x L") 'js-send-buffer-and-go)))
 
 ;; JS comint
 (require 'js-comint)
-(setq inferior-js-program-command "nodejs")
+(setq inferior-js-program-command "6to5-node")
 (setenv "NODE_NO_READLINE" "1")
+(setq inferior-js-mode-hook
+      (lambda ()
+        (add-to-list
+         'comint-preoutput-filter-functions
+         (lambda (output)
+           (replace-regexp-in-string "\033\\[[0-9]+[GKJ]" "" output)))))
 (defalias 'nodejs 'run-js)
 
 ;; Hooks
@@ -59,4 +69,8 @@
 (add-hook 'js2-mode-hook 'js-keys)
 
 
+(add-hook 'skewer-mode-hook 'skewer-keys)
+
+
 (provide 'javascript-config)
+
