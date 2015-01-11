@@ -18,8 +18,8 @@
   (interactive "r")
   (skewer-eval (buffer-substring beg end) #'skewer-post-minibuffer))
 
-;; Kesys for js2 mode
-(defun js-keys ()
+;; Keys for skewer-mode
+(defun skewer-keys ()
   "Keys used in Javascript"
   (interactive)
   (local-set-key (kbd "C-x C-r") 'skewer-eval-region)
@@ -27,17 +27,32 @@
   (local-set-key (kbd "C-M-k") 'sp-kill-hybrid-sexp)
   (local-set-key (kbd "C-k") 'kill-line))
 
+(defalias 'nodejs 'run-js)
 
-(add-hook 'js2-mode-hook 'skewer-mode)
+;; Keys for js-comint/Node.js
+(defun node-keys ()
+  (interactive)
+  (setq skewer-mode nil)
+  (local-set-key (kbd "C-x C-e") 'js-send-last-sexp)
+  (local-set-key (kbd "C-x C-r") 'js-send-region)
+  (local-set-key (kbd "C-M-x") 'js-send-last-sexp-and-go)
+  (local-set-key (kbd "C-c b") 'js-send-buffer)
+  (local-set-key (kbd "C-c C-b") 'js-send-buffer-and-go))
+
+;; Hooks
+(add-hook 'js2-mode-hook (lambda () (setq mode-name "JS2")))
+
 (add-hook 'js2-mode-hook 'pretty-symbols-mode)
 (add-hook 'js2-mode-hook 'linum-mode)
 (add-hook 'js2-mode-hook 'abbrev-mode)
-(add-hook 'js2-mode-hook 'js-keys)
 (add-hook 'js2-mode-hook 'smartparens-strict-mode) 
 (add-hook 'js2-mode-hook 'hs-minor-mode)
 (add-hook 'js2-mode-hook 'js2-imenu-extras-mode)
 (add-hook 'js2-mode-hook 'flycheck-mode)
 (add-hook 'js2-mode-hook 'yas-minor-mode)
 (add-hook 'js2-mode-hook 'enable-jshint)
+
+(add-hook 'skewer-mode 'skewer-keys)
+
 
 (provide 'js-config)

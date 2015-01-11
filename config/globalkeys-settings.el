@@ -71,16 +71,6 @@
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-:") 'mc/mark-pop)
 
-;; Keys for js-comint/Node.js
-(defun node-keys ()
-  (interactive)
-  (setq skewer-mode nil)
-  (local-set-key (kbd "C-x C-e") 'js-send-last-sexp)
-  (local-set-key (kbd "C-x C-r") 'js-send-region)
-  (local-set-key (kbd "C-M-x") 'js-send-last-sexp-and-go)
-  (local-set-key (kbd "C-c b") 'js-send-buffer)
-  (local-set-key (kbd "C-c C-b") 'js-send-buffer-and-go))
-
 (global-set-key (kbd "C-\\") 'delete-to-previous-line)
 (global-set-key (kbd "C-S-y") 'yank-next)
 
