@@ -11,6 +11,11 @@
 (setq ido-save-directory-list-file "~/.emacs.d/cache/ido-list")
 (setq bookmark-default-file "~/.emacs.d/cache/bookmarks")
 
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
 ;; General settings
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
@@ -23,7 +28,6 @@
 (set-language-environment "UTF-8")
 (setq custom-safe-themes t)
 (setq compilation-ask-about-save nil)
-(setq make-backup-files nil)
 (setq save-abbrevs nil)
 (setq hippie-expand-try-functions-list
       '(try-expand-dabbrev

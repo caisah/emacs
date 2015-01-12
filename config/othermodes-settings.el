@@ -28,14 +28,19 @@
 (global-page-break-lines-mode t)
 
 ;; Emmet https://github.com/smihica/emmet-mode
-(require 'emmet-mode)
 (setq emmet-preview-default nil) 
 
 ;; Multiple Cursors https://github.com/magnars/multiple-cursors.el
 (require 'multiple-cursors)
 
 ;; Org Mode
-(require 'org)
+;; enable toc
+(setq org-src-fontify-natively t)
+(eval-after-load "org-toc-autoloads"
+  '(progn
+     (if (require 'org-toc nil t)
+         (add-hook 'org-mode-hook 'org-toc-enable)
+       (warn "org-toc not found"))))
 
 ;; Nginx mode https://github.com/ajc/nginx-mode
 (require 'nginx-mode)

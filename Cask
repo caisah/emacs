@@ -50,6 +50,7 @@
 (depends-on "multiple-cursors")
 (depends-on "nginx-mode")
 (depends-on "nyan-mode")
+(depends-on "org-toc")
 (depends-on "package-build")
 (depends-on "page-break-lines")
 (depends-on "palette")
