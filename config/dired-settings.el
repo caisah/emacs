@@ -24,14 +24,22 @@
 ;; Enable dired plus by default
 (require 'dired+)
 
+(defun dired-delete-and-refresh (&optional arg)
+  (interactive)
+  (dired-do-delete arg)
+  (revert-buffer))
+
 (with-eval-after-load 'dired
   (define-key dired-mode-map (kbd "i") 'dired-subtree-insert)
   (define-key dired-mode-map (kbd "I") nil)
   (define-key dired-mode-map (kbd "I") 'dired-subtree-remove)
-  (define-key dired-mode-map (kbd "C-S-n") nil)
-  (define-key dired-mode-map (kbd "C-S-n") 'dired-subtree-down)
-  (define-key dired-mode-map (kbd "C-S-p") nil)
-  (define-key dired-mode-map (kbd "C-S-p") 'dired-subtree-up))
+  (define-key dired-mode-map (kbd "C-M-n") nil)
+  (define-key dired-mode-map (kbd "C-M-n") 'dired-subtree-down)
+  (define-key dired-mode-map (kbd "C-M-p") nil)
+  (define-key dired-mode-map (kbd "C-M-p") 'dired-subtree-up)
+  (define-key dired-mode-map (kbd "D") nil)
+  (define-key dired-mode-map (kbd "D") 'dired-delete-and-refresh))
+
 
 (setq dired-subtree-use-backgrounds nil)
 

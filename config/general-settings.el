@@ -1,16 +1,30 @@
+;; Info
 (setq user-full-name "Vlad Piersec" user-mail-address "vlad.piersec@gmail.com")
 
-;; Cask & Pallet
+;; Cask & Pallet (this adds all pacakge files to load-path)
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
 (require 'pallet)
 (pallet-mode t)
-(add-to-list 'load-path "~/.emacs.d/custom-packages/")
 
-;; Set cache folder
+;; Set custom file
+(setq custom-file "~/.emacs.d/config/emacs-custom.el")
+;; Load custom file
+(load custom-file)
+
+;; Set cache location
 (setq ido-save-directory-list-file "~/.emacs.d/cache/ido-list")
 (setq bookmark-default-file "~/.emacs.d/cache/bookmarks")
+(setq mc/list-file "~/.emacs.d/cache/.mc-lists.el")
+(setq eshell-directory-name "~/.emacs.d/cache/eshell/")
+(setq auto-save-list-file-prefix "~/.emacs.d/cache/auto-save-list/.save-")
+(setq projectile-cache-file "~/.emacs.d/cache/projectile/projectile.cache")
 
+
+;; Set temp dir
+(setq temporary-file-directory "~/.emacs.d/cache/temp")
+
+;; Set backup dir
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms

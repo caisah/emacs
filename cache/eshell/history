@@ -1,0 +1,65 @@
+git config --global user.email "vlad.piersec@gmail.com"
+git config --global user.name "Vlad Piersec"
+ls -la
+ls -la
+git clone git@bitbucket.org:caisah/coding-2014.git
+git init
+ls -la
+simple-livereload 8888
+ls -la
+gpg --fingerprint vlad.piersec@gmail.com
+gpg --fingerprint vlad.piersec@gmail.com show fingerprint
+sudo chmod +w torrc
+sudo emacsclient torrc
+sudo service tor stop
+ls -la
+sudo chmod 755
+chmod --help
+sudo chmod 755 torrc
+ls -la
+cd ../../
+git clone https://github.com/w3c/tidy-html5
+ls -la
+cd tidy-html5/
+make -C build/gmake/
+sudo make install -C build/gmake/
+make -C build/gmake/
+sudo make install -C build/gmake/
+sudo apt-get install xsltproc
+sudo make install -C build/gmake/
+tidy "<a>"
+tidy --version
+sudo apt-get remove tor
+git clone git@github.com:caisah/blog.git
+cd blog/
+ls -la
+git init
+ls -la
+git remote add origin git@github.com:caisah/notes.git
+npm install -g lesscss
+sudo npm install -g lesscss
+sudo npm install -g less
+less ha
+less-css
+6to5-node
+hey
+hey --version
+node
+node --version
+6to5-node --version
+6to5-node "let x = 3;"
+6to5-node let x = 3;
+6to5-node x
+6to5-node var x = 3;
+6to5 "var x = 3";
+6to5 1
+6to5-runtime
+6to5-runtime x
+6to5 --version
+6to4 --help
+6to5 --help
+gpg --gen-key
+ssh-keygen -t rsa
+ls -la
+ssh git@github.com
+ls -la
