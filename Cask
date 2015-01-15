@@ -42,6 +42,7 @@
 (depends-on "json-mode")
 (depends-on "json-reformat")
 (depends-on "json-snatcher")
+(depends-on "keyfreq")
 (depends-on "less-css-mode")
 (depends-on "list-processes+")
 (depends-on "logito")

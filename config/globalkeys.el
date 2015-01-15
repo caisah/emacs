@@ -30,13 +30,14 @@
 (define-key helm-swoop-map (kbd "M-i") 'helm-multi-swoop-all-from-helm-swoop)
 (global-set-key (kbd "C-x C-S-f") 'helm-projectile)
 (global-set-key (kbd "C-x g") 'helm-do-grep-recursive)
-(global-set-key (kbd "C-x C-b") '(lambda ()
-                                   (interactive)
-                                   (helm-resume t)))
+(global-set-key (kbd "C-x C-b") 'helm-resume)
 
 
 ;; Smart-compile
 (global-set-key (kbd "<f9>") 'smart-compile)
+
+;; Change to Message buffer
+(global-set-key (kbd "<f1>") '(lambda () (interactive) (switch-to-buffer "*Messages*")))
 
 ;; Widow resizing
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)

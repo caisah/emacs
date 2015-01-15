@@ -1,0 +1,2 @@
+<span id="el">Not ready...</span>
+<span style="color: {{color}};">Yep, {{owner}}</span>

@@ -1,0 +1,16 @@
+DB_NAME=data.db
+CREATE_TABLE_SCRIPT=sql/create_table.sql
+SELECT_SCRIPT=sql/selectall.sql
+
+all: create
+
+create:
+	sqlite3 $(DB_NAME) < $(CREATE_TABLE_SCRIPT);
+selectall:
+	sqlite3 $(DB_NAME) < $(SELECT_SCRIPT)
+delete: 
+	rm $(DB_NAME)
+
+.PHONY:
+
+

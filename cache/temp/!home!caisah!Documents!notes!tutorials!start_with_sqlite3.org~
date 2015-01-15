@@ -1,0 +1,59 @@
+* Getting started with PostgreSQL
+
+** Installation
+*** Install on Ubuntu:
+   #+BEGIN_SRC shell
+     sudo apt-get install postgresql postgresql-contrib postgresql-client
+   #+END_SRC
+*** Log in to access/manage databases
+    The installation created a [[http://www.postgresql.org/docs/9.0/static/user-manag.html][role]] account called ~postgres~. In order to manage databases log with that user.
+    #+BEGIN_SRC shell
+      sudo -u postgres psql
+    #+END_SRC
+*** Add password for ~postgres~ role
+    By default ~postgres~ role has no password set up. Set up a password:
+    #+BEGIN_SRC sql
+     \password
+    #+END_SRC
+    Now every time you connect with ~postgres~ you will be prompted with a password request. 
+
+** Basic commands
+   |---------------------------+-------------------|
+   | Usage                     | Command           |
+   |---------------------------+-------------------|
+   | Help on "slash commands"  | \?                |
+   |---------------------------+-------------------|
+   | List all dbs              | \list             |
+   |---------------------------+-------------------|
+   | List all tables           | \dt               |
+   |---------------------------+-------------------|
+   | Connect to a different db | \c [dbname]       |
+   |---------------------------+-------------------|
+   | Execute command from file | \i [path/to/file] |
+   |---------------------------+-------------------|
+   | Quit                      | \q                |
+   |---------------------------+-------------------|
+
+** Creating databases
+   For this example, the db name will be *test* and the user name *tom*.
+   First you have to connect to ~template1~ database with ~postgres~ user:
+   #+BEGIN_SRC shell
+     psql -h localhost -U postgres -d template1
+   #+END_SRC
+*** Create a new database
+    #+BEGIN_SRC sql
+      CREATE DATABASE test;
+    #+END_SRC
+*** Create a user
+    #+BEGIN_SRC sql
+      CREATE USER tom WITH PASSWORD 'myPassword';
+    #+END_SRC
+*** Grant privileges to user
+    #+BEGIN_SRC sql
+      GRANT ALL PRIVILEGES ON DATABASE test to tom;
+    #+END_SRC
+*** Test login
+    In a new shell:
+    #+BEGIN_SRC shell
+      psql -h localhost -U tom -d test
+    #+END_SRC

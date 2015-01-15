@@ -1,0 +1,16 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="my-element"
+                 attributes="color owner">
+    <template>
+        <span id="el">Not ready...</span>
+        <span style="color: {{color}};">Yep, {{owner}}</span>
+    </template>
+
+    <script>
+        Polymer({
+            color: "red",
+            owner: "Vlad"
+        });
+    </script>
+</polymer-element>

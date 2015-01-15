@@ -15,6 +15,8 @@
 ;; Set cache location
 (setq ido-save-directory-list-file "~/.emacs.d/cache/ido-list")
 (setq bookmark-default-file "~/.emacs.d/cache/bookmarks")
+(setq keyfreq-file "~/.emacs.d/cache/keyfrequency")
+(setq recentf-save-file "~/.emacs.d/cache/recentf")
 (setq mc/list-file "~/.emacs.d/cache/.mc-lists.el")
 (setq eshell-directory-name "~/.emacs.d/cache/eshell/")
 (setq auto-save-list-file-prefix "~/.emacs.d/cache/auto-save-list/.save-")

@@ -126,10 +126,15 @@
 (require 'tramp)
 (setq tramp-default-method "ssh")
 
-;; Yasnippet
+;; Yasnippet https://github.com/capitaomorte/yasnippet
 (require 'yasnippet)
 (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
 (yas-reload-all)
+
+;; KeyFreq https://github.com/dacap/keyfreq
+(require 'keyfreq)
+(keyfreq-mode 1)
+(keyfreq-autosave-mode 1)
 
 
 (provide 'othermodes-settings)

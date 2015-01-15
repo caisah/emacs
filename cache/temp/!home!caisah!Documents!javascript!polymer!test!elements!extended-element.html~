@@ -1,0 +1,5 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="my-extended-element">
+    
+</polymer-element>

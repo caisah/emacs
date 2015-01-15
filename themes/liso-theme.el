@@ -158,6 +158,7 @@
    `(helm-buffer-file ((t (:foreground ,liso-pink :weight normal))))
    `(helm-ff-directory ((t (:inherit (diredp-dir-priv)))))
    `(helm-ff-file ((t (:inherit (diredp-file-name)))))
+   `(helm-ff-dotted-directory ((t (:inherit (diredp-dir-priv)))))
    `(helm-ff-symlink ((t (:inherit (diredp-symlink)))))
    `(helm-M-x-key ((t (:foreground ,liso-red :weight bold))))
    `(helm-match ((t (:foreground ,prompt-green))))
