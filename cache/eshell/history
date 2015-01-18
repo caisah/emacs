@@ -1,5 +1,3 @@
-ls ../
-rm ../data.db 
 rm ../data.db 
 node ./db.js 
 rm ../data.db 
@@ -126,3 +124,5 @@ ls
 rm data.db 
 node test.js
 ls
+cd '~/Documents/javascript/todo.app/'
+cd '/home/caisah/.emacs.d/config/'

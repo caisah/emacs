@@ -123,9 +123,8 @@
 (setq tramp-default-method "ssh")
 
 ;; Yasnippet https://github.com/capitaomorte/yasnippet
-(require 'yasnippet)
-(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
-(yas-reload-all)
+(setq-default yas-snippet-dirs '("~/.emacs.d/snippets"))
+(add-hook 'yas-minor-mode-hook 'yas-reload-all)
 
 ;; KeyFreq https://github.com/dacap/keyfreq
 (require 'keyfreq)

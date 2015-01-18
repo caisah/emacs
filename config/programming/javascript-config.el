@@ -21,7 +21,7 @@
 (define-abbrev-table 'js2-mode-abbrev-table '(("ret" "return")))
 
 (defun skewer-eval-region (beg end)
-  "Execute the region as JavaScript code in the attached browsers."
+  "Execute the region from BEG to END as JavaScript code in the attached browsers."
   (interactive "r")
   (skewer-eval (buffer-substring beg end) #'skewer-post-minibuffer))
 
@@ -38,6 +38,7 @@
 
 ;; Keys for js-comint/Node.js
 (defun node-keys ()
+  "Set local keys for nodejs."
   (interactive)
   ;; disable skewer-mode
   (progn
@@ -78,7 +79,7 @@
 
 (add-hook 'skewer-mode-hook 'skewer-keys)
 
-
+;; Export
 (provide 'javascript-config)
 
 ;;; javascript-config.el ends here
