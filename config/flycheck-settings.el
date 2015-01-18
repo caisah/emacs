@@ -1,7 +1,13 @@
+;;; flycheck-settings.el --- Flycheck settings
+
+;;; Commentary:
 ;; Flycheck https://github.com/flycheck/flycheck
+
+;;; Code:
 (require 'flycheck)
 
 (defun enable-jshint ()
+  "Enable jshint."
   (setq flycheck-jshintrc "~/.emacs.d/external/.jshintrc")
   (setq flycheck-javascript-jshint-executable "jshint"))
 
@@ -22,3 +28,4 @@ See URL `https://github.com/w3c/tidy-html5'."
   :modes (html-mode nxhtml-mode web-mode))
 
 (provide 'flycheck-settings)
+;;; flycheck-settings.el ends here

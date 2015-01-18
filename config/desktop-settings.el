@@ -1,5 +1,10 @@
+;;; desktop-settings.el --- Desktop settings
+
+;;; Commentary:
 ;; Desktop http://www.emacswiki.org/DeskTop
-(require 'desktop) 
+
+;;; Code:
+(require 'desktop)
 (desktop-save-mode 1)
 
 (setq desktop-dirname "~/.emacs.d/cache")
@@ -15,4 +20,7 @@
 (add-hook 'auto-save-hook 'my-desktop-save)
 
 
+;; Export
 (provide 'desktop-settings)
+
+;;; desktop-settings.el ends here

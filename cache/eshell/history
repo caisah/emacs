@@ -1,128 +1,128 @@
-ls -la
-sudo npm install -g bower
-which bower
-whereis bower
-cd Documents/javascript/polymer/test/
-bower init
-bower init
-bower install --save Polymer/polymer
-ls -la
-cd bower_components/polymer/
-which sqlite
-which sqlite3
-sqlite3 --help
-sqlite3 ./test.db
-sqlite
-sqlite3
-cd ~/Documents/javascript/
-ls -la
-cd todo.app/
-sqlite3 test.db
-ls -la
-sqlite test.db
-sqlite3 test.db
-ls -la
-rm test.db
-sqlite3 data.db
-ls -la
+ls ../
+rm ../data.db 
+rm ../data.db 
+node ./db.js 
+rm ../data.db 
+node ./db.js 
+rm ../data.db 
+node ./db.js 
+rm ../data.db 
+node ./db.js 
+node ./db.js 
+node ./db.js 
+node ./db.js 
+node ./db.js 
+node ./db.js 
+rm ../data.db 
+node db.js 
+rm ../data.db 
+ls
+node db.js 
+ls
 rm data.db 
-sqlite3 data.db
-ls -la
-chown +x test.sh 
-chmod +x test.sh
-./test.sh
-./test.sh 
-ls -la
-./test.sh 
-./test.sh 
-./test.sh
-./test.sh 
-./test.sh 
-./test.sh 
-./test.sh 
-./test.sh 
-./test.sh 
-cat create_table.sql | ls
-./test.sh 
-./test.sh 
-./test.sh 
-./test.sh 
-./test.sh 
-./test.sh 
-make clean
-ls -la
-make delete
-ls -la
-make all
-make all
-make check
-make check
-make check
-echo "hey"
-make check
-ls -la
-make check
-make check
-make check
-ls sql
-make selectall
-make delete
-ls -la
-make all
-make all
-make delete
-make all
-make selectall
-make delete
-chmod +x install_deps.sh 
-./install_deps.sh 
-./install_deps.sh 
-./install_deps.sh 
-./install_deps.sh 
-sudo apt-get remove sqlite3
-sqlite3 -v
-./install_deps.sh 
-make install
-make install
-node -v
-make install
-make install
-$type node
-$type sqlite3
-type node
-type ls
-type
-man
-command -v sqlite3
-hash
-s=1;
-$s=3;
-$sss=haha
-nodejs --version
-make install
-make install
-make install
-which nodejs
-which nodejs
-make install
-make delete
-make installdeps
-make installdeps
-make all
-make selectall
-make installdeps
-node --help
-npm help
-npm info
-npm info
-npm info sqlite3
-npm install
-sudo npm install
-npm install
-sudo npm install
-npm install
-node
-cd src/
-node db.js
-node db.js
-node db.js
+node db.js 
+node db.js 
+node db.js 
+node db.js 
+node db.js 
+node db.js 
+ls
+rm data.db 
+rm data.db 
+node db.js 
+node db.js 
+ls
+rm data.db 
+node db.js 
+rm data.db 
+ls
+rm data.db 
+node db.js 
+node db.js 
+node db.js 
+node db.js 
+node db.js 
+cd..
+cd ..
+ls 
+ls node_modules/
+ls node_modules/q/
+nodejs test.js
+cd src
+nodejs test.js
+nodejs db.js
+nodejs db.js
+nodejs test.js 
+nodejs test.js 
+nodejs test.js 
+nodejs test.js 
+nodejs db.js
+nodejs db.js
+nodejs db.js
+nodejs db.js
+nodejs db.js
+nodejs db.js
+nodejs db.js
+nodejs db.js
+nodejs db.js
+nodejs db.js
+nodejs db.js
+nodejs db.js
+nodejs db.js
+nodejs db.js
+nodejs db.js
+nodejs db.js
+nodejs db.js
+nodejs db.js
+nodejs db.js
+nodejs db.js
+nodejs db.js
+nodejs db.js
+nodejs db.js
+nodejs db.js
+nodejs test.js
+nodejs test.js
+nodejs test.js
+nodejs test.js
+nodejs test.js 
+ls
+nodejs test.js 
+ls
+ls ../
+rm data.db 
+rm data.db 
+nodejs test.js 
+nodejs test.js 
+nodejs test.js 
+nodejs test.js 
+nodejs test.js 
+nodejs test.js 
+nodejs test.js 
+nodejs test.js 
+nodejs test.js 
+nodejs test.js 
+nodejs test.js 
+nodejs test.js 
+nodejs liteconnection.js 
+nodejs liteconnection.js 
+nodejs liteconnection.js 
+node liteconnection.js 
+node liteconnection.js 
+node liteconnection.js 
+node liteconnection.js 
+node liteconnection.js 
+ls
+rm data.db 
+rm data.db 
+node test.js
+node test.js
+node test.js
+node test.js
+node test.js
+node test.js
+node test.js
+ls
+ls
+rm data.db 
+node test.js
+ls

@@ -1,10 +1,16 @@
+;;; magit-settings.el --- Magit settings
+
+;;; Commentary:
+;; https://github.com/magit/magit
+
+;;; Code:
 (require 'magit)
 
 (set-default 'magit-stage-all-confirm nil)
 (set-default 'magit-unstage-all-confirm nil)
 
 (defun magit-toggle-all ()
-  "Toggles all sections"
+  "Magit toggle all sections."
   (interactive)
   (defun toggle-until-end ()
     (magit-toggle-section)
@@ -19,3 +25,4 @@
 
 
 (provide 'magit-settings)
+;;; magit-settings.el ends here

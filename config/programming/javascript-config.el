@@ -1,17 +1,24 @@
-;; Javascript
+;;; javascript-config.el --- JavaScript config
 
-(setq-default js2-global-externs '("module" "require" "buster" "sinon" "assert" "refute" "setTimeout" "clearTimeout" "setInterval" "clearInterval" "location" "__dirname" "console" "JSON" "$" "jQuery" "doT" "_" "Backbone" "skewer"))
+;;; Commentary:
+;; My JavaScript config file
 
-                                        ; Let flycheck handle parse errors
-(setq-default js2-show-parse-errors nil)
-(setq-default js2-strict-missing-semi-warning nil)
-(setq-default js2-strict-trailing-comma-warning t)
-(setq-default js2-basic-offset 4)
+;;; Code:
+(setq-default js2-show-parse-errors nil
+              js2-strict-missing-semi-warning nil
+              js2-strict-trailing-comma-warning t
+              js2-basic-offset 4
+              js2-global-externs '("module" "require" "exports" "sinon" "assert"
+                                   "refute" "setTimeout" "clearTimeout" "setInterval"
+                                   "clearInterval" "location" "__dirname" "console"
+                                   "JSON" "$" "jQuery" "doT" "_" "Backbone"
+                                   "skewer"))
+
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'pretty-symbol-patterns '(?ƒ lambda "\\<function\\>" (js2-mode)))
 
-(define-abbrev-table 'js2-mode-abbrev-table '(
-                                              ("ret" "return")))
+;; Abbrevs
+(define-abbrev-table 'js2-mode-abbrev-table '(("ret" "return")))
 
 (defun skewer-eval-region (beg end)
   "Execute the region as JavaScript code in the attached browsers."
@@ -32,7 +39,7 @@
 ;; Keys for js-comint/Node.js
 (defun node-keys ()
   (interactive)
-  ;; disable skewer-mode 
+  ;; disable skewer-mode
   (progn
     (if (assoc 'skewer-mode minor-mode-alist)
         (setq skewer-mode nil))
@@ -44,7 +51,7 @@
 
 ;; JS comint
 (require 'js-comint)
-(setq inferior-js-program-command "6to5-node")
+(setq inferior-js-program-command "nodejs")
 (setenv "NODE_NO_READLINE" "1")
 (setq inferior-js-mode-hook
       (lambda ()
@@ -60,17 +67,18 @@
 (add-hook 'js2-mode-hook 'pretty-symbols-mode)
 (add-hook 'js2-mode-hook 'linum-mode)
 (add-hook 'js2-mode-hook 'abbrev-mode)
-(add-hook 'js2-mode-hook 'smartparens-strict-mode) 
+(add-hook 'js2-mode-hook 'smartparens-strict-mode)
 (add-hook 'js2-mode-hook 'hs-minor-mode)
 (add-hook 'js2-mode-hook 'js2-imenu-extras-mode)
 (add-hook 'js2-mode-hook 'flycheck-mode)
 (add-hook 'js2-mode-hook 'yas-minor-mode)
 (add-hook 'js2-mode-hook 'enable-jshint)
 (add-hook 'js2-mode-hook 'js-keys)
-
+(add-hook 'js2-mode-hook 'whitespace-mode)
 
 (add-hook 'skewer-mode-hook 'skewer-keys)
 
 
 (provide 'javascript-config)
 
+;;; javascript-config.el ends here

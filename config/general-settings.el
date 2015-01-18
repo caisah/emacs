@@ -1,3 +1,10 @@
+;;; general-settings.el --- loads settings
+
+;;; Commentary:
+;; General settings loads all the other settings
+
+;;; Code:
+
 ;; Info
 (setq user-full-name "Vlad Piersec" user-mail-address "vlad.piersec@gmail.com")
 
@@ -13,15 +20,14 @@
 (load custom-file)
 
 ;; Set cache location
-(setq ido-save-directory-list-file "~/.emacs.d/cache/ido-list")
-(setq bookmark-default-file "~/.emacs.d/cache/bookmarks")
-(setq keyfreq-file "~/.emacs.d/cache/keyfrequency")
-(setq recentf-save-file "~/.emacs.d/cache/recentf")
-(setq mc/list-file "~/.emacs.d/cache/.mc-lists.el")
-(setq eshell-directory-name "~/.emacs.d/cache/eshell/")
-(setq auto-save-list-file-prefix "~/.emacs.d/cache/auto-save-list/.save-")
-(setq projectile-cache-file "~/.emacs.d/cache/projectile/projectile.cache")
-
+(setq-default ido-save-directory-list-file "~/.emacs.d/cache/ido-list"
+              bookmark-default-file "~/.emacs.d/cache/bookmarks"
+              keyfreq-file "~/.emacs.d/cache/keyfrequency"
+              recentf-save-file "~/.emacs.d/cache/recentf"
+              mc/list-file "~/.emacs.d/cache/.mc-lists.el"
+              eshell-directory-name "~/.emacs.d/cache/eshell/"
+              auto-save-list-file-prefix "~/.emacs.d/cache/auto-save-list/.save-"
+              projectile-cache-file "~/.emacs.d/cache/projectile/projectile.cache")
 
 ;; Set temp dir
 (setq temporary-file-directory "~/.emacs.d/cache/temp")
@@ -47,15 +53,15 @@
 (setq save-abbrevs nil)
 (setq hippie-expand-try-functions-list
       '(try-expand-dabbrev
-	try-expand-dabbrev-all-buffers
-	try-expand-dabbrev-from-kill
-	try-complete-file-name-partially
-	try-complete-file-name
-	try-expand-all-abbrevs
-	try-expand-list
-	try-expand-line
-	try-complete-lisp-symbol-partially
-	try-complete-lisp-symbol))
+        try-expand-dabbrev-all-buffers
+        try-expand-dabbrev-from-kill
+        try-complete-file-name-partially
+        try-complete-file-name
+        try-expand-all-abbrevs
+        try-expand-list
+        try-expand-line
+        try-complete-lisp-symbol-partially
+        try-complete-lisp-symbol))
 (custom-set-variables
  '(initial-frame-alist (quote ((fullscreen . maximized)))))
 
@@ -74,10 +80,8 @@
 ;; Disable electric indent mode
 (electric-indent-mode -1)
 
-;; for eww
-(setq shr-color-visible-luminance-min 70)
-
 ;; Package settings
+
 (require 'desktop-settings)
 (require 'dired-settings)
 (require 'flycheck-settings)
@@ -86,14 +90,15 @@
 (require 'othermodes-settings)
 
 ;; Programming
-(require 'mongo-config)
 (require 'javascript-config)
 (require 'html-config)
 (require 'clojure-config)
 (require 'elisp-config)
+(require 'other-languages-config)
 
 ;; Other
 (require 'my-functions)
 
-
+;; Export:
 (provide 'general-settings)
+;;; general-settings ends here

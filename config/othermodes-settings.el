@@ -1,3 +1,38 @@
+;;; othermodes-settings.el --- Enabe other modes
+
+;;; Commentary:
+;; Settings for other modes
+
+;;; Code:
+
+;; Re-Builder
+(setq-default reb-re-syntax 'string)
+
+;; Emmet https://github.com/smihica/emmet-mode
+(setq-default emmet-preview-default nil)
+
+;; Org Mode
+;; enable toc
+(setq-default org-src-fontify-natively t)
+(eval-after-load "org-toc-autoloads"
+  '(progn
+     (if (require 'org-toc nil t)
+         (add-hook 'org-mode-hook 'org-toc-enable)
+       (warn "org-toc not found"))))
+(add-hook 'org-mode-hook 'flyspell-mode)
+
+;; Calendar
+(setq-default calendar-latitude 46.7667)
+(setq-default calendar-longitude 23.5833)
+
+;; eww
+(setq-default eww-search-prefix "https://google.com/search?q=")
+(setq-default shr-color-visible-luminance-min 70)
+
+;; Whitepspace
+(setq-default whitespace-style '(face trailing tabs lines)
+              whitespace-line-column 85)
+
 ;; Httpd https://github.com/skeeto/emacs-web-server
 (require 'simple-httpd)
 (setq httpd-root "~/Documents/javascript/")
@@ -16,51 +51,15 @@
 (require 'anzu)
 (global-anzu-mode t)
 
-;; Rainbow Delimiters https://github.com/jlr/rainbow-delimiters
-(require 'rainbow-delimiters)
-
-;; Re-Builder
-(require 're-builder)
-(setq reb-re-syntax 'string)
-
 ;; Page Break Lines https://github.com/purcell/page-break-lines
 (require 'page-break-lines)
 (global-page-break-lines-mode t)
 
-;; Emmet https://github.com/smihica/emmet-mode
-(setq emmet-preview-default nil) 
-
 ;; Multiple Cursors https://github.com/magnars/multiple-cursors.el
 (require 'multiple-cursors)
 
-;; Org Mode
-;; enable toc
-(setq org-src-fontify-natively t)
-(eval-after-load "org-toc-autoloads"
-  '(progn
-     (if (require 'org-toc nil t)
-         (add-hook 'org-mode-hook 'org-toc-enable)
-       (warn "org-toc not found"))))
-
-;; Nginx mode https://github.com/ajc/nginx-mode
-(require 'nginx-mode)
-
-;; Calendar
-(setq calendar-latitude 46.7667)
-(setq calendar-longitude 23.5833)
-
-;; eww
-(setq eww-search-prefix "https://google.com/search?q=")
-
-;; Company
-(setq company-tern-meta-as-single-line t)
-(setq company-tooltip-align-annotations t)
-
-(with-eval-after-load 'company
-  (define-key company-active-map (kbd "M-n") nil)
-  (define-key company-active-map (kbd "M-p") nil)
-  (define-key company-active-map (kbd "C-n") #'company-select-next)
-  (define-key company-active-map (kbd "C-n") #'company-select-previous))
+;; Kill Ring
+(require 'browse-kill-ring)
 
 ;; Ibuffer
 (defadvice ibuffer-update-title-and-summary (after remove-column-titles)
@@ -70,28 +69,26 @@
     (goto-char 1)
     (search-forward "-\n" nil t)
     (delete-region 1 (point))
-    (let ((window-min-height 1)) 
+    (let ((window-min-height 1))
       ;; save a little screen estate
       (shrink-window-if-larger-than-buffer))
     (toggle-read-only)))
 (ad-activate 'ibuffer-update-title-and-summary)
 
-;; Kill Ring
-(require 'browse-kill-ring)
 
-;; Markdown mode 
-(autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
+;; Markdown mode
+(autoload 'markdown-mode "markdown-mode"
+  "Major mode for editing Markdown files" t)
 
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
-;; org mode
-(add-hook 'org-mode-hook 'flyspell-mode)
 
 ;; Projectile
 (projectile-global-mode)
-(setq projectile-enable-caching t)
+(setq-default projectile-enable-caching t)
+
 
 ;; SmartParens:
 (require 'smartparens-config)
@@ -103,10 +100,10 @@
 
 ;; Wrap the next expression in a pair of parens
 (defun my-wrap-with-round-paren (&optional arg)
+  "Wrap ARG with in round parens ()."
   (interactive "p")
   (sp-select-next-thing-exchange arg)
   (execute-kbd-macro (kbd "(")))
-
 
 ;; Smart Mode Line https://github.com/Bruce-Connor/smart-mode-line
 (require 'smart-mode-line)
@@ -114,13 +111,12 @@
 (sml/setup)
 (sml/apply-theme 'dark)
 (setq sml/mode-width 15)
-(setq rm-excluded-modes
-      (list " Anzu" " ARev" " SP/s" " SP" " Abbrev" " Isearch"
-            " A" " Guide"  " Undo-Tree" " PgLn" " MRev"
-            " skewer-html" " skewer-css"" Emmet" " hs"
-            " λ" " Rbow" " vl" " Wrap" " Helm" " Projectile" " yas"
-            " company" " Tern"
-            ))
+(setq-default rm-excluded-modes
+              (list " Anzu" " ARev" " SP/s" " SP" " Abbrev" " Isearch"
+                    " A" " Guide"  " Undo-Tree" " PgLn" " MRev"
+                    " skewer-html" " skewer-css"" Emmet" " hs"
+                    " λ" " Rbow" " vl" " Wrap" " Helm" " Projectile" " yas"
+                    " company" " Tern" " ws" " WS"))
 
 ;; Tramp http://www.emacswiki.org/TrampMode
 (require 'tramp)
@@ -137,4 +133,7 @@
 (keyfreq-autosave-mode 1)
 
 
+;; Export
 (provide 'othermodes-settings)
+
+;;; othermodes-settings.el ends here

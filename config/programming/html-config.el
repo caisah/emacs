@@ -1,5 +1,9 @@
-;; HTML & CSS
+;;; html-config --- Web config
 
+;;; Commentary:
+;; My config for HTML & CSS (+ preprocessors)
+
+;;; Code:
 (require 'web-mode)
 
 (setq web-mode-markup-indent-offset 4)
@@ -21,13 +25,14 @@
     (browse-url filename)))
 
 (defun backward-kill-element ()
-  (interactive) 
+  "Backward kill web element."
+  (interactive)
   (backward-word)
   (web-mode-element-kill))
 
 ;; Keys for html
 (defun html-keys ()
-  "Keys used in HTML"
+  "Keys used in HTML."
   (local-set-key (kbd "C-,") 'sgml-tag)
   (local-set-key (kbd "C-o") 'open-file-in-browser)
   (define-key emmet-mode-keymap (kbd "C-j") nil)
@@ -50,7 +55,7 @@
 
 
 (defun less-keys ()
-  "Keys for LESS"
+  "Keys for LESS."
   (define-key emmet-mode-keymap (kbd "C-j") nil)
   (local-set-key (kbd "C-j") 'newline-and-indent))
 
@@ -76,3 +81,4 @@
 
 
 (provide 'html-config)
+;;; html-config.el ends here

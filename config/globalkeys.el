@@ -1,10 +1,15 @@
-;; Global Keys 
+;;; globalkeys.el --- Global keys
+
+;;; Commentary:
+;; Only global keys
+
+;;; Code:
 (global-set-key (kbd "C-S-s") 'query-replace)
 (global-set-key (kbd "C-S-d") 'delete-region)
 (global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-x m") 'magit-status)
 (global-set-key (kbd "C-`") 'er/expand-region)
-(global-set-key (kbd "<C-tab>") 'indent-relative) 
+(global-set-key (kbd "<C-tab>") 'indent-relative)
 (global-set-key (kbd "C-c C-f") 'hs-toggle-hiding)
 (global-set-key (kbd "C-h C-s") 'elisp-index-search)
 (global-set-key (kbd "C-o") 'company-complete)
@@ -37,7 +42,8 @@
 (global-set-key (kbd "<f9>") 'smart-compile)
 
 ;; Change to Message buffer
-(global-set-key (kbd "<f1>") '(lambda () (interactive) (switch-to-buffer "*Messages*")))
+(global-set-key (kbd "<f1>")
+                '(lambda () (interactive) (switch-to-buffer "*Messages*")))
 
 ;; Widow resizing
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
@@ -75,6 +81,7 @@
 (global-set-key (kbd "C-\\") 'delete-to-previous-line)
 (global-set-key (kbd "C-S-y") 'yank-next)
 
-
-
+;; Export
 (provide 'globalkeys)
+
+;;; globalkeys.el ends here

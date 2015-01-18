@@ -1,11 +1,12 @@
-;;; liso-theme.el Eclectic Dark Theme for GNU Emacs
-
-;; Inspired by TangoTango Theme https://github.com/juba/color-theme-tangotango
+;;; liso-theme.el ---  Eclectic Dark Theme for GNU Emacs
 
 ;; Author: Vlad Piersec <vlad.piersec@gmail.com>
 ;; Keywords: theme, themes
 ;; URL: https://github.com/caisah/liso-theme
 ;; Version: 2.0
+
+;;; Commentary:
+;; Inspired by TangoTango Theme https://github.com/juba/color-theme-tangotango
 
 ;;; License:
 
@@ -22,16 +23,16 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this file.  If not, see <http://www.gnu.org/licenses/>.
 
-;;; Code
+;;; Code:
 
 (deftheme liso
   "Liso - Eclectic Dark Theme inspired by TangoTango")
 
 (let ((background "#272C2E")
-      (foreground "#EDEDE1") 
+      (foreground "#EDEDE1")
       (cursor-yellow "#E6CB00")
       (foreground-black "#1A1A1A")
-      (escape "#885D79")
+      (escape "#C83194")
       (prompt-green "#C8FF03")
       (highlight-yellow "#ECE185")
       (region-background "#31454F")
@@ -40,7 +41,7 @@
       (warning "#FF7E00")
       (search-pink "#FFEDE6")
       (search-orange "#CE5C00")
-      (search-brown "#795317") 
+      (search-brown "#795317")
       (comment "#5D6A70")
       (liso-yellow "#FFE203")
       (liso-orange "#FF9326")
@@ -67,7 +68,7 @@
 
   (custom-theme-set-faces
    'liso
-   
+
    `(default ((t (:family "Ubuntu Mono"
                   :foundry "unknown"
                   :width normal
@@ -79,17 +80,17 @@
                   :strike-through nil
                   :box nil
                   :inverse-video nil
-                  :foreground ,foreground 
+                  :foreground ,foreground
                   :background ,background
                   :stipple nil
                   :inherit nil))))
-   `(cursor ((t (:foreground ,foreground-black :background ,cursor-yellow)))) 
-   `(fixed-pitch ((t (:inherit (default))))) 
-   `(variable-pitch ((t (:family "Sans Serif")))) 
-   `(escape-glyph ((t (:foreground ,escape)))) 
-   `(minibuffer-prompt ((t (:weight normal :foreground ,prompt-green)))) 
-   `(highlight ((t (:foreground ,foreground-black :background ,highlight-yellow)))) 
-   `(region ((t (:background ,region-background)))) 
+   `(cursor ((t (:foreground ,foreground-black :background ,cursor-yellow))))
+   `(fixed-pitch ((t (:inherit (default)))))
+   `(variable-pitch ((t (:family "Sans Serif"))))
+   `(escape-glyph ((t (:foreground ,escape))))
+   `(minibuffer-prompt ((t (:weight normal :foreground ,prompt-green))))
+   `(highlight ((t (:foreground ,foreground-black :background ,highlight-yellow))))
+   `(region ((t (:background ,region-background))))
    `(shadow ((((class color grayscale) (min-colors 88) (background light)) (:foreground "grey50"))
              (((class color grayscale) (min-colors 88) (background dark)) (:foreground "grey70"))
              (((class color) (min-colors 8) (background light)) (:foreground "green"))
@@ -97,50 +98,51 @@
    `(secondary-selection ((t (:background ,search-brown))))
    `(trailing-whitespace ((t (:background ,fail-dark-red))))
    `(whitespace-trailing ((t (:background ,fail-dark-red :foreground ,foreground-black))))
-   ;; 
-   `(font-lock-builtin-face ((t (:foreground ,liso-purple))))
+   ;;
+   `(font-lock-builtin-face
+     ((t (:foreground ,liso-purple))))
    `(font-lock-comment-face ((t (:foreground ,comment))))
    `(font-lock-comment-delimiter-face ((t (:inherit (font-lock-comment-face)))))
    `(font-lock-constant-face ((t (:foreground ,liso-red))))
    `(font-lock-doc-face ((t (:foreground ,liso-dark-green))))
    `(font-lock-function-name-face ((t (:foreground ,liso-yellow))))
    `(font-lock-keyword-face ((t (:foreground ,liso-green))))
-   `(font-lock-negation-char-face ((t nil))) 
-   `(font-lock-preprocessor-face ((t (:inherit (font-lock-builtin-face))))) 
-   `(font-lock-regexp-grouping-backslash ((t (:inherit (bold))))) 
+   `(font-lock-negation-char-face ((t nil)))
+   `(font-lock-preprocessor-face ((t (:inherit (font-lock-builtin-face)))))
+   `(font-lock-regexp-grouping-backslash ((t (:inherit (bold)))))
    `(font-lock-regexp-grouping-construct ((t (:inherit (bold)))))
    `(font-lock-string-face ((t (:foreground ,liso-pink))))
    `(font-lock-type-face ((t (:foreground ,liso-blue))))
    `(font-lock-variable-name-face ((t (:foreground ,liso-orange))))
    `(font-lock-warning-face ((t (:weight bold :foreground ,warning :inherit (error)))))
-   
+
    `(button ((t (:inherit (link)))))
    `(link ((t (:underline (:color foreground-color :style line) :foreground ,link-blue))))
    `(link-visited ((t (:underline (:color foreground-color :style line) :foreground ,link-dark-blue :inherit (link)))))
    `(fringe ((t (:background ,background))))
-   `(header-line ((t (:foreground ,comment :weight bold)))) 
+   `(header-line ((t (:foreground ,comment :weight bold))))
    `(tooltip ((t (:foreground "black" :background "lightyellow" :inherit (quote variable-pitch)))))
-   `(mode-line ((t (:box (:line-width -1 :color nil :style pressed-button) :foreground "white smoke" :background ,ml-black)))) 
-   `(mode-line-buffer-id ((t (:weight bold :foreground ,ml-yellow)))) 
-   `(mode-line-emphasis ((t (:weight bold)))) 
-   `(mode-line-highlight ((((class color) (min-colors 88)) (:box (:line-width 2 :color "grey40" :style released-button))) (t (:inherit (highlight))))) 
-   `(mode-line-inactive ((t (:weight light :box (:line-width -1 :color nil :style released-button) :foreground ,ml-grey :background ,ml-grey-darker :inherit (mode-line))))) 
+   `(mode-line ((t (:box (:line-width -1 :color nil :style pressed-button) :foreground "white smoke" :background ,ml-black))))
+   `(mode-line-buffer-id ((t (:weight bold :foreground ,ml-yellow))))
+   `(mode-line-emphasis ((t (:weight bold))))
+   `(mode-line-highlight ((((class color) (min-colors 88)) (:box (:line-width 2 :color "grey40" :style released-button))) (t (:inherit (highlight)))))
+   `(mode-line-inactive ((t (:weight light :box (:line-width -1 :color nil :style released-button) :foreground ,ml-grey :background ,ml-grey-darker :inherit (mode-line)))))
    `(isearch ((t (:foreground ,search-pink :background ,search-orange :underline (:color foreground-color :style line)))))
    `(isearch-fail ((((class color) (min-colors 88) (background light)) (:background "RosyBrown1"))
                    (((class color) (min-colors 88) (background dark)) (:background "red4"))
                    (((class color) (min-colors 16)) (:background "red"))
                    (((class color) (min-colors 8)) (:background "red"))
                    (((class color grayscale)) (:foreground "grey"))
-                   (t (:inverse-video t)))) 
+                   (t (:inverse-video t))))
    `(anzu-mode-line ((t (:foreground "PaleVioletRed2" :weight bold))))
-   `(lazy-highlight ((t (:foreground ,foreground-black :background ,search-brown)))) 
+   `(lazy-highlight ((t (:foreground ,foreground-black :background ,search-brown))))
    `(match ((t (:weight bold :foreground ,search-orange :background ,foreground-black))))
-   `(next-error ((t (:inherit (region))))) 
-   `(query-replace ((t (:inherit (isearch))))) 
+   `(next-error ((t (:inherit (region)))))
+   `(query-replace ((t (:inherit (isearch)))))
    `(show-paren-match ((t (:background ,paren-blue :foreground ,background))))
    `(show-paren-mismatch ((t (:background ,paren-red :foreground "red"))))
    `(linum ((t (:foreground "#6F8085" :weight light :height 0.9))))
-   `(vertical-border ((t (:foreground ,ml-black)))) 
+   `(vertical-border ((t (:foreground ,ml-black))))
    `(error ((t (:foreground ,error-red :weight semi-bold))))
    `(completions-first-difference ((t (:inherit (highlight)))))
    ;; flycheck
@@ -242,13 +244,15 @@
    `(eshell-ls-directory ((t (:foreground ,liso-yellow :weight bold))))
    `(eshell-ls-symlink ((t (:foreground ,link-blue))))
    `(eshell-ls-executable ((t (:foreground ,liso-green))))
+   ;; whitespace
+   `(whitespace-trailing ((t (:background ,error-red))))
+   `(whitespace-tab ((t (:background ,highlight-yellow))))
+   `(whitespace-line ((t (:background ,background :foreground ,warning))))
    ))
 
-;; Ibuffer 
-(setq ibuffer-marked-face 'diredp-flag-mark)
-(setq ibuffer-deletion-face 'diredp-deletion-file-name)
-
-
+;; Ibuffer
+(setq-default ibuffer-marked-face 'diredp-flag-mark
+              ibuffer-deletion-face 'diredp-deletion-file-name)
 
 ;;; Other cusomizations isearch
 ;; Disable menu bar mode
@@ -269,5 +273,7 @@
 ;; Show column number
 (column-number-mode t)
 
-
+;; Export
 (provide-theme 'liso)
+
+;;; liso-theme.el ends here
