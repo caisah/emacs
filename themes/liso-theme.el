@@ -248,6 +248,16 @@
    `(whitespace-trailing ((t (:background ,error-red))))
    `(whitespace-tab ((t (:background ,highlight-yellow))))
    `(whitespace-line ((t (:background ,background :foreground ,warning))))
+   ;; markdown
+   `(markdown-header-face ((t (:inherit (org-level-1)))))
+   `(markdown-header-delimiter-face ((t (:foreground ,search-orange))))
+   `(markdown-header-face-1 ((t (:inherit (org-level-1)))))
+   `(markdown-header-face-2 ((t (:inherit (org-level-2)))))
+   `(markdown-header-face-3 ((t (:inherit (org-level-3)))))
+   `(markdown-header-face-4 ((t (:inherit (org-level-4)))))
+   `(markdown-header-face-5 ((t (:inherit (org-level-5)))))
+   `(markdown-url-face ((t (:foreground ,link-dark-blue))))
+   `(markdown-link-face ((t (:foreground ,liso-blue))))
    ))
 
 ;; Ibuffer
