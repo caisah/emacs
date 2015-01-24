@@ -82,7 +82,6 @@
 
 ;; Package settings
 
-(require 'desktop-settings)
 (require 'dired-settings)
 (require 'flycheck-settings)
 (require 'helm-settings)

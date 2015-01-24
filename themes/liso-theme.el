@@ -264,7 +264,6 @@
 (setq-default ibuffer-marked-face 'diredp-flag-mark
               ibuffer-deletion-face 'diredp-deletion-file-name)
 
-;;; Other cusomizations isearch
 ;; Disable menu bar mode
 (menu-bar-mode -1)
 

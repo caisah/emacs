@@ -5,6 +5,14 @@
 
 ;;; Code:
 
+;; Desktop
+(desktop-save-mode 1)
+(setq-default desktop-dirname "~/.emacs.d/cache")
+(setq-default desktop-path (list desktop-dirname))
+(setq-default desktop-base-file-name "emacs-desktop")
+(setq-default indent-tabs-mode nil)
+(setq-default desktop-save t)
+
 ;; Re-Builder
 (setq-default reb-re-syntax 'string)
 
@@ -104,6 +112,7 @@
   (interactive "p")
   (sp-select-next-thing-exchange arg)
   (execute-kbd-macro (kbd "(")))
+(setq-default sp-hybrid-kill-excessive-whitespace t)
 
 ;; Smart Mode Line https://github.com/Bruce-Connor/smart-mode-line
 (require 'smart-mode-line)

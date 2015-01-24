@@ -40,6 +40,15 @@
   (newline-and-indent)
   (yank arg))
 
+(defun shell-execute-last-command ()
+  "Run last command in shell buffer."
+  (interactive)
+  (when (get-buffer "*shell*")
+    (with-current-buffer "*shell*"
+      (comint-send-input (comint-previous-input 1))
+      (message "Last command executed"))))
+
+
 ;; Export
 (provide 'my-functions)
 

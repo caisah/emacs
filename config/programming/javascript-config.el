@@ -27,18 +27,21 @@
 
 ;; Keys for js2-mode
 (defun js-keys ()
-  (define-key js2-mode-map (kbd "C-c C-f") 'hs-toggle-hiding))
+  "Enable local keys for js2-mode."
+  (define-key js2-mode-map (kbd "C-x l") 'hs-toggle-hiding)
+  (define-key js2-mode-map (kbd "C-c C-e") 'shell-execute-last-command))
 
 
 ;; Keys for skewer
 (defun skewer-keys ()
+  "Enable local keys for skewer-mode."
   (local-set-key (kbd "C-x C-r") 'skewer-eval-region)
   (local-set-key (kbd "C-M-k") 'sp-kill-hybrid-sexp)
   (local-set-key (kbd "C-k") 'kill-line))
 
 ;; Keys for js-comint/Node.js
 (defun node-keys ()
-  "Set local keys for nodejs."
+  "Enable local keys for nodejs."
   (interactive)
   ;; disable skewer-mode
   (progn
