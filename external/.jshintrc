@@ -1,14 +1,45 @@
 {
-    "esnext": true,
-    "curly": true,
-    "newcap": true,
-    "noempty": true,
-    "undef": true,
-    "unused": true,
+    "-W031": true, // Remove once fixed
+    "-W040": true, // Remove once fixed
+    "boss": true,
     "browser": true,
-    "node": true,
+    "curly": true,
+    "eqeqeq": true,
+    "forin": true,
+    "immed": true,
+    "indent": 4,
+    "jquery": true,
+    "latedef": "nofunc",
+    "newcap": false, // Set `true` when fixed
+    "noarg": true,
+    "noempty": true,
+    "nonew": true,
     "predef": [
         "_",
+        "_notifications",
+        "accounting",
+        "Backbone",
+        "BigDecimal",
+        "BigNumber",
+        "clearRequestInterval",
+        "console",
+        "document",
+        "doT",
+        "G_vmlCanvasManager",
+        "Image",
+        "Logger",
+        "localStorage",
+        "Modal",
+        "navigator",
+        "org",
+        "PubSub",
+        "UW",
+        "UW_GLOBALS",
+        "window",
         "skewer"
-    ]
+    ],
+    "undef": true,
+    // "unused": true,
+    "strict": true,
+    "trailing": true
 }
