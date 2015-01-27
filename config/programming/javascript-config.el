@@ -28,7 +28,7 @@
 ;; Keys for js2-mode
 (defun js-keys ()
   "Enable local keys for js2-mode."
-  (define-key js2-mode-map (kbd "C-x l") 'hs-toggle-hiding)
+  (define-key js2-mode-map (kbd "C-c C-f") 'hs-toggle-hiding)
   (define-key js2-mode-map (kbd "C-c C-e") 'shell-execute-last-command))
 
 
