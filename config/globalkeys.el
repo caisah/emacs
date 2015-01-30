@@ -5,6 +5,7 @@
 
 ;;; Code:
 (global-set-key (kbd "C-S-s") 'query-replace)
+(global-set-key (kbd "C-x C-s") 'save-and-delete-whitespaces)
 (global-set-key (kbd "C-S-d") 'delete-region)
 (global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-x m") 'magit-status)

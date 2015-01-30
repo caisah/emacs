@@ -15,6 +15,7 @@
        (/ (- e-us  s-us) 1e6))))
 
 (defun display-startup-echo-area-message ()
+  "Message the time since .init file loaded."
   (let ((time-passed (time-passed-since *start-time*)))
     (message "My .init loaded in %.3f seconds. Happy hacking!" time-passed)))
 
@@ -47,6 +48,12 @@
     (with-current-buffer "*shell*"
       (comint-send-input (comint-previous-input 1))
       (message "Last command executed"))))
+
+(defun save-and-delete-whitespaces ()
+  "Delete trailing whitespaces and then save buffer."
+  (interactive)
+  (delete-trailing-whitespace)
+  (save-buffer))
 
 
 ;; Export
