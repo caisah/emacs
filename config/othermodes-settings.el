@@ -43,7 +43,7 @@
 
 ;; Httpd https://github.com/skeeto/emacs-web-server
 (require 'simple-httpd)
-(setq httpd-root "~/Documents/javascript/")
+(setq httpd-root "~/Documents/server/")
 
 ;; Smart Compile http://www.emacswiki.org/emacs/SmartCompile
 (require 'smart-compile)
