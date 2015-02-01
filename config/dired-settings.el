@@ -4,14 +4,15 @@
 ;; Dired
 
 ;;; Code:
+(require 'dired)
+
 ;; List directories first
 (setq dired-listing-switches "-la --group-directories-first")
 
-;; KEY
-(add-hook 'dired-mode-hook
-          (lambda () (define-key dired-mode-map (kbd "^")
-                  (lambda () (interactive) (find-alternate-file "..")))))
-
+(defun dired-go-up-dir ()
+  "Navigates to the parent dir."
+  (interactive)
+  (find-alternate-file ".."))
 
 ;; Sort by different criterion
 (defun dired-sort-criteria (criteria)
@@ -26,6 +27,9 @@
   (dired-sort-other
    (concat dired-listing-switches
            (match-string 1 criteria))))
+
+(define-key dired-mode-map (kbd "^") 'dired-go-up-dir)
+(define-key dired-mode-map (kbd "k") 'dired-kill-subdir)
 
 ;; Enable dired plus by default
 (require 'dired+)
