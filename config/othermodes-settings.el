@@ -135,11 +135,19 @@
 (setq-default yas-snippet-dirs '("~/.emacs.d/snippets"))
 (add-hook 'yas-minor-mode-hook 'yas-reload-all)
 
+;; YAML
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+(add-hook 'yaml-mode-hook 'linum-mode)
+
 ;; KeyFreq https://github.com/dacap/keyfreq
 (require 'keyfreq)
 (keyfreq-mode 1)
 (keyfreq-autosave-mode 1)
 
+
+;; Lint on JSON
+(add-hook 'json-mode-hook 'flycheck-mode)
 
 ;; Export
 (provide 'othermodes-settings)
