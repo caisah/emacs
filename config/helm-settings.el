@@ -36,6 +36,9 @@
          (helm-current-prefix-arg non-recursive))
     (call-interactively 'helm-do-grep)))
 
+(eval-after-load 'flycheck
+   '(define-key flycheck-mode-map (kbd "C-c ! h") 'helm-flycheck))
+
 ;; Export
 (provide 'helm-settings)
 
