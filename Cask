@@ -28,6 +28,7 @@
 (depends-on "git-rebase-mode")
 (depends-on "helm")
 (depends-on "helm-flycheck")
+(depends-on "helm-google")
 (depends-on "helm-projectile")
 (depends-on "helm-swoop")
 (depends-on "hexrgb")
