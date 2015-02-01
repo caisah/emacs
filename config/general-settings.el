@@ -98,6 +98,12 @@
 ;; Other
 (require 'my-functions)
 
+;; Load global keys
+(require 'globalkeys)
+
+;; Load Abbrevs
+(require 'abbrevs)
+
 ;; Export:
 (provide 'general-settings)
 ;;; general-settings ends here

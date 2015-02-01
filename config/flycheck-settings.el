@@ -27,5 +27,15 @@ See URL `https://github.com/w3c/tidy-html5'."
             " - Warning: " (message) line-end))
   :modes (html-mode nxhtml-mode web-mode))
 
+;; Flycheck for typescript-mode
+(flycheck-define-checker typescript
+  "A TypeScript syntax checker using tsc command."
+  :command ("tsc" "--out" "/dev/null" source)
+  :error-patterns
+  ((error line-start (file-name) "(" line "," column "): error " (message) line-end))
+  :modes (typescript-mode))
+
+(add-to-list 'flycheck-checkers 'typescript)
+
 (provide 'flycheck-settings)
 ;;; flycheck-settings.el ends here

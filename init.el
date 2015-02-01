@@ -6,17 +6,11 @@
 (add-to-list 'load-path "~/.emacs.d/config/programming")
 (add-to-list 'load-path "~/.emacs.d/custom-packages/")
 
-;; Add theme
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-
 ;; Load general settings
 (require 'general-settings)
 
-;; Load global keys
-(require 'globalkeys)
-
-;; Load Abbrevs
-(require 'abbrevs)
+;; Add theme
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 ;; Load Theme
 (load-theme 'liso t)

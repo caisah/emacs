@@ -16,7 +16,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'pretty-symbol-patterns '(?ƒ lambda "\\<function\\>" (js2-mode)))
-
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
 ;; Abbrevs
 (define-abbrev-table 'js2-mode-abbrev-table '(("ret" "return")))
 
@@ -81,6 +81,21 @@
 (add-hook 'js2-mode-hook 'whitespace-mode)
 
 (add-hook 'skewer-mode-hook 'skewer-keys)
+
+;; Typescript
+(require 'typescript-mode)
+
+(add-hook 'typescript-mode-hook (lambda () (setq mode-name "TypeScript")))
+
+(add-hook 'typescript-mode-hook 'pretty-symbols-mode)
+(add-hook 'typescript-mode-hook 'linum-mode)
+(add-hook 'typescript-mode-hook 'abbrev-mode)
+(add-hook 'typescript-mode-hook 'smartparens-strict-mode)
+(add-hook 'typescript-mode-hook 'hs-minor-mode)
+(add-hook 'typescript-mode-hook 'flycheck-mode)
+(add-hook 'typescript-mode-hook 'yas-minor-mode)
+(add-hook 'typescript-mode-hook 'whitespace-mode)
+
 
 ;; Export
 (provide 'javascript-config)
