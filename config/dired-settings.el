@@ -9,9 +9,9 @@
 
 ;; KEY
 (add-hook 'dired-mode-hook
-          (lambda ()
-            (define-key dired-mode-map (kbd "^")
-              (lambda () (interactive) (find-alternate-file "..")))))
+          (lambda () (define-key dired-mode-map (kbd "^")
+                  (lambda () (interactive) (find-alternate-file "..")))))
+
 
 ;; Sort by different criterion
 (defun dired-sort-criteria (criteria)
@@ -30,26 +30,6 @@
 ;; Enable dired plus by default
 (require 'dired+)
 
-(defun dired-delete-and-refresh (&optional arg)
-  "Delete and refresh buffer ARG."
-  (interactive)
-  (dired-do-delete arg)
-  (revert-buffer))
-
-(with-eval-after-load 'dired
-  (define-key dired-mode-map (kbd "i") 'dired-subtree-insert)
-  (define-key dired-mode-map (kbd "I") nil)
-  (define-key dired-mode-map (kbd "I") 'dired-subtree-remove)
-  (define-key dired-mode-map (kbd "C-M-n") nil)
-  (define-key dired-mode-map (kbd "C-M-n") 'dired-subtree-down)
-  (define-key dired-mode-map (kbd "C-M-p") nil)
-  (define-key dired-mode-map (kbd "C-M-p") 'dired-subtree-up)
-  (define-key dired-mode-map (kbd "D") nil)
-  (define-key dired-mode-map (kbd "D") 'dired-delete-and-refresh))
-
-(setq-default dired-subtree-use-backgrounds nil)
-
 ;; Export
 (provide 'dired-settings)
-
 ;;; dired-settings.el ends here

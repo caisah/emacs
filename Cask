@@ -13,7 +13,6 @@
 (depends-on "dash")
 (depends-on "dash-functional")
 (depends-on "dired+")
-(depends-on "dired-subtree")
 (depends-on "elpy")
 (depends-on "emmet-mode")
 (depends-on "epl")
