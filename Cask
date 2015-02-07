@@ -57,7 +57,6 @@
 (depends-on "page-break-lines")
 (depends-on "palette")
 (depends-on "pallet")
-(depends-on "paradox")
 (depends-on "pcache")
 (depends-on "pkg-info")
 (depends-on "popup")

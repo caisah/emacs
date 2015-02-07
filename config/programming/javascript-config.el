@@ -11,8 +11,8 @@
               js2-global-externs '("module" "require" "exports" "sinon" "assert"
                                    "refute" "setTimeout" "clearTimeout" "setInterval"
                                    "clearInterval" "location" "__dirname" "console"
-                                   "JSON" "$" "jQuery" "doT" "_" "Backbone"
-                                   "skewer"))
+                                   "JSON" "$" "jQuery" "doT" "_" "Backbone",
+                                   "__dirname","skewer"))
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'pretty-symbol-patterns '(?ƒ lambda "\\<function\\>" (js2-mode)))

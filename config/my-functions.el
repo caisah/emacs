@@ -46,6 +46,7 @@
   (interactive)
   (when (get-buffer "*shell*")
     (with-current-buffer "*shell*"
+      (end-of-buffer)
       (comint-send-input (comint-previous-input 1))
       (message "Last command executed"))))
 
