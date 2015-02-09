@@ -16,30 +16,17 @@
     "nonew": true,
     "predef": [
         "_",
-        "_notifications",
-        "accounting",
+        "__dirname"
         "Backbone",
-        "BigDecimal",
-        "BigNumber",
-        "clearRequestInterval",
         "console",
         "document",
-        "doT",
-        "G_vmlCanvasManager",
-        "Image",
-        "Logger",
         "localStorage",
-        "Modal",
-        "navigator",
-        "org",
-        "PubSub",
-        "UW",
-        "UW_GLOBALS",
         "window",
-        "skewer"
+        "skewer",
+        "require"
     ],
     "undef": true,
-    // "unused": true,
+    "unused": true,
     "strict": true,
     "trailing": true
 }
