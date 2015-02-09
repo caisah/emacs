@@ -1,6 +1,4 @@
 {
-    "-W031": true, // Remove once fixed
-    "-W040": true, // Remove once fixed
     "boss": true,
     "browser": true,
     "curly": true,
@@ -10,13 +8,13 @@
     "indent": 4,
     "jquery": true,
     "latedef": "nofunc",
-    "newcap": false, // Set `true` when fixed
+    "newcap": false,
     "noarg": true,
     "noempty": true,
     "nonew": true,
     "predef": [
         "_",
-        "__dirname"
+        "__dirname",
         "Backbone",
         "console",
         "document",
