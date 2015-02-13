@@ -39,7 +39,7 @@
 
 ;; Whitepspace
 (setq-default whitespace-style '(face trailing tabs lines)
-              whitespace-line-column 85)
+              whitespace-line-column 80)
 
 ;; Httpd https://github.com/skeeto/emacs-web-server
 (require 'simple-httpd)

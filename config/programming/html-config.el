@@ -54,8 +54,8 @@
   (local-set-key (kbd "<C-M-backspace>") 'backward-kill-element))
 
 
-(defun less-keys ()
-  "Keys for LESS."
+(defun enable-ss-keys ()
+  "Keys for CSS preprocessors."
   (define-key emmet-mode-keymap (kbd "C-j") nil)
   (local-set-key (kbd "C-j") 'newline-and-indent))
 
@@ -69,15 +69,23 @@
 (add-hook 'css-mode-hook 'skewer-css-mode)
 (add-hook 'css-mode-hook 'rainbow-mode)
 (add-hook 'css-mode-hook 'linum-mode)
+
 ;; Auto-start on any markup modes
 (add-hook 'sgml-mode-hook 'emmet-mode)
 (add-hook 'html-mode-hook 'emmet-mode)
 (add-hook 'css-mode-hook  'emmet-mode)
+
 ;; LESS
 (add-hook 'less-css-mode-hook 'linum-mode)
 (add-hook 'less-css-mode-hook 'flycheck-mode)
-(add-hook 'less-css-mode-hook 'less-keys)
+(add-hook 'less-css-mode-hook 'enable-ss-keys)
 (add-hook 'less-css-mode-hook 'hs-minor-mode)
+
+;; Sass
+(add-hook 'scss-mode-hook 'linum-mode)
+(add-hook 'scss-mode-hook 'flycheck-mode)
+(add-hook 'scss-mode-hook 'enable-ss-keys)
+(add-hook 'scss-mode-hook 'hs-minor-mode)
 
 
 (provide 'html-config)

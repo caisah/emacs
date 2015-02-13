@@ -95,6 +95,7 @@
 (add-hook 'typescript-mode-hook 'flycheck-mode)
 (add-hook 'typescript-mode-hook 'yas-minor-mode)
 (add-hook 'typescript-mode-hook 'whitespace-mode)
+(add-hook 'typescript-mode-hook 'js-keys)
 
 
 ;; Export

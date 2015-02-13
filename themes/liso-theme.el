@@ -247,7 +247,7 @@
    ;; whitespace
    `(whitespace-trailing ((t (:background ,error-red))))
    `(whitespace-tab ((t (:background ,highlight-yellow))))
-   `(whitespace-line ((t (:background ,background :foreground ,warning))))
+   `(whitespace-line ((t (:background ,background :foreground ,foreground))))
    ;; markdown
    `(markdown-header-face ((t (:inherit (org-level-1)))))
    `(markdown-header-delimiter-face ((t (:foreground ,search-orange))))
