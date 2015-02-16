@@ -32,10 +32,14 @@
   (define-key js2-mode-map (kbd "C-c C-e") 'shell-execute-last-command))
 
 (defun ts-keys ()
-  "Enable local keys for js2-mode."
+  "Enable local keys for typescript-mode."
   (define-key typescript-mode-map (kbd "C-c C-f") 'hs-toggle-hiding)
   (define-key typescript-mode-map (kbd "C-c C-e") 'shell-execute-last-command))
 
+(defun jsx-keys ()
+  "Enable local keys for jsx-mode."
+  (define-key jsx-mode-map (kbd "C-c C-f") 'hs-toggle-hiding)
+  (define-key jsx-mode-map (kbd "C-c C-e") 'shell-execute-last-command))
 
 ;; Keys for skewer
 (defun skewer-keys ()
@@ -98,7 +102,6 @@
 (add-hook 'typescript-mode-hook 'smartparens-strict-mode)
 (add-hook 'typescript-mode-hook 'hs-minor-mode)
 (add-hook 'typescript-mode-hook 'flycheck-mode)
-(add-hook 'typescript-mode-hook 'yas-minor-mode)
 (add-hook 'typescript-mode-hook 'whitespace-mode)
 (add-hook 'typescript-mode-hook 'ts-keys)
 
@@ -106,6 +109,15 @@
 ;; JSX for React
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
 (autoload 'jsx-mode "jsx-mode" "JSX mode" t)
+
+(add-hook 'jsx-mode-hook 'pretty-symbols-mode)
+(add-hook 'jsx-mode-hook 'linum-mode)
+(add-hook 'jsx-mode-hook 'abbrev-mode)
+(add-hook 'jsx-mode-hook 'smartparens-strict-mode)
+(add-hook 'jsx-mode-hook 'hs-minor-mode)
+(add-hook 'jsx-mode-hook 'flycheck-mode)
+(add-hook 'jsx-mode-hook 'whitespace-mode)
+(add-hook 'jsx-mode-hook 'jsx-keys)
 
 ;; Export
 (provide 'javascript-config)
