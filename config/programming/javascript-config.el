@@ -103,6 +103,10 @@
 (add-hook 'typescript-mode-hook 'ts-keys)
 
 
+;; JSX for React
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
+(autoload 'jsx-mode "jsx-mode" "JSX mode" t)
+
 ;; Export
 (provide 'javascript-config)
 
