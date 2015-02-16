@@ -31,6 +31,11 @@
   (define-key js2-mode-map (kbd "C-c C-f") 'hs-toggle-hiding)
   (define-key js2-mode-map (kbd "C-c C-e") 'shell-execute-last-command))
 
+(defun ts-keys ()
+  "Enable local keys for js2-mode."
+  (define-key typescript-mode-map (kbd "C-c C-f") 'hs-toggle-hiding)
+  (define-key typescript-mode-map (kbd "C-c C-e") 'shell-execute-last-command))
+
 
 ;; Keys for skewer
 (defun skewer-keys ()
@@ -95,7 +100,7 @@
 (add-hook 'typescript-mode-hook 'flycheck-mode)
 (add-hook 'typescript-mode-hook 'yas-minor-mode)
 (add-hook 'typescript-mode-hook 'whitespace-mode)
-(add-hook 'typescript-mode-hook 'js-keys)
+(add-hook 'typescript-mode-hook 'ts-keys)
 
 
 ;; Export
