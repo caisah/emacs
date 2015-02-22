@@ -133,7 +133,6 @@
 
 ;; Yasnippet https://github.com/capitaomorte/yasnippet
 (setq-default yas-snippet-dirs '("~/.emacs.d/snippets"))
-(add-hook 'yas-minor-mode-hook 'yas-reload-all)
 
 ;; YAML
 (require 'yaml-mode)

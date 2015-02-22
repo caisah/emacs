@@ -25,6 +25,6 @@
     ],
     "undef": true,
     "unused": true,
-    "strict": true,
+    "globalstrict": true,
     "trailing": true
 }
