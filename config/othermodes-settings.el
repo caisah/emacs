@@ -37,6 +37,9 @@
 (setq-default eww-search-prefix "https://google.com/search?q=")
 (setq-default shr-color-visible-luminance-min 70)
 
+;; Whitepspace
+(setq-default whitespace-style '(face trailing tabs lines))
+
 ;; Httpd https://github.com/skeeto/emacs-web-server
 (require 'simple-httpd)
 (setq httpd-root "~/Documents/server/")
