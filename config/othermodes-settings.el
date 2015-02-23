@@ -38,7 +38,8 @@
 (setq-default shr-color-visible-luminance-min 70)
 
 ;; Whitepspace
-(setq-default whitespace-style '(face trailing tabs lines))
+(setq-default whitespace-style '(face trailing tabs lines)
+              whitespace-line-column 200)
 
 ;; Httpd https://github.com/skeeto/emacs-web-server
 (require 'simple-httpd)
