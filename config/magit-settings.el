@@ -6,8 +6,10 @@
 ;;; Code:
 (require 'magit)
 
+(setq magit-last-seen-setup-instructions "1.4.0")
 (set-default 'magit-stage-all-confirm nil)
 (set-default 'magit-unstage-all-confirm nil)
+(setq magit-auto-revert-mode nil)
 
 (defun magit-toggle-all ()
   "Magit toggle all sections."
