@@ -21,7 +21,6 @@
 (helm-mode t)
 
 ;; Helm Projectile
-(require 'helm-projectile)
 (setq projectile-mode-line " Projectile")
 (setq projectile-completion-system 'helm)
 (setq helm-projectile-fuzzy-match nil)
