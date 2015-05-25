@@ -76,6 +76,7 @@
 (depends-on "shut-up")
 (depends-on "simple-httpd")
 (depends-on "skewer-mode")
+(depends-on "slime")
 (depends-on "smart-compile")
 (depends-on "smart-mode-line")
 (depends-on "smartparens")

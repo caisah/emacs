@@ -93,7 +93,9 @@
 (require 'html-config)
 (require 'clojure-config)
 (require 'elisp-config)
+(require 'lisp-config)
 (require 'other-languages-config)
+
 
 ;; Other
 (require 'my-functions)
