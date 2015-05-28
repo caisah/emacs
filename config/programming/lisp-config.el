@@ -8,6 +8,7 @@
 
 (setq inferior-lisp-program "sbcl")
 (setq slime-contribs '(slime-fancy))
+(slime-setup '(slime-fancy))
 
 (add-hook 'lisp-mode-hook 'slime-mode)
 (add-hook 'lisp-mode-hook 'rainbow-delimiters-mode)
