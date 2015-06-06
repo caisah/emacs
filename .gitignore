@@ -3,6 +3,7 @@ recentf
 /url/
 /eshell/
 /.cask/
+/cache/auto-save-list
 /cache/.emacs.desktop.lock
 /cache/bookmarks
 /cache/ido-list
