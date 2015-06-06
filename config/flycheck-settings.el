@@ -8,8 +8,8 @@
 
 (defun enable-jshint ()
   "Enable jshint."
-  (setq flycheck-jshintrc "~/.emacs.d/external/.jshintrc")
-  (setq flycheck-javascript-jshint-executable "jshint"))
+  (setq flycheck-eslintrc "~/.emacs.d/external/.eslintrc")
+  (setq flycheck-javascript-eslint-executable "eslint"))
 
 ;; Flycheck for web-mode
 (flycheck-define-checker html-tidy

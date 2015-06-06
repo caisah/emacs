@@ -1,0 +1,76 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "amd": true
+    },
+    "rules": {
+        "block-scoped-var": 2,
+        "no-reserved-keys": 2,
+        "no-eq-null": 2,
+        "radix": 2,
+        "brace-style": [
+            2,
+            "1tbs"
+        ],
+        "camelcase": 2,
+        "comma-spacing": 2,
+        "comma-style": 2,
+        "dot-notation": 0,
+        "no-multiple-empty-lines": [
+            2,
+            {
+                "max": 2
+            }
+        ],
+        "no-nested-ternary": 2,
+        "one-var": [
+            2,
+            "never"
+        ],
+        "strict": [
+            2,
+            "global"
+        ],
+        "quote-props": [
+            2,
+            "as-needed"
+        ],
+        "quotes": [
+            2,
+            "single"
+        ],
+        "space-after-keywords": [
+            2,
+            "always"
+        ],
+        "space-before-blocks": [
+            2,
+            "always"
+        ],
+        "space-before-function-paren": [
+            2,
+            "never"
+        ],
+        "space-in-brackets": [
+            2,
+            "never"
+        ],
+        "space-in-parens": [
+            2,
+            "never"
+        ],
+        "spaced-line-comment": [
+            2,
+            "always"
+        ],
+        "max-len": [
+            2,
+            88,
+            4
+        ]
+    },
+    "globals": {
+
+    }
+}
