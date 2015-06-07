@@ -10,9 +10,9 @@
               js2-basic-offset 4
               js2-global-externs '("module" "require" "exports" "sinon" "assert"
                                    "refute" "setTimeout" "clearTimeout" "setInterval"
-                                   "clearInterval" "location" "__dirname" "console"
-                                   "JSON" "$" "jQuery" "doT" "_" "Backbone",
-                                   "__dirname","skewer"))
+                                   "clearInterval" "location"  "console"
+                                   "JSON" "$" "jQuery" "_" "Backbone"
+                                   "__dirname" "__filename" "skewer"))
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'pretty-symbol-patterns '(?ƒ lambda "\\<function\\>" (js2-mode)))
