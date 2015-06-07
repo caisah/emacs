@@ -6,9 +6,6 @@
     },
     "rules": {
         "block-scoped-var": 2,
-        "no-reserved-keys": 2,
-        "no-eq-null": 2,
-        "radix": 2,
         "brace-style": [
             2,
             "1tbs"
@@ -17,6 +14,17 @@
         "comma-spacing": 2,
         "comma-style": 2,
         "dot-notation": 0,
+        "indent": 2,
+        "max-nested-callbacks": [
+            2,
+            3
+        ],
+        "max-params": [
+            2,
+            3
+        ],
+        "no-else-return": 2,
+        "no-eq-null": 2,
         "no-multiple-empty-lines": [
             2,
             {
@@ -24,6 +32,9 @@
             }
         ],
         "no-nested-ternary": 2,
+        "no-eq-null": 2,
+        "no-reserved-keys": 2,
+        "no-undef-init": 2,
         "one-var": [
             2,
             "never"
@@ -40,6 +51,7 @@
             2,
             "single"
         ],
+        "radix": 2,
         "space-after-keywords": [
             2,
             "always"
