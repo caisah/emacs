@@ -215,7 +215,7 @@
    `(magit-diff-hunk-heading-highlight ((t (:background ,ml-black :foreground ,comment))))
    `(magit-log-author ((t (:foreground ,comment))))
    `(magit-log-date ((t (:foreground ,comment))))
-   `(magit-tag ((t (:foreground ,ml-yellow))))
+   `(magit-tag ((t (:foreground ,liso-purple))))
    ;; org
    `(org-table ((t (:foreground ,liso-dark-green))))
    `(org-level-1 ((t (:foreground ,liso-red))))
