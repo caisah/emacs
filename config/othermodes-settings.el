@@ -13,6 +13,12 @@
 (setq-default indent-tabs-mode nil)
 (setq-default desktop-save t)
 
+;; Shell
+(add-to-list
+ 'comint-preoutput-filter-functions
+ (lambda (output)
+   (replace-regexp-in-string "\\[[0-9]+[GK]" "" output)))
+
 ;; Re-Builder
 (setq-default reb-re-syntax 'string)
 

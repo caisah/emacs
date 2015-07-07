@@ -85,6 +85,7 @@
         ]
     },
     "globals": {
-         "describe", "it"
+         "describe", "it", "beforeEach", "afterEach",
+         "before", "after"
     }
 }
