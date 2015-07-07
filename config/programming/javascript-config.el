@@ -12,7 +12,7 @@
                                    "refute" "setTimeout" "clearTimeout" "setInterval"
                                    "clearInterval" "location"  "console"
                                    "JSON" "$" "jQuery" "_" "Backbone"
-                                   "__dirname" "__filename" "skewer"))
+                                   "__dirname" "__filename" "skewer" "describe"))
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'pretty-symbol-patterns '(?ƒ lambda "\\<function\\>" (js2-mode)))

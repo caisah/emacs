@@ -85,6 +85,6 @@
         ]
     },
     "globals": {
-
+         "describe"
     }
 }
