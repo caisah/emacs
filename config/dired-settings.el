@@ -8,6 +8,8 @@
 
 ;; List directories first
 (setq dired-listing-switches "-la --group-directories-first")
+;; Move deteleted stuff to trash
+(setq delete-by-moving-to-trash t)
 
 (defun dired-go-up-dir ()
   "Navigates to the parent dir."
