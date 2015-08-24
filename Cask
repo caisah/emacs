@@ -78,6 +78,7 @@
 (depends-on "smart-mode-line")
 (depends-on "smartparens")
 (depends-on "solarized-theme")
+(depends-on "tss")
 (depends-on "undo-tree")
 (depends-on "web-mode")
 (depends-on "yaml-mode")

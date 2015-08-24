@@ -35,7 +35,10 @@
 (defun ts-keys ()
   "Enable local keys for typescript-mode."
   (define-key typescript-mode-map (kbd "C-c C-f") 'hs-toggle-hiding)
-  (define-key typescript-mode-map (kbd "C-c C-e") 'shell-execute-last-command))
+  (define-key typescript-mode-map (kbd "C-c C-e") 'shell-execute-last-command)
+  (define-key typescript-mode-map (kbd "M-,") 'tss-popup-help)
+  (define-key typescript-mode-map (kbd "M-.") 'tss-jump-to-definition)
+  (define-key typescript-mode-map (kbd "C-c i") 'tss-implement-definition))
 
 (defun jsx-keys ()
   "Enable local keys for jsx-mode."
@@ -94,6 +97,10 @@
 
 ;; Typescript
 (require 'typescript-mode)
+;; Typescript tools
+(require 'tss)
+;;Do setting recommemded configuration
+(tss-config-default)
 
 (add-hook 'typescript-mode-hook (lambda () (setq mode-name "TypeScript")))
 
@@ -105,7 +112,6 @@
 (add-hook 'typescript-mode-hook 'flycheck-mode)
 (add-hook 'typescript-mode-hook 'whitespace-mode)
 (add-hook 'typescript-mode-hook 'ts-keys)
-
 
 ;; JSX for React
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
