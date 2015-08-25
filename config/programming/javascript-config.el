@@ -96,8 +96,6 @@
 (add-hook 'skewer-mode-hook 'skewer-keys)
 
 ;; Typescript
-(require 'typescript-mode)
-;; Typescript tools
 (require 'tss)
 ;;Do setting recommemded configuration
 (tss-config-default)
