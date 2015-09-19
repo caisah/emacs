@@ -8,6 +8,5 @@
 ;; Mongo
 (setq-default inf-mongo-command "/usr/bin/mongo")
 
-
 (provide 'other-languages-config)
 ;;; other-languages-config.el ends here

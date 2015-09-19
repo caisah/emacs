@@ -94,6 +94,7 @@
 (require 'clojure-config)
 (require 'elisp-config)
 (require 'lisp-config)
+(require 'scala-config)
 (require 'other-languages-config)
 
 
