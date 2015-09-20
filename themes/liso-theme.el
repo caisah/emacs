@@ -182,6 +182,7 @@
 
    ;; dired plus
    `(diredp-dir-priv ((t (:foreground ,liso-yellow :weight bold))))
+   `(diredp-dir-name ((t (:foreground ,liso-yellow :weight bold))))
    `(diredp-file-name ((t (:foreground ,foreground :weight normal))))
    `(diredp-file-suffix ((t (:foreground ,comment :slant italic))))
    `(diredp-dir-heading ((t (:background ,background :foreground ,ml-yellow :weight ultra-bold))))
