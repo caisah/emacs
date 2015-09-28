@@ -21,7 +21,7 @@
    (local-set-key (kbd "C-c C-e") 'sbt-command)
 
    ;; use sbt-run-previous-command to re-compile your code after changes
-   (local-set-key (kbd "C-x '") 'sbt-run-previous-command)
+   (local-set-key (kbd "C-c C-c") 'sbt-run-previous-command)
 ))
 ;; Exports
 (provide 'scala-config)
