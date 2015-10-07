@@ -131,7 +131,24 @@
                     " A" " Guide"  " Undo-Tree" " PgLn" " MRev"
                     " skewer-html" " skewer-css"" Emmet" " hs"
                     " λ" " Rbow" " vl" " Wrap" " Helm" " Projectile" " yas"
-                    " company" " Tern" " ws" " WS"))
+                    " company" " Tern" " ws" " WS" " Fly"))
+
+
+;; Hide/show
+(defface hs-face nil
+         "Basic face for hide/show."
+         :group 'basic-faces)
+
+(setq hs-set-up-overlay
+       (defun my-display-code-line-counts (ov)
+         (when (eq 'code (overlay-get ov 'hs))
+           (overlay-put ov 'display
+                        (propertize
+                         (format " ... %d lines ... "
+                                 (count-lines (overlay-start ov)
+                                              (overlay-end ov)))
+                         'face 'hs-face)))))
+
 
 ;; Tramp http://www.emacswiki.org/TrampMode
 (require 'tramp)
@@ -151,8 +168,12 @@
 (keyfreq-autosave-mode 1)
 
 
-;; Lint on JSON
-(add-hook 'json-mode-hook 'flycheck-mode)
+;;  JSON mode
+(add-hook 'json-mode-hook (lambda ()
+          (flycheck-mode)
+          (hs-minor-mode)
+          (local-set-key (kbd "C-c C-b") 'json-mode-beautify)
+          (local-set-key (kbd "C-c C-f") 'hs-toggle-hiding)))
 
 ;; Export
 (provide 'othermodes-settings)
