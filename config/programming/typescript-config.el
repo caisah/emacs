@@ -16,11 +16,11 @@
 
 ;; Typescript tools
 (require 'tss)
-
-;; Do setting recommended configuration
 (tss-config-default)
 
-(add-hook 'typescript-mode-hook (lambda () (setq mode-name "TypeScript")))
+;; Do setting recommended configuration
+(add-hook 'typescript-mode-hook '(lambda () (setq mode-name "TypeScript")))
+(add-hook 'typescript-mode-hook '(lambda() (auto-complete-mode 0)))
 (add-hook 'typescript-mode-hook 'pretty-symbols-mode)
 (add-hook 'typescript-mode-hook 'linum-mode)
 (add-hook 'typescript-mode-hook 'abbrev-mode)
@@ -30,6 +30,7 @@
 (add-hook 'typescript-mode-hook 'whitespace-mode)
 (add-hook 'typescript-mode-hook 'ts-keys)
 (add-hook 'typescript-mode-hook 'tss-setup-current-buffer)
+
 
 ;; Export
 (provide 'typescript-config)

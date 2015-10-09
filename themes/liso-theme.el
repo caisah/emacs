@@ -264,6 +264,8 @@
    `(markdown-header-face-5 ((t (:inherit (org-level-5)))))
    `(markdown-url-face ((t (:foreground ,link-dark-blue))))
    `(markdown-link-face ((t (:foreground ,liso-blue))))
+   ;; hs
+   `(hs-face ((t (:foreground ,liso-dark-green :background ,ml-black))))
    ;; re-builder
    `(reb-match-0 ((t (:background ,search-orange :foreground ,foreground :box (:line-width 1 :color ,liso-pink)))))
    `(reb-match-1 ((t (:background ,search-brown :foreground ,foreground :box (:line-width 1 :color ,liso-pink)))))
