@@ -70,9 +70,12 @@
            (replace-regexp-in-string "\033\\[[0-9]+[GKJ]" "" output)))))
 (defalias 'nodejs 'run-js)
 
-;; Hooks
-(add-hook 'js2-mode-hook (lambda () (setq mode-name "JS2")))
+(defun change-js2-mode-name ()
+  "Change js2-mode name to JS2."
+  (setq mode-name "JS2"))
 
+;; Hooks
+(add-hook 'js2-mode-hook 'change-js2-mode-name)
 (add-hook 'js2-mode-hook 'pretty-symbols-mode)
 (add-hook 'js2-mode-hook 'linum-mode)
 (add-hook 'js2-mode-hook 'abbrev-mode)

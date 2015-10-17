@@ -14,13 +14,17 @@
   (define-key typescript-mode-map (kbd "M-.") 'tss-jump-to-definition)
   (define-key typescript-mode-map (kbd "C-c i") 'tss-implement-definition))
 
+(defun change-name-&-disable-autocomplete ()
+  "Change name to TypeScript & disable autocomplete mode."
+  (setq mode-name "TypeScript")
+  (auto-complete-mode 0))
+
 ;; Typescript tools
 (require 'tss)
 (tss-config-default)
 
 ;; Do setting recommended configuration
-(add-hook 'typescript-mode-hook '(lambda () (setq mode-name "TypeScript")))
-(add-hook 'typescript-mode-hook '(lambda() (auto-complete-mode 0)))
+(add-hook 'typescript-mode-hook 'change-name-&-disable-autocomplete)
 (add-hook 'typescript-mode-hook 'pretty-symbols-mode)
 (add-hook 'typescript-mode-hook 'linum-mode)
 (add-hook 'typescript-mode-hook 'abbrev-mode)

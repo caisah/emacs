@@ -169,11 +169,15 @@
 
 
 ;;  JSON mode
-(add-hook 'json-mode-hook (lambda ()
-          (flycheck-mode)
-          (hs-minor-mode)
-          (local-set-key (kbd "C-c C-b") 'json-mode-beautify)
-          (local-set-key (kbd "C-c C-f") 'hs-toggle-hiding)))
+(defun set-json-mode-keys ()
+  "Set keys for json-mode."
+  (local-set-key (kbd "C-c C-b") 'json-mode-beautify)
+  (local-set-key (kbd "C-c C-f") 'hs-toggle-hiding))
+
+(add-hook 'json-mode-hook 'flycheck-mode)
+(add-hook 'json-mode-hook 'hs-minor-mode)
+(add-hook 'json-mode-hook 'set-json-mode-keys)
+
 
 ;; Export
 (provide 'othermodes-settings)
