@@ -95,7 +95,7 @@
 (require 'clojure-config)
 (require 'elisp-config)
 (require 'lisp-config)
-(require 'scala-config)
+(require 'ocaml-config)
 (require 'other-languages-config)
 
 

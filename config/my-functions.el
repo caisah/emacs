@@ -50,10 +50,15 @@
       (comint-send-input (comint-previous-input 1))
       (message "Last command executed"))))
 
-(defun save-and-delete-whitespaces ()
+;; Saving:
+(defun run-before-buffer-save ()
+  "Run this before saving a buffer."
+  (delete-trailing-whitespace))
+
+(defun my-save-buffer ()
   "Delete trailing whitespaces and then save buffer."
   (interactive)
-  (delete-trailing-whitespace)
+  (run-before-buffer-save)
   (save-buffer))
 
 

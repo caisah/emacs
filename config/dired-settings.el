@@ -11,6 +11,9 @@
 ;; Move deteleted stuff to trash
 (setq delete-by-moving-to-trash t)
 
+;; Easily copy file to the other buffer
+(setq dired-dwim-target t)
+
 (defun dired-go-up-dir ()
   "Navigates to the parent dir."
   (interactive)
