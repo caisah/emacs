@@ -21,11 +21,15 @@
 
 (add-hook 'merlin-mode-hook 'disable-ac)
 
+;; Utop
+(autoload 'utop-minor-mode "utop" "Minor mode for utop" t)
+
 ;; Keys
 (defun ocaml-keys ()
   "Enable local keys for tuareg-mode."
-  (define-key tuareg-mode-map (kbd "C-c C-z") 'tuareg-run-ocaml))
+  (define-key tuareg-mode-map (kbd "C-c C-z") 'utop))
 
+(add-hook 'tuareg-mode-hook 'utop-minor-mode)
 (add-hook 'tuareg-mode-hook 'linum-mode)
 (add-hook 'tuareg-mode-hook 'smartparens-strict-mode)
 (add-hook 'tuareg-mode-hook 'hs-minor-mode)

@@ -84,6 +84,7 @@
 (depends-on "tss")
 (depends-on "tuareg")
 (depends-on "undo-tree")
+(depends-on "utop")
 (depends-on "web-mode")
 (depends-on "yaml-mode")
 (depends-on "yasnippet")
