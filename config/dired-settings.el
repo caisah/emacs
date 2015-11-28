@@ -10,7 +10,6 @@
 (setq dired-listing-switches "-la --group-directories-first")
 ;; Move deteleted stuff to trash
 (setq delete-by-moving-to-trash t)
-
 ;; Easily copy file to the other buffer
 (setq dired-dwim-target t)
 
@@ -35,6 +34,9 @@
 
 (define-key dired-mode-map (kbd "^") 'dired-go-up-dir)
 (define-key dired-mode-map (kbd "k") 'dired-kill-subdir)
+
+;; Hooks
+(add-hook 'dired-mode-hook 'dired-omit-mode)
 
 ;; Enable dired plus by default
 (require 'dired+)
