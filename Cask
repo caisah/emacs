@@ -25,6 +25,7 @@
 (depends-on "gh")
 (depends-on "gist")
 (depends-on "helm")
+(depends-on "helm-ag")
 (depends-on "helm-flycheck")
 (depends-on "helm-google")
 (depends-on "helm-projectile")
