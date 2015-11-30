@@ -1,7 +1,0 @@
-create table tasks (task_id int primary key not null, task_text text, task_done int);
-
-insert into tasks values (1, 'My first task', 0);
-
---list insertion
-select * from tasks;
-       

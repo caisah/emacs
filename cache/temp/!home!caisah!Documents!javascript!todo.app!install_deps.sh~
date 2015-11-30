@@ -1,5 +1,0 @@
-#! /bin/bash
-
-if ! [ -x "$(command -v sqlite3)" ];
-    echo 'git is not installed.' >&2
-fi
