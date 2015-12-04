@@ -12,6 +12,7 @@ recentf
 /themes/color-theme.el
 /projectile-bookmarks.eld
 /.mc-lists.el
+/.sx/
 /var/
 /projectile.cache
 /cache/keyfrequency
@@ -20,3 +21,4 @@ recentf
 /tramp
 /image-dired/icon128_55a3fde6a9df4128cfa50b12448e9bac.thumb.png
 /elpa/
+/image-dired/

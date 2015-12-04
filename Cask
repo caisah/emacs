@@ -82,6 +82,7 @@
 (depends-on "smart-mode-line")
 (depends-on "smartparens")
 (depends-on "solarized-theme")
+(depends-on "sx")
 (depends-on "tss")
 (depends-on "tuareg")
 (depends-on "undo-tree")
