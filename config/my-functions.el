@@ -26,6 +26,15 @@
   (kill-this-buffer)
   (other-window 1))
 
+(defun kill-all-buffers ()
+  "Kill all buffers, leaving *scratch* only."
+  (interactive)
+  (mapc
+   (lambda (buffer)
+     (kill-buffer buffer))
+   (buffer-list))
+  (delete-other-windows))
+
 (defun delete-to-previous-line ()
   "Delete to previous end of line."
   (interactive)

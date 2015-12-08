@@ -85,6 +85,7 @@
 (depends-on "sx")
 (depends-on "tss")
 (depends-on "tuareg")
+(depends-on "twittering-mode")
 (depends-on "undo-tree")
 (depends-on "utop")
 (depends-on "web-mode")
