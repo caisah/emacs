@@ -1,5 +1,4 @@
 ;;; dired-settings.el --- Dired settings
-
 ;;; Commentary:
 ;; Dired
 

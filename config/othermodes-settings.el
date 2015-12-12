@@ -28,16 +28,6 @@
 ;; Emmet https://github.com/smihica/emmet-mode
 (setq-default emmet-preview-default nil)
 
-;; Org Mode
-;; enable toc
-(setq-default org-src-fontify-natively t)
-(eval-after-load "org-toc-autoloads"
-  '(progn
-     (if (require 'org-toc nil t)
-         (add-hook 'org-mode-hook 'org-toc-enable)
-       (warn "org-toc not found"))))
-(add-hook 'org-mode-hook 'flyspell-mode)
-
 ;; Calendar
 (setq-default calendar-latitude 46.7667)
 (setq-default calendar-longitude 23.5833)
@@ -97,7 +87,7 @@
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-
+(add-hook 'markdown-mode 'pandoc-mode)
 
 ;; Projectile
 (projectile-global-mode)

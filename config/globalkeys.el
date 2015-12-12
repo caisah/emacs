@@ -1,7 +1,6 @@
 ;;; globalkeys.el --- Global keys
-
 ;;; Commentary:
-;; Only global keys
+;; Global keys
 
 ;;; Code:
 (global-set-key (kbd "C-S-s") 'query-replace)
@@ -81,6 +80,13 @@
 
 (global-set-key (kbd "C-\\") 'delete-to-previous-line)
 (global-set-key (kbd "C-S-y") 'yank-next)
+
+;; ORG
+(add-hook 'org-mode-hook
+          '(lambda ()
+(define-key org-mode-map (kbd "C-M-p") 'outline-previous-visible-heading)
+(define-key org-mode-map (kbd "C-M-n") 'outline-next-visible-heading)
+(define-key org-mode-map (kbd "C-M-u") 'outline-up-heading)))
 
 ;; Company
 (with-eval-after-load 'company

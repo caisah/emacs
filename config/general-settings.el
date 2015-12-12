@@ -86,6 +86,7 @@
 (require 'flycheck-settings)
 (require 'helm-settings)
 (require 'magit-settings)
+(require 'org-settings)
 (require 'othermodes-settings)
 
 ;; Programming
