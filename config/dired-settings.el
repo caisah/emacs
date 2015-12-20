@@ -4,7 +4,7 @@
 
 ;;; Code:
 (require 'dired)
-
+(require 'dired-aux)
 ;; List directories first
 (setq dired-listing-switches "-la --group-directories-first")
 ;; Move deteleted stuff to trash
