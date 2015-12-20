@@ -12,6 +12,9 @@
 ;; Easily copy file to the other buffer
 (setq dired-dwim-target t)
 
+;; Set zip to decompress
+(add-to-list 'dired-compress-file-suffixes '("\\.zip\\'" ".zip" "unzip"))
+
 (defun dired-go-up-dir ()
   "Navigates to the parent dir."
   (interactive)
