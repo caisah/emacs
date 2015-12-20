@@ -8,7 +8,8 @@ recentf
 /cache/bookmarks
 /cache/ido-list
 /cache/emacs-desktop
-/cache/temp
+/cache/temp/
+!/cache/temp/.empty
 /themes/color-theme.el
 /projectile-bookmarks.eld
 /.mc-lists.el
