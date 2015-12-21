@@ -34,7 +34,7 @@
 ;; From helm-swoop to helm-multi-swoop-all
 (define-key helm-swoop-map (kbd "M-i") 'helm-multi-swoop-all-from-helm-swoop)
 (global-set-key (kbd "C-x C-S-f") 'helm-projectile)
-(global-set-key (kbd "C-x g") 'helm-do-grep-recursive)
+(global-set-key (kbd "C-x g") 'helm-ag)
 (global-set-key (kbd "C-x C-b") 'helm-resume)
 
 
