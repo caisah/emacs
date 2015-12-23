@@ -70,6 +70,7 @@
 (depends-on "rainbow-blocks")
 (depends-on "rainbow-delimiters")
 (depends-on "rainbow-mode")
+(depends-on "restclient")
 (depends-on "rich-minority")
 (depends-on "s")
 (depends-on "sbt-mode")
