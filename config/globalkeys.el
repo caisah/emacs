@@ -94,6 +94,11 @@
   (define-key company-active-map (kbd "M-p") nil)
   (define-key company-active-map (kbd "C-n") #'company-select-next)
   (define-key company-active-map (kbd "C-p") #'company-select-previous))
+
+;; Other modes
+(with-eval-after-load 'nxml-mode
+  (define-key nxml-mode-map (kbd "C-c C-f") 'hs-toggle-hiding))
+
 ;; Export
 (provide 'globalkeys)
 

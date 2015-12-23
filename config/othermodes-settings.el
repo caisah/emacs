@@ -168,6 +168,19 @@
 (add-hook 'json-mode-hook 'hs-minor-mode)
 (add-hook 'json-mode-hook 'set-json-mode-keys)
 
+;; XML
+(add-hook 'xml-mode-hook 'nxml-mode)
+(add-hook 'xml-mode-hook 'sgml-mode)
+(add-hook 'xml-mode-hook 'hs-minor-mode)
+
+(add-to-list 'hs-special-modes-alist
+             '(nxml-mode
+               "<!--\\|<[^/>]*[^/]>"
+               "-->\\|</[^/>]*[^/]>"
+               "<!--"
+               sgml-skip-tag-forward
+               nil))
+
 
 ;; Export
 (provide 'othermodes-settings)

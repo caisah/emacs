@@ -84,6 +84,7 @@
 (depends-on "smartparens")
 (depends-on "solarized-theme")
 (depends-on "sx")
+(depends-on "tern")
 (depends-on "tss")
 (depends-on "tuareg")
 (depends-on "twittering-mode")
