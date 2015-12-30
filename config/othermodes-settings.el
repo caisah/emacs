@@ -169,7 +169,7 @@
 (add-hook 'json-mode-hook 'set-json-mode-keys)
 
 ;; XML
-(add-hook 'nxml-mode-hook 'nxml-sgml-mode)
+(add-hook 'nxml-mode-hook 'sgml-mode)
 (add-hook 'nxml-mode-hook 'hs-minor-mode)
 
 (add-to-list 'hs-special-modes-alist
