@@ -7,11 +7,10 @@
 ;; enable toc
 (setq-default org-src-fontify-natively t)
 
-(eval-after-load "org-toc-autoloads"
-  '(progn
-     (if (require 'org-toc nil t)
-         (add-hook 'org-mode-hook 'org-toc-enable)
-       (warn "org-toc not found"))))
+(if (require 'toc-org nil t)
+    (add-hook 'org-mode-hook 'org-toc-enable)
+  (warn "org-toc not found"))
+
 
 (add-hook 'org-mode-hook 'flyspell-mode)
 (add-hook 'org-mode-hook 'turn-off-smartparens-mode)
