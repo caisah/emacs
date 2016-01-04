@@ -70,6 +70,9 @@
            (replace-regexp-in-string "\033\\[[0-9]+[GKJ]" "" output)))))
 (defalias 'nodejs 'run-js)
 
+;; Tern
+(require 'tern)
+
 (defun change-js2-mode-name ()
   "Change js2-mode name to JS2."
   (setq mode-name "JS2"))
