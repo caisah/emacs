@@ -74,8 +74,6 @@
 (depends-on "restclient")
 (depends-on "rich-minority")
 (depends-on "s")
-(depends-on "sbt-mode")
-(depends-on "scala-mode2")
 (depends-on "scss-mode")
 (depends-on "shut-up")
 (depends-on "simple-httpd")

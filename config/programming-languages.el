@@ -53,24 +53,3 @@
 
 (add-hook 'c-mode-common-hook 'linum-mode)
 (add-hook 'c-mode-common-hook 'abbrev-mode)
-
-
-			     ;; Smalltalk
-
-
-(require 'smalltalk-mode)
-(require 'gst-mode)
-
-(push (cons "\\.star\\'"
-            (catch 'archive-mode
-              (dolist (mode-assoc auto-mode-alist 'archive-mode)
-                (and (string-match (car mode-assoc) "Starfile.zip")
-                     (functionp (cdr mode-assoc))
-                     (throw 'archive-mode (cdr mode-assoc))))))
-      auto-mode-alist)
-
-(push '("\\.st\\'" . smalltalk-mode) auto-mode-alist)
-
-(autoload 'smalltalk-mode "smalltalk-mode" "" t)
-(autoload 'gst "gst-mode" "" t)
-(add-hook 'smalltalk-mode-hook 'linum-mode)
