@@ -93,7 +93,6 @@
 (require 'javascript-config)
 (require 'typescript-config)
 (require 'html-config)
-(require 'clojure-config)
 (require 'elisp-config)
 (require 'lisp-config)
 (require 'ocaml-config)
