@@ -48,5 +48,7 @@ See URL `https://github.com/w3c/tidy-html5'."
 (add-to-list 'flycheck-checkers 'typescript)
 (add-to-list 'flycheck-checkers 'jsx)
 
+(add-hook 'flycheck-mode-hook 'flycheck-elm-setup)
+
 (provide 'flycheck-settings)
 ;;; flycheck-settings.el ends here

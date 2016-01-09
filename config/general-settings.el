@@ -94,8 +94,7 @@
 (require 'typescript-config)
 (require 'html-config)
 (require 'elisp-config)
-(require 'lisp-config)
-(require 'ocaml-config)
+(require 'elm-config)
 (require 'other-languages-config)
 
 
