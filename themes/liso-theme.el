@@ -269,6 +269,9 @@
    ;; re-builder
    `(reb-match-0 ((t (:background ,search-orange :foreground ,foreground :box (:line-width 1 :color ,liso-pink)))))
    `(reb-match-1 ((t (:background ,search-brown :foreground ,foreground :box (:line-width 1 :color ,liso-pink)))))
+
+   ;; Twitter
+   `(twittering-uri-face ((t (:inherit (link)))))
    ))
 
 ;; Ibuffer

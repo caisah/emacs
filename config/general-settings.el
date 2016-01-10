@@ -87,6 +87,7 @@
 (require 'helm-settings)
 (require 'magit-settings)
 (require 'org-settings)
+(require 'twitter-settings)
 (require 'othermodes-settings)
 
 ;; Programming
