@@ -272,6 +272,7 @@
 
    ;; Twitter
    `(twittering-uri-face ((t (:inherit (link)))))
+   `(twittering-username-face ((t (:inherit (font-lock-type-face)))))
    ))
 
 ;; Ibuffer
