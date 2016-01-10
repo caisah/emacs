@@ -28,7 +28,7 @@
   :group 'faces)
 
 (defface twittering-delimiter
-  '((t (:foreground "gray10")))
+  '((t (:inherit (vertical-border))))
   "test face"
   :group 'faces)
 
@@ -40,7 +40,7 @@
 (setq twittering-status-format "%i%FACE[twittering-user-name]{%s}%FACE[twittering-reply]{%r%R}%FACE[twittering-time]{ - %@}
 %FILL{    %T}\n
 %FILL{%FACE[twittering-location]{Client: %f -- Loc: %l}}
-%FACE[twittering-delimiter]{---------------------------------------}")
+%FACE[twittering-delimiter]{---------------------------------------------}")
 
 (defun twittering-open-with-eww ()
   "Open link from twitt with EWW."
