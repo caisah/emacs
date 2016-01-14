@@ -273,6 +273,11 @@
    ;; Twitter
    `(twittering-uri-face ((t (:inherit (link)))))
    `(twittering-username-face ((t (:inherit (font-lock-type-face)))))
+
+   ;; ERC
+   `(erc-timestamp-face ((t (:foreground ,liso-dark-green))))
+   `(erc-notice-face ((t (:foreground ,comment))))
+   `(erc-nick-default-face ((t (:foreground ,liso-blue))))
    ))
 
 ;; Ibuffer
