@@ -30,12 +30,8 @@
 (setq-default helm-multi-swoop-edit-save t)
 (setq-default helm-swoop-split-direction 'split-window-vertically)
 
-(defun helm-do-grep-recursive (&optional non-recursive)
-  "Like `helm-do-grep', but greps recursively by default."
-  (interactive "P")
-  (let* ((current-prefix-arg (not non-recursive))
-         (helm-current-prefix-arg non-recursive))
-    (call-interactively 'helm-do-grep)))
+(require 'helm-ag)
+(setq helm-ag--ignore-case t)
 
 (eval-after-load 'flycheck
    '(define-key flycheck-mode-map (kbd "C-c ! h") 'helm-flycheck))
