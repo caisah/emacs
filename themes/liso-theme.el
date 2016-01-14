@@ -278,6 +278,7 @@
    `(erc-timestamp-face ((t (:foreground ,liso-dark-green))))
    `(erc-notice-face ((t (:foreground ,comment))))
    `(erc-nick-default-face ((t (:foreground ,liso-blue))))
+   `(erc-action-face ((t (:foreground ,liso-purple))))
    ))
 
 ;; Ibuffer
