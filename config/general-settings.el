@@ -88,6 +88,7 @@
 (require 'magit-settings)
 (require 'org-settings)
 (require 'twitter-settings)
+(require 'eww-settings)
 (require 'othermodes-settings)
 
 ;; Programming

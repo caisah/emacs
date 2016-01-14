@@ -32,9 +32,6 @@
 (setq-default calendar-latitude 46.7667)
 (setq-default calendar-longitude 23.5833)
 
-;; eww
-(setq-default eww-search-prefix "https://google.com/search?q=")
-(setq-default shr-color-visible-luminance-min 70)
 
 ;; Whitepspace
 (setq-default whitespace-style '(face trailing tabs lines)
