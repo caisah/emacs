@@ -42,7 +42,7 @@
 %FILL{%FACE[twittering-location]{Client: %f -- Loc: %l}}
 %FACE[twittering-delimiter]{---------------------------------------------}")
 
-(defun twittering-open-nex-link-with-eww ()
+(defun twittering-open-next-link-with-eww ()
   "Open link from twitt with EWW."
   (interactive)
   (save-excursion

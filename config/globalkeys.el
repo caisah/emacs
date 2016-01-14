@@ -42,6 +42,7 @@
 (global-set-key (kbd "<f9>") 'smart-compile)
 
 ;; Change to Message buffer
+(global-set-key (kbd "C-x B") 'switch-to-buffer)
 (global-set-key (kbd "<f1>")
                 '(lambda () (interactive) (switch-to-buffer "*Messages*")))
 
