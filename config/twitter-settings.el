@@ -42,7 +42,7 @@
 %FILL{%FACE[twittering-location]{Client: %f -- Loc: %l}}
 %FACE[twittering-delimiter]{---------------------------------------------}")
 
-(defun twittering-open-with-eww ()
+(defun twittering-open-nex-link-with-eww ()
   "Open link from twitt with EWW."
   (interactive)
   (save-excursion
@@ -55,7 +55,10 @@
 (define-key twittering-mode-map (kbd "p") 'twittering-goto-previous-status)
 (define-key twittering-mode-map (kbd "j") 'twittering-visit-timeline)
 (define-key twittering-mode-map (kbd "W") 'twittering-push-uri-onto-kill-ring)
-(define-key twittering-mode-map (kbd "o") 'twittering-open-with-eww)
+(define-key twittering-mode-map (kbd "o") 'twittering-open-next-link-with-eww)
+(define-key twittering-mode-map (kbd "t") 'twittering-update-status-interactive)
+(define-key twittering-mode-map (kbd "u") 'twittering-other-user-timeline)
+(define-key twittering-mode-map (kbd "C-c C-s") 'twittering-search)
 ;; Export:
 (provide 'twitter-settings)
 ;;; twitter-settings ends here
