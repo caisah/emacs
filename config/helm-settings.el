@@ -31,7 +31,8 @@
 (setq-default helm-swoop-split-direction 'split-window-vertically)
 
 (require 'helm-ag)
-(setq helm-ag--ignore-case t)
+(custom-set-variables
+ '(helm-ag-command-option "-i"))
 
 (eval-after-load 'flycheck
    '(define-key flycheck-mode-map (kbd "C-c ! h") 'helm-flycheck))
