@@ -79,7 +79,6 @@
 (depends-on "smartparens")
 (depends-on "solarized-theme")
 (depends-on "swiper")
-(depends-on "sx")
 (depends-on "tern")
 (depends-on "toc-org")
 (depends-on "tss")
