@@ -30,12 +30,16 @@
 (setq-default helm-multi-swoop-edit-save t)
 (setq-default helm-swoop-split-direction 'split-window-vertically)
 
+;; Helm AG
 (require 'helm-ag)
 (custom-set-variables
  '(helm-ag-command-option "-i"))
 
 (eval-after-load 'flycheck
    '(define-key flycheck-mode-map (kbd "C-c ! h") 'helm-flycheck))
+
+;; Helm Package
+(require 'helm-package)
 
 ;; Export
 (provide 'helm-settings)
