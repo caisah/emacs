@@ -168,7 +168,7 @@
    `(helm-separator ((t (:foreground ,liso-dark-green))))
    `(helm-grep-file ((t (:foreground ,liso-dark-green))))
    `(helm-grep-match ((t (:foreground ,prompt-green))))
-   `(helm-swoop-target-word-face ((t (:inherit (isearch)))))
+   `(helm-swoop-target-word-face ((t (:background ,background :foreground ,prompt-green :underline nil))))
    `(helm-swoop-target-line-face ((t (:background ,ml-grey-darker))))
 
    `(company-tooltip-selection ((t (:inherit (helm-selection)))))

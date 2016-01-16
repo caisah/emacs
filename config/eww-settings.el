@@ -11,6 +11,10 @@
 (define-key eww-mode-map (kbd "n") 'shr-next-link)
 (define-key eww-mode-map (kbd "p") 'shr-previous-link)
 
+(defun eww-open-link-at-point ()
+  (interactive)
+  (eww (thing-at-point 'url)))
+
 ;; Export:
 (provide 'eww-settings)
 ;;; eww-settings ends here

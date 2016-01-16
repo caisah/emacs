@@ -22,6 +22,7 @@
 (depends-on "geiser")
 (depends-on "gh")
 (depends-on "gist")
+(depends-on "google-translate")
 (depends-on "helm")
 (depends-on "helm-ag")
 (depends-on "helm-core")
