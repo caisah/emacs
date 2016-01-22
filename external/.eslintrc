@@ -2,7 +2,8 @@
     "env": {
         "browser": true,
         "node": true,
-        "amd": true
+        "amd": true,
+        "es6": true
     },
     "rules": {
         "block-scoped-var": 2,
@@ -15,7 +16,6 @@
         "comma-style": 2,
         "dot-notation": 0,
         "eol-last": 0,
-        "indent": 2,
         "max-nested-callbacks": [
             2,
             3

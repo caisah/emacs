@@ -7,13 +7,13 @@
 (setq-default js2-show-parse-errors nil
               js2-strict-missing-semi-warning nil
               js2-strict-trailing-comma-warning t
-              js2-basic-offset 4
+              js2-basic-offset 2
               js2-global-externs '("module" "require" "exports" "sinon" "assert"
                                    "refute" "setTimeout" "clearTimeout" "setInterval"
                                    "clearInterval" "location"  "console"
                                    "JSON" "$" "jQuery" "_" "Backbone" "__dirname"
                                    "__filename" "skewer" "describe" "it" "beforeEach"
-                                   "afterEach" "before" "after" "angular"))
+                                   "afterEach" "before" "after" "angular" "define"))
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'pretty-symbol-patterns '(?ƒ lambda "\\<function\\>" (js2-mode)))
@@ -30,7 +30,8 @@
 (defun js-keys ()
   "Enable local keys for js2-mode."
   (define-key js2-mode-map (kbd "C-c C-f") 'hs-toggle-hiding)
-  (define-key js2-mode-map (kbd "C-c C-e") 'shell-execute-last-command))
+  (define-key js2-mode-map (kbd "C-c C-e") 'shell-execute-last-command)
+  (define-key js2-mode-map (kbd "C-c i") 'imenu))
 
 (defun jsx-keys ()
   "Enable local keys for jsx-mode."
