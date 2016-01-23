@@ -3,7 +3,7 @@
 ;; Author: Vlad Piersec <vlad.piersec@gmail.com>
 ;; Keywords: theme, themes
 ;; URL: https://github.com/caisah/liso-theme
-;; Version: 2.0
+;; Version: 2.1
 
 ;;; Commentary:
 ;; Inspired by TangoTango Theme https://github.com/juba/color-theme-tangotango
@@ -60,10 +60,12 @@
       (ml-grey-darker "#414B4E")
       (paren-blue "#7AD9FF")
       (paren-red "#9D005C")
-      (diff-dark-red "#372121")
-      (diff-dark-green "#233721")
-      (diff-light-green "#317A31")
-      (diff-light-red "#AA2222")
+      (diff-dark-red "#8C5454")
+      (diff-dark-green "#598C54")
+      (diff-light-green "#7ABF73")
+      (diff-ultra-green "#2BBD1C")
+      (diff-light-red "#A63232")
+      (diff-light-orange "#DE7000")
       (darker-background "#1A1C1F"))
 
   (custom-theme-set-faces
@@ -168,7 +170,7 @@
    `(helm-separator ((t (:foreground ,liso-dark-green))))
    `(helm-grep-file ((t (:foreground ,liso-dark-green))))
    `(helm-grep-match ((t (:foreground ,prompt-green))))
-   `(helm-swoop-target-word-face ((t (:background ,background :foreground ,prompt-green :underline nil))))
+   `(helm-swoop-target-word-face ((t (:background ,ml-black :foreground ,prompt-green :underline nil))))
    `(helm-swoop-target-line-face ((t (:background ,ml-grey-darker))))
 
    `(company-tooltip-selection ((t (:inherit (helm-selection)))))
@@ -201,22 +203,25 @@
    `(diredp-number ((t (:foreground ,comment))))
    `(diredp-no-priv ((t (:foreground ,foreground))))
    ;; magit
-   `(magit-section-highlight ((t (:background ,ml-grey-darker))))
-   `(magit-section-heading ((t (:foreground ,ml-yellow))))
-   `(magit-branch-current ((t (:foreground ,liso-green :box (:width 2)))))
-   `(magit-branch-remote ((t (:foreground ,liso-blue))))
-   `(magit-branch-local ((t (:foreground ,liso-green))))
-   `(magit-hash ((t (:foreground ,liso-red))))
-   `(magit-head ((t (:foreground ,liso-red :background ,ml-black))))
-   `(magit-section-heading ((t (:foreground ,ml-yellow))))
-   `(magit-diff-file-heading ((t (:foreground ,foreground))))
-   `(magit-diff-file-heading-highlight ((t (:foreground ,foreground :background ,ml-grey-darker :weight bold))))
-   `(magit-diff-removed-highlight ((t (:background ,diff-dark-red))))
-   `(magit-diff-added-highlight ((t (:background ,diff-dark-green))))
-   `(magit-diff-hunk-heading-highlight ((t (:background ,ml-black :foreground ,comment))))
    `(magit-log-author ((t (:foreground ,comment))))
    `(magit-log-date ((t (:foreground ,comment))))
    `(magit-tag ((t (:foreground ,liso-purple))))
+   `(magit-branch-remote ((t (:foreground ,liso-blue))))
+   `(magit-branch-local ((t (:foreground ,liso-green :box (:width 2)))))
+   `(magit-branch-current ((t (:foreground ,liso-green :box (:width 2)))))
+   `(magit-hash ((t (:foreground ,liso-red))))
+   `(magit-head ((t (:foreground ,liso-red :background ,ml-black))))
+   `(magit-section-heading ((t (:foreground ,ml-yellow))))
+   `(magit-section-highlight ((t (:background ,ml-grey-darker))))
+   `(magit-diff-file-heading ((t (:foreground ,foreground))))
+   `(magit-diff-file-heading-highlight ((t (:foreground ,foreground :background ,ml-grey-darker :weight bold))))
+   `(magit-diff-context-highlight ((t (:background ,ml-black :foreground ,comment))))
+   `(magit-diff-hunk-heading-highlight ((t (:background ,ml-black :foreground ,comment))))
+   `(magit-diff-added ((t (:foreground ,diff-dark-green))))
+   `(magit-diff-added-highlight ((t (:background ,ml-black :foreground ,diff-light-green))))
+   `(magit-diff-removed ((t (:foreground ,diff-dark-red))))
+   `(magit-diff-removed-highlight ((t (:background ,ml-black :foreground ,diff-light-red))))
+
    ;; org
    `(org-table ((t (:foreground ,liso-dark-green))))
    `(org-level-1 ((t (:foreground ,liso-red))))
@@ -230,12 +235,18 @@
    ;; ediff
    `(diff-removed ((t (:foreground ,diff-dark-red))))
    `(diff-added ((t (:foreground ,diff-dark-green))))
-   `(ediff-even-diff-A ((t (:foreground ,ml-grey-darker))))
-   `(ediff-even-diff-B ((t (:foreground ,ml-grey-darker))))
-   `(ediff-odd-diff-A ((t (:foreground ,ml-grey-darker))))
-   `(ediff-odd-diff-B ((t (:foreground ,ml-grey-darker))))
-   `(ediff-fine-diff-A ((t (:foreground ,diff-light-red))))
-   `(ediff-fine-diff-B ((t (:foreground ,diff-light-green))))
+   `(ediff-current-diff-A ((t (:background ,ml-black))))
+   `(ediff-current-diff-B ((t (:background ,ml-black))))
+   `(ediff-current-diff-C ((t (:background ,ml-black))))
+   `(ediff-even-diff-A ((t (:background ,ml-black))))
+   `(ediff-even-diff-B ((t (:background ,ml-black))))
+   `(ediff-even-diff-C ((t (:background ,ml-black))))
+   `(ediff-odd-diff-A ((t (:background ,ml-black))))
+   `(ediff-odd-diff-B ((t (:background ,ml-black))))
+   `(ediff-odd-diff-C ((t (:background ,ml-black))))
+   `(ediff-fine-diff-A ((t (:foreground ,diff-light-orange))))
+   `(ediff-fine-diff-B ((t (:foreground ,diff-light-orange))))
+   `(ediff-fine-diff-C ((t (:background ,ml-black :foreground ,diff-ultra-green))))
    ;; web mode
    `(web-mode-html-tag-face ((t (:foreground ,liso-yellow))))
    `(web-mode-html-tag-bracket-face ((t (:inherit (web-mode-html-tag-face)))))
