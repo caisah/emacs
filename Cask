@@ -11,6 +11,7 @@
 (depends-on "dash")
 (depends-on "dash-functional")
 (depends-on "dired+")
+(depends-on "elfeed")
 (depends-on "elm-mode")
 (depends-on "emmet-mode")
 (depends-on "epl")

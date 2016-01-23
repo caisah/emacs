@@ -90,6 +90,7 @@
 (require 'twitter-settings)
 (require 'eww-settings)
 (require 'othermodes-settings)
+(require 'elfeed-settings)
 
 ;; Programming
 (require 'javascript-config)
