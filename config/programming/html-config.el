@@ -6,7 +6,8 @@
 ;;; Code:
 (require 'web-mode)
 
-(setq web-mode-markup-indent-offset 4)
+(setq web-mode-markup-indent-offset 2)
+(setq css-indent-offset 2)
 
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.hbs?\\'" . web-mode))
@@ -18,6 +19,7 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jst\\'" . web-mode))
+
 
 ;; Functions
 (defun open-file-in-browser()
@@ -70,11 +72,6 @@
 (add-hook 'css-mode-hook 'skewer-css-mode)
 (add-hook 'css-mode-hook 'rainbow-mode)
 (add-hook 'css-mode-hook 'linum-mode)
-
-;; Auto-start on any markup modes
-(add-hook 'sgml-mode-hook 'emmet-mode)
-(add-hook 'html-mode-hook 'emmet-mode)
-(add-hook 'css-mode-hook  'emmet-mode)
 
 ;; LESS
 (add-hook 'less-css-mode-hook 'linum-mode)
