@@ -42,8 +42,7 @@
         ],
         "space-before-blocks": "always",
         "strict": [
-            2,
-            "global"
+            2
         ],
         "quote-props": [
             2,
