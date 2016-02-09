@@ -13,7 +13,8 @@
                                    "clearInterval" "location"  "console"
                                    "JSON" "$" "jQuery" "_" "Backbone" "__dirname"
                                    "__filename" "skewer" "describe" "it" "beforeEach"
-                                   "afterEach" "before" "after" "angular" "define"))
+                                   "afterEach" "before" "after" "angular" "define"
+                                   "expect" "spyOn"))
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'pretty-symbol-patterns '(?ƒ lambda "\\<function\\>" (js2-mode)))
