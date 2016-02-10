@@ -38,7 +38,6 @@
   "Keys used in HTML."
   (local-set-key (kbd "C-,") 'sgml-tag)
   (local-set-key (kbd "C-o") 'open-file-in-browser)
-  (define-key emmet-mode-keymap (kbd "C-j") nil)
   (local-set-key (kbd "C-j") 'newline-and-indent)
   (local-set-key (kbd "C-;") 'emmet-expand-line)
   (local-set-key (kbd "M-n") 'sp-html-next-tag)
@@ -56,22 +55,17 @@
   (local-set-key (kbd "C-S-c") 'web-mode-element-clone)
   (local-set-key (kbd "<C-M-backspace>") 'backward-kill-element))
 
-
-(defun enable-ss-keys ()
-  "Keys for CSS preprocessors."
-  (define-key emmet-mode-keymap (kbd "C-j") nil)
-  (local-set-key (kbd "C-j") 'newline-and-indent))
-
 ;; Hooks
-(add-hook 'web-mode-hook 'emmet-mode)
 (add-hook 'web-mode-hook 'flycheck-mode)
 (add-hook 'web-mode-hook 'html-keys)
 (add-hook 'web-mode-hook 'skewer-html-mode)
 (add-hook 'web-mode-hook 'linum-mode)
-(add-hook 'web-mode-hook 'skewer-css-mode)
+(add-hook 'web-mode-hook 'hs-minor-mode)
 (add-hook 'css-mode-hook 'skewer-css-mode)
 (add-hook 'css-mode-hook 'rainbow-mode)
 (add-hook 'css-mode-hook 'linum-mode)
+(add-hook 'css-mode-hook 'flycheck-mode)
+(add-hook 'css-mode-hook 'hs-minor-mode)
 
 ;; LESS
 (add-hook 'less-css-mode-hook 'linum-mode)
