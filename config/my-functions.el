@@ -70,6 +70,15 @@
   (run-before-buffer-save)
   (save-buffer))
 
+(defun my-dired-shell ()
+  "Open shell when in dired mode.
+Does the job when using `dired-maybe-insert-subdir`"
+  (interactive)
+  (when (string-equal major-mode "dired-mode")
+    (let* ((dir (dired-current-directory))
+           (default-directory dir)
+           (buffer-name (format "*shell %s*" dir)))
+      (shell buffer-name))))
 
 ;; Export
 (provide 'my-functions)
