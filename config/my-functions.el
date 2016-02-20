@@ -77,10 +77,13 @@ Does the job when using `dired-maybe-insert-subdir`"
   (if (string-equal major-mode "dired-mode")
     (let* ((dir (dired-current-directory))
            (default-directory dir)
-           (buffer-name (format "*shell %s*" dir)))
+           (dir-name (car (last (split-string dir "/") 2)))
+           (buffer-name (format "shell /%s*" dir-name)))
       (shell buffer-name))
     (shell)))
 
+
+()
 ;; Export
 (provide 'my-functions)
 
