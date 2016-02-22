@@ -234,7 +234,9 @@
    `(org-level-8 ((t (:foreground ,liso-dark-green))))
    ;; ediff
    `(diff-removed ((t (:foreground ,diff-dark-red))))
+   `(diff-refine-removed ((t (:foreground ,diff-light-red :background ,ml-black))))
    `(diff-added ((t (:foreground ,diff-dark-green))))
+   `(diff-refine-added ((t (:foreground ,diff-light-green :background ,ml-black))))
    `(ediff-current-diff-A ((t (:background ,ml-black))))
    `(ediff-current-diff-B ((t (:background ,ml-black))))
    `(ediff-current-diff-C ((t (:background ,ml-black))))
