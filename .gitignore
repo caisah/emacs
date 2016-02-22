@@ -3,12 +3,7 @@ recentf
 /url/
 /eshell/
 /.cask/
-/cache/auto-save-list
-/cache/.emacs.desktop.lock
-/cache/bookmarks
-/cache/ido-list
-/cache/emacs-desktop
-/cache/temp/
+/cache/
 !/cache/temp/.empty
 /themes/color-theme.el
 /projectile-bookmarks.eld
@@ -16,9 +11,6 @@ recentf
 /.sx/
 /var/
 /projectile.cache
-/cache/keyfrequency
-/cache/projectile/projectile.cache
-/cache/.mc-lists.el
 /tramp
 /image-dired/icon128_55a3fde6a9df4128cfa50b12448e9bac.thumb.png
 /elpa/
