@@ -34,7 +34,7 @@
         ],
         "no-nested-ternary": 2,
         "no-path-concat": 0,
-        "no-reserved-keys": 2,
+        "quote-props": 2,
         "no-undef-init": 2,
         "one-var": [
             2,
@@ -65,15 +65,11 @@
             2,
             "never"
         ],
-        "space-in-brackets": [
-            2,
-            "never"
-        ],
         "space-in-parens": [
             2,
             "never"
         ],
-        "spaced-line-comment": [
+        "spaced-comment": [
             2,
             "always"
         ],
