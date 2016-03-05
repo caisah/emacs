@@ -141,7 +141,6 @@
         "http://hitenism.com/fee/"
         "http://www.tolo.ro/feed/"
         "http://feeds.feedburner.com/Room362com"
-        "http://www.cyberwarnews.info/feed/"
         "http://www.ccc.de/de/rss/updates.rdf"
         "http://feeds.feedburner.com/typepad/126429516s8517/news"
         "http://seclists.org/rss/bugtraq.rss"
