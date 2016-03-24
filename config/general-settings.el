@@ -98,6 +98,7 @@
 (require 'html-config)
 (require 'elisp-config)
 (require 'elm-config)
+(require 'haskell-config)
 (require 'other-languages-config)
 
 
