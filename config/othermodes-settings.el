@@ -13,9 +13,6 @@
 (setq-default indent-tabs-mode nil)
 (setq-default desktop-save t)
 
-;; Flyspell
-(add-hook 'prog-mode-hook 'flyspell-prog-mode)
-
 ;; Shell
 (add-to-list
  'comint-preoutput-filter-functions

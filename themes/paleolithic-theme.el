@@ -63,7 +63,7 @@
    `(mode-line ((t (:background "black" :foreground "gray70" :box (:line-width 4 :color "black")))))
    `(mode-line-buffer-id ((t (:weight bold))))
    `(mode-line-emphasis ((t (:weight bold))))
-   `(mode-line-inactive ((t (:background "gray20" :foreground "gray50" :box (:line-width 4 :color "gray20")))))
+   `(mode-line-inactive ((t (:background "gray15" :foreground "gray50" :box (:line-width 4 :color "gray15")))))
 
    ;; sml
    `(sml/col-number ((t (:foreground "gray30"))))
@@ -102,7 +102,7 @@
    `(whitespace-trailing ((t (:background "firebrick "))))
 
    ;; diredp
-   `(diredp-dir-heading ((t (:foreground "gray70" :background "gray17" :weight normal))))
+   `(diredp-dir-heading ((t (:foreground "gray70" :background "gray20" :weight normal))))
    `(diredp-file-name ((t (:foreground "gray70"))))
    `(diredp-ignored-file-name ((t (:foreground "gray30"))))
    `(diredp-dir-name ((t (:foreground "gray80" :weight bold))))
@@ -116,6 +116,16 @@
    `(diredp-dir-priv ((t (:foreground "ForestGreen"))))
    `(diredp-no-priv ((t (:foreground "gray40"))))
    `(diredp-symlink ((t (:foreground "gray70" :background "gray30"))))
+
+   ;; helm
+   `(helm-source-header ((t (:foreground "gray70" :background "gray20"))))
+   `(helm-selection ((t (:foreground "gray90" :background "gray30" :weight bold))))
+   `(helm-candidate-number ((t (:foreground "black" :background "gray30"))))
+   `(helm-match ((t (:foreground "gray90" :background "gray30" :weight normal))))
+   `(helm-M-x-key ((t (:foreground "wheat3" :underline t))))
+   `(helm-buffer-directory ((t (:foreground "gray80" :weight bold))))
+   `(helm-buffer-size ((t (:foreground "gray30"))))
+   `(helm-buffer-process ((t (:foreground "gray35"))))
 
    ;; js2-mode
    `(js2-error ((t (:foreground "firebrick"))))
