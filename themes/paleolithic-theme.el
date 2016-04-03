@@ -1,0 +1,155 @@
+;;; paleolithic-theme.el --- Dark Gray Theme
+
+;; Author: Vlad Piersec <vlad.piersec@gmail.com>
+;; Keywords: theme, themes, gray, grey
+;; Version: 0.2
+
+;;;; License:
+
+;; This program is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+;; This file is not part of Emacs.
+
+;;; Commentary:
+;; This is a very opinionated theme.
+
+;;; Code:
+
+(deftheme paleolithic
+ "A Dark Gray Theme")
+  (custom-theme-set-faces
+   'paleolithic
+   `(default ((t (:background "gray10" :foreground "gray80"))))
+   `(cursor ((t (:background "chartreuse3" :foreground "black"))))
+   `(region ((t (:background "gray20" :foreground "gray70"))))
+   `(highlight ((t (:background "gray80" :foreground "gray10"))))
+   `(minibuffer-prompt ((t (:background "gray10" :foreground "gray80"))))
+
+   ;; font-lock
+   `(font-lock-builtin-face ((t (:foreground "gray60"))))
+   `(font-lock-comment-face ((t (:foreground "gray35"))))
+   `(font-lock-comment-delimiter-face ((t (:inherit (font-lock-comment-face)))))
+   `(font-lock-constant-face ((t (:foreground "LemonChiffon3"))))
+   `(font-lock-doc-face ((t (:inherit (font-lock-comment-face)))))
+   `(font-lock-function-name-face ((t (:foreground "gray80" :weight bold))))
+   `(font-lock-keyword-face ((t (:foreground "gray80" :weight bold))))
+   `(font-lock-negation-char-face ((t nil)))
+   `(font-lock-preprocessor-face ((t (:inherit (font-lock-builtin-face)))))
+   `(font-lock-regexp-grouping-backslash ((t (:inherit (bold)))))
+   `(font-lock-regexp-grouping-construct ((t (:inherit (bold)))))
+   `(font-lock-string-face ((t (:foreground "gray75" :slant italic))))
+   `(font-lock-type-face ((t (:foreground "gray80" :weight bold))))
+   `(font-lock-variable-name-face ((t (:foreground "wheat3"))))
+   `(font-lock-warning-face ((t :foreground "DarkOrange")))
+
+   ;; buttons & links
+   `(button ((t (:background "gray15" :foreground "gray60" :box (:style released-button)))))
+   `(link ((t (:foreground "gray60" :underline t))))
+   `(link-visited ((t (:foreground "gray35" :underline t))))
+   `(fringe ((t (:background "gray10"))))
+
+   ;; modeline
+   `(mode-line ((t (:background "black" :foreground "gray70" :box (:line-width 4 :color "black")))))
+   `(mode-line-buffer-id ((t (:weight bold))))
+   `(mode-line-emphasis ((t (:weight bold))))
+   `(mode-line-inactive ((t (:background "gray20" :foreground "gray50" :box (:line-width 4 :color "gray20")))))
+
+   ;; sml
+   `(sml/col-number ((t (:foreground "gray30"))))
+   `(sml/numbers-separator ((t (:foreground "gray30"))))
+   `(sml/line-number ((t (:foreground "gray70" :weight normal))))
+   `(sml/filename ((t (:foreground "gray70" :weight bold))))
+   `(sml/folder ((t (:foreground "gray40"))))
+   `(sml/position-percentage ((t (:foreground "gray40" :weight normal))))
+   `(sml/prefix ((t (:foreground "gray40" :weight normal))))
+   `(sml/client ((t (:foreground "blue" :weight normal))))
+   `(sml/minor-modes ((t (:foreground "gray40"))))
+   `(sml/modes ((t (:foreground "gray60" :weight bold))))
+   `(sml/mule-info ((t (:foreground "gray60"))))
+   `(sml/read-only ((t (:foreground "gold3"))))
+   `(sml/process ((t (:foreground "gray90"))))
+   `(sml/git ((t (:foreground "ForestGreen" :weight normal))))
+   `(sml/vc-edited ((t (:foreground "firebrick" :weight normal))))
+   `(sml/modified ((t (:foreground "firebrick" :weight bold))))
+
+
+   `(isearch ((t (:foreground "gray90" :background "gray40" :weight bold))))
+   `(lazy-highlight ((t (:foreground "gray90" :background "gray25"))))
+
+   `(show-paren-match ((t (:foreground "black" :background "gray60"))))
+   `(show-paren-mismatch ((t (:foreground "black" :background "firebrick"))))
+
+   `(linum ((t (:foreground "gray40" :weight light :height 0.9))))
+
+   `(vertical-border ((t (:foreground "black"))))
+
+   `(error ((t (:foreground "firebrick"))))
+
+   `(flycheck-error ((t (:underline (:color "firebrick" :style wave)))))
+   `(flycheck-warning ((t (:underline (:color "DarkOrange" :style wave)))))
+
+   `(whitespace-trailing ((t (:background "firebrick "))))
+
+   ;; diredp
+   `(diredp-dir-heading ((t (:foreground "gray70" :background "gray17" :weight normal))))
+   `(diredp-file-name ((t (:foreground "gray70"))))
+   `(diredp-ignored-file-name ((t (:foreground "gray30"))))
+   `(diredp-dir-name ((t (:foreground "gray80" :weight bold))))
+   `(diredp-file-suffix ((t (:foreground "gray40"))))
+   `(diredp-compressed-file-suffix ((t (:foreground "gray30"))))
+   `(diredp-date-time ((t (:foreground "gray40"))))
+   `(diredp-number ((t (:foreground "gray50"))))
+   `(diredp-read-priv ((t (:foreground "gray70"))))
+   `(diredp-write-priv ((t (:foreground "gray70"))))
+   `(diredp-exec-priv ((t (:foreground "gray70"))))
+   `(diredp-dir-priv ((t (:foreground "ForestGreen"))))
+   `(diredp-no-priv ((t (:foreground "gray40"))))
+   `(diredp-symlink ((t (:foreground "gray70" :background "gray30"))))
+
+   ;; js2-mode
+   `(js2-error ((t (:foreground "firebrick"))))
+   `(js2-function-param ((t (:foreground "wheat3"))))
+   `(js2-warning ((t (:underline (:color "DarkOrange" :style wave)))))
+
+   ;; comint
+   `(comint-highlight-prompt ((t (:foreground "gray80" :background "gray20"))))
+   )
+
+;;;###autoload
+(when load-file-name
+  (add-to-list 'custom-theme-load-path
+               (file-name-as-directory (file-name-directory load-file-name))))
+
+;; Disable menu bar mode
+(menu-bar-mode -1)
+
+;; Disable toolbar
+(tool-bar-mode -1)
+
+;; Disable scroll
+(set-scroll-bar-mode nil)
+
+;; Fringes
+(set-fringe-mode '(1 . 1))
+
+;; Show size of file
+(size-indication-mode t)
+
+;; Show column number
+(column-number-mode t)
+
+;; Export
+(provide-theme 'paleolithic)
+
+;;; paleolithic-theme.el ends here

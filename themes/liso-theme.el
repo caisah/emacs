@@ -101,8 +101,7 @@
    `(trailing-whitespace ((t (:background ,fail-dark-red))))
    `(whitespace-trailing ((t (:background ,fail-dark-red :foreground ,foreground-black))))
    ;;
-   `(font-lock-builtin-face
-     ((t (:foreground ,liso-purple))))
+   `(font-lock-builtin-face ((t (:foreground ,liso-purple))))
    `(font-lock-comment-face ((t (:foreground ,comment))))
    `(font-lock-comment-delimiter-face ((t (:inherit (font-lock-comment-face)))))
    `(font-lock-constant-face ((t (:foreground ,liso-red))))

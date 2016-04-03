@@ -13,4 +13,4 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 ;; Load Theme
-(load-theme 'liso t)
+(load-theme 'paleolithic t)

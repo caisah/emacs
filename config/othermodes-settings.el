@@ -111,7 +111,7 @@
 (require 'smart-mode-line)
 (setq sml/no-confirm-load-theme t)
 (sml/setup)
-(sml/apply-theme 'dark)
+(setq sml/theme 'automatic)
 (setq sml/mode-width 15)
 (setq-default rm-excluded-modes
               (list " Anzu" " ARev" " SP/s" " SP" " Abbrev" " Isearch"
