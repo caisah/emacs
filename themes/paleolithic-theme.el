@@ -32,7 +32,7 @@
    'paleolithic
    `(default ((t (:background "gray10" :foreground "gray80"))))
    `(cursor ((t (:background "chartreuse3" :foreground "black"))))
-   `(region ((t (:background "gray20" :foreground "gray70"))))
+   `(region ((t (:background "gray20" :foreground "gray90"))))
    `(highlight ((t (:background "gray80" :foreground "gray10"))))
    `(minibuffer-prompt ((t (:background "gray10" :foreground "gray80"))))
 
@@ -103,7 +103,7 @@
 
    ;; diredp
    `(diredp-dir-heading ((t (:foreground "gray70" :background "gray20" :weight normal))))
-   `(diredp-file-name ((t (:foreground "gray70"))))
+   `(diredp-file-name ((t (:foreground "gray60"))))
    `(diredp-ignored-file-name ((t (:foreground "gray30"))))
    `(diredp-dir-name ((t (:foreground "gray80" :weight bold))))
    `(diredp-file-suffix ((t (:foreground "gray40"))))
@@ -119,6 +119,7 @@
 
    ;; helm
    `(helm-source-header ((t (:foreground "gray70" :background "gray20"))))
+   `(helm-header ((t (:foreground "gray40" :background "gray10"))))
    `(helm-selection ((t (:foreground "gray90" :background "gray30" :weight bold))))
    `(helm-candidate-number ((t (:foreground "black" :background "gray30"))))
    `(helm-match ((t (:foreground "wheat3" :background nil :weight bold))))
@@ -127,11 +128,22 @@
    `(helm-buffer-size ((t (:foreground "gray30"))))
    `(helm-buffer-process ((t (:foreground "gray35"))))
    `(helm-ff-directory ((t (:foreground "gray80" :weight bold))))
+   `(helm-ff-symlink ((t (:foreground "firebrick"))))
+
+   ;; helm swoop
+   `(helm-swoop-target-line-face ((t (:foreground "gray90" :background "gray30" :weight bold))))
+   `(helm-swoop-target-word-face ((t (:foreground "wheat3" :background nil :weight bold))))
 
    ;; js2-mode
    `(js2-error ((t (:foreground "firebrick"))))
    `(js2-function-param ((t (:foreground "wheat3"))))
    `(js2-warning ((t (:underline (:color "DarkOrange" :style wave)))))
+
+   ;; web mode
+   `(web-mode-html-tag-bracket-face ((t (:foreground "wheat3"))))
+   `(web-mode-html-tag-face ((t (:foreground "wheat3"))))
+   `(web-mode-html-attr-value-face ((t (:foreground "gray50" :slant italic))))
+   `(web-mode-html-attr-name-face ((t (:foreground "gray50" :weight bold))))
 
    ;; comint
    `(comint-highlight-prompt ((t (:foreground "gray80" :background "gray20"))))
