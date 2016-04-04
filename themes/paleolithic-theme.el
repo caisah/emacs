@@ -121,11 +121,12 @@
    `(helm-source-header ((t (:foreground "gray70" :background "gray20"))))
    `(helm-selection ((t (:foreground "gray90" :background "gray30" :weight bold))))
    `(helm-candidate-number ((t (:foreground "black" :background "gray30"))))
-   `(helm-match ((t (:foreground "gray90" :background "gray30" :weight normal))))
+   `(helm-match ((t (:foreground "wheat3" :background nil :weight bold))))
    `(helm-M-x-key ((t (:foreground "wheat3" :underline t))))
    `(helm-buffer-directory ((t (:foreground "gray80" :weight bold))))
    `(helm-buffer-size ((t (:foreground "gray30"))))
    `(helm-buffer-process ((t (:foreground "gray35"))))
+   `(helm-ff-directory ((t (:foreground "gray80" :weight bold))))
 
    ;; js2-mode
    `(js2-error ((t (:foreground "firebrick"))))
