@@ -1,8 +1,8 @@
 ;;; paleolithic-theme.el --- Dark Gray Theme
 
 ;; Author: Vlad Piersec <vlad.piersec@gmail.com>
-;; Keywords: theme, themes, gray, grey
-;; Version: 0.2
+;; Keywords: theme, themes, gray, grey, dark
+;; Version: 0.3
 
 ;;;; License:
 
@@ -92,6 +92,8 @@
 
    `(linum ((t (:foreground "gray40" :weight light :height 0.9))))
 
+   `(header-line ((t (:foreground "gray70" :background "gray20"))))
+
    `(vertical-border ((t (:foreground "black"))))
 
    `(error ((t (:foreground "firebrick"))))
@@ -116,9 +118,9 @@
    `(diredp-dir-priv ((t (:foreground "ForestGreen"))))
    `(diredp-no-priv ((t (:foreground "gray40"))))
    `(diredp-symlink ((t (:foreground "gray70" :background "gray30"))))
-   `(diredp-flag-mark-line ((t (:weight bold))))
+   `(diredp-flag-mark-line ((t (:foreground "black" :background "gray60"))))
    `(diredp-flag-mark ((t (:foreground "DarkOrange"))))
-   `(diredp-deletion-file-name ((t (:weight bold))))
+   `(diredp-deletion-file-name ((t (:foreground "black" :background "gray60"))))
    `(diredp-deletion ((t (:foreground "firebrick" :weight bold))))
 
    ;; helm
@@ -133,6 +135,7 @@
    `(helm-buffer-process ((t (:foreground "gray35"))))
    `(helm-ff-directory ((t (:foreground "gray80" :weight bold))))
    `(helm-ff-symlink ((t (:foreground "firebrick"))))
+   `(helm-visible-mark ((t (:foreground "black" :background "gray60"))))
 
    ;; helm swoop
    `(helm-swoop-target-line-face ((t (:foreground "gray90" :background "gray30" :weight bold))))
@@ -151,6 +154,19 @@
 
    ;; comint
    `(comint-highlight-prompt ((t (:foreground "gray80" :background "gray20"))))
+
+   ;; erc
+   `(erc-notice-face ((t (:foreground "gray30"))))
+   `(erc-nick-msg-face ((t (:foreground "gray70"))))
+   `(erc-direct-msg-face ((t (:foreground "wheat3"))))
+   `(erc-my-nick-face ((t (:foreground "wheat3" :weight bold))))
+   `(erc-input-face ((t (:foreground "LemonChiffon3"))))
+   `(erc-default-face ((t (:foreground "gray80"))))
+   `(erc-current-nick-face ((t (:foreground "gray90" :weight bold))))
+   `(erc-timestamp-face ((t (:foreground "gray40" :weight bold))))
+   `(erc-prompt-face ((t (:foreground "gray80" :background "gray20"))))
+   `(erc-nick-default-face ((t (:foreground "gray50" :weight bold))))
+   `(erc-button ((t (:background "gray15" :foreground "gray60" :box (:style released-button)))))
    )
 
 ;;;###autoload
