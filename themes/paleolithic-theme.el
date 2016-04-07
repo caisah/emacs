@@ -116,6 +116,10 @@
    `(diredp-dir-priv ((t (:foreground "ForestGreen"))))
    `(diredp-no-priv ((t (:foreground "gray40"))))
    `(diredp-symlink ((t (:foreground "gray70" :background "gray30"))))
+   `(diredp-flag-mark-line ((t (:weight bold))))
+   `(diredp-flag-mark ((t (:foreground "DarkOrange"))))
+   `(diredp-deletion-file-name ((t (:weight bold))))
+   `(diredp-deletion ((t (:foreground "firebrick" :weight bold))))
 
    ;; helm
    `(helm-source-header ((t (:foreground "gray70" :background "gray20"))))
