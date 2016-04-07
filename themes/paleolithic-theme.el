@@ -94,6 +94,10 @@
 
    `(header-line ((t (:foreground "gray70" :background "gray20"))))
 
+   `(message-header-name ((t (:foreground "gray50" :weight bold))))
+   `(message-header-subject ((t (:foreground "gray70"))))
+   `(message-header-other ((t (:foreground "gray40"))))
+
    `(vertical-border ((t (:foreground "black"))))
 
    `(error ((t (:foreground "firebrick"))))
@@ -167,6 +171,13 @@
    `(erc-prompt-face ((t (:foreground "gray80" :background "gray20"))))
    `(erc-nick-default-face ((t (:foreground "gray50" :weight bold))))
    `(erc-button ((t (:background "gray15" :foreground "gray60" :box (:style released-button)))))
+
+   ;; elfeed
+   `(elfeed-search-date-face ((t (:foreground "gray30"))))
+   `(elfeed-search-feed-face ((t (:foreground "gray40"))))
+   `(elfeed-search-tag-face ((t (:foreground "wheat3"))))
+   `(elfeed-search-title-face ((t (:foreground "gray65"))))
+   `(elfeed-search-unread-title-face ((t (:foreground "gray80" :weight bold))))
    )
 
 ;;;###autoload
