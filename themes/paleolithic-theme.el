@@ -177,6 +177,8 @@
    `(elfeed-search-feed-face ((t (:foreground "gray40"))))
    `(elfeed-search-tag-face ((t (:foreground "wheat3"))))
    `(elfeed-search-title-face ((t (:foreground "gray65"))))
+   `(elfeed-log-error-level-face ((t (:foreground "firebrick"))))
+   `(elfeed-log-info-level-face ((t (:foreground "gold3"))))
    `(elfeed-search-unread-title-face ((t (:foreground "gray80" :weight bold))))
    )
 

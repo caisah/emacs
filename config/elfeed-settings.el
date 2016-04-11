@@ -134,7 +134,6 @@
         "http://colegii.cc/feed/"
         "http://feeds.feedburner.com/rezistentaUrbana"
         "http://piratetimes.net/feed/"
-        "http://yo9fah.net/feed/"
         "http://www.orlando.ro/?feed=rss2"
         "http://www.ghenea.ro/feed/"
         "http://feeds.feedburner.com/RaduGeorgescu"
@@ -152,6 +151,7 @@
         ))
 
 (setq-default elfeed-search-filter "@1-week-ago +unread ")
+(setq-default elfeed-sort-order 'descending)
 
 (provide 'elfeed-settings)
 ;;; elfeed-settings.el ends here
