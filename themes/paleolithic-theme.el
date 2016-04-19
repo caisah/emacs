@@ -64,7 +64,7 @@
    `(mode-line-buffer-id ((t (:weight bold))))
    `(mode-line-emphasis ((t (:weight bold))))
    `(mode-line-inactive ((t (:background "gray15" :foreground "gray50" :box (:line-width 4 :color "gray15")))))
-
+   `(anzu-mode-line ((t (:foreground "firebrick"))))
    ;; sml
    `(sml/col-number ((t (:foreground "gray30"))))
    `(sml/numbers-separator ((t (:foreground "gray30"))))
