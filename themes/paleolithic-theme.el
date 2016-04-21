@@ -30,7 +30,8 @@
  "A Dark Gray Theme")
   (custom-theme-set-faces
    'paleolithic
-   `(default ((t (:background "gray10" :foreground "gray80"))))
+   `(default ((t (:family "Ubuntu Mono"
+:height 128 :background "gray10" :foreground "gray80"))))
    `(cursor ((t (:background "chartreuse3" :foreground "black"))))
    `(region ((t (:background "gray20" :foreground "gray90"))))
    `(highlight ((t (:background "gray80" :foreground "gray10"))))

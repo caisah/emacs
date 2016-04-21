@@ -34,19 +34,14 @@
         ],
         "no-nested-ternary": 2,
         "no-path-concat": 0,
-        "quote-props": 2,
+        "quote-props": 0,
         "no-undef-init": 2,
         "one-var": [
             2,
             "never"
         ],
-        "space-before-blocks": "always",
         "strict": [
             2
-        ],
-        "quote-props": [
-            2,
-            "as-needed"
         ],
         "quotes": [
             2,
@@ -54,10 +49,6 @@
         ],
         "radix": 2,
         "space-after-keywords": [
-            2,
-            "always"
-        ],
-        "space-before-blocks": [
             2,
             "always"
         ],
