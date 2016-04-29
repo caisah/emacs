@@ -181,6 +181,10 @@
    `(elfeed-log-error-level-face ((t (:foreground "firebrick"))))
    `(elfeed-log-info-level-face ((t (:foreground "gold3"))))
    `(elfeed-search-unread-title-face ((t (:foreground "gray80" :weight bold))))
+
+   ;; magit
+   `(magit-log-author ((t (:foreground "gray50"))))
+   `(magit-log-date ((t (:foreground "gray35"))))
    )
 
 ;;;###autoload
