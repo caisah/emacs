@@ -102,10 +102,6 @@
 
 
 
-
-
-
-        "block-scoped-var": 2,
         "brace-style": [
             2,
             "1tbs"
@@ -123,8 +119,6 @@
             2,
             3
         ],
-        "no-else-return": 2,
-        "no-eq-null": 2,
         "no-multiple-empty-lines": [
             2,
             {
@@ -146,7 +140,6 @@
             2,
             "single"
         ],
-        "radix": 2,
         "space-after-keywords": [
             2,
             "always"
