@@ -44,7 +44,7 @@
         "consistent-return": "error",
         "curly": "error",
         "default-case": "warn",
-        "dot-location": ["error", "object"],
+        "dot-location": ["error", "property"],
         "eqeqeq": "off",
         "guard-for-in": "warn",
         "no-alert": "error",
