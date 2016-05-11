@@ -113,7 +113,7 @@
         "no-undef-init": "error",
         "no-undefined": "warn",
         "no-unused-vars": "error",
-        "no-use-before-define": "error"
+        "no-use-before-define": "error",
 
 
 
@@ -145,7 +145,6 @@
         "no-nested-ternary": 2,
         "no-path-concat": 0,
         "quote-props": 0,
-        "no-undef-init": 2,
         "one-var": [
             2,
             "never"
