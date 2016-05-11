@@ -100,6 +100,23 @@
         "wrap-iife": ["error", "outside"],
         "yoda": "off",
 
+        "strict": "error",
+
+        "init-declarations": "off",
+        "no-catch-shadow": "error",
+        "no-delete-var": "error",
+        "no-label-var": "error",
+        "no-restricted-globals": "off",
+        "no-shadow": "error",
+        "no-shadow-restricted-names": "error",
+        "no-undef": "error",
+        "no-undef-init": "error",
+        "no-undefined": "warn",
+        "no-unused-vars": "error",
+        "no-use-before-define": "error"
+
+
+
 
 
         "brace-style": [
@@ -132,9 +149,6 @@
         "one-var": [
             2,
             "never"
-        ],
-        "strict": [
-            2
         ],
         "quotes": [
             2,
