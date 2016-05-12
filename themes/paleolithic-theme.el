@@ -150,6 +150,9 @@
    `(js2-error ((t (:foreground "firebrick"))))
    `(js2-function-param ((t (:foreground "wheat3"))))
    `(js2-warning ((t (:underline (:color "DarkOrange" :style wave)))))
+   `(js2-jsdoc-tag ((t (:foreground "gray30"))))
+   `(js2-jsdoc-type ((t (:foreground "gray40"))))
+   `(js2-jsdoc-value ((t (:foreground "gray45"))))
 
    ;; web mode
    `(web-mode-html-tag-bracket-face ((t (:foreground "wheat3"))))
