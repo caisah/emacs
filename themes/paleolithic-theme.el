@@ -139,6 +139,7 @@
    `(helm-buffer-size ((t (:foreground "gray30"))))
    `(helm-buffer-process ((t (:foreground "gray35"))))
    `(helm-ff-directory ((t (:foreground "gray80" :weight bold))))
+   `(helm-ff-prefix ((t (:foreground "gray70" :background "gray30"))))
    `(helm-ff-symlink ((t (:foreground "firebrick"))))
    `(helm-visible-mark ((t (:foreground "black" :background "gray60"))))
 
@@ -188,6 +189,27 @@
    ;; magit
    `(magit-log-author ((t (:foreground "gray50"))))
    `(magit-log-date ((t (:foreground "gray35"))))
+
+   `(magit-section-heading ((t (:foreground "gray70" :weight bold))))
+   `(magit-section-highlight ((t (:foreground "gray80" :background "gray20"))))
+
+   `(magit-branch-local ((t (:foreground "gray70" :box (:line-width 1)))))
+   `(magit-branch-remote ((t (:foreground "gray55" :box (:line-width 1)))))
+
+   `(magit-diff-added ((t (:foreground "ForestGreen" :background "gray15"))))
+   `(magit-diff-added-highlight ((t (:foreground "LimeGreen" :background "black"))))
+
+   `(magit-diff-removed ((t (:foreground "DarkRed" :background "gray15"))))
+   `(magit-diff-removed-highlight ((t (:foreground "firebrick" :background "black"))))
+
+   `(magit-diff-hunk-heading ((t (:foreground "gray70" :background "gray15"))))
+   `(magit-diff-hunk-heading-highlight ((t (:foreground "gray70" :background "gray20"))))
+
+   `(magit-diff-context ((t (:foreground "gray50" :background "gray15"))))
+   `(magit-diff-context-highlight ((t (:foreground "gray75" :background "gray5"))))
+
+   `(magit-diff-file-heading ((t (:foreground "wheat3" :background "gray15"))))
+   `(magit-diff-file-heading-highlight ((t (:foreground "wheat3"  :weight bold :background "gray20"))))
    )
 
 ;;;###autoload
