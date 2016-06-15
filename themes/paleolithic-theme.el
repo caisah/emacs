@@ -135,6 +135,8 @@
    `(helm-candidate-number ((t (:foreground "black" :background "gray30"))))
    `(helm-match ((t (:foreground "wheat3" :background nil :weight bold))))
    `(helm-M-x-key ((t (:foreground "wheat3" :underline t))))
+   `(helm-moccur-buffer ((t (:foreground "gray60" :underline t))))
+   `(helm-grep-lineno ((t (:foreground "gray50"))))
    `(helm-buffer-directory ((t (:foreground "gray80" :weight bold))))
    `(helm-buffer-size ((t (:foreground "gray30"))))
    `(helm-buffer-process ((t (:foreground "gray35"))))
