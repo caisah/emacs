@@ -106,7 +106,10 @@
    `(flycheck-error ((t (:underline (:color "firebrick" :style wave)))))
    `(flycheck-warning ((t (:underline (:color "DarkOrange" :style wave)))))
 
-   `(whitespace-trailing ((t (:background "firebrick "))))
+   `(whitespace-trailing ((t (:background "firebrick"))))
+
+   `(custom-variable-tag ((t (:foreground "gray60" :weight bold))))
+   `(custom-state ((t (:foreground "wheat3"))))
 
    ;; diredp
    `(diredp-dir-heading ((t (:foreground "gray70" :background "gray20" :weight normal))))
@@ -165,6 +168,7 @@
 
    ;; comint
    `(comint-highlight-prompt ((t (:foreground "gray80" :background "gray20"))))
+   `(comint-highlight-input ((t (:foreground "gray80" :weight bold))))
 
    ;; erc
    `(erc-notice-face ((t (:foreground "gray30"))))
@@ -213,6 +217,16 @@
    `(magit-diff-file-heading ((t (:foreground "wheat3" :background "gray15"))))
    `(magit-diff-file-heading-highlight ((t (:foreground "wheat3"  :weight bold :background "gray20"))))
    )
+
+(custom-theme-set-variables
+ 'paleolithic
+ '(ansi-color-names-vector ["gray75" "wheat3" "gray75" "gray65" "gray75" "gray75" "gray75" "gray75"])
+
+ ;; ibuffer
+ '(ansi-color-map (ansi-color-make-color-map))
+ '(ibuffer-marked-face 'diredp-flag-mark)
+ '(ibuffer-deletion-face 'diredp-deletion-file-name))
+
 
 ;;;###autoload
 (when load-file-name
