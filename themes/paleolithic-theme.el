@@ -168,7 +168,7 @@
 
    ;; comint
    `(comint-highlight-prompt ((t (:foreground "gray80" :background "gray20"))))
-   `(comint-highlight-input ((t (:foreground "gray80" :weight bold))))
+   `(comint-highlight-input ((t (:foreground "gray85" :weight bold))))
 
    ;; erc
    `(erc-notice-face ((t (:foreground "gray30"))))
@@ -216,13 +216,15 @@
 
    `(magit-diff-file-heading ((t (:foreground "wheat3" :background "gray15"))))
    `(magit-diff-file-heading-highlight ((t (:foreground "wheat3"  :weight bold :background "gray20"))))
+
+   `(epa-validity-high ((t (:foreground "gray90" :weight bold))))
+   `(epa-field-name ((t (:foreground "gray90" :weight bold))))
+   `(epa-field-body ((t (:foreground "gray70" :slant italic))))
    )
 
 (custom-theme-set-variables
  'paleolithic
- '(ansi-color-names-vector ["gray75" "wheat3" "gray75" "gray65" "gray75" "gray75" "gray75" "gray75"])
-
- ;; ibuffer
+ '(ansi-color-names-vector ["gray75" "gray75" "gray75" "wheat3" "gray75" "gray65" "gray75" "gray75" "gray75" "gray75"])
  '(ansi-color-map (ansi-color-make-color-map))
  '(ibuffer-marked-face 'diredp-flag-mark)
  '(ibuffer-deletion-face 'diredp-deletion-file-name))
