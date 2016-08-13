@@ -32,6 +32,8 @@
 ;; Set temp dir
 (setq temporary-file-directory "~/.emacs.d/cache/temp")
 
+(setq epg-gpg-program "gpg2")
+
 ;; Set backup dir
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))

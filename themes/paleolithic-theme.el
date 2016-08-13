@@ -182,6 +182,7 @@
    `(erc-prompt-face ((t (:foreground "gray80" :background "gray20"))))
    `(erc-nick-default-face ((t (:foreground "gray50" :weight bold))))
    `(erc-button ((t (:background "gray15" :foreground "gray60" :box (:style released-button)))))
+   `(erc-error-face ((t (:foreground "firebrick"))))
 
    ;; elfeed
    `(elfeed-search-date-face ((t (:foreground "gray30"))))
