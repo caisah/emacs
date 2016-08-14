@@ -225,7 +225,7 @@
 
 (custom-theme-set-variables
  'paleolithic
- '(ansi-color-names-vector ["gray75" "gray75" "gray75" "wheat3" "gray75" "gray65" "gray75" "gray75" "gray75" "gray75"])
+ '(ansi-color-names-vector ["gray35" "gray75" "gray75" "wheat" "gray75" "gray65" "gray75" "gray75" "gray75" "gray75"])
  '(ansi-color-map (ansi-color-make-color-map))
  '(ibuffer-marked-face 'diredp-flag-mark)
  '(ibuffer-deletion-face 'diredp-deletion-file-name))
