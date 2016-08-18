@@ -8,12 +8,21 @@
 ;; Info
 (setq user-full-name "Vlad Piersec" user-mail-address "vlad.piersec@gmail.com")
 
-;; Cask & Pallet (this adds all pacakge files to load-path)
-(require 'cask "~/.cask/cask.el")
+
+;; Cask & Pallet
+(if (eql system-type 'darwin)
+    (require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
+  (require 'cask "~/.cask/cask.el"))
 (cask-initialize)
 (require 'pallet)
 (pallet-mode t)
 
+;; MAC
+(when (eql system-type 'darwin)
+  (progn
+    (setq insert-directory-program "/usr/local/opt/coreutils/libexec/gnubin/ls")
+    (setq shell-file-name "/usr/local/bin/bash")
+    (exec-path-from-shell-initialize)))
 ;; Set custom file
 (setq custom-file "~/.emacs.d/config/emacs-custom.el")
 ;; Load custom file
