@@ -5,6 +5,7 @@
 ;;; Code:
 (setq elfeed-feeds
       '("http://feeds.nature.com/news/rss/news?format=xml"
+        "https://feedpress.me/jlongster"
         "https://blog.mozilla.org/feed/"
         "http://www.sciam.com/xml/sciam.xml"
         "http://www.kurzweilai.net/feed/atom"
