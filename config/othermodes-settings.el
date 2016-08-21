@@ -159,9 +159,14 @@
   (local-set-key (kbd "C-c C-b") 'json-mode-beautify)
   (local-set-key (kbd "C-c C-f") 'hs-toggle-hiding))
 
+(defun set-json-indentation ()
+  (make-local-variable 'js-indent-level)
+  (setq js-indent-level 2))
+
 (add-hook 'json-mode-hook 'flycheck-mode)
 (add-hook 'json-mode-hook 'hs-minor-mode)
 (add-hook 'json-mode-hook 'set-json-mode-keys)
+(add-hook 'json-mode-hook 'set-json-indentation)
 
 ;; XML
 (add-hook 'nxml-mode-hook 'sgml-mode)
