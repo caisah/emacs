@@ -6,11 +6,6 @@
 ;;; Code:
 (require 'flycheck)
 
-(defun enable-jshint ()
-  "Enable jshint."
-  (setq flycheck-eslintrc "~/.emacs.d/external/.eslintrc")
-  (setq flycheck-javascript-eslint-executable "eslint"))
-
 ;; Flycheck for web-mode
 (flycheck-define-checker html-tidy
   "A HTML syntax and style checker using Tidy.

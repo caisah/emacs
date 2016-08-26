@@ -6,7 +6,7 @@
 ;;; Code:
 (setq-default js2-show-parse-errors nil
               js2-strict-missing-semi-warning nil
-              js2-strict-trailing-comma-warning t
+              js2-mode-show-strict-warnings nil
               js2-basic-offset 2
               js2-global-externs '("module" "require" "exports" "sinon" "assert"
                                    "refute" "setTimeout" "clearTimeout" "setInterval"
@@ -89,24 +89,14 @@
 (add-hook 'js2-mode-hook 'js2-imenu-extras-mode)
 (add-hook 'js2-mode-hook 'flycheck-mode)
 (add-hook 'js2-mode-hook 'yas-minor-mode)
-(add-hook 'js2-mode-hook 'enable-jshint)
+
 (add-hook 'js2-mode-hook 'js-keys)
 (add-hook 'js2-mode-hook 'whitespace-mode)
 
 (add-hook 'skewer-mode-hook 'skewer-keys)
 
 ;; JSX for React
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
-(autoload 'jsx-mode "jsx-mode" "JSX mode" t)
-
-(add-hook 'jsx-mode-hook 'pretty-symbols-mode)
-(add-hook 'jsx-mode-hook 'linum-mode)
-(add-hook 'jsx-mode-hook 'abbrev-mode)
-(add-hook 'jsx-mode-hook 'smartparens-strict-mode)
-(add-hook 'jsx-mode-hook 'hs-minor-mode)
-(add-hook 'jsx-mode-hook 'flycheck-mode)
-(add-hook 'jsx-mode-hook 'whitespace-mode)
-(add-hook 'jsx-mode-hook 'jsx-keys)
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode))
 
 ;; Export
 (provide 'javascript-config)
