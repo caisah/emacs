@@ -246,7 +246,7 @@
 (set-scroll-bar-mode nil)
 
 ;; Fringes
-(set-fringe-mode '(1 . 1))
+(set-fringe-mode '(4 . 1))
 
 ;; Show size of file
 (size-indication-mode t)

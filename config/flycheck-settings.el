@@ -31,17 +31,17 @@ See URL `https://github.com/w3c/tidy-html5'."
   :modes (typescript-mode))
 
 ;; Flycheck for JSX (react.js)
-(flycheck-define-checker jsx
+(flycheck-define-checker jsx2
   "A JSX syntax checker using tsc command."
-  :command ("jsxhint" source)
+  :command ("eslint" source)
   :error-patterns
   ((error line-start (1+ nonl) ": line " line ", col " column ", " (message) line-end))
-  :modes (jsx-mode))
+  :modes (jsx2-mode))
 
 
 ;; Add checkers
 (add-to-list 'flycheck-checkers 'typescript)
-(add-to-list 'flycheck-checkers 'jsx)
+(add-to-list 'flycheck-checkers 'jsx2)
 
 (add-hook 'flycheck-mode-hook 'flycheck-elm-setup)
 
