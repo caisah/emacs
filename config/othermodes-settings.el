@@ -17,7 +17,7 @@
 (add-to-list
  'comint-preoutput-filter-functions
  (lambda (output)
-   (replace-regexp-in-string "\\[[0-9]+[GK]" "" output)))
+   (replace-regexp-in-string "\\[\\??[0-9]+[GhK]" "" output)))
 
 ;; Re-Builder
 (setq-default reb-re-syntax 'string)
