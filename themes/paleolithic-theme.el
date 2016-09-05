@@ -147,6 +147,7 @@
    `(helm-ff-prefix ((t (:foreground "gray70" :background "gray30"))))
    `(helm-ff-symlink ((t (:foreground "firebrick"))))
    `(helm-visible-mark ((t (:foreground "black" :background "gray60"))))
+   `(helm-separator ((t (:foreground "gray40"))))
 
    ;; helm swoop
    `(helm-swoop-target-line-face ((t (:foreground "gray90" :background "gray30" :weight bold))))

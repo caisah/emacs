@@ -34,11 +34,6 @@
   (define-key js2-mode-map (kbd "C-c C-e") 'shell-execute-last-command)
   (define-key js2-mode-map (kbd "C-c i") 'imenu))
 
-(defun jsx-keys ()
-  "Enable local keys for jsx-mode."
-  (define-key jsx-mode-map (kbd "C-c C-f") 'hs-toggle-hiding)
-  (define-key jsx-mode-map (kbd "C-c C-e") 'shell-execute-last-command))
-
 ;; Keys for skewer
 (defun skewer-keys ()
   "Enable local keys for skewer-mode."
@@ -97,7 +92,8 @@
 (add-hook 'skewer-mode-hook 'skewer-keys)
 
 ;; JSX for React
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
+(add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode))
 
 ;; Export
 (provide 'javascript-config)
