@@ -28,10 +28,10 @@
 
 (deftheme paleolithic
  "A Dark Gray Theme")
+(let ((font-height (if (eql system-type 'darwin) 160 128)))
   (custom-theme-set-faces
    'paleolithic
-   `(default ((t (:family "Ubuntu Mono"
-:height 128 :background "gray10" :foreground "gray80"))))
+   `(default ((t (:family "Ubuntu Mono" :height ,font-height :background "gray10" :foreground "gray80"))))
    `(cursor ((t (:background "chartreuse3" :foreground "black"))))
    `(region ((t (:background "gray20" :foreground "gray90"))))
    `(highlight ((t (:background "gray80" :foreground "gray10"))))
@@ -222,7 +222,7 @@
    `(epa-validity-high ((t (:foreground "gray90" :weight bold))))
    `(epa-field-name ((t (:foreground "gray90" :weight bold))))
    `(epa-field-body ((t (:foreground "gray70" :slant italic))))
-   )
+   ))
 
 (custom-theme-set-variables
  'paleolithic
