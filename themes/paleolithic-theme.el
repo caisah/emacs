@@ -222,6 +222,9 @@
    `(epa-validity-high ((t (:foreground "gray90" :weight bold))))
    `(epa-field-name ((t (:foreground "gray90" :weight bold))))
    `(epa-field-body ((t (:foreground "gray70" :slant italic))))
+
+   `(reb-match-0 ((t (:background "gray40"))))
+   `(reb-match-1 ((t (:background "gray30"))))
    ))
 
 (custom-theme-set-variables
