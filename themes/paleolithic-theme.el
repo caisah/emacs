@@ -225,6 +225,8 @@
 
    `(reb-match-0 ((t (:background "gray40"))))
    `(reb-match-1 ((t (:background "gray30"))))
+
+   `(Info-quoted ((t (:background "gray20" :box (:line-width 2 :color "grey20") :height 1.0 :width condensed))))
    ))
 
 (custom-theme-set-variables

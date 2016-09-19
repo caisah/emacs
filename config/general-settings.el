@@ -1,5 +1,6 @@
 ;;; general-settings.el --- loads settings
 
+
 ;;; Commentary:
 ;; General settings loads all the other settings
 
@@ -36,7 +37,8 @@
               mc/list-file "~/.emacs.d/cache/.mc-lists.el"
               eshell-directory-name "~/.emacs.d/cache/eshell/"
               auto-save-list-file-prefix "~/.emacs.d/cache/auto-save-list/.save-"
-              projectile-cache-file "~/.emacs.d/cache/projectile/projectile.cache")
+              projectile-cache-file "~/.emacs.d/cache/projectile/projectile.cache"
+              projectile-known-projects-file "~/.emacs.d/cache/projectile/known-projects.eld")
 
 ;; Set temp dir
 (setq temporary-file-directory "~/.emacs.d/cache/temp")
