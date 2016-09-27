@@ -112,6 +112,7 @@
 (require 'elisp-config)
 (require 'elm-config)
 (require 'haskell-config)
+(require 'ocaml-config)
 (require 'other-languages-config)
 
 
