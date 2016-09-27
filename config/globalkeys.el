@@ -35,6 +35,7 @@
 (define-key helm-swoop-map (kbd "M-i") 'helm-multi-swoop-all-from-helm-swoop)
 (global-set-key (kbd "C-x C-S-f") 'helm-projectile)
 (global-set-key (kbd "C-x g") 'helm-ag)
+(global-set-key (kbd "C-x M-g") 'helm-projectile-ag)
 (global-set-key (kbd "C-x C-b") 'helm-resume)
 
 
