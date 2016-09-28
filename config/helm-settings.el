@@ -40,6 +40,7 @@
 
 (eval-after-load 'company
   '(progn
+     (add-to-list 'company-backends 'company-tern)
      (define-key company-mode-map (kbd "C-:") 'helm-company)
      (define-key company-active-map (kbd "C-:") 'helm-company)))
 
