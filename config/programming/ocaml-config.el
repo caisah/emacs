@@ -12,6 +12,8 @@
   (flycheck-ocaml-setup))
 
 (add-hook 'tuareg-mode-hook #'merlin-mode)
+(add-hook 'tuareg-mode-hook 'linum-mode)
+(add-hook 'tuareg-mode-hook 'flycheck-mode)
 
 
 (provide 'ocaml-config)
