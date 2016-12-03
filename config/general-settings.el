@@ -1,14 +1,9 @@
-;;; general-settings.el --- loads settings
-
+;;; general-settings.el --- loads all settings
 
 ;;; Commentary:
-;; General settings loads all the other settings
+;;  General settings loads all the other specific settings & set variables
 
 ;;; Code:
-
-;; Info
-(setq user-full-name "Vlad Piersec" user-mail-address "vlad.piersec@gmail.com")
-
 
 ;; Cask & Pallet
 (if (eql system-type 'darwin)
@@ -24,14 +19,20 @@
     (setq insert-directory-program "/usr/local/opt/coreutils/libexec/gnubin/ls")
     (setq shell-file-name "/usr/local/bin/bash")
     (exec-path-from-shell-initialize)))
-;; Set custom file
-(setq custom-file "~/.emacs.d/config/emacs-custom.el")
-;; Load custom file
-(load custom-file)
 
-;; Set cache location
-(setq-default ido-save-directory-list-file "~/.emacs.d/cache/ido-list"
-              bookmark-default-file "~/.emacs.d/cache/bookmarks"
+
+;; Files created by Emacs
+;; Set custom file to emacs-custom.el
+(setq custom-file "~/.emacs.d/config/emacs-custom.el")
+;; Set temp dir
+(setq temporary-file-directory "~/.emacs.d/cache/temp")
+;; Set backup dir
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+;; Set cache file names
+(setq-default bookmark-default-file "~/.emacs.d/cache/bookmarks"
               keyfreq-file "~/.emacs.d/cache/keyfrequency"
               recentf-save-file "~/.emacs.d/cache/recentf"
               mc/list-file "~/.emacs.d/cache/.mc-lists.el"
@@ -40,91 +41,168 @@
               projectile-cache-file "~/.emacs.d/cache/projectile/projectile.cache"
               projectile-known-projects-file "~/.emacs.d/cache/projectile/known-projects.eld")
 
-;; Set temp dir
-(setq temporary-file-directory "~/.emacs.d/cache/temp")
+;; Calendar
+(setq-default calendar-latitude 46.7667
+              calendar-longitude 23.5833)
 
-(setq epg-gpg-program "gpg2")
+;; Consider all themes safe
+(setq-default custom-safe-themes t
+              ;; don't ask to save when copiling
+              compilation-ask-about-save nil
+              ;; don't save abbrevs
+              save-abbrevs nil
+              ;; don't insert tabs on indent
+              indent-tabs-mode nil
+              ;; start emacs fullscreen and maximized
+              initial-frame-alist (quote ((fullscreen . maximized)))
+              ;; don't use angle brackets
+              uniquify-buffer-name-style 'post-forward
+              ;; don't put anything is *scratch*
+              initial-scratch-message "")
 
-;; Set backup dir
-(setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
 
-;; General settings
+
+;; use UTF-8
+(set-language-environment "UTF-8")
+
+
+;; Load custom file
+(load custom-file)
+
+
+;; Enable default disabled stuff
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 (put 'erase-buffer 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 (put 'scroll-left 'disabled nil)
-(put 'dired-find-alternate-file 'disabled nil)
 
-;; More general settings
-(set-language-environment "UTF-8")
-(setq custom-safe-themes t)
-(setq compilation-ask-about-save nil)
-(setq save-abbrevs nil)
-(setq hippie-expand-try-functions-list
-      '(try-expand-dabbrev
-        try-expand-dabbrev-all-buffers
-        try-expand-dabbrev-from-kill
-        try-complete-file-name-partially
-        try-complete-file-name
-        try-expand-all-abbrevs
-        try-expand-list
-        try-expand-line
-        try-complete-lisp-symbol-partially
-        try-complete-lisp-symbol))
-(custom-set-variables
- '(initial-frame-alist (quote ((fullscreen . maximized)))))
-
-;; Even more settings
+;; Use y and n as confirmations
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; Global modes
+;; claen whitespaces before saving
+(add-hook 'before-save-hook 'whitespace-cleanup)
+
+;; Improve navigation & editing
+(defun my-kill-other-buffer ()
+  "Kill buffer in the other window."
+  (interactive)
+  (other-window 1)
+  (kill-this-buffer)
+  (other-window 1))
+
+(defun my-kill-all-buffers ()
+  "Kill all buffers, leaving *scratch* only."
+  (interactive)
+  (mapc
+   (lambda (buffer)
+     (kill-buffer buffer))
+   (buffer-list)))
+
+(defun my-delete-to-previous-line ()
+  "Delete to previous end of line."
+  (interactive)
+  (delete-horizontal-space)
+  (backward-delete-char 1)
+  (delete-horizontal-space)
+  (insert-char 32))
+
+
+;; Global common keys
+(global-set-key (kbd "C-x K") 'my-kill-other-buffer)
+(global-set-key (kbd "C-x C-k") 'my-kill-all-buffers)
+(global-set-key (kbd "C-\\") 'my-delete-to-previous-line)
+(global-set-key (kbd "C-S-d") 'delete-region)
+
+(global-set-key (kbd "<C-tab>") 'indent-relative)
+
+(global-set-key (kbd "C-c C-f") 'hs-toggle-hiding)
+
+(global-set-key (kbd "C-S-r") 'revert-buffer)
+
+;; Emacs
+(global-set-key (kbd "C-h C-s") 'elisp-index-search)
+
+;; Widow resizing
+(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-<down>") 'shrink-window)
+(global-set-key (kbd "S-C-<up>") 'enlarge-window)
+
+(global-set-key (kbd "<f1>")
+                '(lambda () (interactive) (switch-to-buffer "*Messages*")))
+
+(global-set-key (kbd "C-`") 'er/expand-region)
+
+
+;; Global Modes:
+;; Use word-wrapping for continuation lines
 (global-visual-line-mode t)
-(projectile-global-mode)
+;; Show matching parens
 (show-paren-mode t)
-
-;; Start emacs server
-(require 'server)
-(unless (server-running-p) (server-start))
-
 ;; Disable electric indent mode
 (electric-indent-mode -1)
+;; Save undos in tree
+(global-undo-tree-mode)
+;; Show info about search
+(global-anzu-mode t)
+;; Show beautified page breaks
+(global-page-break-lines-mode t)
+;; Revert buffer when the file changes on disk
+(global-auto-revert-mode 1)
 
-;; Package settings
 
+;; Enable projectile
+(projectile-global-mode)
+;; cache projectile files
+(setq-default projectile-enable-caching t)
+
+;; Highlight whitespaces
+;; ??????????????? work on this
+(global-whitespace-mode)
+(setq-default whitespace-style '(face trailing tabs lines)
+              ;; highlight if more than 180 chars on line
+              whitespace-line-column 180)
+
+
+;; required for "true" init file timing
+(require 'my-functions)
+
+;; Configure all the other modes
 (require 'dired-settings)
-(require 'flycheck-settings)
+(require 'desktop-settings)
+(require 'hippie-expand-settings)
+(require 'epa-settings)
+(require 'tramp-settings)
+(require 'company-settings)
 (require 'helm-settings)
+(require 'shell-settings)
 (require 'magit-settings)
-(require 'org-settings)
-(require 'twitter-settings)
-(require 'eww-settings)
+(require 'docview-settings)
+(require 'ace-window-settings)
+(require 'sml-settings)
+;; (require 'org-settings)
+;; (require 'twitter-settings)
+;; (require 'eww-settings)
 (require 'othermodes-settings)
-(require 'elfeed-settings)
+;; (require 'elfeed-settings)
 
 ;; Programming
 (require 'javascript-config)
-(require 'typescript-config)
-(require 'html-config)
-(require 'elisp-config)
-(require 'elm-config)
-(require 'haskell-config)
-(require 'ocaml-config)
-(require 'other-languages-config)
+(require 'go-config)
+(require 'sh-config)
+;; (require 'typescript-config)
+;; (require 'html-config)
+;; (require 'elisp-config)
+;; (require 'elm-config)
+;; (require 'haskell-config)
+;; (require 'ocaml-config)
+;; (require 'other-languages-config)
 
-
-;; Other
-(require 'my-functions)
-
-;; Load global keys
-(require 'globalkeys)
+(require 'blog-settings)
 
 ;; Load Abbrevs
-(require 'abbrevs)
+;; (require 'abbrevs)
 
-;; Export:
 (provide 'general-settings)
 ;;; general-settings ends here

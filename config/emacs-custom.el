@@ -8,22 +8,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(haskell-process-auto-import-loaded-modules t)
- '(haskell-process-log t)
- '(haskell-process-suggest-remove-import-lines t)
- '(helm-ag-command-option "-i")
- '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(package-selected-packages
    (quote
-    (company-tern helm-company yasnippet yaml-mode web-mode undo-tree twittering-mode tuareg tss tern swiper solarized-theme smartparens smart-mode-line smart-compile slime skewer-mode scss-mode restclient rainbow-mode rainbow-delimiters queue quack pyvenv pretty-symbols popwin pandoc-mode pallet palette page-break-lines nginx-mode multiple-cursors markdown-mode magit list-processes+ less-css-mode keyfreq jsx-mode js-comint inf-mongo impatient-mode imenu-anywhere idomenu highlight-indentation helm-swoop helm-projectile helm-package helm-google helm-flycheck helm-ag haskell-mode google-translate gist geiser flycheck-ocaml flycheck-elm find-file-in-project expand-region exec-path-from-shell emmet-mode elm-mode elfeed dired+ deferred dash-functional company browse-kill-ring anzu)))
- '(paradox-github-token t)
- '(safe-local-variable-values
-   (quote
-    ((eval when
-           (require
-            (quote rainbow-mode)
-            nil t)
-           (rainbow-mode 1))))))
+    (ace-window go-mode discover-my-major company-quickhelp helm-descbinds helm-describe-modes yasnippet yaml-mode web-mode undo-tree twittering-mode tuareg swiper solarized-theme smartparens smart-mode-line smart-compile slime simple-httpd scss-mode restclient rainbow-mode rainbow-delimiters queue pyvenv pretty-symbols pcache pandoc-mode pallet page-break-lines nginx-mode multiple-cursors markdown-mode magit logito list-processes+ less-css-mode keyfreq json-mode js2-mode inf-mongo imenu-anywhere htmlize highlight-indentation hexrgb helm-swoop helm-projectile helm-package helm-flycheck helm-ag haskell-mode google-translate flycheck-ocaml flycheck-elm find-file-in-project expand-region exec-path-from-shell elm-mode elfeed dired+ deferred company-tern browse-kill-ring anzu))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

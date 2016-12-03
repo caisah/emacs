@@ -1,8 +1,8 @@
-;;; paleolithic-theme.el --- Dark Gray Theme
+ ;;; paleolithic-theme.el --- Dark Gray Theme
 
 ;; Author: Vlad Piersec <vlad.piersec@gmail.com>
 ;; Keywords: theme, themes, gray, grey, dark
-;; Version: 0.3
+;; Version: 1.0
 
 ;;;; License:
 
@@ -84,6 +84,10 @@
    `(sml/vc-edited ((t (:foreground "firebrick" :weight normal))))
    `(sml/modified ((t (:foreground "firebrick" :weight bold))))
 
+   ;; ace-window
+   `(aw-mode-line-face ((t (:foreground "gray60" :height 0.6))))
+   `(aw-leading-char-face ((t (:foreground "firebrick" :height 1.3 :weight bold))))
+
 
    `(isearch ((t (:foreground "gray90" :background "gray40" :weight bold))))
    `(lazy-highlight ((t (:foreground "gray90" :background "gray25"))))
@@ -106,10 +110,14 @@
    `(flycheck-error ((t (:underline (:color "firebrick" :style wave)))))
    `(flycheck-warning ((t (:underline (:color "DarkOrange" :style wave)))))
 
+   ;; whitespace
    `(whitespace-trailing ((t (:background "firebrick"))))
+   `(whitespace-line ((t (:background "gray15" :foreground "gray60"))))
 
    `(custom-variable-tag ((t (:foreground "gray60" :weight bold))))
    `(custom-state ((t (:foreground "wheat3"))))
+
+   `(org-table ((t (:foreground "gray60"))))
 
    ;; diredp
    `(diredp-dir-heading ((t (:foreground "gray70" :background "gray20" :weight normal))))
@@ -132,18 +140,19 @@
    `(diredp-deletion ((t (:foreground "firebrick" :weight bold))))
 
    ;; helm
-   `(helm-source-header ((t (:foreground "gray70" :background "gray20"))))
+   `(helm-source-header ((t (:foreground "gray70" :background "gray15"))))
    `(helm-header ((t (:foreground "gray40" :background "gray10"))))
-   `(helm-selection ((t (:foreground "gray90" :background "gray30" :weight bold))))
+   `(helm-selection ((t (:background "gray20"))))
    `(helm-candidate-number ((t (:foreground "black" :background "gray30"))))
    `(helm-match ((t (:foreground "wheat3" :background nil :weight bold))))
    `(helm-M-x-key ((t (:foreground "wheat3" :underline t))))
    `(helm-moccur-buffer ((t (:foreground "gray60" :underline t))))
    `(helm-grep-lineno ((t (:foreground "gray50"))))
    `(helm-buffer-directory ((t (:foreground "gray80" :weight bold))))
-   `(helm-buffer-size ((t (:foreground "gray30"))))
+   `(helm-buffer-size ((t (:foreground "gray35"))))
    `(helm-buffer-process ((t (:foreground "gray35"))))
    `(helm-ff-directory ((t (:foreground "gray80" :weight bold))))
+   `(helm-ff-dotted-directory ((t (:foreground "gray40" :background "gray10"))))
    `(helm-ff-prefix ((t (:foreground "gray70" :background "gray30"))))
    `(helm-ff-symlink ((t (:foreground "firebrick"))))
    `(helm-visible-mark ((t (:foreground "black" :background "gray60"))))
@@ -225,6 +234,19 @@
 
    `(reb-match-0 ((t (:background "gray40"))))
    `(reb-match-1 ((t (:background "gray30"))))
+
+   `(company-tooltip ((t (:background "black" :foreground "gray70"))))
+   `(company-tooltip-selection ((t (:foreground "gray90" :background "gray30" :weight bold))))
+   `(company-tooltip-common ((t (:foreground "wheat3" :weight bold))))
+   `(company-tooltip-annotation ((t (:foreground "wheat3"))))
+   `(company-scrollbar-fg ((t (:background "gray50"))))
+   `(company-scrollbar-bg ((t (:background "gray30"))))
+   `(company-preview-common ((t (:foreground "gray70" :background "gray20"))))
+
+   `(tooltip ((t (:foreground "gray80" :background "gray20"))))
+
+   ;; discover key mode
+   `(makey-key-mode-button-face ((t (:foreground "wheat3" :underline t))))
 
    `(Info-quoted ((t (:background "gray20" :box (:line-width 2 :color "grey20") :height 1.0 :width condensed))))
    ))

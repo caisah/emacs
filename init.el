@@ -1,16 +1,30 @@
-;; The time when Emacs starts
+;;; init.el -- Start here
+
+;;; Commentary:
+;;  Add all dirs to the patth and load settings
+
+;;; Code:
+
+;; (package-initialize)
 (defvar *start-time* (current-time))
 
 ;; Add theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 ;; Add config and custom packages
-(add-to-list 'load-path "~/.emacs.d/config")
-(add-to-list 'load-path "~/.emacs.d/config/programming")
+(add-to-list 'load-path "~/.emacs.d/config/blog")
 (add-to-list 'load-path "~/.emacs.d/custom-packages/")
+(add-to-list 'load-path "~/.emacs.d/config/programming-modes")
+(add-to-list 'load-path "~/.emacs.d/config/tiny-modes")
+(add-to-list 'load-path "~/.emacs.d/config/general-modes")
+(add-to-list 'load-path "~/.emacs.d/config/elisp")
+(add-to-list 'load-path "~/.emacs.d/config")
+
 
 ;; Load Theme
 (load-theme 'paleolithic t)
 
-;; Load general settings
+;; Load the settings
 (require 'general-settings)
+
+;;; init.el ends here

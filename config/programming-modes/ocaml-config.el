@@ -8,10 +8,10 @@
   ;; Disable Merlin's own error checking
   (setq merlin-error-after-save nil)
 
-  ;; Enable Flycheck checker
+  ;; Add ocaml-merlin to flycheck checkers
   (flycheck-ocaml-setup))
 
-(add-hook 'tuareg-mode-hook #'merlin-mode)
+(add-hook 'tuareg-mode-hook 'merlin-mode)
 (add-hook 'tuareg-mode-hook 'linum-mode)
 (add-hook 'tuareg-mode-hook 'flycheck-mode)
 
