@@ -39,6 +39,7 @@
               eshell-directory-name "~/.emacs.d/cache/eshell/"
               auto-save-list-file-prefix "~/.emacs.d/cache/auto-save-list/.save-"
               projectile-cache-file "~/.emacs.d/cache/projectile/projectile.cache"
+              url-configuration-directory "~/.emacs.d/cache/url/"
               projectile-known-projects-file "~/.emacs.d/cache/projectile/known-projects.eld")
 
 ;; Calendar
