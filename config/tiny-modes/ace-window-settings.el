@@ -5,7 +5,7 @@
 
 ;;; Code:
 
-(global-set-key (kbd "M-p") 'ace-window)
+(global-set-key (kbd "C-c o") 'ace-window)
 
 (with-eval-after-load 'ace-window
   (progn

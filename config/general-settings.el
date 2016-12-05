@@ -59,7 +59,11 @@
               ;; don't use angle brackets
               uniquify-buffer-name-style 'post-forward
               ;; don't put anything is *scratch*
-              initial-scratch-message "")
+              initial-scratch-message ""
+              ;; highlight trailing spaces & tabs
+              whitespace-style '(face trailing indentation::tabs)
+              ;; highlight if more than 180 chars on line
+              whitespace-line-column 180)
 
 
 
@@ -81,7 +85,7 @@
 ;; Use y and n as confirmations
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; claen whitespaces before saving
+;; clean whitespaces before saving
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
 ;; Improve navigation & editing
@@ -158,14 +162,6 @@
 ;; cache projectile files
 (setq-default projectile-enable-caching t)
 
-;; Highlight whitespaces
-;; ??????????????? work on this
-(global-whitespace-mode)
-(setq-default whitespace-style '(face trailing tabs lines)
-              ;; highlight if more than 180 chars on line
-              whitespace-line-column 180)
-
-
 ;; required for "true" init file timing
 (require 'my-functions)
 
@@ -182,6 +178,7 @@
 (require 'docview-settings)
 (require 'ace-window-settings)
 (require 'sml-settings)
+(require 'eww-settings)
 ;; (require 'org-settings)
 ;; (require 'twitter-settings)
 ;; (require 'eww-settings)

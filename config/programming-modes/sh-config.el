@@ -12,5 +12,6 @@
   (progn
     (message "sh-mode loaded")))
 
+
 (provide 'sh-config)
 ;;; bash-config.el ends here
