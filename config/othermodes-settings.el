@@ -19,14 +19,6 @@
 (add-hook 'markdown-mode 'pandoc-mode)
 
 
-;; SmartParens:
-(require 'smartparens-config)
-(require 'smartparens-html)
-
-(smartparens-global-mode t)
-(smartparens-strict-mode)
-(setq sp-highlight-pair-overlay nil)
-
 ;; Wrap the next expression in a pair of parens
 (defun my-wrap-with-round-paren (&optional arg)
   "Wrap ARG with in round parens ()."

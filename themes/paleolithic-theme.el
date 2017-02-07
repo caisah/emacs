@@ -118,6 +118,9 @@
    `(custom-state ((t (:foreground "wheat3"))))
 
    `(org-table ((t (:foreground "gray60"))))
+   `(org-document-info-keyword ((t (:foreground "gray50"))))
+   `(org-document-title ((t (:foreground "LemonChiffon3"))))
+   `(org-meta-line ((t (:foreground "gray50"))))
 
    ;; diredp
    `(diredp-dir-heading ((t (:foreground "gray70" :background "gray20" :weight normal))))

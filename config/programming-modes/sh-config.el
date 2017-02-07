@@ -1,4 +1,4 @@
-;;; sh-config.el --- Bash config
+;;; sh-config.el --- Shell config
 
 ;;; Commentary:
 ;; My Shell script config file
@@ -12,6 +12,33 @@
   (progn
     (message "sh-mode loaded")))
 
+;; opening shells
+(defun my-shell-here ()
+  (interactive)
+  (shell (switch-to-buffer
+          (generate-new-buffer default-directory))))
+
+(defun my-shell-other ()
+  (interactive)
+  (progn
+    (other-window 1)
+    (my-shell-here)))
+
+(defun my-shell-split-other ()
+  (interactive)
+  (progn
+    (other-window 1)
+    (split-window-below)
+    (my-shell-here)))
+
+(defun my-shell-split-below ()
+  (interactive)
+  (progn
+    (other-window 1)
+    (split-window-below)
+    (other-window 1))
+    (my-shell-here))
+
 
 (provide 'sh-config)
-;;; bash-config.el ends here
+;;; sh-config.el ends here

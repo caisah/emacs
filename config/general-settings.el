@@ -179,6 +179,7 @@
 (require 'ace-window-settings)
 (require 'sml-settings)
 (require 'eww-settings)
+(require 'smartparens-settings)
 ;; (require 'org-settings)
 ;; (require 'twitter-settings)
 ;; (require 'eww-settings)

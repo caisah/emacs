@@ -38,7 +38,9 @@
           ;; Don't ask for confirmation on recursion when deleting
           dired-recursive-deletes 'always
           ;; Easily copy file to the other buffer
-          dired-dwim-target t)
+          dired-dwim-target t
+          ;; change image dir location
+          image-dired-dir "~/.emacs.d/cache/image-dired/")
 
     ;; Use unzip for .zip files
     (add-to-list 'dired-compress-file-suffixes '("\\.zip\\'" ".zip" "unzip"))
