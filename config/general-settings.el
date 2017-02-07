@@ -190,6 +190,7 @@
 (require 'javascript-config)
 (require 'go-config)
 (require 'sh-config)
+(require 'rust-config)
 ;; (require 'typescript-config)
 ;; (require 'html-config)
 ;; (require 'elisp-config)
