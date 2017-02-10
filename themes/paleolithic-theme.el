@@ -206,6 +206,23 @@
    `(elfeed-log-info-level-face ((t (:foreground "gold3"))))
    `(elfeed-search-unread-title-face ((t (:foreground "gray80" :weight bold))))
 
+   ;; ediff
+   `(ediff-odd-diff-A ((t (:background "gray5" :foreground "gray60"))))
+   `(ediff-odd-diff-B ((t (:background "gray5" :foreground "gray60"))))
+   `(ediff-odd-diff-C ((t (:background "gray5" :foreground "gray60"))))
+   `(ediff-even-diff-A ((t (:background "gray5" :foreground "gray60"))))
+   `(ediff-even-diff-B ((t (:background "gray5" :foreground "gray60"))))
+   `(ediff-even-diff-C ((t (:background "gray5" :foreground "gray60"))))
+
+   `(ediff-current-diff-A ((t (:background "gray20" :foreground "gray90" :weight bold))))
+   `(ediff-current-diff-B ((t (:background "gray20" :foreground "gray90" :weight bold))))
+   `(ediff-current-diff-C ((t (:background "gray20" :foreground "gray90" :weight bold))))
+
+   `(ediff-fine-diff-A ((t (:background "gray20" :foreground "firebrick"))))
+   `(ediff-fine-diff-B ((t (:background "gray20" :foreground "DarkOrange"))))
+   `(ediff-fine-diff-C ((t (:background "gray20" :foreground "LimeGreen"))))
+
+
    ;; magit
    `(magit-log-author ((t (:foreground "gray50"))))
    `(magit-log-date ((t (:foreground "gray35"))))
