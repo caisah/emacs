@@ -41,5 +41,34 @@ Does the job when using `dired-maybe-insert-subdir`"
    (replace-regexp-in-string "\\[\\??[0-9]+[GhK]" "" output)))
 
 
+;; opening shells
+(defun my-shell-here ()
+  (interactive)
+  (let ((dir (or dired-directory default-directory)))
+   (shell (switch-to-buffer
+           (generate-new-buffer dir)))))
+
+(defun my-shell-other ()
+  (interactive)
+  (progn
+    (other-window 1)
+    (my-shell-here)))
+
+(defun my-shell-split-up ()
+  (interactive)
+  (progn
+    (other-window 1)
+    (split-window-below)
+    (my-shell-here)))
+
+(defun my-shell-split-below ()
+  (interactive)
+  (progn
+    (other-window 1)
+    (split-window-below)
+    (other-window 1))
+    (my-shell-here))
+
+
 (provide 'shell-settings)
 ;;; shell-settings ends here
