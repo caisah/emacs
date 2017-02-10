@@ -6,10 +6,13 @@
 ;;; Code:
 (with-eval-after-load 'rust-mode
   (message "Rust loaded")
+
   )
 
 (add-hook 'rust-mode-hook 'linum-mode)
-(add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+(add-hook 'rust-mode-hook (lambda ()
+                            (flycheck-mode)
+                            (flycheck-rust-setup)))
 
 
 (provide 'rust-config)
