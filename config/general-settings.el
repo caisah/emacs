@@ -40,6 +40,7 @@
               auto-save-list-file-prefix "~/.emacs.d/cache/auto-save-list/.save-"
               projectile-cache-file "~/.emacs.d/cache/projectile/projectile.cache"
               url-configuration-directory "~/.emacs.d/cache/url/"
+              eww-bookmarks-directory "~/.emacs.d/cache/"
               projectile-known-projects-file "~/.emacs.d/cache/projectile/known-projects.eld")
 
 ;; Calendar
