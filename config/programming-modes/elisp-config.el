@@ -1,7 +1,7 @@
 ;;; elisp-config.el --- emacs lisp programming
 
 ;;; Commentary:
-;; Config for .el (emacs lisp) files
+;; Config for .el (Emacs Lisp) files
 
 ;;; Code:
 ;; Abbrevs:
