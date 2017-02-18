@@ -68,6 +68,7 @@
 (depends-on "rainbow-delimiters")
 (depends-on "restclient")
 (depends-on "rust-mode")
+(depends-on "rust-playground")
 (depends-on "s")
 (depends-on "scss-mode")
 (depends-on "shut-up")

@@ -248,6 +248,16 @@
    `(magit-diff-file-heading ((t (:foreground "wheat3" :background "gray15"))))
    `(magit-diff-file-heading-highlight ((t (:foreground "wheat3"  :weight bold :background "gray20"))))
 
+   `(magit-reflog-commit ((t (:foreground "gray60"))))
+   `(magit-reflog-merge ((t (:foreground "LimeGreen"))))
+   `(magit-reflog-amend ((t (:foreground "gray65"))))
+   `(magit-reflog-checkout ((t (:foreground "ForestGreen"))))
+   `(magit-reflog-cherry-pick ((t (:foreground "ForestGreen"))))
+   `(magit-reflog-rebase ((t (:foreground "wheat3"))))
+   `(magit-reflog-remote ((t (:foreground "LemonChiffon3"))))
+   `(magit-reflog-other ((t (:foreground "gray50"))))
+   `(magit-reflog-reset ((t (:foreground "firebrick"))))
+
    `(epa-validity-high ((t (:foreground "gray90" :weight bold))))
    `(epa-field-name ((t (:foreground "gray90" :weight bold))))
    `(epa-field-body ((t (:foreground "gray70" :slant italic))))

@@ -7,7 +7,9 @@
 (with-eval-after-load 'rust-mode
   (message "Rust loaded")
 
-  )
+  (setq rust-playground-basedir "~/.emacs.d/cache"))
+
+
 
 (add-hook 'rust-mode-hook 'linum-mode)
 (add-hook 'rust-mode-hook (lambda ()
