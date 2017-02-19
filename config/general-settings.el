@@ -32,6 +32,7 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 ;; Set cache file names
+
 (setq-default bookmark-default-file "~/.emacs.d/cache/bookmarks"
               keyfreq-file "~/.emacs.d/cache/keyfrequency"
               recentf-save-file "~/.emacs.d/cache/recentf"
@@ -66,7 +67,8 @@
               ;; highlight if more than 180 chars on line
               whitespace-line-column 180)
 
-
+;; set language for time to Eng
+(setq system-time-locale "C")
 
 ;; use UTF-8
 (set-language-environment "UTF-8")

@@ -5,7 +5,11 @@
 ;;; Code:
 
 ;; enable toc
-(setq-default org-src-fontify-natively t)
+(with-eval-after-load 'org
+  (progn
+    (message "org-mode loaded")
+
+    (setq-default org-src-fontify-natively t)))
 
 (add-hook 'org-mode-hook 'flyspell-mode)
 (add-hook 'org-mode-hook 'turn-off-smartparens-mode)
