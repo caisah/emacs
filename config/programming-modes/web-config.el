@@ -1,14 +1,9 @@
-;;; html-config --- Web config
+;;; web-config --- Web config
 
 ;;; Commentary:
 ;; My config for HTML & CSS (+ preprocessors)
 
 ;;; Code:
-(require 'web-mode)
-
-(setq web-mode-markup-indent-offset 2)
-(setq css-indent-offset 2)
-
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.hbs?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
@@ -20,6 +15,37 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jst\\'" . web-mode))
 
+(with-eval-after-load 'web-mode
+  (progn
+    (message "web-mode loaded")
+
+    (setq web-mode-markup-indent-offset 2)
+
+    ;; Keys
+    (define-key web-mode-map (kbd "C-,") 'sgml-tag)
+    (define-key web-mode-map (kbd "C-o") 'open-file-in-browser)
+    (define-key web-mode-map (kbd "C-j") 'newline-and-indent)
+    (define-key web-mode-map (kbd "C-;") 'emmet-expand-line)
+    (define-key web-mode-map (kbd "M-n") 'sp-html-next-tag)
+    (define-key web-mode-map (kbd "M-p") 'sp-html-previous-tag)
+    (define-key web-mode-map (kbd "C-M-n") 'web-mode-element-next)
+    (define-key web-mode-map (kbd "C-M-p") 'web-mode-element-previous)
+    (define-key web-mode-map (kbd "C-M-d") 'web-mode-element-child)
+    (define-key web-mode-map (kbd "C-M-u") 'web-mode-element-parent)
+    (define-key web-mode-map (kbd "C-M-a") 'web-mode-element-beginning)
+    (define-key web-mode-map (kbd "C-M-e") 'web-mode-element-end)
+    (define-key web-mode-map (kbd "C-M-f") 'web-mode-attribute-next)
+    (define-key web-mode-map (kbd "C-M-b") 'web-mode-attribute-previous)
+    (define-key web-mode-map (kbd "C-M-k") 'web-mode-element-kill)
+    (define-key web-mode-map (kbd "C-S-i") 'web-mode-element-content-select)
+    (define-key web-mode-map (kbd "C-S-c") 'web-mode-element-clone)
+    (define-key web-mode-map (kbd "<C-M-backspace>") 'backward-kill-element)))
+
+(with-eval-after-load 'css-mode
+  (progn
+    (message "css-mode loaded")
+
+    (setq css-indent-offset 2)))
 
 ;; Functions
 (defun open-file-in-browser()
@@ -33,31 +59,8 @@
   (backward-word)
   (web-mode-element-kill))
 
-;; Keys for html
-(defun html-keys ()
-  "Keys used in HTML."
-  (local-set-key (kbd "C-,") 'sgml-tag)
-  (local-set-key (kbd "C-o") 'open-file-in-browser)
-  (local-set-key (kbd "C-j") 'newline-and-indent)
-  (local-set-key (kbd "C-;") 'emmet-expand-line)
-  (local-set-key (kbd "M-n") 'sp-html-next-tag)
-  (local-set-key (kbd "M-p") 'sp-html-previous-tag)
-  (local-set-key (kbd "C-M-n") 'web-mode-element-next)
-  (local-set-key (kbd "C-M-p") 'web-mode-element-previous)
-  (local-set-key (kbd "C-M-d") 'web-mode-element-child)
-  (local-set-key (kbd "C-M-u") 'web-mode-element-parent)
-  (local-set-key (kbd "C-M-a") 'web-mode-element-beginning)
-  (local-set-key (kbd "C-M-e") 'web-mode-element-end)
-  (local-set-key (kbd "C-M-f") 'web-mode-attribute-next)
-  (local-set-key (kbd "C-M-b") 'web-mode-attribute-previous)
-  (local-set-key (kbd "C-M-k") 'web-mode-element-kill)
-  (local-set-key (kbd "C-S-i") 'web-mode-element-content-select)
-  (local-set-key (kbd "C-S-c") 'web-mode-element-clone)
-  (local-set-key (kbd "<C-M-backspace>") 'backward-kill-element))
-
 ;; Hooks
 (add-hook 'web-mode-hook 'flycheck-mode)
-(add-hook 'web-mode-hook 'html-keys)
 (add-hook 'web-mode-hook 'skewer-html-mode)
 (add-hook 'web-mode-hook 'linum-mode)
 (add-hook 'web-mode-hook 'hs-minor-mode)
@@ -80,5 +83,5 @@
 (add-hook 'scss-mode-hook 'hs-minor-mode)
 
 
-(provide 'html-config)
+(provide 'web-config)
 ;;; html-config.el ends here
