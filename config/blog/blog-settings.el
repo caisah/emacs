@@ -4,57 +4,72 @@
 ;;  Blog config
 
 ;;; Code:
-(defun my-get-string-from-file (path)
+
+(defun blog-get-string-from-file (path)
   "Read contents of the file PATH."
   (with-temp-buffer
     (insert-file-contents path)
     (buffer-string)))
 
-(defun format-path (str)
+(defun blog-strip-path (str)
   "Format the relative path in STR."
   (replace-regexp-in-string "\\.\\." "\." str))
 
-(format-path "img class=\"logo in-header\" src=\"../img/lambda.gif\" />")
+(defconst blog-root-dir "~/Documents/caisah.info/src")
+(defconst blog-blog-dir (concat blog-root-dir "/blog"))
+(defconst blog-img-dir (concat blog-root-dir "/img"))
+(defconst blog-css-dir (concat blog-root-dir "/css"))
+(defconst blog-pub-root-dir "~/Documents/caisah.info/public")
+(defconst blog-pub-blog-dir (concat blog-pub-root-dir "/blog"))
+(defconst blog-pub-img-dir (concat blog-pub-root-dir "/img"))
+(defconst blog-pub-css-dir (concat blog-pub-root-dir "/css"))
+(defconst blog-head-string
+  (blog-get-string-from-file "~/.emacs.d/config/blog/head.html"))
+(defconst blog-header-string
+  (blog-get-string-from-file "~/.emacs.d/config/blog/header.html"))
+(defconst blog-footer-string
+  (blog-get-string-from-file "~/.emacs.d/config/blog/footer.html"))
 
+;; Set all the details for the org website
 (setq org-publish-project-alist
       `(("root"
-         :base-directory "~/Documents/caisah.info/src"
+         :base-directory ,blog-root-dir
          :base-extension "org"
-         :publishing-directory "~/Documents/caisah.info/public"
+         :publishing-directory ,blog-pub-root-dir
          :publishing-function org-html-publish-to-html
          :headline-levels 3
          :section-numbers nil
          :with-toc nil
-         :html-head ,(format-path (my-get-string-from-file "./head.html"))
-         :html-preamble ,(format-path (my-get-string-from-file "./header.html"))
-         :html-postamble ,(format-path (my-get-string-from-file "./footer.html"))
+         :html-head ,(blog-strip-path blog-head-string)
+         :html-preamble ,(blog-strip-path blog-header-string)
+         :html-postamble ,(blog-strip-path blog-footer-string)
          :recursive nil)
 
         ("blog"
-         :base-directory "~/Documents/caisah.info/src/blog"
+         :base-directory ,blog-blog-dir
          :base-extension "org"
-         :publishing-directory "~/Documents/caisah.info/public/blog"
+         :publishing-directory ,blog-pub-blog-dir
          :publishing-function org-html-publish-to-html
          :headline-levels 3
          :section-numbers nil
          :with-toc nil
-         :html-head ,(my-get-string-from-file "./head.html")
-         :html-preamble ,(my-get-string-from-file "./header.html")
-         :html-postamble ,(my-get-string-from-file "./footer.html"))
+         :html-head ,blog-header-string
+         :html-preamble ,blog-header-string
+         :html-postamble ,blog-footer-string)
 
         ("img"
-         :base-directory "~/Documents/caisah.info/src/img"
+         :base-directory ,blog-img-dir
          :base-extension "jpg\\|gif\\|png"
-         :publishing-directory "~/Documents/caisah.info/public/img"
+         :publishing-directory blog-pub-img-dir
          :publishing-function org-publish-attachment)
 
         ("css"
-         :base-directory "~/Documents/caisah.info/src/css"
+         :base-directory ,blog-css-dir
          :base-extension "css\\|el"
-         :publishing-directory "~/Documents/caisah.info/public/css"
+         :publishing-directory blog-pub-css-dir
          :publishing-function org-publish-attachment)
 
-        ("website" :components ("root" "images" "css"))))
+        ("website" :components ("root" "blog" "images" "css"))))
 
 
 (provide 'blog-settings)
