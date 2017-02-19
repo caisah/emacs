@@ -67,6 +67,7 @@
 (depends-on "queue")
 (depends-on "rainbow-delimiters")
 (depends-on "restclient")
+(depends-on "rjsx-mode")
 (depends-on "rust-mode")
 (depends-on "rust-playground")
 (depends-on "s")
