@@ -53,7 +53,7 @@
          :headline-levels 3
          :section-numbers nil
          :with-toc nil
-         :html-head ,blog-header-string
+         :html-head ,blog-head-string
          :html-preamble ,blog-header-string
          :html-postamble ,blog-footer-string)
 

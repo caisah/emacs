@@ -66,6 +66,7 @@
 (depends-on "projectile")
 (depends-on "queue")
 (depends-on "rainbow-delimiters")
+(depends-on "rainbow-mode")
 (depends-on "restclient")
 (depends-on "rjsx-mode")
 (depends-on "rust-mode")

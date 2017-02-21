@@ -47,6 +47,7 @@
 
     (setq css-indent-offset 2)))
 
+(add-hook 'css-mode-hook 'rainbow-mode)
 ;; Functions
 (defun open-file-in-browser()
   (interactive)
