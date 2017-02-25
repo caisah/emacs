@@ -34,6 +34,7 @@
    `(default ((t (:family "Ubuntu Mono" :height ,font-height :background "gray10" :foreground "gray80"))))
    `(cursor ((t (:background "chartreuse3" :foreground "black"))))
    `(region ((t (:background "gray20" :foreground "gray90"))))
+   `(secondary-selection ((t (:background "gray25"))))
    `(highlight ((t (:background "gray80" :foreground "gray10"))))
    `(minibuffer-prompt ((t (:background "gray10" :foreground "gray80"))))
 
