@@ -11,4 +11,4 @@
 
 
 (provide 'docview-settings)
-;;; docview-config ends here
+;;; docview-settings.el ends here

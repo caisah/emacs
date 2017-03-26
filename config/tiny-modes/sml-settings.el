@@ -1,8 +1,9 @@
 ;;; sml-settings.el --- Smart-Mode-Line
 
-;;: Commentary:
+;;; Commentary:
 ;; Settings for smart-mode-line
 
+;; Code:
 (require 'smart-mode-line)
 
 (setq-default
@@ -24,5 +25,4 @@
 
 
 (provide 'sml-settings)
-;;; Code:
 ;;; sml-settings ends here

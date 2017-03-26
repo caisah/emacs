@@ -31,4 +31,4 @@
 
 
 (provide 'company-settings)
-;;; company-settings ends here
+;;; company-settings.el ends here

@@ -181,6 +181,7 @@
 (require 'docview-settings)
 (require 'ace-window-settings)
 (require 'sml-settings)
+(require 'editorconfig-settings)
 (require 'eww-settings)
 (require 'smartparens-settings)
 (require 'org-settings)

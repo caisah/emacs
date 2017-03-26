@@ -12,5 +12,6 @@
     ;; can export to text
     (setq epa-armor t)))
 
+
 (provide 'epa-settings)
-;;; hippie-expand-config ends here
+;;; epa-settings.el ends here
