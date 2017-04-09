@@ -57,6 +57,8 @@
     ;; Hooks
     ;; Omit uninteresting files in Dired including .. and .
     (add-hook 'dired-mode-hook 'dired-omit-mode)
+    ;; Refresh dired when file changes
+    (add-hook 'dired-mode-hook 'auto-revert-mode)
 
     ;; Move deleted stuff to trash
     (setq delete-by-moving-to-trash t)))
