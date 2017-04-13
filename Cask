@@ -2,6 +2,8 @@
 (source melpa)
 (source org)
 
+(depends-on "org-plus-contrib")
+
 (depends-on "ace-window")
 (depends-on "anzu")
 (depends-on "async")
