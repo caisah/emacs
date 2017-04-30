@@ -11,6 +11,17 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 
+(defun my-use-eslint-from-node-modules ()
+  (let* ((root (locate-dominating-file
+                (or (buffer-file-name) default-directory)
+                "node_modules"))
+         (eslint (and root
+                      (expand-file-name "node_modules/eslint/bin/eslint.js"
+                                        root))))
+    (when (and eslint (file-executable-p eslint))
+      (setq-local flycheck-javascript-eslint-executable eslint))))
+
+
 (defun myjs-before-hooks ()
   "Run before all hooks:
    - change mode name to JS2;"
@@ -44,6 +55,8 @@
 (add-hook 'js2-mode-hook 'flycheck-mode)
 (add-hook 'js2-mode-hook 'linum-mode)
 (add-hook 'js2-mode-hook 'myjs-before-hooks)
+;; configure flycheck to use the local node_modules
+(add-hook 'flycheck-mode-hook #'my-use-eslint-from-node-modules)
 
 
 (with-eval-after-load 'js2-mode
