@@ -185,6 +185,7 @@
 (require 'eww-settings)
 (require 'smartparens-settings)
 (require 'org-settings)
+(require 'mc-settings)
 ;; (require 'twitter-settings)
 ;; (require 'eww-settings)
 (require 'othermodes-settings)
