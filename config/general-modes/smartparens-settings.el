@@ -8,8 +8,8 @@
 (require 'smartparens-html)
 
 (smartparens-global-mode t)
-(smartparens-strict-mode)
 
+(message "smartparens loaded")
 (setq sp-highlight-pair-overlay nil)
 
 ;; Keys
@@ -48,6 +48,8 @@
 (define-key smartparens-mode-map (kbd "C-<left_bracket>") 'sp-select-previous-thing)
 (define-key smartparens-mode-map (kbd "C-M-]") 'sp-select-next-thing)
 
+;; let C-S-d bound to 'delete-region
+(define-key smartparens-strict-mode-map [remap delete-region] nil)
 
 ;; export
 (provide 'smartparens-settings)

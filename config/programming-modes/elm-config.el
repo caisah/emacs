@@ -3,9 +3,11 @@
 ;;; Commentary:
 ;; My Elm config file
 
-(require 'elm-mode)
-
 ;;; Code:
+(with-eval-after-load 'elm-mode
+  (progn
+    (message "elm-mode loaded")))
+
 (add-hook 'elm-mode-hook 'flycheck-mode)
 (add-hook 'elm-mode-hook 'linum-mode)
 
