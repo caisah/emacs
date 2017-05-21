@@ -50,6 +50,7 @@
 (depends-on "json-snatcher")
 (depends-on "keyfreq")
 (depends-on "less-css-mode")
+(depends-on "list-environment")
 (depends-on "list-processes+")
 (depends-on "logito")
 (depends-on "magit")
