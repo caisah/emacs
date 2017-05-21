@@ -8,7 +8,13 @@
   (progn
     (message "elm-mode loaded")))
 
-(add-hook 'elm-mode-hook 'flycheck-mode)
+(defun start-elm-flycheck ()
+  "Start flycheck and setup it for elm."
+  (flycheck-mode)
+  (flycheck-elm-setup))
+
+
+(add-hook 'elm-mode-hook 'start-elm-flycheck)
 (add-hook 'elm-mode-hook 'linum-mode)
 
 (provide 'elm-config)
