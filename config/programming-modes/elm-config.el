@@ -6,7 +6,8 @@
 ;;; Code:
 (with-eval-after-load 'elm-mode
   (progn
-    (message "elm-mode loaded")))
+    (message "elm-mode loaded")
+    (setq elm-format-on-save t)))
 
 (defun start-elm-flycheck ()
   "Start flycheck and setup it for elm."
