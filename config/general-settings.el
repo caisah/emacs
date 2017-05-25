@@ -122,6 +122,9 @@
 (global-set-key (kbd "C-\\") 'my-delete-to-previous-line)
 (global-set-key (kbd "C-S-d") 'delete-region)
 
+(global-set-key (kbd "C-x l") nil)
+(global-set-key (kbd "C-x l") 'rename-buffer)
+
 (global-set-key (kbd "<C-tab>") 'indent-relative)
 
 (global-set-key (kbd "C-c C-f") 'hs-toggle-hiding)
