@@ -24,7 +24,7 @@
 
 (defun myjs-before-hooks ()
   "Run before all hooks:
-   - change mode name to JS2;"
+- change mode name to JS2;"
 
   (message "Running 'before' hooks for js2-mode in buffer.")
 
@@ -54,6 +54,7 @@
 (add-hook 'js2-mode-hook 'hs-minor-mode)
 (add-hook 'js2-mode-hook 'flycheck-mode)
 (add-hook 'js2-mode-hook 'linum-mode)
+(add-hook 'js2-mode-hook 'prettier-js-mode)
 (add-hook 'js2-mode-hook 'myjs-before-hooks)
 ;; configure flycheck to use the local node_modules
 (add-hook 'flycheck-mode-hook #'my-use-eslint-from-node-modules)
@@ -73,6 +74,12 @@
      js2-include-node-externs t
      js2-basic-offset 2)))
 
+(with-eval-after-load 'prettier-js-mode
+  (progn
+    (message "prettier js loaded")
+    (setq prettier-js-args '("--trailing-comma" "all"
+                             "--bracket-spacing" "true"
+                             "--single-quote" "true"))))
 
 ;; Export
 (provide 'javascript-config)

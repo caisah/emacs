@@ -19,7 +19,7 @@
                          " skewer-html" " skewer-css"" Emmet" " hs"
                          " λ" " Rbow" " vl" " Wrap" " Helm" " Projectile" " yas"
                          " company" " Tern" " ws" " WS" " Fly" " Merlin (default)"
-                         " Interactive"))
+                         " Interactive" " prettier" " EditorConfig" " ElDoc"))
 
 (sml/setup)
 

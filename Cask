@@ -66,6 +66,7 @@
 (depends-on "pcache")
 (depends-on "pkg-info")
 (depends-on "popup")
+(depends-on "prettier-js")
 (depends-on "pretty-symbols")
 (depends-on "projectile")
 (depends-on "queue")
