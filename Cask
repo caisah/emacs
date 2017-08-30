@@ -63,6 +63,7 @@
 (depends-on "page-break-lines")
 (depends-on "pallet")
 (depends-on "pandoc-mode")
+(depends-on "password-generator")
 (depends-on "pcache")
 (depends-on "pkg-info")
 (depends-on "popup")
