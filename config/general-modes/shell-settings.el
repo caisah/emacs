@@ -54,6 +54,7 @@
     (other-window 1))
     (my-shell-here))
 
+(global-set-key (kbd "C-c s") 'my-shell-here)
 
 (provide 'shell-settings)
 ;;; shell-settings ends here
