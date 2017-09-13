@@ -74,7 +74,7 @@
      js2-include-node-externs t
      js2-basic-offset 2)))
 
-(with-eval-after-load 'prettier-js-mode
+(with-eval-after-load 'prettier-js
   (progn
     (message "prettier js loaded")
     (setq prettier-js-args '("--trailing-comma" "all"
