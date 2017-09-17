@@ -145,6 +145,12 @@
 
 (global-set-key (kbd "C-`") 'er/expand-region)
 
+;; Searching
+(global-set-key (kbd "C-s") nil)
+(global-set-key (kbd "C-S-s") nil)
+(global-set-key (kbd "C-s") 'isearch-forward)
+(global-set-key (kbd "C-S-s") 'query-replace)
+
 
 ;; Global Modes:
 ;; Use word-wrapping for continuation lines

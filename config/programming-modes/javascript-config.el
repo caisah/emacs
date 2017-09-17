@@ -11,7 +11,7 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 
-(defun my-use-eslint-from-node-modules ()
+(defun myjs-use-eslint-from-node-modules ()
   (let* ((root (locate-dominating-file
                 (or (buffer-file-name) default-directory)
                 "node_modules"))
@@ -43,10 +43,14 @@
          company-files
          company-keywords)))
 
+(defun myjs-set-local-keys ()
+  "Override some js2-mode keys."
+  (local-set-key (kbd "C-c C-f") 'hs-toggle-hiding))
 
 ;; order matters
 (add-hook 'js2-mode-hook 'myjs-after-hooks)
 (add-hook 'js2-mode-hook 'whitespace-mode)
+(add-hook 'js2-mode-hook 'myjs-set-local-keys)
 (add-hook 'js2-mode-hook 'company-mode)
 (add-hook 'js2-mode-hook 'tern-mode)
 (add-hook 'js2-mode-hook 'smartparens-strict-mode)
@@ -57,7 +61,7 @@
 (add-hook 'js2-mode-hook 'prettier-js-mode)
 (add-hook 'js2-mode-hook 'myjs-before-hooks)
 ;; configure flycheck to use the local node_modules
-(add-hook 'flycheck-mode-hook #'my-use-eslint-from-node-modules)
+(add-hook 'flycheck-mode-hook #'myjs-use-eslint-from-node-modules)
 
 
 (with-eval-after-load 'js2-mode
