@@ -20,7 +20,7 @@
                          " λ" " Rbow" " vl" " Wrap" " Helm" " Projectile" " yas"
                          " company" " Tern" " ws" " WS" " Fly" " Merlin (default)"
                          " Interactive" " prettier" " EditorConfig" " ElDoc"
-                         " Prettier"))
+                         " Prettier" " Omit"))
 
 (sml/setup)
 
