@@ -231,8 +231,10 @@
 
    `(magit-section-heading ((t (:foreground "gray70" :weight bold))))
    `(magit-section-highlight ((t (:foreground "gray80" :background "gray20"))))
+   `(magit-section-heading-selection ((t (:foreground "gray95"))))
 
-   `(magit-branch-local ((t (:foreground "gray70" :box (:line-width 1)))))
+   `(magit-branch-current ((t (:foreground "wheat3" :box (:line-width 1)))))
+   `(magit-branch-local ((t (:foreground "grey70" :box (:line-width 1)))))
    `(magit-branch-remote ((t (:foreground "gray55" :box (:line-width 1)))))
 
    `(magit-diff-added ((t (:foreground "ForestGreen" :background "gray15"))))
