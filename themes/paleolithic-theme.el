@@ -55,7 +55,8 @@
    `(font-lock-variable-name-face ((t (:foreground "wheat3"))))
    `(font-lock-warning-face ((t :foreground "DarkOrange")))
 
-   ;; buttons & links
+   ;; common
+   `(match ((t (:foreground "gray90" :background "gray40" :weight bold))))
    `(button ((t (:background "gray15" :foreground "gray60" :box (:style released-button)))))
    `(link ((t (:foreground "gray60" :underline t))))
    `(link-visited ((t (:foreground "gray35" :underline t))))
@@ -90,7 +91,7 @@
    `(aw-leading-char-face ((t (:foreground "firebrick" :height 1.3 :weight bold))))
 
 
-   `(isearch ((t (:foreground "gray90" :background "gray40" :weight bold))))
+   `(isearch ((t (:inherit (match)))))
    `(lazy-highlight ((t (:foreground "gray90" :background "gray25"))))
 
    `(show-paren-match ((t (:foreground "black" :background "gray60"))))
