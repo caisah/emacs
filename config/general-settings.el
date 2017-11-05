@@ -131,8 +131,6 @@
 
 (global-set-key (kbd "C-c C-f") 'hs-toggle-hiding)
 
-(global-set-key (kbd "C-S-r") 'revert-buffer)
-
 ;; Emacs
 (global-set-key (kbd "C-h C-s") 'elisp-index-search)
 
