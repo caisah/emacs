@@ -41,6 +41,7 @@
 (depends-on "helm-projectile")
 (depends-on "helm-swoop")
 (depends-on "highlight-indentation")
+(depends-on "hindent")
 (depends-on "htmlize")
 (depends-on "imenu-anywhere")
 (depends-on "inf-mongo")
