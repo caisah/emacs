@@ -89,6 +89,11 @@
                sgml-skip-tag-forward
                nil))
 
+;; WTTrin | Weather
+(setq wttrin-default-cities '("Cluj-Napoca"))
+(setq wttrin-default-accept-language '("Accept-Language" . "ro-RO"))
+(defalias 'show-weather 'wttrin)
+
 
 (provide 'othermodes-settings)
 ;;; othermodes-settings.el ends here
