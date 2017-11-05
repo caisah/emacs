@@ -94,6 +94,9 @@
 (setq wttrin-default-accept-language '("Accept-Language" . "ro-RO"))
 (defalias 'show-weather 'wttrin)
 
+;; nov-mode for epub
+(add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+
 
 (provide 'othermodes-settings)
 ;;; othermodes-settings.el ends here

@@ -58,6 +58,7 @@
 (depends-on "merlin")
 (depends-on "multiple-cursors")
 (depends-on "nginx-mode")
+(depends-on "nov")
 (depends-on "org-plus-contrib")
 (depends-on "package-build")
 (depends-on "page-break-lines")
