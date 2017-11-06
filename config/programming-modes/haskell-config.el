@@ -25,7 +25,8 @@
   (define-key haskell-mode-map (kbd "C-c C-c") 'haskell-process-cabal-build)
   (define-key haskell-mode-map (kbd "C-c M-O") 'haskell-interactive-mode-clear)
   (define-key haskell-mode-map (kbd "C-c c") 'haskell-process-cabal)
-  (define-key haskell-mode-map (kbd "C-c C-o") 'haskell-compile))
+  (define-key haskell-mode-map (kbd "C-c C-o") 'haskell-compile)
+  (define-key haskell-mode-map (kbd "C-j") 'haskell-indentation-newline-and-indent))
 
 
 (with-eval-after-load 'haskell-cabal-mode

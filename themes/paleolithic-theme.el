@@ -97,7 +97,7 @@
    `(show-paren-match ((t (:foreground "black" :background "gray60"))))
    `(show-paren-mismatch ((t (:foreground "black" :background "firebrick"))))
 
-   `(linum ((t (:foreground "gray40" :weight light :height 0.9))))
+   `(linum ((t (:foreground "gray40" :background "gray10" :weight light :height 0.9))))
 
    `(header-line ((t (:foreground "gray70" :background "gray20"))))
 
