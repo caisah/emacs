@@ -34,19 +34,13 @@
 (define-key smartparens-mode-map (kbd "M-<delete>") 'sp-unwrap-sexp)
 (define-key smartparens-mode-map (kbd "M-<backspace>") 'sp-backward-unwrap-sexp)
 
-(define-key smartparens-mode-map (kbd "C-<right>") 'sp-forward-slurp-sexp)
-(define-key smartparens-mode-map (kbd "C-<left>") 'sp-forward-barf-sexp)
-(define-key smartparens-mode-map (kbd "C-M-<left>") 'sp-backward-slurp-sexp)
-(define-key smartparens-mode-map (kbd "C-M-<right>") 'sp-backward-barf-sexp)
+(define-key smartparens-mode-map (kbd "C-*") 'sp-forward-slurp-sexp)
+(define-key smartparens-mode-map (kbd "C-&") 'sp-forward-barf-sexp)
 
 (define-key smartparens-mode-map (kbd "M-D") 'sp-splice-sexp)
 (define-key smartparens-mode-map (kbd "C-M-<delete>") 'sp-splice-sexp-killing-forward)
 (define-key smartparens-mode-map (kbd "C-M-<backspace>") 'sp-splice-sexp-killing-backward)
 (define-key smartparens-mode-map (kbd "C-S-<backspace>") 'sp-splice-sexp-killing-around)
-
-(define-key smartparens-mode-map (kbd "C-]") 'sp-select-next-thing-exchange)
-(define-key smartparens-mode-map (kbd "C-<left_bracket>") 'sp-select-previous-thing)
-(define-key smartparens-mode-map (kbd "C-M-]") 'sp-select-next-thing)
 
 ;; let C-S-d bound to 'delete-region
 (define-key smartparens-strict-mode-map [remap delete-region] nil)
