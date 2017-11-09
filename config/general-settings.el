@@ -78,7 +78,9 @@
 (load custom-file)
 
 ;; Start server - Now we can open any file with emacsclient
-(server-start)
+(unless (and (fboundp 'server-running-p)
+             (server-running-p))
+  (server-start))
 
 ;; Enable default disabled stuff
 (put 'downcase-region 'disabled nil)
