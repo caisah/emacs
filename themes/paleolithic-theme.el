@@ -157,6 +157,8 @@
    `(helm-buffer-directory ((t (:foreground "gray80" :weight bold))))
    `(helm-buffer-size ((t (:foreground "gray35"))))
    `(helm-buffer-process ((t (:foreground "gray35"))))
+   `(helm-buffer-not-saved ((t (:foreground "IndianRed2"))))
+   `(helm-buffer-modified ((t (:foreground "IndianRed2"))))
    `(helm-ff-directory ((t (:foreground "gray80" :weight bold))))
    `(helm-ff-dotted-directory ((t (:foreground "gray40" :background "gray10"))))
    `(helm-ff-prefix ((t (:foreground "gray70" :background "gray30"))))
