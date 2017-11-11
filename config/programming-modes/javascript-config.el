@@ -11,7 +11,8 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 
-(defun myjs-use-eslint-from-node-modules ()
+(defun my-use-eslint-from-node-modules ()
+  "Try to use local .eslint file instead of global."
   (let* ((root (locate-dominating-file
                 (or (buffer-file-name) default-directory)
                 "node_modules"))
@@ -22,35 +23,21 @@
       (setq-local flycheck-javascript-eslint-executable eslint))))
 
 
-(defun myjs-before-hooks ()
-  "Run before all hooks:
-- change mode name to JS2;"
+(defun my-jshook ()
+  "Personal hook for js2-mode."
+  (progn
+    (set (make-local-variable 'company-backends)
+         '(company-dabbrev-code
+           company-dabbrev
+           company-tern
+           company-files
+           company-keywords))
+    ;; Change mode name to JS2
+    (setq mode-name "JS2")
+    (my-use-eslint-from-node-modules)))
 
-  (message "Running 'before' hooks for js2-mode in buffer.")
 
-  (setq mode-name "JS2"))
-
-
-(defun myjs-after-hooks ()
-  "Run after all hooks are executed."
-  (message "Running 'after' hooks for js2-mode in buffer")
-
-  ;; set backends for company
-  (set (make-local-variable 'company-backends)
-       '(company-dabbrev-code
-         company-dabbrev
-         company-tern
-         company-files
-         company-keywords)))
-
-(defun myjs-set-local-keys ()
-  "Override some js2-mode keys."
-  (local-set-key (kbd "C-c C-f") 'hs-toggle-hiding))
-
-;; order matters
-(add-hook 'js2-mode-hook 'myjs-after-hooks)
 (add-hook 'js2-mode-hook 'whitespace-mode)
-(add-hook 'js2-mode-hook 'myjs-set-local-keys)
 (add-hook 'js2-mode-hook 'company-mode)
 (add-hook 'js2-mode-hook 'tern-mode)
 (add-hook 'js2-mode-hook 'smartparens-strict-mode)
@@ -60,8 +47,7 @@
 (add-hook 'js2-mode-hook 'linum-mode)
 (add-hook 'js2-mode-hook 'prettier-js-mode)
 (add-hook 'js2-mode-hook 'myjs-before-hooks)
-;; configure flycheck to use the local node_modules
-(add-hook 'flycheck-mode-hook #'myjs-use-eslint-from-node-modules)
+(add-hook 'js2-mode-hook 'my-jshook)
 
 
 (with-eval-after-load 'js2-mode
@@ -78,12 +64,14 @@
      js2-include-node-externs t
      js2-basic-offset 2)))
 
+;; Set config for prettier code formatter
 (with-eval-after-load 'prettier-js
   (progn
     (message "prettier js loaded")
-    (setq prettier-js-args '("--trailing-comma" "all"
-                             "--bracket-spacing" "true"
-                             "--single-quote" "true"))))
+
+    (setq-default prettier-js-args '("--trailing-comma" "all"
+                                     "--bracket-spacing" "true"
+                                     "--single-quote" "true"))))
 
 ;; Export
 (provide 'javascript-config)

@@ -8,6 +8,7 @@
 ;; load helm at startup
 (helm-mode t)
 (require 'helm-swoop)
+
 ;; ag is really fast
 (require 'helm-ag)
 
@@ -22,7 +23,10 @@
               helm-ag-command-option "-i"
 
               helm-multi-swoop-edit-save t
-              helm-swoop-split-direction 'split-window-vertically)
+              helm-swoop-split-direction 'split-window-vertically
+              helm-swoop-use-line-number-face t
+              helm-swoop-pre-input-function (lambda () "")
+              )
 
 
 (when (executable-find "curl")
@@ -67,7 +71,7 @@
 
 
 (eval-after-load 'flycheck
-   '(define-key flycheck-mode-map (kbd "C-c ! h") 'helm-flycheck))
+  '(define-key flycheck-mode-map (kbd "C-c ! h") 'helm-flycheck))
 
 
 ;; Export

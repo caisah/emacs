@@ -1,7 +1,7 @@
-;;; smartparens-settings.el --- Smart parens
+;;; smartparens-settings.el -- Smart parens
+;;; Commentary:
+;;  Settings for parens
 
-;;: Commentary:
-;; Settings for parens
 
 ;;; Code:
 (require 'smartparens-config)
@@ -34,8 +34,8 @@
 (define-key smartparens-mode-map (kbd "M-<delete>") 'sp-unwrap-sexp)
 (define-key smartparens-mode-map (kbd "M-<backspace>") 'sp-backward-unwrap-sexp)
 
-(define-key smartparens-mode-map (kbd "C-*") 'sp-forward-slurp-sexp)
-(define-key smartparens-mode-map (kbd "C-&") 'sp-forward-barf-sexp)
+(define-key smartparens-mode-map (kbd "C-M-8") 'sp-forward-slurp-sexp)
+(define-key smartparens-mode-map (kbd "C-M-7") 'sp-forward-barf-sexp)
 
 (define-key smartparens-mode-map (kbd "M-D") 'sp-splice-sexp)
 (define-key smartparens-mode-map (kbd "C-M-<delete>") 'sp-splice-sexp-killing-forward)

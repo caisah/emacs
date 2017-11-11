@@ -169,6 +169,9 @@
    ;; helm swoop
    `(helm-swoop-target-line-face ((t (:foreground "gray90" :background "gray30" :weight bold))))
    `(helm-swoop-target-word-face ((t (:foreground "wheat3" :background nil :weight bold))))
+   `(helm-swoop-target-line-block-face ((t (:inherit (helm-swoop-target-line-face)))))
+   `(helm-swoop-line-number-face ((t (:foreground "red"))))
+
 
    ;; js2-mode
    `(js2-error ((t (:foreground "firebrick"))))
@@ -187,6 +190,9 @@
    ;; comint
    `(comint-highlight-prompt ((t (:foreground "gray80" :background "gray20"))))
    `(comint-highlight-input ((t (:foreground "gray85" :weight bold))))
+
+   ;; hydra
+   `(hydra-face-blue ((t (:foreground "DarkRed" :weight bold))))
 
    ;; erc
    `(erc-notice-face ((t (:foreground "gray30"))))
