@@ -149,6 +149,7 @@
    `(helm-source-header ((t (:foreground "gray70" :background "gray15"))))
    `(helm-header ((t (:foreground "gray40" :background "gray10"))))
    `(helm-selection ((t (:background "gray20"))))
+   `(helm-grep-match ((t (:foreground "wheat3" :background nil :weight bold))))
    `(helm-candidate-number ((t (:foreground "black" :background "gray30"))))
    `(helm-match ((t (:foreground "wheat3" :background nil :weight bold))))
    `(helm-M-x-key ((t (:foreground "wheat3" :underline t))))
