@@ -1,7 +1,7 @@
 ;;; eww-settings.el --- EWW settings
 
-;;: Commentary:
-;; Browsing the internet from within emacs
+;;; Commentary:
+;; Browsing the internet from within Emacs
 ;;; Code:
 (require 'eww)
 
@@ -12,6 +12,7 @@
 (define-key eww-mode-map (kbd "p") 'shr-previous-link)
 
 (defun eww-open-link-at-point ()
+  "Open link at cursor point in eww."
   (interactive)
   (eww (thing-at-point 'url)))
 

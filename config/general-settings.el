@@ -119,15 +119,24 @@
   (delete-horizontal-space)
   (insert-char 32))
 
+(defun buffer-too-big-p ()
+  "Check if a buffer is really big."
+  (or (> (buffer-size) (* 5000 80))
+      (> (line-number-at-pos (point-max)) 5000)))
+
+;; Disable `linum-mode' & `flycheck-mode' for big buffers
+(add-hook 'prog-mode-hook
+          (lambda ()
+            (if (buffer-too-big-p)
+                (progn
+                  (linum-mode -1)
+                  (flycheck-mode -1)))))
 
 ;; Global common keys
 (global-set-key (kbd "C-x K") 'my-kill-other-buffer)
 (global-set-key (kbd "C-x C-k") 'my-kill-all-buffers)
 (global-set-key (kbd "C-\\") 'my-delete-to-previous-line)
 (global-set-key (kbd "C-S-d") 'delete-region)
-
-(global-set-key (kbd "C-x l") nil)
-(global-set-key (kbd "C-x l") 'rename-buffer)
 
 (global-set-key (kbd "<C-tab>") 'indent-relative)
 
@@ -172,7 +181,7 @@
 
 
 ;; Enable projectile
-(projectile-global-mode)
+(projectile-mode)
 ;; cache projectile files
 (setq-default projectile-enable-caching t)
 
@@ -192,7 +201,6 @@
 (require 'docview-settings)
 (require 'ace-window-settings)
 (require 'sml-settings)
-(require 'editorconfig-settings)
 (require 'eww-settings)
 (require 'smartparens-settings)
 (require 'org-settings)

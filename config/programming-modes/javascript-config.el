@@ -22,16 +22,15 @@
     (when (and eslint (file-executable-p eslint))
       (setq-local flycheck-javascript-eslint-executable eslint))))
 
-
 (defun my-jshook ()
   "Personal hook for js2-mode."
   (progn
-    (set (make-local-variable 'company-backends)
-         '(company-dabbrev-code
-           company-dabbrev
-           company-tern
-           company-files
-           company-keywords))
+    (setq-local company-backends
+                '(company-dabbrev-code
+                  company-dabbrev
+                  company-tern
+                  company-files
+                  company-keywords))
     ;; Change mode name to JS2
     (setq mode-name "JS2")
     (my-use-eslint-from-node-modules)))
@@ -46,7 +45,6 @@
 (add-hook 'js2-mode-hook 'flycheck-mode)
 (add-hook 'js2-mode-hook 'linum-mode)
 (add-hook 'js2-mode-hook 'prettier-js-mode)
-(add-hook 'js2-mode-hook 'myjs-before-hooks)
 (add-hook 'js2-mode-hook 'my-jshook)
 
 

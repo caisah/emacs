@@ -3,12 +3,14 @@
 ;;; Commentary:
 ;; My go lang config file
 
-(defun go-gonfig-set-local-variables ()
+;;; Code:
+(defun my-go-hook ()
+  "My personal golang hook."
   (setq tab-width 2))
 
 (add-hook 'go-mode-hook 'linum-mode)
 (add-hook 'go-mode-hook 'flycheck-mode)
-(add-hook 'go-mode-hook 'go-gonfig-set-local-variables)
+(add-hook 'go-mode-hook 'my-go-hook)
 
 (with-eval-after-load 'go-mode
   (progn
@@ -16,4 +18,4 @@
 
 ;; Export
 (provide 'go-config)
-;;; javascript-config.el ends here
+;;; go-config.el ends here

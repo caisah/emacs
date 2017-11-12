@@ -11,9 +11,9 @@
   (progn
     (message "ace-window loaded")
     ;; enable deleting, swapping, splitting
-    (setq aw-dispatch-always t)
-    ;; keep keys on the home row
-    (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))))
+    (setq-default aw-dispatch-always t
+                  ;; keep keys on the home row
+                  aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))))
 
 
 (provide 'ace-window-settings)

@@ -10,7 +10,7 @@
 (with-eval-after-load 'epa
   (progn
     ;; can export to text
-    (setq epa-armor t)))
+    (setq-default epa-armor t)))
 
 
 (provide 'epa-settings)

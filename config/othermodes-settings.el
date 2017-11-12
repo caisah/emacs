@@ -18,22 +18,12 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (add-hook 'markdown-mode 'pandoc-mode)
 
-
-;; Wrap the next expression in a pair of parens
-(defun my-wrap-with-round-paren (&optional arg)
-  "Wrap ARG with in round parens ()."
-  (interactive "p")
-  (sp-select-next-thing-exchange arg)
-  (execute-kbd-macro (kbd "(")))
-(setq-default sp-hybrid-kill-excessive-whitespace t)
-
-
 ;; Hide/show
 (defface hs-face nil
          "Basic face for hide/show."
          :group 'basic-faces)
 
-(setq hs-set-up-overlay
+(setq-default hs-set-up-overlay
        (defun my-display-code-line-counts (ov)
          (when (eq 'code (overlay-get ov 'hs))
            (overlay-put ov 'display
@@ -63,19 +53,18 @@
 
 
 ;;  JSON mode
-(defun set-json-mode-keys ()
-  "Set keys for json-mode."
-  (local-set-key (kbd "C-c C-b") 'json-mode-beautify)
-  (local-set-key (kbd "C-c C-f") 'hs-toggle-hiding))
+(defun my-json-hook ()
+  "Personal hook for json-mode."
+  (progn
+    (make-local-variable 'js-indent-level)
+    (setq js-indent-level 2)
 
-(defun set-json-indentation ()
-  (make-local-variable 'js-indent-level)
-  (setq js-indent-level 2))
+    (local-set-key (kbd "C-c C-b") 'json-mode-beautify)
+    (local-set-key (kbd "C-c C-f") 'hs-toggle-hiding)))
 
 (add-hook 'json-mode-hook 'flycheck-mode)
 (add-hook 'json-mode-hook 'hs-minor-mode)
-(add-hook 'json-mode-hook 'set-json-mode-keys)
-(add-hook 'json-mode-hook 'set-json-indentation)
+(add-hook 'json-mode-hook 'my-json-hook)
 
 ;; XML
 (add-hook 'nxml-mode-hook 'sgml-mode)
@@ -90,12 +79,18 @@
                nil))
 
 ;; WTTrin | Weather
-(setq wttrin-default-cities '("Cluj-Napoca"))
-(setq wttrin-default-accept-language '("Accept-Language" . "ro-RO"))
+(setq-default wttrin-default-cities '("Cluj-Napoca")
+              wttrin-default-accept-language '("Accept-Language" . "ro-RO"))
+
+;; on `show-weather' call wttrin
 (defalias 'show-weather 'wttrin)
 
 ;; nov-mode for epub
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+
+;; Use the config of the project
+(require 'editorconfig)
+(editorconfig-mode 1)
 
 
 (provide 'othermodes-settings)

@@ -19,7 +19,7 @@
   (progn
     (message "web-mode loaded")
 
-    (setq web-mode-markup-indent-offset 2)
+    (setq-default web-mode-markup-indent-offset 2)
 
     ;; Keys
     (define-key web-mode-map (kbd "C-,") 'sgml-tag)
@@ -45,20 +45,26 @@
   (progn
     (message "css-mode loaded")
 
-    (setq css-indent-offset 2)))
+    (setq-default css-indent-offset 2)))
+
+(defun my-css-hook ()
+  "Personal hook for css."
+  (setq-local company-backends
+              '(company-dabbrev-code
+                company-dabbrev
+                company-css
+                company-keywords)))
 
 (add-hook 'css-mode-hook 'rainbow-mode)
+(add-hook 'css-mode-hook 'company-mode)
+(add-hook 'css-mode-hook 'my-css-hook)
+
 ;; Functions
 (defun open-file-in-browser()
+  "Open a current buffer in browser."
   (interactive)
   (let ((filename (buffer-file-name)))
     (browse-url filename)))
-
-(defun backward-kill-element ()
-  "Backward kill web element."
-  (interactive)
-  (backward-word)
-  (web-mode-element-kill))
 
 ;; Hooks
 (add-hook 'web-mode-hook 'flycheck-mode)
@@ -85,4 +91,4 @@
 
 
 (provide 'web-config)
-;;; html-config.el ends here
+;;; web-config.el ends here

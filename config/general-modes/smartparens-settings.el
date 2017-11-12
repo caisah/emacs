@@ -10,7 +10,16 @@
 (smartparens-global-mode t)
 
 (message "smartparens loaded")
-(setq sp-highlight-pair-overlay nil)
+
+;; Wrap the next expression in a pair of parens
+(defun my-wrap-with-round-paren (&optional arg)
+  "Wrap ARG with in round parens ()."
+  (interactive "p")
+  (sp-select-next-thing-exchange arg)
+  (execute-kbd-macro (kbd "(")))
+
+(setq-default sp-highlight-pair-overlay nil
+              sp-hybrid-kill-excessive-whitespace t)
 
 ;; Keys
 (define-key smartparens-mode-map (kbd "C-M-f") 'sp-forward-sexp)
@@ -36,6 +45,8 @@
 
 (define-key smartparens-mode-map (kbd "C-M-8") 'sp-forward-slurp-sexp)
 (define-key smartparens-mode-map (kbd "C-M-7") 'sp-forward-barf-sexp)
+
+(define-key smartparens-mode-map (kbd "C-(") 'my-wrap-with-round-paren)
 
 (define-key smartparens-mode-map (kbd "M-D") 'sp-splice-sexp)
 (define-key smartparens-mode-map (kbd "C-M-<delete>") 'sp-splice-sexp-killing-forward)

@@ -7,7 +7,8 @@
 (with-eval-after-load 'doc-view
   (progn
     (message "doc-view loaded")
-    (setq doc-view-continuous t)))
+
+    (setq-default doc-view-continuous t)))
 
 
 (provide 'docview-settings)

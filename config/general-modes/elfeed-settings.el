@@ -6,7 +6,7 @@
 (with-eval-after-load 'elfeed
   (progn
     (setq-default elfeed-search-filter "@1-week-ago +unread ")
-    (setq-default elfeed-sort-order 'descending)
+    (setq-default elfeed-sort-order 'ascending)
     (setq-default elfeed-feeds
                   '("http://html5doctor.com/feed/"
                     "http://www.orlando.ro/?feed=rss2"
@@ -141,11 +141,9 @@
                     "http://www.catonmat.net/feed/"
                     "http://www.adplayers.ro/rss"
                     "http://blog.jqueryui.com/feed"
-                    "https://www.ethnews.com/rss.xml"
                     "http://www.omgubuntu.co.uk/feed"
                     "http://www.sciam.com/xml/sciam.xml"
                     "http://feeds.feedburner.com/CssTricks"
-                    "http://cointelegraph.com/rss"
                     "https://feeds.feedburner.com/paul-irish"
                     "http://feeds.feedburner.com/codinghorror/"
                     "http://hugogiraudel.com/rss"

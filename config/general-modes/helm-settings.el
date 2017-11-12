@@ -25,8 +25,7 @@
               helm-multi-swoop-edit-save t
               helm-swoop-split-direction 'split-window-vertically
               helm-swoop-use-line-number-face t
-              helm-swoop-pre-input-function (lambda () "")
-              )
+              helm-swoop-pre-input-function (lambda () ""))
 
 
 (when (executable-find "curl")

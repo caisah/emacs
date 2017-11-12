@@ -7,7 +7,7 @@
 (with-eval-after-load 'rust-mode
   (message "Rust loaded")
 
-  (setq rust-playground-basedir "~/.emacs.d/cache"))
+  (setq-default rust-playground-basedir "~/.emacs.d/cache"))
 
 
 

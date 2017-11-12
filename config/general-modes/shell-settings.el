@@ -1,26 +1,34 @@
 ;;; shell-settings.el --- Shell
 
-;;: Commentary:
+;;; Commentary:
 ;; Settings for M-x shell
 
 ;;; Code:
 (with-eval-after-load 'shell
   (progn
     (message "shell-mode loaded")
+
+    (define-key shell-mode-map (kbd "C-x l") 'rename-buffer)
+
+    ;; strip ugly characters whe working in shell
     (add-to-list
      'comint-preoutput-filter-functions
      (lambda (output)
        (replace-regexp-in-string "\\[\\??[0-9]+[GhK]" "" output)))))
 
+(defun my-shell-hook ()
+  "Personal hook for shell mode."
+  (progn
+    (setq-local company-backends
+                '(company-capf
+                  company-files))))
+
+(add-hook 'shell-mode-hook 'my-shell-hook)
 ;; show full width lines in shell mode
 (add-hook 'shell-mode-hook '(lambda ()
                               (visual-line-mode nil)
                               (setq truncate-lines t)))
 (add-hook 'shell-mode-hook 'company-mode)
-
-;; strip ugly characters whe working in shell
-
-
 
 ;; opening shells
 (defun my-shell-here ()

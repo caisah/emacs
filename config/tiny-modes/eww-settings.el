@@ -4,12 +4,11 @@
 ;;  Visit webpages
 
 ;;; Code:
-(setq eww-bookmarks-directory "~/.emacs.d/cache")
-
 (with-eval-after-load 'eww
   (progn
     (message "eww loaded")
     ;; keep bookmarks in cache dir
+    (setq-default eww-bookmarks-directory "~/.emacs.d/cache")
     ))
 
 

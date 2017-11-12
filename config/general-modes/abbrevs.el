@@ -1,4 +1,4 @@
-;;; abbrevs.el --- all my abbrevs
+;;; abbrevs.el --- Abbrevs
 
 ;;; Commentary:
 ;; Set all my global abbrevs

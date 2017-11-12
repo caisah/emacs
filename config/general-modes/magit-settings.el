@@ -12,7 +12,8 @@
 (with-eval-after-load 'magit
   (progn
     (message "magit loaded")
-    (setq magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1)))
+
+    (setq-default magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1)))
 
 (provide 'magit-settings)
 ;;; magit-settings.el ends here

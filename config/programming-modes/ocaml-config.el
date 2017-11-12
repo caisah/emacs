@@ -6,7 +6,7 @@
 ;;; Code:
 (with-eval-after-load 'merlin
   ;; Disable Merlin's own error checking
-  (setq merlin-error-after-save nil)
+  (setq-default merlin-error-after-save nil)
 
   ;; Add ocaml-merlin to flycheck checkers
   (flycheck-ocaml-setup))
