@@ -195,6 +195,10 @@
    ;; hydra
    `(hydra-face-blue ((t (:foreground "DarkRed" :weight bold))))
 
+   ;; markdown
+   `(markdown-header-delimiter-face ((t (:foreground "wheat3" :weight normal))))
+   `(markdown-language-keyword-face ((t (:foreground "grey35" :weight normal))))
+   `(markdown-code-face ((t (:foreground "grey55" :weight normal :height 0.95 :family "Ubuntu Mono"))))
    ;; erc
    `(erc-notice-face ((t (:foreground "gray30"))))
    `(erc-nick-msg-face ((t (:foreground "gray70"))))
