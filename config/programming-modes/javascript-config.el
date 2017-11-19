@@ -33,7 +33,11 @@
                   company-keywords))
     ;; Change mode name to JS2
     (setq mode-name "JS2")
-    (my-use-eslint-from-node-modules)))
+    (my-use-eslint-from-node-modules)
+    ;; Don't consider camelcased full words
+    (subword-mode 1)
+    ;; Don't consider underscored full words
+    (superword-mode 1)))
 
 
 (add-hook 'js2-mode-hook 'whitespace-mode)
