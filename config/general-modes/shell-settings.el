@@ -34,9 +34,10 @@
 (defun my-shell-here ()
   "Open shell buffer in this window."
   (interactive)
-  (let ((dir (or dired-directory default-directory)))
+  (let* ((dir (or dired-directory default-directory))
+         (name (car (last (split-string dir "/") 2))))
    (shell (switch-to-buffer
-           (generate-new-buffer dir)))))
+           (generate-new-buffer (concat "*shell " name "*"))))))
 
 (defun my-shell-other ()
   "Open shell buffer in the other window."

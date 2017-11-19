@@ -153,6 +153,7 @@
                     "http://bricss.net/rss"
                     "http://sixrevisions.com/catgory/css/feed/"
                     "http://feeds.feedburner.com/Catswhocode"
+                    "https://feeds.feedburner.com/SteveysBlogRants"
                     ))))
 (provide 'elfeed-settings)
 ;;; elfeed-settings.el ends here
