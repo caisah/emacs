@@ -178,6 +178,8 @@
 (global-page-break-lines-mode t)
 ;; Revert buffer when the file changes on disk
 (global-auto-revert-mode 1)
+;; Delete selected text when starting to type
+(delete-selection-mode 1)
 
 
 ;; Enable projectile
@@ -209,6 +211,7 @@
 (require 'calendar-settings)
 ;; (require 'twitter-settings)
 ;; (require 'eww-settings)
+(require 'erc-settings)
 (require 'othermodes-settings)
 (require 'elfeed-settings)
 
