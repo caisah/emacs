@@ -37,9 +37,12 @@
     ;; Don't consider camelcased full words
     (subword-mode 1)
     ;; Don't consider underscored full words
-    (superword-mode 1)))
+    (superword-mode 1)
+    ;; Override js2-mode toggle
+    (define-key js2-mode-map (kbd "C-c C-f") 'hs-toggle-hiding)
+    ))
 
-
+(add-hook 'js2-mode-hook 'my-jshook)
 (add-hook 'js2-mode-hook 'whitespace-mode)
 (add-hook 'js2-mode-hook 'company-mode)
 (add-hook 'js2-mode-hook 'tern-mode)
@@ -49,7 +52,7 @@
 (add-hook 'js2-mode-hook 'flycheck-mode)
 (add-hook 'js2-mode-hook 'linum-mode)
 (add-hook 'js2-mode-hook 'prettier-js-mode)
-(add-hook 'js2-mode-hook 'my-jshook)
+
 
 
 (with-eval-after-load 'js2-mode
