@@ -35,7 +35,8 @@
    `(cursor ((t (:background "chartreuse3" :foreground "black"))))
    `(region ((t (:background "gray20" :foreground "gray90"))))
    `(secondary-selection ((t (:background "gray25"))))
-   `(highlight ((t (:background "gray80" :foreground "gray10"))))
+   `(highlight ((t (:foreground "wheat3" :background nil :weight bold))))
+   `(hl-line ((t (:foreground "gray80" :background "gray20" :weight bold))))
    `(minibuffer-prompt ((t (:background "gray10" :foreground "gray80"))))
 
    ;; font-lock
@@ -119,6 +120,14 @@
    `(custom-variable-tag ((t (:foreground "gray60" :weight bold))))
    `(custom-state ((t (:foreground "wheat3"))))
 
+   ;; eshell
+   `(eshell-prompt ((t (:foreground "ForestGreen" :background "black" :weight bold))))
+   `(eshell-ls-directory ((t (:foreground "wheat3" :weight bold))))
+   `(eshell-ls-symlink ((t (:inherit link))))
+   `(eshell-ls-executable ((t (:foreground "LimeGreen"))))
+   `(eshell-ls-readonly ((t (:foreground "gray50" :background "black"))))
+
+   ;; org
    `(org-table ((t (:foreground "gray60"))))
    `(org-document-info-keyword ((t (:foreground "gray50"))))
    `(org-document-title ((t (:foreground "LemonChiffon3"))))
@@ -172,6 +181,9 @@
    `(helm-swoop-target-word-face ((t (:foreground "wheat3" :background nil :weight bold))))
    `(helm-swoop-target-line-block-face ((t (:inherit (helm-swoop-target-line-face)))))
    `(helm-swoop-line-number-face ((t (:foreground "red"))))
+
+   `(helm-xref-file-name ((t (:inherit 'helm-moccur-buffer))))
+   `(helm-xref-line-number ((t (:inherit 'helm-grep-lineno))))
 
 
    ;; js2-mode
