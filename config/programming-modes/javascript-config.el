@@ -8,7 +8,8 @@
 
 ;;; Code:
 
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 
 (defun my-use-eslint-from-node-modules ()
@@ -28,7 +29,7 @@
     (setq-local company-backends
                 '(company-dabbrev-code
                   company-dabbrev
-                  company-tern
+                  company-lsp
                   company-files
                   company-keywords))
     ;; Change mode name to JS2
@@ -39,25 +40,26 @@
     ;; Don't consider underscored full words
     (superword-mode 1)
     ;; Override js2-mode toggle
-    (define-key js2-mode-map (kbd "C-c C-f") 'hs-toggle-hiding)
+    (local-set-key (kbd "C-c C-f") 'hs-toggle-hiding)
+    (local-set-key  (kbd "M-.") 'xref-find-definitions)
     ))
 
 (add-hook 'js2-mode-hook 'my-jshook)
 (add-hook 'js2-mode-hook 'whitespace-mode)
 (add-hook 'js2-mode-hook 'company-mode)
-(add-hook 'js2-mode-hook 'tern-mode)
 (add-hook 'js2-mode-hook 'smartparens-strict-mode)
 (add-hook 'js2-mode-hook 'js2-imenu-extras-mode)
 (add-hook 'js2-mode-hook 'hs-minor-mode)
 (add-hook 'js2-mode-hook 'flycheck-mode)
 (add-hook 'js2-mode-hook 'linum-mode)
 (add-hook 'js2-mode-hook 'prettier-js-mode)
-
-
+(add-hook 'js2-mode-hook 'lsp-javascript-typescript-enable)
 
 (with-eval-after-load 'js2-mode
   (progn
     (message "js2-mode loaded")
+
+    (require 'lsp-javascript-typescript)
 
     (setq-default
      js2-mode-show-parse-errors nil

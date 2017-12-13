@@ -223,7 +223,7 @@
 (require 'rust-config)
 (require 'elisp-config)
 (require 'elm-config)
-;; (require 'typescript-config)
+(require 'typescript-config)
 (require 'haskell-config)
 ;; (require 'ocaml-config)
 ;; (require 'other-languages-config)

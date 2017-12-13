@@ -7,10 +7,16 @@
 
 ;; load helm at startup
 (helm-mode t)
+
+;; one cannot live without helm swoop
 (require 'helm-swoop)
 
 ;; ag is really fast
 (require 'helm-ag)
+
+;; use helm for xref
+(require 'helm-xref)
+
 
 (setq-default helm-quick-update t
               helm-split-window-in-side-p t
@@ -21,6 +27,8 @@
               helm-ff-file-name-history-use-recentf t
 
               helm-ag-command-option "-i"
+
+              xref-show-xrefs-function 'helm-xref-show-xrefs
 
               helm-multi-swoop-edit-save t
               helm-swoop-split-direction 'split-window-vertically
