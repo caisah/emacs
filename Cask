@@ -39,6 +39,7 @@
 (depends-on "helm-flycheck")
 (depends-on "helm-package")
 (depends-on "helm-projectile")
+(depends-on "helm-xref")
 (depends-on "helm-swoop")
 (depends-on "highlight-indentation")
 (depends-on "hindent")
