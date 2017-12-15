@@ -7,8 +7,7 @@
 ;;; add hippie expand `hippie-expand-try-functions-list
 
 ;;; Code:
-
-(add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
+(add-to-list 'interpreter-mode-alist '("\\.js\\" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 
