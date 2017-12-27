@@ -37,7 +37,6 @@
 (depends-on "helm-descbinds")
 (depends-on "helm-describe-modes")
 (depends-on "helm-flycheck")
-(depends-on "helm-package")
 (depends-on "helm-projectile")
 (depends-on "helm-xref")
 (depends-on "helm-swoop")
