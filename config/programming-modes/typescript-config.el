@@ -28,6 +28,7 @@
     ))
 
 ;; Do setting recommended configuration
+(add-hook 'typescript-mode-hook 'my-tshook)
 (add-hook 'typescript-mode-hook 'pretty-symbols-mode)
 (add-hook 'typescript-mode-hook 'linum-mode)
 (add-hook 'typescript-mode-hook 'abbrev-mode)
@@ -35,9 +36,9 @@
 (add-hook 'typescript-mode-hook 'hs-minor-mode)
 (add-hook 'typescript-mode-hook 'whitespace-mode)
 (add-hook 'typescript-mode-hook 'company-mode)
+(add-hook 'typescript-mode-hook 'prettier-js-mode)
 (add-hook 'typescript-mode-hook 'lsp-javascript-typescript-enable)
 (add-hook 'typescript-mode-hook 'flycheck-mode)
-(add-hook 'typescript-mode-hook 'my-tshook)
 
 (with-eval-after-load 'typescript-mode
   (progn
