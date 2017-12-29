@@ -18,7 +18,9 @@
   (progn
     (setq insert-directory-program "/usr/local/opt/coreutils/libexec/gnubin/ls")
     (setq shell-file-name "/usr/local/bin/bash")
-    (exec-path-from-shell-initialize)))
+    (exec-path-from-shell-initialize)
+    ;; add node to the path
+    (exec-path-from-shell-copy-env "NVM_DIR")))
 
 
 ;; Files created by Emacs

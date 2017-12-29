@@ -305,6 +305,8 @@
 
    `(tooltip ((t (:foreground "gray80" :background "gray20"))))
 
+   `(lsp-face-highlight-write ((t (:background "gray35" :foreground "gray85"))))
+
    ;; discover key mode
    `(makey-key-mode-button-face ((t (:foreground "wheat3" :underline t))))
 
