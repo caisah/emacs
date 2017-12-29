@@ -55,6 +55,7 @@
 (depends-on "list-processes+")
 (depends-on "logito")
 (depends-on "lsp-javascript-typescript")
+(depends-on "lsp-ocaml")
 (depends-on "magit")
 (depends-on "markdown-mode")
 (depends-on "merlin")
