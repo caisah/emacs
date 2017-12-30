@@ -13,12 +13,13 @@
 (require 'pallet)
 (pallet-mode t)
 
+;; Set exec-path as $PATH
+(exec-path-from-shell-initialize)
 ;; MAC
 (when (eql system-type 'darwin)
   (progn
     (setq insert-directory-program "/usr/local/opt/coreutils/libexec/gnubin/ls")
     (setq shell-file-name "/usr/local/bin/bash")
-    (exec-path-from-shell-initialize)
     ;; add node to the path
     (exec-path-from-shell-copy-env "NVM_DIR")))
 

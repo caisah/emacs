@@ -305,6 +305,10 @@
 
    `(tooltip ((t (:foreground "gray80" :background "gray20"))))
 
+   ;; Merlin
+   `(merlin-compilation-error-face ((t (:inherit 'flycheck-error))))
+
+   ;; LSP
    `(lsp-face-highlight-write ((t (:background "gray35" :foreground "gray85"))))
 
    ;; discover key mode

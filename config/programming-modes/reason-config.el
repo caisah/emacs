@@ -4,23 +4,28 @@
 ;; My reasonML config file
 
 ;;; Code:
-(defun my-reason-hook ()
-  "Hook for reason."
-  (add-hook 'before-save-hook 'refmt-before-save))
+(defun shell-cmd (cmd)
+  "Returns the stdout output of a shell command or nil if the command returned an error."
+  (car (ignore-errors (apply 'process-lines (split-string cmd)))))
 
-(add-hook 'reason-mode-hook 'my-reason-hook)
-(add-hook 'reason-mode-hook 'lsp-ocaml-enable)
+(defun my-reason-hook ()
+  "My reason mode hook."
+  (progn
+    (add-hook 'before-save-hook 'refmt-before-save)
+    (merlin-mode)))
+
 (add-hook 'reason-mode-hook 'company-mode)
-(add-hook 'reason-mode-hook 'flycheck-mode)
 (add-hook 'reason-mode-hook 'linum-mode)
+(add-hook 'reason-mode-hook 'my-reason-hook)
 
 (with-eval-after-load 'reason-mode
   (progn
     (message "reason-mode loaded")
-    (require 'lsp-mode)
-    (require 'lsp-ocaml)
-    (require 'lsp-flycheck)
 
+    (require 'merlin)
+
+    (setq-default refmt-command (shell-cmd "which refmt"))
+    (setq-default merlin-command (shell-cmd "which ocamlmerlin"))
     (setq-default merlin-ac-setup t)))
 
 (provide 'reason-config)
