@@ -13,6 +13,8 @@
 (require 'pallet)
 (pallet-mode t)
 
+;; Don't log bash profile warning
+(setq-default exec-path-from-shell-check-startup-files nil)
 ;; Set exec-path as $PATH
 (exec-path-from-shell-initialize)
 ;; MAC
