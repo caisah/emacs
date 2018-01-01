@@ -16,6 +16,7 @@
 (depends-on "deferred")
 (depends-on "dired+")
 (depends-on "discover-my-major")
+(depends-on "djvu")
 (depends-on "editorconfig")
 (depends-on "elfeed")
 (depends-on "elm-mode")

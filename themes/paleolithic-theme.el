@@ -1,4 +1,4 @@
- ;;; paleolithic-theme.el --- Dark Gray Theme
+;;; paleolithic-theme.el --- Dark Gray Theme
 
 ;; Author: Vlad Piersec <vlad.piersec@gmail.com>
 ;; Keywords: theme, themes, gray, grey, dark
@@ -128,11 +128,24 @@
    `(eshell-ls-readonly ((t (:foreground "gray50" :background "black"))))
 
    ;; org
+
    `(org-table ((t (:foreground "gray60"))))
    `(org-document-info-keyword ((t (:foreground "gray50"))))
    `(org-document-title ((t (:foreground "LemonChiffon3"))))
    `(org-meta-line ((t (:foreground "gray50"))))
    `(org-date ((t (:foreground "LemonChiffon3" :underline t :height 0.9))))
+
+   `(org-todo ((t (:foreground "gray75" :weight bold :underline "firebrick"))))
+   `(org-done ((t (:foreground "gray75" :weight bold :underline "LimeGreen"))))
+
+   `(outline-1 ((t (:foreground "wheat3" :weight bold))))
+   `(outline-2 ((t (:foreground "gray80" :weight bold))))
+   `(outline-3 ((t (:foreground "gray70" :weight bold))))
+   `(outline-4 ((t (:foreground "gray65" :weight bold))))
+   `(outline-5 ((t (:foreground "gray65" :weight bold))))
+   `(outline-6 ((t (:foreground "gray65" :weight bold))))
+   `(outline-7 ((t (:foreground "gray65" :weight bold))))
+   `(outline-8 ((t (:foreground "gray65" :weight bold))))
 
    ;; diredp
    `(diredp-dir-heading ((t (:foreground "gray70" :background "gray20" :weight normal))))
