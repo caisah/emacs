@@ -154,6 +154,7 @@
                     "http://sixrevisions.com/catgory/css/feed/"
                     "http://feeds.feedburner.com/Catswhocode"
                     "https://feeds.feedburner.com/SteveysBlogRants"
+                    "https://www.rt.com/rss/"
                     ))))
 (provide 'elfeed-settings)
 ;;; elfeed-settings.el ends here

@@ -162,6 +162,7 @@
    `(diredp-dir-priv ((t (:foreground "ForestGreen"))))
    `(diredp-no-priv ((t (:foreground "gray40"))))
    `(diredp-symlink ((t (:foreground "gray70" :background "gray30"))))
+   `(diredp-rare-priv ((t (:foreground "gray70" :background "gray30"))))
    `(diredp-flag-mark-line ((t (:foreground "black" :background "gray60"))))
    `(diredp-flag-mark ((t (:foreground "DarkOrange"))))
    `(diredp-deletion-file-name ((t (:foreground "black" :background "gray60"))))
