@@ -57,7 +57,7 @@
    `(font-lock-warning-face ((t :foreground "DarkOrange")))
 
    ;; common
-   `(match ((t (:foreground "gray90" :background "gray40" :weight bold))))
+   `(match ((t (:foreground "gray90" :background "ForestGreen" :weight bold))))
    `(button ((t (:background "gray15" :foreground "gray60" :box (:style released-button)))))
    `(link ((t (:foreground "gray60" :underline t))))
    `(link-visited ((t (:foreground "gray35" :underline t))))
