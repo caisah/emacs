@@ -91,6 +91,7 @@
 (depends-on "smartparens")
 (depends-on "solarized-theme")
 (depends-on "swiper")
+(depends-on "tide")
 (depends-on "toml-mode")
 (depends-on "tuareg")
 (depends-on "twittering-mode")

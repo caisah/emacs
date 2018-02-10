@@ -8,24 +8,19 @@
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
 
 (defun my-tshook ()
-  "Personal hook for js2-mode."
-  (progn
-    (setq-local company-backends
-                '(company-dabbrev-code
-                  company-dabbrev
-                  company-lsp
-                  company-files
-                  company-keywords))
-    ;; Change mode name to JS2
-    (setq mode-name "TypeScript")
-    ;; Don't consider camelcased full words
-    (subword-mode 1)
-    ;; Don't consider underscored full words
-    (superword-mode 1)
-    ;; Override js2-mode toggle
-    (local-set-key (kbd "C-c C-f") 'hs-toggle-hiding)
-    (local-set-key  (kbd "M-.") 'xref-find-definitions)
-    ))
+  "Personal hook for typescript-mode."
+
+  ;; Change mode name to TypeScript
+  (setq mode-name "TypeScript")
+
+  ;; Enable TIDE
+  (tide-setup)
+
+  ;; Enable flycheck & eldoc
+  (flycheck-mode +1)
+  (eldoc-mode +1)
+
+  (setq flycheck-check-syntax-automatically '(save mode-enabled)))
 
 ;; Do setting recommended configuration
 (add-hook 'typescript-mode-hook 'my-tshook)
@@ -36,15 +31,10 @@
 (add-hook 'typescript-mode-hook 'hs-minor-mode)
 (add-hook 'typescript-mode-hook 'whitespace-mode)
 (add-hook 'typescript-mode-hook 'company-mode)
-(add-hook 'typescript-mode-hook 'prettier-js-mode)
-(add-hook 'typescript-mode-hook 'lsp-javascript-typescript-enable)
-(add-hook 'typescript-mode-hook 'flycheck-mode)
 
 (with-eval-after-load 'typescript-mode
   (progn
-    (message "typescript-mode loaded")
-
-    (require 'lsp-javascript-typescript)))
+    (message "typescript-mode loaded")))
 
 ;; Export
 (provide 'typescript-config)
