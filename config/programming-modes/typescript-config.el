@@ -30,6 +30,7 @@
 (add-hook 'typescript-mode-hook 'smartparens-strict-mode)
 (add-hook 'typescript-mode-hook 'hs-minor-mode)
 (add-hook 'typescript-mode-hook 'whitespace-mode)
+(add-hook 'typescript-mode-hook 'prettier-js-mode)
 (add-hook 'typescript-mode-hook 'company-mode)
 
 (with-eval-after-load 'typescript-mode
