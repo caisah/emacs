@@ -5,7 +5,6 @@
 
 ;;; Code:
 
-;; (package-initialize)
 (defvar *start-time* (current-time))
 
 ;; Add theme
