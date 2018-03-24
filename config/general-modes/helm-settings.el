@@ -33,8 +33,11 @@
               helm-multi-swoop-edit-save t
               helm-swoop-split-direction 'split-window-vertically
               helm-swoop-use-line-number-face t
-              helm-swoop-pre-input-function (lambda () ""))
+              helm-swoop-pre-input-function (lambda () "")
 
+              projectile-mode-line " Projectile"
+              projectile-completion-system 'helm
+              helm-projectile-fuzzy-match nil)
 
 (when (executable-find "curl")
   (setq-default helm-google-suggest-use-curl-p t))
@@ -69,12 +72,6 @@
 (global-set-key (kbd "C-x C-S-f") 'helm-projectile)
 (global-set-key (kbd "C-x M-g") 'helm-projectile-ag)
 (global-set-key (kbd "C-x g") 'helm-do-ag)
-
-
-;; Helm Projectile
-(setq projectile-mode-line " Projectile")
-(setq projectile-completion-system 'helm)
-(setq helm-projectile-fuzzy-match nil)
 
 
 (eval-after-load 'flycheck
