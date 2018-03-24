@@ -5,7 +5,6 @@
 
 ;;; Code:
 (global-set-key (kbd "M-/") 'hippie-expand)
-
 (setq hippie-expand-try-functions-list
           '(try-expand-dabbrev
             try-expand-dabbrev-all-buffers

@@ -200,7 +200,6 @@
 (require 'desktop-settings)
 (require 'hippie-expand-settings)
 (require 'epa-settings)
-(require 'tramp-settings)
 (require 'company-settings)
 (require 'helm-settings)
 (require 'shell-settings)

@@ -1,4 +1,4 @@
-;;; tramp-settings.el --- Dired
+;;; tramp-settings.el --- Tramp
 
 ;;; Commentary:
 ;; Tramp

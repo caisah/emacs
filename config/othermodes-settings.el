@@ -34,10 +34,6 @@
                          'face 'hs-face)))))
 
 
-;; Tramp http://www.emacswiki.org/TrampMode
-(require 'tramp)
-(setq tramp-default-method "ssh")
-
 ;; Yasnippet https://github.com/capitaomorte/yasnippet
 (setq-default yas-snippet-dirs '("~/.emacs.d/snippets"))
 
@@ -65,6 +61,7 @@
 (add-hook 'json-mode-hook 'flycheck-mode)
 (add-hook 'json-mode-hook 'hs-minor-mode)
 (add-hook 'json-mode-hook 'my-json-hook)
+(add-hook 'json-mode-hook 'prettier-js-mode)
 
 ;; XML
 (add-hook 'nxml-mode-hook 'sgml-mode)
@@ -88,10 +85,8 @@
 ;; nov-mode for epub
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
 
-;; Use the config of the project
+;; Editor config
 (require 'editorconfig)
-(editorconfig-mode 1)
-
 
 (provide 'othermodes-settings)
 ;;; othermodes-settings.el ends here

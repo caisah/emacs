@@ -38,6 +38,8 @@
     (subword-mode 1)
     ;; Don't consider underscored full words
     (superword-mode 1)
+    ;; Use editor config
+    (editorconfig-mode 1)
     ;; Override js2-mode toggle
     (local-set-key (kbd "C-c C-f") 'hs-toggle-hiding)
     (local-set-key  (kbd "M-.") 'xref-find-definitions)
