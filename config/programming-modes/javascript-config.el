@@ -31,6 +31,9 @@
                   company-lsp
                   company-files
                   company-keywords))
+    ;; Enable yasnippet
+    (yas-reload-all)
+    (yas-minor-mode-on)
     ;; Change mode name to JS2
     (setq mode-name "JS2")
     (my-use-eslint-from-node-modules)

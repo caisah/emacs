@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: var ... = function(...) {
+# --
+const ${1:name} = (${2:args}) => {
+  ${0:...}
+};
