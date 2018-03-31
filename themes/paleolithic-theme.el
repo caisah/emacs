@@ -206,7 +206,13 @@
    `(js2-warning ((t (:underline (:color "DarkOrange" :style wave)))))
    `(js2-jsdoc-tag ((t (:foreground "gray30"))))
    `(js2-jsdoc-type ((t (:foreground "gray40"))))
-   `(js2-jsdoc-value ((t (:foreground "gray45"))))
+   `(js2-jsdoc-value ((t (:foreground "gray52"))))
+
+   ;; typescript
+   `(typescript-jsdoc-tag ((t (:inherit (js2-jsdoc-tag)))))
+   `(typescript-jsdoc-type ((t (:inherit (js2-jsdoc-type)))))
+   `(typescript-jsdoc-value ((t (:inherit (js2-jsdoc-value)))))
+
 
    ;; web mode
    `(web-mode-html-tag-bracket-face ((t (:foreground "wheat3"))))
