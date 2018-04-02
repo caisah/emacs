@@ -19,7 +19,6 @@
 (add-to-list 'load-path "~/.emacs.d/config/elisp")
 (add-to-list 'load-path "~/.emacs.d/config")
 
-
 ;; Load Theme
 (load-theme 'paleolithic t)
 
