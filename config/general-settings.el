@@ -186,18 +186,13 @@
 ;; Delete selected text when starting to type
 (delete-selection-mode 1)
 
-
-;; Enable projectile
-(projectile-mode)
-;; cache projectile files
-(setq-default projectile-enable-caching t)
-
 ;; required for "true" init file timing
 (require 'my-functions)
 
 ;; Configure all the other modes
 (require 'dired-settings)
 (require 'desktop-settings)
+(require 'projectile-settings)
 (require 'hippie-expand-settings)
 (require 'epa-settings)
 (require 'company-settings)

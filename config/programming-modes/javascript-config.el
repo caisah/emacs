@@ -36,7 +36,7 @@
                   company-files
                   company-keywords))
     ;; Enable yasnippet
-    (yas-minor-mode-on)
+    (yas-minor-mode)
     (yas-reload-all)
     ;; Change mode name to JS2
     (setq mode-name "JS2")
