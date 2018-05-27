@@ -22,6 +22,10 @@
     (when (and eslint (file-executable-p eslint))
       (setq-local flycheck-javascript-eslint-executable eslint))))
 
+(defun my-company-transformer (candidates)
+  (let ((completion-ignore-case t))
+    (all-completions (company-grab-symbol) candidates)))
+
 (defun my-jshook ()
   "Personal hook for js2-mode."
   (progn
@@ -32,8 +36,8 @@
                   company-files
                   company-keywords))
     ;; Enable yasnippet
-    (yas-reload-all)
     (yas-minor-mode-on)
+    (yas-reload-all)
     ;; Change mode name to JS2
     (setq mode-name "JS2")
     (my-use-eslint-from-node-modules)
@@ -44,6 +48,11 @@
     ;; Use editor config
     (editorconfig-mode 1)
     ;; Override js2-mode toggle
+
+    ;; for lsp-javascript
+    (make-local-variable 'company-transformers)
+    (push 'my-company-transformer company-transformers)
+
     (local-set-key (kbd "C-c C-f") 'hs-toggle-hiding)
     (local-set-key  (kbd "M-.") 'xref-find-definitions)
     ))
