@@ -76,7 +76,6 @@
 (depends-on "rainbow-mode")
 (depends-on "reason-mode")
 (depends-on "restclient")
-(depends-on "rjsx-mode")
 (depends-on "rust-mode")
 (depends-on "rust-playground")
 (depends-on "s")
