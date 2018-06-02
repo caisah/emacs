@@ -9,11 +9,11 @@
 
 (setq-default
  ;; Use elisp
- projectile-indexing-method 'native
+ projectile-indexing-method 'alien
  ;; Cache projectile files
  projectile-enable-caching t
  ;; When switching a project switch to a dir
- projectile-switch-project-action #'projectile-find-dir)
+ projectile-switch-project-action #'projectile-dired)
 
 (provide 'projectile-settings)
 ;;; projectile-settings ends here
