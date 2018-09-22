@@ -44,6 +44,7 @@
 (depends-on "hindent")
 (depends-on "htmlize")
 (depends-on "imenu-anywhere")
+(depends-on "indium")
 (depends-on "inf-mongo")
 (depends-on "js2-mode")
 (depends-on "json-mode")
