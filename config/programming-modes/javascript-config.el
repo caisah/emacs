@@ -11,6 +11,7 @@
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 
+
 (defun my-use-eslint-from-node-modules ()
   "Try to use local .eslint file instead of global."
   (let* ((root (locate-dominating-file
@@ -66,13 +67,11 @@
 (add-hook 'js2-mode-hook 'flycheck-mode)
 (add-hook 'js2-mode-hook 'linum-mode)
 (add-hook 'js2-mode-hook 'prettier-js-mode)
-(add-hook 'js2-mode-hook 'lsp-javascript-typescript-enable)
+(add-hook 'js2-mode-hook 'lsp)
 
 (with-eval-after-load 'js2-mode
   (progn
     (message "js2-mode loaded")
-
-    (require 'lsp-javascript-typescript)
 
     (setq-default
      js2-mode-show-parse-errors nil

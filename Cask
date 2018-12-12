@@ -54,7 +54,6 @@
 (depends-on "less-css-mode")
 (depends-on "list-environment")
 (depends-on "logito")
-(depends-on "lsp-javascript-typescript")
 (depends-on "magit")
 (depends-on "markdown-mode")
 (depends-on "merlin")
