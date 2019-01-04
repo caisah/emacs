@@ -1,10 +1,9 @@
 ;;; init.el -- Start here
 
 ;;; Commentary:
-;;  Add all dirs to the patth and load settings
+;;  Add all dirs to the path and load settings
 
 ;;; Code:
-
 (defvar *start-time* (current-time))
 
 ;; Add theme

@@ -100,6 +100,9 @@
 ;; clean whitespaces before saving
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
+;; display startup time
+(add-hook 'window-setup-hook 'my-show-startup-time)
+
 ;; Improve navigation & editing
 (defun my-kill-other-buffer ()
   "Kill buffer in the other window."

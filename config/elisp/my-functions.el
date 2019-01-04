@@ -14,11 +14,11 @@
     (+ (- e-lo s-lo)
        (/ (- e-us  s-us) 1e6))))
 
-(defun display-startup-echo-area-message ()
+
+(defun my-show-startup-time ()
   "Message the time since .init file loaded."
   (let ((time-passed (time-passed-since *start-time*)))
-    (message "My .init loaded in %.3f seconds. Happy hacking!" time-passed)))
-
+    (run-with-timer 1 nil (lambda (time) (message "My .init loaded in %.3f seconds. Happy hacking!" time)) time-passed)))
 
 ;; Export
 (provide 'my-functions)
