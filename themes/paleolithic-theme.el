@@ -344,12 +344,6 @@
  '(ibuffer-marked-face 'diredp-flag-mark)
  '(ibuffer-deletion-face 'diredp-deletion-file-name))
 
-
-;;;###autoload
-(when load-file-name
-  (add-to-list 'custom-theme-load-path
-               (file-name-as-directory (file-name-directory load-file-name))))
-
 ;; Disable menu bar mode
 (menu-bar-mode -1)
 
