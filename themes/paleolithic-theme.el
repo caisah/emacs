@@ -63,6 +63,9 @@
    `(link-visited ((t (:foreground "gray35" :underline t))))
    `(fringe ((t (:background "gray10"))))
 
+   ;; highlighting
+   `(hi-yellow ((t (:background "LightGoldenrod" :foreground "gray10"))))
+
    ;; modeline
    `(mode-line ((t (:background "black" :foreground "gray70" :box (:line-width 4 :color "black")))))
    `(mode-line-buffer-id ((t (:weight bold))))
