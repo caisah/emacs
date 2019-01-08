@@ -31,6 +31,9 @@
     (require 'dired-aux)
     (require 'dired+)
 
+    ;; Do async operations when dealing with files
+    (dired-async-mode 1)
+
     ;; Show directories first
     (setq-default dired-listing-switches "-la --group-directories-first"
                   ;; Don't ask for confirmation on recursion when copying
