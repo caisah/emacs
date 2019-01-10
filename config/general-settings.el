@@ -115,8 +115,7 @@
   "Kill all buffers, leaving *scratch* only."
   (interactive)
   (mapc
-   (lambda (buffer)
-     (kill-buffer buffer))
+   'kill-buffer
    (buffer-list)))
 
 (defun my-delete-to-previous-line ()
