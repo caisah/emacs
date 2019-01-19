@@ -43,21 +43,31 @@
 
 (with-eval-after-load 'css-mode
   (progn
-    (message "css-mode loaded")
+    (message "CSS mode [like] loaded")
 
     (setq-default css-indent-offset 2)))
 
 (defun my-css-hook ()
   "Personal hook for css."
-  (setq-local company-backends
-              '(company-dabbrev-code
-                company-dabbrev
-                company-css
-                company-keywords)))
 
-(add-hook 'css-mode-hook 'rainbow-mode)
-(add-hook 'css-mode-hook 'company-mode)
-(add-hook 'css-mode-hook 'my-css-hook)
+  ;; Check for errors
+  (flycheck-mode)
+  ;; Show line number
+  (linum-mode)
+  ;; Colorize hex/rgb strings
+  (rainbow-mode)
+  ;; Show/Hide blocks
+  (hs-minor-mode)
+  ;; Autocomplete
+  (company-mode)
+  (lsp)
+
+  (setq-local company-backends
+              '(company-keywords
+                company-lsp
+                company-dabbrev-code
+                company-dabbrev
+                company-css)))
 
 ;; Functions
 (defun open-file-in-browser()
@@ -67,27 +77,14 @@
     (browse-url filename)))
 
 ;; Hooks
-(add-hook 'web-mode-hook 'flycheck-mode)
 (add-hook 'web-mode-hook 'skewer-html-mode)
-(add-hook 'web-mode-hook 'linum-mode)
-(add-hook 'web-mode-hook 'hs-minor-mode)
 (add-hook 'css-mode-hook 'skewer-css-mode)
-(add-hook 'css-mode-hook 'rainbow-mode)
-(add-hook 'css-mode-hook 'linum-mode)
-(add-hook 'css-mode-hook 'flycheck-mode)
-(add-hook 'css-mode-hook 'hs-minor-mode)
+(add-hook 'css-mode-hook 'my-css-hook)
 
 ;; LESS
-(add-hook 'less-css-mode-hook 'linum-mode)
-(add-hook 'less-css-mode-hook 'flycheck-mode)
-(add-hook 'less-css-mode-hook 'enable-ss-keys)
-(add-hook 'less-css-mode-hook 'hs-minor-mode)
-
+(add-hook 'less-css-mode-hook 'my-css-hook)
 ;; Sass
-(add-hook 'scss-mode-hook 'linum-mode)
-(add-hook 'scss-mode-hook 'flycheck-mode)
-(add-hook 'scss-mode-hook 'enable-ss-keys)
-(add-hook 'scss-mode-hook 'hs-minor-mode)
+(add-hook 'scss-mode-hook 'my-css-hook)
 
 
 (provide 'web-config)

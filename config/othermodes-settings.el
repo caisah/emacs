@@ -37,8 +37,6 @@
 ;; Yasnippet https://github.com/capitaomorte/yasnippet
 (setq-default yas-snippet-dirs '("~/.emacs.d/snippets"))
 
-(require 'lsp)
-(require 'lsp-clients)
 ;; YAML
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
