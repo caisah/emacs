@@ -6,6 +6,9 @@
 ;;; Code:
 (defvar *start-time* (current-time))
 
+;; Enable debugger
+(setq debug-on-error t)
+
 ;; Add theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
