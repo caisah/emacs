@@ -31,9 +31,9 @@
   "Personal hook for js2-mode."
   (progn
     (setq-local company-backends
-                '(company-dabbrev-code
+                '(company-lsp
+                  company-dabbrev-code
                   company-dabbrev
-                  company-lsp
                   company-files
                   company-keywords))
     ;; Enable yasnippet
