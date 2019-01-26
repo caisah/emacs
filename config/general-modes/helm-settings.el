@@ -37,7 +37,15 @@
 
               projectile-mode-line " Projectile"
               projectile-completion-system 'helm
-              helm-projectile-fuzzy-match nil)
+              helm-projectile-fuzzy-match nil
+
+              ;; hide boring buffers
+              helm-boring-buffer-regexp-list
+              '("\\` "
+                "\\`\\*helm"
+                "\\`\\*Echo Area"
+                "\\`\\*Minibuf"
+                "\\`\\*ts-ls"))
 
 (when (executable-find "curl")
   (setq-default helm-google-suggest-use-curl-p t))
