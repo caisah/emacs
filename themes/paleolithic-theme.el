@@ -102,6 +102,8 @@
    `(show-paren-mismatch ((t (:foreground "black" :background "firebrick"))))
 
    `(linum ((t (:foreground "gray40" :background "gray10" :weight light :height 0.9))))
+   `(line-number ((t (:inherit linum))))
+   `(line-number-current-line ((t (:inherit linum))))
 
    `(header-line ((t (:foreground "gray70" :background "gray20"))))
 
