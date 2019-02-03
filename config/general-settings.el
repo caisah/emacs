@@ -40,6 +40,7 @@
 
 (setq-default bookmark-default-file "~/.emacs.d/cache/bookmarks"
               keyfreq-file "~/.emacs.d/cache/keyfrequency"
+              lsp-session-file "/home/caisah/.emacs.d/cache/lsp-session"
               recentf-save-file "~/.emacs.d/cache/recentf"
               mc/list-file "~/.emacs.d/cache/.mc-lists.el"
               eshell-directory-name "~/.emacs.d/cache/eshell/"
