@@ -45,7 +45,9 @@
                 "\\`\\*helm"
                 "\\`\\*Echo Area"
                 "\\`\\*Minibuf"
-                "\\`\\*ts-ls"))
+                "\\`\\*ts-ls"
+                "\\`\\*jsts-ls"
+                ))
 
 (when (executable-find "curl")
   (setq-default helm-google-suggest-use-curl-p t))

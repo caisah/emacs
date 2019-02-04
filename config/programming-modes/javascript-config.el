@@ -49,6 +49,7 @@
     (editorconfig-mode 1)
     ;; Override js2-mode toggle
 
+    (flymake-mode -1)
     ;; for lsp-javascript
     (make-local-variable 'company-transformers)
     (push 'my-company-transformer company-transformers)
