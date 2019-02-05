@@ -15,9 +15,7 @@
   (flycheck-mode)
   (flycheck-elm-setup))
 
-
 (add-hook 'elm-mode-hook 'start-elm-flycheck)
-(add-hook 'elm-mode-hook 'linum-mode)
 
 (provide 'elm-config)
 ;;; elm-config.el ends here

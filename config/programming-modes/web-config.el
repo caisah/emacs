@@ -52,8 +52,6 @@
 
   ;; Check for errors
   (flycheck-mode)
-  ;; Show line number
-  (linum-mode)
   ;; Colorize hex/rgb strings
   (rainbow-mode)
   ;; Show/Hide blocks

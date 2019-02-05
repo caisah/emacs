@@ -47,6 +47,7 @@
                 "\\`\\*Minibuf"
                 "\\`\\*ts-ls"
                 "\\`\\*jsts-ls"
+                "\\`\\*lsp-"
                 ))
 
 (when (executable-find "curl")

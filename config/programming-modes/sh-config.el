@@ -7,8 +7,6 @@
 ;;; Code:
 (add-hook 'sh-mode-hook 'company-mode)
 (add-hook 'sh-mode-hook 'flycheck-mode)
-(add-hook 'sh-mode-hook 'linum-mode)
-
 
 (with-eval-after-load 'sh-script
   (progn

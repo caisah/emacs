@@ -19,7 +19,6 @@
 (add-hook 'emacs-lisp-mode-hook 'smartparens-strict-mode)
 (add-hook 'emacs-lisp-mode-hook 'pretty-symbols-mode)
 (add-hook 'emacs-lisp-mode-hook 'abbrev-mode)
-(add-hook 'emacs-lisp-mode-hook 'linum-mode)
 (add-hook 'emacs-lisp-mode-hook 'flycheck-mode)
 (add-hook 'emacs-lisp-mode-hook 'whitespace-mode)
 

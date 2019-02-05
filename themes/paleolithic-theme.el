@@ -349,25 +349,6 @@
  '(ibuffer-marked-face 'diredp-flag-mark)
  '(ibuffer-deletion-face 'diredp-deletion-file-name))
 
-;; Disable menu bar mode
-(menu-bar-mode -1)
-
-;; Disable toolbar
-(tool-bar-mode -1)
-
-;; Disable scroll
-(set-scroll-bar-mode nil)
-
-;; Fringes
-(set-fringe-mode '(8 . 1))
-
-;; Show size of file
-(size-indication-mode t)
-
-;; Show column number
-(column-number-mode t)
-
 ;; Export
 (provide-theme 'paleolithic)
-
 ;;; paleolithic-theme.el ends here

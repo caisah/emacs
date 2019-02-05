@@ -127,17 +127,16 @@
   (delete-horizontal-space)
   (insert-char 32))
 
-(defun buffer-too-big-p ()
+(defun my-buffer-too-big-p ()
   "Check if a buffer is really big."
   (or (> (buffer-size) (* 5000 80))
       (> (line-number-at-pos (point-max)) 5000)))
 
-;; Disable `linum-mode' & `flycheck-mode' for big buffers
+;; Disable `flycheck-mode' for big buffers
 (add-hook 'prog-mode-hook
           (lambda ()
-            (if (buffer-too-big-p)
+            (if (my-buffer-too-big-p)
                 (progn
-                  (linum-mode -1)
                   (flycheck-mode -1)))))
 
 ;; Global common keys
@@ -188,6 +187,26 @@
 (global-auto-revert-mode 1)
 ;; Delete selected text when starting to type
 (delete-selection-mode 1)
+
+;; Visual Stuff
+;;
+;; Disable menu bar mode
+(menu-bar-mode -1)
+
+;; Disable toolbar
+(tool-bar-mode -1)
+
+;; Disable scroll
+(set-scroll-bar-mode nil)
+
+;; Fringes
+(set-fringe-mode '(8 . 0))
+
+;; Show size of file
+(size-indication-mode t)
+
+;; Show column number
+(column-number-mode t)
 
 ;; required for "true" init file timing
 (require 'my-functions)

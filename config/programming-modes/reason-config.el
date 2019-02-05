@@ -15,7 +15,6 @@
     (merlin-mode)))
 
 (add-hook 'reason-mode-hook 'company-mode)
-(add-hook 'reason-mode-hook 'linum-mode)
 (add-hook 'reason-mode-hook 'smartparens-strict-mode)
 (add-hook 'reason-mode-hook 'my-reason-hook)
 

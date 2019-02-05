@@ -28,7 +28,6 @@
 ;; Do setting recommended configuration
 (add-hook 'typescript-mode-hook 'my-tshook)
 (add-hook 'typescript-mode-hook 'pretty-symbols-mode)
-(add-hook 'typescript-mode-hook 'linum-mode)
 (add-hook 'typescript-mode-hook 'abbrev-mode)
 (add-hook 'typescript-mode-hook 'smartparens-strict-mode)
 (add-hook 'typescript-mode-hook 'hs-minor-mode)

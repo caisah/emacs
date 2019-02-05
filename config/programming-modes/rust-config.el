@@ -10,8 +10,6 @@
   (setq-default rust-playground-basedir "~/.emacs.d/cache"))
 
 
-
-(add-hook 'rust-mode-hook 'linum-mode)
 (add-hook 'rust-mode-hook (lambda ()
                             (flycheck-mode)
                             (flycheck-rust-setup)))
