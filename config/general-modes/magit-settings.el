@@ -17,5 +17,7 @@
     ;; Unbind C-x M-g as is used for helm-ag
     (define-key magit-file-mode-map (kbd "C-x M-g") nil)))
 
+(add-hook 'magit-mode-hook 'my-make-left-fringe-wider)
+
 (provide 'magit-settings)
 ;;; magit-settings.el ends here
