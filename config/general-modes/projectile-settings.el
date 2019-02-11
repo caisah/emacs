@@ -7,8 +7,16 @@
 ;; Start projectile
 (projectile-mode)
 
-(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+;; Use helm
+(require 'helm-projectile)
+(helm-projectile-on)
+
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+;; Use helm for switching buffers
+;; (substitute-key-definition
+;;  'projectile-switch-to-buffer 'helm-projectile-switch-to-buffer 'projectile-command-map)
+
 
 (setq-default
  ;; Use elisp
