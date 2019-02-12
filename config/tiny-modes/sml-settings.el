@@ -3,7 +3,7 @@
 ;;; Commentary:
 ;; Settings for smart-mode-line
 
-;; Code:
+;;; Code:
 (require 'smart-mode-line)
 
 (setq-default
@@ -20,7 +20,7 @@
                          " λ" " Rbow" " vl" " Wrap" " Helm" " Projectile" " yas"
                          " company" " Tern" " ws" " WS" " Fly" " Merlin (default)"
                          " Interactive" " prettier" " EditorConfig" " ElDoc"
-                         " Prettier" " Omit"))
+                         " Prettier" " Omit" " Async"))
 
 (sml/setup)
 
