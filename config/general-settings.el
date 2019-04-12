@@ -177,8 +177,6 @@
 (show-paren-mode t)
 ;; Disable electric indent mode
 (electric-indent-mode -1)
-;; Save undos in tree
-(global-undo-tree-mode)
 ;; Show info about search
 (global-anzu-mode t)
 ;; Show beautified page breaks
