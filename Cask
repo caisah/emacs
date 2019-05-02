@@ -19,6 +19,7 @@
 (depends-on "editorconfig")
 (depends-on "elfeed")
 (depends-on "elm-mode")
+(depends-on "elpy")
 (depends-on "epl")
 (depends-on "exec-path-from-shell")
 (depends-on "expand-region")
