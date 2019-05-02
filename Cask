@@ -93,7 +93,6 @@
 (depends-on "tuareg")
 (depends-on "twittering-mode")
 (depends-on "typescript-mode")
-(depends-on "undo-tree")
 (depends-on "web-mode")
 (depends-on "wttrin")
 (depends-on "yaml-mode")
