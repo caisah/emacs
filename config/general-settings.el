@@ -232,7 +232,6 @@
 (require 'eww-settings)
 (require 'erc-settings)
 (require 'othermodes-settings)
-(require 'elfeed-settings)
 
 ;; Programming
 (require 'javascript-config)
