@@ -23,6 +23,18 @@
     (when (and eslint (file-executable-p eslint))
       (setq-local flycheck-javascript-eslint-executable eslint))))
 
+
+(defun my-enable-standard-if-possible ()
+  "Try to use standard if exists.
+Return t on success, nil on failure."
+  (let* ((root (locate-dominating-file buffer-file-name "node_modules"))
+         (standard (concat root "/node_modules/.bin/standard")))
+
+    (if (file-executable-p standard)
+        (progn (setq-local flycheck-javascript-standard-executable standard)
+               (flycheck-select-checker 'javascript-standard)
+               t))))
+
 (defun my-company-transformer (candidates)
   (let ((completion-ignore-case t))
     (all-completions (company-grab-symbol) candidates)))
@@ -40,7 +52,9 @@
     (yas-minor-mode 1)
     ;; Change mode name to JS2
     (setq mode-name "JS2")
-    (my-use-eslint-from-node-modules)
+    (unless (my-enable-standard-if-possible)
+      (my-use-eslint-from-node-modules))
+
     ;; Don't consider camelcased full words
     (subword-mode 1)
     ;; Don't consider underscored full words
@@ -77,7 +91,11 @@
      js2-mode-show-strict-warnings nil
      js2-include-browser-externs t
      js2-include-node-externs t
-     js2-basic-offset 2)))
+     js2-basic-offset 2
+
+     ;; Don't use flymake with lsp
+     lsp-prefer-flymake :none
+)))
 
 ;; Set config for prettier code formatter
 (with-eval-after-load 'prettier-js
