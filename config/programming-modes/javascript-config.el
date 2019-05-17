@@ -27,7 +27,7 @@
 (defun my-enable-standard-if-possible ()
   "Try to use standard if exists.
 Return t on success, nil on failure."
-  (let* ((root (locate-dominating-file buffer-file-name "node_modules"))
+  (let* ((root (locate-dominating-file (or (buffer-file-name) default-directory) "node_modules"))
          (standard (concat root "/node_modules/.bin/standard")))
 
     (if (file-executable-p standard)
