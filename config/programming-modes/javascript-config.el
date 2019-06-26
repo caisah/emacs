@@ -28,11 +28,12 @@
   "Try to use standard if exists.
 Return t on success, nil on failure."
   (let* ((root (locate-dominating-file (or (buffer-file-name) default-directory) "node_modules"))
-         (standard (concat root "/node_modules/.bin/standard")))
+         (standard (and (concat root "/node_modules/.bin/standard"))))
 
     (if (file-executable-p standard)
         (progn (setq-local flycheck-javascript-standard-executable standard)
                (flycheck-select-checker 'javascript-standard)
+               (setq prettier-js-command "prettier-standard")
                t))))
 
 (defun my-company-transformer (candidates)

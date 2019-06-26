@@ -18,6 +18,8 @@
       (add-to-list 'tramp-default-proxies-alist
               '((regexp-quote (system-name)) nil nil))))
 
+(require 'tramp)
+
 (provide 'tramp-settings)
 
 ;;; tramp-settings.el ends here
