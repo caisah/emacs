@@ -47,7 +47,6 @@
 (depends-on "imenu-anywhere")
 (depends-on "indium")
 (depends-on "inf-mongo")
-(depends-on "js2-mode")
 (depends-on "json-mode")
 (depends-on "json-reformat")
 (depends-on "json-snatcher")

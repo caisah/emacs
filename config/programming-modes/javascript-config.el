@@ -87,6 +87,7 @@ Return t on success, nil on failure."
     (setq-default
      ;; Don't use flymake with lsp
      lsp-prefer-flymake :none
+     js-indent-level 2
 )))
 
 ;; Set config for prettier code formatter
