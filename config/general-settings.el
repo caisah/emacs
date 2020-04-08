@@ -27,28 +27,19 @@
 
 
 ;; Files created by Emacs
-;; Set custom file to emacs-custom.el
-(setq custom-file "~/.emacs.d/config/emacs-custom.el")
-;; Set temp dir
-(setq temporary-file-directory "~/.emacs.d/cache/temp")
+;; Set .litter as the default dir for custom emacs files
+(setq-default no-littering-etc-directory
+      (expand-file-name ".litter/etc/" user-emacs-directory))
+(setq-default no-littering-var-directory
+      (expand-file-name ".litter/var/" user-emacs-directory))
+(require 'no-littering)
 ;; Set backup dir
-(setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
-;; Set cache file names
-
-(setq-default bookmark-default-file "~/.emacs.d/cache/bookmarks"
-              keyfreq-file "~/.emacs.d/cache/keyfrequency"
-              lsp-session-file "/home/caisah/.emacs.d/cache/lsp-session"
-              recentf-save-file "~/.emacs.d/cache/recentf"
-              mc/list-file "~/.emacs.d/cache/.mc-lists.el"
-              eshell-directory-name "~/.emacs.d/cache/eshell/"
-              auto-save-list-file-prefix "~/.emacs.d/cache/auto-save-list/.save-"
-              projectile-cache-file "~/.emacs.d/cache/projectile/projectile.cache"
-              url-configuration-directory "~/.emacs.d/cache/url/"
-              eww-bookmarks-directory "~/.emacs.d/cache/"
-              projectile-known-projects-file "~/.emacs.d/cache/projectile/known-projects.eld")
+      `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
+;; Set the temp dir
+(setq temporary-file-directory "~/.emacs.d/.litter/temp")
+;; Set custom file to emacs-custom.el
+(setq custom-file (expand-file-name "config/emacs-custom.el" user-emacs-directory))
 
 ;; Calendar
 (setq-default calendar-latitude 46.7667

@@ -4,6 +4,7 @@ recentf
 /eshell/
 /.cask/
 /cache/
+/.litter/
 !/cache/temp/.empty
 /themes/color-theme.el
 /projectile-bookmarks.eld
