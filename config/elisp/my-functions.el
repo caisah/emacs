@@ -25,6 +25,29 @@
   (setq left-fringe-width 20
         right-fringe-width 0))
 
+(defun my-kill-other-buffer ()
+  "Kill buffer in the other window."
+  (interactive)
+  (other-window 1)
+  (kill-this-buffer)
+  (other-window 1))
+
+(defun my-kill-all-buffers ()
+  "Kill all buffers, leaving *scratch* only."
+  (interactive)
+  (mapc
+   'kill-buffer
+   (buffer-list)))
+
+(defun my-delete-to-previous-line ()
+  "Delete to previous end of line."
+  (interactive)
+  (delete-horizontal-space)
+  (backward-delete-char 1)
+  (delete-horizontal-space)
+  (insert-char 32))
+
+
 ;; Export
 (provide 'my-functions)
 

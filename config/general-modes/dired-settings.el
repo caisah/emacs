@@ -26,7 +26,7 @@
 
 (with-eval-after-load 'dired
   (progn
-    (message "dired loaded")
+    (message "My init :: dired loaded")
 
     (require 'dired-aux)
     (require 'dired+)

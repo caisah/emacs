@@ -37,7 +37,7 @@
    `(secondary-selection ((t (:background "gray25"))))
    `(highlight ((t (:foreground "wheat3" :background nil :weight bold))))
    `(hl-line ((t (:foreground "gray80" :background "gray20" :weight bold))))
-   `(minibuffer-prompt ((t (:background "gray10" :foreground "gray80"))))
+   `(minibuffer-prompt ((t (:foreground "gray55" :background "gray8" :height 0.9 :box (:line-width 4 :color "gray8")))))
 
    ;; font-lock
    `(font-lock-builtin-face ((t (:foreground "gray60"))))
@@ -57,7 +57,7 @@
    `(font-lock-warning-face ((t :foreground "DarkOrange")))
 
    ;; common
-   `(match ((t (:foreground "gray90" :background "ForestGreen" :weight bold))))
+   `(match ((t (:foreground "goldenRod3" :background "gray25" :weight bold))))
    `(button ((t (:background "gray15" :foreground "gray60" :box (:style released-button)))))
    `(link ((t (:foreground "gray60" :underline t))))
    `(link-visited ((t (:foreground "gray35" :underline t))))
@@ -92,11 +92,10 @@
 
    ;; ace-window
    `(aw-mode-line-face ((t (:foreground "gray60" :height 0.6))))
-   `(aw-leading-char-face ((t (:foreground "firebrick" :height 1.3 :weight bold))))
-
+   `(aw-leading-char-face ((t (:background "gray10" :foreground "firebrick" :height 1.4 :weight bold :box (:line-width 10 :color "gray10")))))
 
    `(isearch ((t (:inherit (match)))))
-   `(lazy-highlight ((t (:foreground "gray90" :background "gray25"))))
+   `(lazy-highlight ((t (:foreground "gray90" :background "igray25"))))
 
    `(show-paren-match ((t (:foreground "black" :background "gray60"))))
    `(show-paren-mismatch ((t (:foreground "black" :background "firebrick"))))
@@ -172,6 +171,31 @@
    `(diredp-flag-mark ((t (:foreground "DarkOrange"))))
    `(diredp-deletion-file-name ((t (:foreground "black" :background "gray60"))))
    `(diredp-deletion ((t (:foreground "firebrick" :weight bold))))
+
+   ;; ivy
+   `(ivy-action ((t (:foreground "goldenrod3" :background nil :weight bold))))
+   `(ivy-current-match ((t (:background "gray25"))))
+   `(ivy-grep-info ((t (:foreground "wheat3" :background nil :weight bold))))
+   `(ivy-minibuffer-match-face-1 ((t (:foreground "wheat3" :background nil :weight bold))))
+   `(ivy-minibuffer-match-face-2 ((t (:foreground "wheat3" :background nil :weight bold))))
+   `(ivy-minibuffer-match-face-3 ((t (:foreground "goldenrod3" :background nil :weight bold))))
+   `(ivy-minibuffer-match-face-4 ((t (:foreground "goldenrod3" :background nil :weight bold))))
+   `(ivy-modified-buffer ((t (:foreground "IndianRed2"))))
+   `(ivy-modified-outside-buffer ((t (:foreground "IndianRed2"))))
+   `(ivy-virtual ((t (:foreground "gray50"))))
+
+   ;; swiper
+   `(swiper-line-face ((t (:background "gray25"))))
+   `(swiper-match-face-1 ((t (:foreground "gray80" :background nil :weight bold))))
+   `(swiper-match-face-2 ((t (:foreground "wheat3" :background nil :weight bold))))
+   `(swiper-match-face-3 ((t (:foreground "wheat3" :background nil :weight bold))))
+   `(swiper-match-face-4 ((t (:foreground "wheat3" :background nil :weight bold))))
+
+   ;; avy
+   `(avy-lead-face ((t (:foreground "LemonChiffon3" :background "gray20"))))
+   `(avy-lead-face-0 ((t (:foreground "LemonChiffon3" :background "gray20"))))
+   `(avy-lead-face-1 ((t (:foreground "LemonChiffon3" :background "gray20"))))
+   `(avy-lead-face-2 ((t (:foreground "LemonChiffon3" :background "gray20"))))
 
    ;; helm
    `(helm-source-header ((t (:foreground "gray70" :background "gray15"))))

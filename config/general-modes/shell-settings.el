@@ -10,7 +10,6 @@
 
     (define-key eshell-mode-map (kbd "C-x l") 'rename-buffer)))
 
-
 ;; show full width lines in shell mode
 (add-hook 'eshell-mode-hook '(lambda ()
                               (visual-line-mode nil)

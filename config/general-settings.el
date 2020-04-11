@@ -21,9 +21,10 @@
 (when (eql system-type 'darwin)
   (progn
     (setq insert-directory-program "/usr/local/opt/coreutils/libexec/gnubin/ls")
-    (setq shell-file-name "/usr/local/bin/bash")
-    ;; add node to the path
-    (exec-path-from-shell-copy-env "NVM_DIR")))
+    (setq shell-file-name "/usr/local/bin/bash")))
+
+;; add node to the path
+(exec-path-from-shell-copy-env "NVM_DIR")
 
 
 ;; Files created by Emacs
@@ -96,28 +97,6 @@
 (add-hook 'window-setup-hook 'my-show-startup-time)
 
 ;; Improve navigation & editing
-(defun my-kill-other-buffer ()
-  "Kill buffer in the other window."
-  (interactive)
-  (other-window 1)
-  (kill-this-buffer)
-  (other-window 1))
-
-(defun my-kill-all-buffers ()
-  "Kill all buffers, leaving *scratch* only."
-  (interactive)
-  (mapc
-   'kill-buffer
-   (buffer-list)))
-
-(defun my-delete-to-previous-line ()
-  "Delete to previous end of line."
-  (interactive)
-  (delete-horizontal-space)
-  (backward-delete-char 1)
-  (delete-horizontal-space)
-  (insert-char 32))
-
 (defun my-buffer-too-big-p ()
   "Check if a buffer is really big."
   (or (> (buffer-size) (* 5000 80))
@@ -176,6 +155,9 @@
 (global-auto-revert-mode 1)
 ;; Delete selected text when starting to type
 (delete-selection-mode 1)
+;; Save state between sessions
+(desktop-save-mode t)
+(setq-default desktop-save t)
 
 ;; Visual Stuff
 ;;
@@ -202,14 +184,13 @@
 
 ;; Configure all the other modes
 (require 'dired-settings)
-(require 'desktop-settings)
 (require 'projectile-settings)
 (require 'hippie-expand-settings)
 (require 'epa-settings)
 (require 'company-settings)
 (require 'shell-settings)
 (require 'magit-settings)
-(require 'helm-settings)
+(require 'ivy-settings)
 (require 'docview-settings)
 (require 'ace-window-settings)
 (require 'sml-settings)
@@ -245,3 +226,4 @@
 
 (provide 'general-settings)
 ;;; general-settings ends here
+
