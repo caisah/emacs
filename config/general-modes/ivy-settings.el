@@ -13,7 +13,7 @@
 (setq-default ivy-use-virtual-buffers t)
 ;; Format the count
 (setq-default ivy-count-format "%d/%d ")
-;; Continue scrolling at the top when hidding the end.
+;; Continue scrolling at the top when hitting the end.
 (setq-default ivy-wrap t)
 ;; Make ivy larger
 (setq-default ivy-height 20)
@@ -25,11 +25,15 @@
 (global-set-key (kbd "C-c J") 'counsel-file-jump)
 (global-set-key (kbd "C-c b") 'counsel-bookmark)
 (global-set-key (kbd "C-c d") 'counsel-descbinds)
+(global-set-key (kbd "C-c f") 'counsel-recentf)
 
 ;; Swiper
 (global-set-key (kbd "C-s") 'swiper-isearch)
-(global-set-key (kbd "M-i") 'swiper-all-thing-at-point)
+(global-set-key (kbd "M-i") 'swiper-thing-at-point)
 (global-set-key (kbd "M-o") 'swiper-avy)
+
+;; avy
+(global-set-key (kbd "C-'") 'avy-goto-char-2)
 
 ;; Ivy
 (global-set-key (kbd "C-x b") 'ivy-switch-buffer)

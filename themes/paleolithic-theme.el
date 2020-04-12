@@ -114,8 +114,13 @@
 
    `(error ((t (:foreground "firebrick"))))
 
+   ;; flycheck
    `(flycheck-error ((t (:underline (:color "firebrick" :style wave)))))
    `(flycheck-warning ((t (:underline (:color "DarkOrange" :style wave)))))
+   `(flycheck-error-list-filename ((t (:foreground "wheat3" :weight bold))))
+   `(flycheck-error-list-highlight ((t (:background "gray30"))))
+   `(flycheck-error-list-column-number ((t (:foreground "gray60"))))
+   `(flycheck-error-list-line-number ((t (:foreground "gray60"))))
 
    ;; whitespace
    `(whitespace-trailing ((t (:background "firebrick"))))
@@ -175,13 +180,15 @@
    ;; ivy
    `(ivy-action ((t (:foreground "goldenrod3" :background nil :weight bold))))
    `(ivy-current-match ((t (:background "gray25"))))
-   `(ivy-grep-info ((t (:foreground "wheat3" :background nil :weight bold))))
+   `(ivy-grep-info ((t (:foreground "gray40" :height 0.9))))
+   `(ivy-grep-line-number ((t (:height 0.9))))
    `(ivy-minibuffer-match-face-1 ((t (:foreground "wheat3" :background nil :weight bold))))
    `(ivy-minibuffer-match-face-2 ((t (:foreground "wheat3" :background nil :weight bold))))
    `(ivy-minibuffer-match-face-3 ((t (:foreground "goldenrod3" :background nil :weight bold))))
    `(ivy-minibuffer-match-face-4 ((t (:foreground "goldenrod3" :background nil :weight bold))))
    `(ivy-modified-buffer ((t (:foreground "IndianRed2"))))
    `(ivy-modified-outside-buffer ((t (:foreground "IndianRed2"))))
+   `(ivy-remote ((t (:foreground "ForestGreen"))))
    `(ivy-virtual ((t (:foreground "gray50"))))
 
    ;; swiper
@@ -192,10 +199,15 @@
    `(swiper-match-face-4 ((t (:foreground "wheat3" :background nil :weight bold))))
 
    ;; avy
-   `(avy-lead-face ((t (:foreground "LemonChiffon3" :background "gray20"))))
-   `(avy-lead-face-0 ((t (:foreground "LemonChiffon3" :background "gray20"))))
-   `(avy-lead-face-1 ((t (:foreground "LemonChiffon3" :background "gray20"))))
-   `(avy-lead-face-2 ((t (:foreground "LemonChiffon3" :background "gray20"))))
+   `(avy-lead-face ((t (:foreground "LemonChiffon3" :background "gray20" :height 0.9))))
+   `(avy-lead-face-0 ((t (:foreground "LemonChiffon3" :background "gray20" :height 0.9))))
+   `(avy-lead-face-1 ((t (:foreground "LemonChiffon3" :background "gray20" :height 0.9))))
+   `(avy-lead-face-2 ((t (:foreground "LemonChiffon3" :background "gray20" :height 0.9))))
+
+   ;; hydra
+   `(hydra-face-pink ((t (:foreground "wheat3" :weight bold))))
+   `(hydra-face-red ((t (:foreground "IndianRed2" :weight bold))))
+   `(hydra-face-blue ((t (:foreground "goldenrod3" :weight bold))))
 
    ;; helm
    `(helm-source-header ((t (:foreground "gray70" :background "gray15"))))

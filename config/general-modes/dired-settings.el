@@ -66,6 +66,5 @@
     ;; Move deleted stuff to trash
     (setq delete-by-moving-to-trash t)))
 
-
 (provide 'dired-settings)
 ;;; dired-settings.el ends here
