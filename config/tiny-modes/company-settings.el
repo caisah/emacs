@@ -6,7 +6,7 @@
 ;;; Code:
 (with-eval-after-load 'company
   (progn
-    (message "company-mode loaded")
+    (message "My init :: company-mode loaded")
     ;; let tab do what it does best
     (define-key company-active-map (kbd "M-n") nil)
     (define-key company-active-map (kbd "M-p") nil)
@@ -17,11 +17,10 @@
 
 (with-eval-after-load 'company-quickhelp
   (progn
-    (message "company-quickhelp loaded")
+    (message "My init :: company-quickhelp loaded")
     ;; show tooltip popup on key press
     (setq-default company-quickhelp-delay nil)
     (define-key company-active-map (kbd "C-j") #'company-quickhelp-manual-begin)))
-
 
 ;; show documentation when using company
 (add-hook 'company-mode-hook '(lambda () (company-quickhelp-mode)))

@@ -6,7 +6,7 @@
 ;;; Code:
 (with-eval-after-load 'doc-view
   (progn
-    (message "doc-view loaded")
+    (message "My init :: doc-view loaded")
 
     (setq-default doc-view-continuous t)))
 

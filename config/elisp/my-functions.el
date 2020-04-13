@@ -20,11 +20,6 @@
   (let ((time-passed (time-passed-since *start-time*)))
     (run-with-timer 1 nil (lambda (time) (message "My .init loaded in %.3f seconds. Happy hacking!" time)) time-passed)))
 
-(defun my-make-left-fringe-wider ()
-  "Make left frige 20px."
-  (setq left-fringe-width 20
-        right-fringe-width 0))
-
 (defun my-kill-other-buffer ()
   "Kill buffer in the other window."
   (interactive)

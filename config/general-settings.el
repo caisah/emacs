@@ -71,7 +71,6 @@
 ;; use UTF-8
 (set-language-environment "UTF-8")
 
-
 ;; Load custom file
 (load custom-file)
 
@@ -133,10 +132,6 @@
 
 (global-set-key (kbd "C-`") 'er/expand-region)
 
-;; Searching
-(global-set-key (kbd "C-s") nil)
-(global-set-key (kbd "C-S-s") nil)
-(global-set-key (kbd "C-s") 'isearch-forward)
 (global-set-key (kbd "C-S-s") 'query-replace)
 
 

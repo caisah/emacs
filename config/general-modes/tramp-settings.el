@@ -7,7 +7,7 @@
 
 (with-eval-after-load 'tramp
     (progn
-      (message "tramp-mode loaded")
+      (message "My init :: tramp loaded")
 
       (setq tramp-default-method "ssh")
 

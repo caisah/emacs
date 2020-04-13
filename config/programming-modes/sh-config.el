@@ -5,13 +5,13 @@
 
 
 ;;; Code:
-(add-hook 'sh-mode-hook 'company-mode)
-(add-hook 'sh-mode-hook 'flycheck-mode)
 
 (with-eval-after-load 'sh-script
   (progn
-    (message "sh-mode loaded")))
+    (message "My init :: sh-mode loaded")))
 
+(add-hook 'sh-mode-hook 'company-mode)
+(add-hook 'sh-mode-hook 'flycheck-mode)
 
 (provide 'sh-config)
 ;;; sh-config.el ends here
