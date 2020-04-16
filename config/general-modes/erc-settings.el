@@ -16,7 +16,7 @@
                 (Snoonet (("caisah" . ,snoonet-pass))))
               erc-prompt-for-nickserv-password nil)
 
-(defun start-erc ()
+(defun my-start-erc ()
   "Start ERC, Join Freenode & Snoonet."
   (interactive)
 

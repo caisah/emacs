@@ -92,7 +92,7 @@
 
    ;; ace-window
    `(aw-mode-line-face ((t (:foreground "gray60" :height 0.6))))
-   `(aw-leading-char-face ((t (:background "gray10" :foreground "firebrick" :height 1.4 :weight bold :box (:line-width 10 :color "gray10")))))
+   `(aw-leading-char-face ((t (:background "gray10" :foreground "firebrick" :weight bold :height 1.2))))
 
    `(isearch ((t (:inherit (match)))))
    `(lazy-highlight ((t (:foreground "gray90" :background "igray25"))))
@@ -188,6 +188,7 @@
    `(ivy-minibuffer-match-face-4 ((t (:foreground "goldenrod3" :background nil :weight bold))))
    `(ivy-modified-buffer ((t (:foreground "IndianRed2"))))
    `(ivy-modified-outside-buffer ((t (:foreground "IndianRed2"))))
+   `(ivy-subdir ((t (:foreground "gray85" :weight bold))))
    `(ivy-remote ((t (:foreground "ForestGreen"))))
    `(ivy-virtual ((t (:foreground "gray50"))))
 
