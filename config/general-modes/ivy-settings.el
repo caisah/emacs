@@ -33,7 +33,7 @@
 (global-set-key (kbd "M-o") 'swiper-avy)
 
 ;; avy
-(global-set-key (kbd "C-'") 'avy-goto-char-2)
+(global-set-key (kbd "C-'") 'ivy-avy)
 
 ;; Ivy
 (global-set-key (kbd "C-x b") 'ivy-switch-buffer)

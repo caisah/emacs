@@ -41,6 +41,8 @@
 (setq temporary-file-directory "~/.emacs.d/.litter/temp")
 ;; Set custom file to emacs-custom.el
 (setq custom-file (expand-file-name "config/emacs-custom.el" user-emacs-directory))
+;; Make buffer names unique
+(setq uniquify-buffer-name-style 'post-forward)
 
 ;; Calendar
 (setq-default calendar-latitude 46.7667
@@ -179,6 +181,7 @@
 
 ;; Configure all the other modes
 (require 'dired-settings)
+(require 'ibuffer-settings)
 (require 'projectile-settings)
 (require 'hippie-expand-settings)
 (require 'epa-settings)

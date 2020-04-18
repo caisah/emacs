@@ -186,6 +186,7 @@
    `(ivy-minibuffer-match-face-2 ((t (:foreground "wheat3" :background nil :weight bold))))
    `(ivy-minibuffer-match-face-3 ((t (:foreground "goldenrod3" :background nil :weight bold))))
    `(ivy-minibuffer-match-face-4 ((t (:foreground "goldenrod3" :background nil :weight bold))))
+   `(ivy-match-required-face ((t (:foreground "IndianRed2"))))
    `(ivy-modified-buffer ((t (:foreground "IndianRed2"))))
    `(ivy-modified-outside-buffer ((t (:foreground "IndianRed2"))))
    `(ivy-subdir ((t (:foreground "gray85" :weight bold))))
