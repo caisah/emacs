@@ -72,6 +72,8 @@
    `(mode-line-emphasis ((t (:weight bold))))
    `(mode-line-inactive ((t (:background "gray15" :foreground "gray50" :box (:line-width 4 :color "gray15")))))
    `(anzu-mode-line ((t (:foreground "firebrick"))))
+   `(anzu-replace-to ((t (:foreground "gray90" :background "gray20" :weight bold))))
+
    ;; sml
    `(sml/col-number ((t (:foreground "gray30"))))
    `(sml/numbers-separator ((t (:foreground "gray30"))))
@@ -95,7 +97,7 @@
    `(aw-leading-char-face ((t (:background "gray10" :foreground "firebrick" :weight bold :height 1.2))))
 
    `(isearch ((t (:inherit (match)))))
-   `(lazy-highlight ((t (:foreground "gray90" :background "igray25"))))
+   `(lazy-highlight ((t (:foreground "gray90" :background "gray25"))))
 
    `(show-paren-match ((t (:foreground "black" :background "gray60"))))
    `(show-paren-mismatch ((t (:foreground "black" :background "firebrick"))))

@@ -5,7 +5,14 @@
 ;;; Code:
 (require 'erc-services)
 
-(load "~/.ercpass")
+;; Try to load ercpass file
+(let ((ercpass "~/.ercpass"))
+  (if (file-exists-p ercpass)
+      (load ercpass)
+    (progn
+      (setq-default freenode-pass "")
+      (setq-default snoonet-pass "")
+      (message "My init :: warn :: Could not load .ercpass"))))
 
 (erc-services-mode 1)
 (erc-autojoin-mode 0)

@@ -134,7 +134,7 @@
 
 (global-set-key (kbd "C-`") 'er/expand-region)
 
-(global-set-key (kbd "C-S-s") 'query-replace)
+(global-set-key (kbd "C-S-s") 'anzu-query-replace-regexp)
 
 
 ;; Global Modes:
