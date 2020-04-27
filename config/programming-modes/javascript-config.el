@@ -42,7 +42,7 @@ Return t on success, nil on failure."
 
 (defun my-js-specific ()
   "Personal hook for \"js-mode\" major mode."
-  (if (not (derived-mode-p 'javascript-mode))
+  (if (eq major-mode 'js-mode)
     (progn
       ;; Enable autocomplete
       (company-mode 1)

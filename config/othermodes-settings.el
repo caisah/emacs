@@ -60,7 +60,6 @@
 (add-hook 'json-mode-hook 'flycheck-mode)
 (add-hook 'json-mode-hook 'hs-minor-mode)
 (add-hook 'json-mode-hook 'my-json-hook)
-(add-hook 'json-mode-hook 'prettier-js-mode)
 
 ;; XML
 (add-hook 'nxml-mode-hook 'sgml-mode)
