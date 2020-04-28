@@ -13,7 +13,8 @@
   (progn
     (message "My init :: magit loaded")
 
-    (setq-default magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1)
+    (setq-default magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1
+                  transient-default-level 5)
     ;; Unbind C-x M-g as is used for helm-ag
     (define-key magit-file-mode-map (kbd "C-x M-g") nil)))
 
