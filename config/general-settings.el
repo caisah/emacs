@@ -201,6 +201,7 @@
 (require 'twitter-settings)
 (require 'eww-settings)
 (require 'erc-settings)
+(require 'lsp-settings)
 (require 'othermodes-settings)
 
 ;; Programming
