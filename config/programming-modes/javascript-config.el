@@ -21,7 +21,9 @@
                       (expand-file-name "node_modules/eslint/bin/eslint.js"
                                         root))))
     (when (and eslint (file-executable-p eslint))
-      (setq-local flycheck-javascript-eslint-executable eslint))))
+      (setq-local flycheck-javascript-eslint-executable eslint)
+      (flycheck-select-checker 'javascript-eslint)
+      t)))
 
 
 (defun my-enable-standard-if-possible ()
@@ -84,11 +86,7 @@ Return t on success, nil on failure."
   (progn
     (message "My init :: js-mode loaded")
 
-    (setq-default
-     ;; Don't use flymake with lsp
-     lsp-prefer-flymake :none
-     js-indent-level 2
-)))
+    (setq-default js-indent-level 2)))
 
 ;; Set config for prettier code formatter
 (with-eval-after-load 'prettier-js
