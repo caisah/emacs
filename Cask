@@ -45,6 +45,7 @@
 (depends-on "list-environment")
 (depends-on "logito")
 (depends-on "lsp-ivy")
+(depends-on "lsp-ui")
 (depends-on "magit")
 (depends-on "markdown-mode")
 (depends-on "merlin")
