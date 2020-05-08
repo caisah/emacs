@@ -11,6 +11,8 @@
     (setq-default
      ;; Use elisp
      projectile-indexing-method 'alien
+     ;; Use ivy
+     projectile-completion-system 'ivy
      ;; Cache projectile files
      projectile-enable-caching t
      ;; When switching a project switch to a dir
