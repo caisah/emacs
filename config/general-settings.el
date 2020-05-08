@@ -207,9 +207,7 @@
 ;; Programming
 (require 'javascript-config)
 (require 'web-config)
-(require 'go-config)
 (require 'sh-config)
-(require 'rust-config)
 (require 'elisp-config)
 (require 'elm-config)
 (require 'typescript-config)
