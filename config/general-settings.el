@@ -23,6 +23,13 @@
     (setq insert-directory-program "/usr/local/opt/coreutils/libexec/gnubin/ls")
     (setq shell-file-name "/usr/local/bin/bash")))
 
+;; Set garbage collection limits
+(let ((normal-gc-cons-threshold (* 20 1024 1024))
+      (init-gc-cons-threshold (* 128 1024 1024)))
+  (setq gc-cons-threshold init-gc-cons-threshold)
+  (add-hook 'emacs-startup-hook
+            (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
+
 ;; add node to the path
 (exec-path-from-shell-copy-env "NVM_DIR")
 
