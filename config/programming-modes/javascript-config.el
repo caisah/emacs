@@ -147,9 +147,6 @@ The order is: `standard', `eslint' `prettier' `prettier-eslint'."
                                      "--bracket-spacing" "true"
                                      "--single-quote" "true"))))
 
-;; Use google-chrome for indium
-(setq-default indium-chrome-executable "chromium-browser")
-
 (add-hook 'js-mode-hook 'my-js-specific)
 (add-hook 'js-mode-hook 'whitespace-mode)
 (add-hook 'js-mode-hook 'smartparens-strict-mode)
