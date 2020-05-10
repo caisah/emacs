@@ -119,6 +119,7 @@
 (global-set-key (kbd "C-\\") 'my-delete-to-previous-line)
 (global-set-key (kbd "C-S-d") 'delete-region)
 (global-set-key (kbd "C-x M-w") 'my-copy-buffer-file-name)
+(global-set-key (kbd "C-x i") 'ibuffer)
 
 (global-set-key (kbd "<C-tab>") 'indent-relative)
 
