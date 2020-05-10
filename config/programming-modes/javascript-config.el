@@ -7,36 +7,87 @@
 ;;; add hippie expand `hippie-expand-try-functions-list
 
 ;;; Code:
+(defvar my-standard-exec nil
+  "Local variable holding the executable for javascript standard.")
+
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js-mode))
 
+(defun my-poor-standard-format ()
+  "Formats buffer with prettier standard.
+This is very rudimentary implementation."
+  (let ((buffer (buffer-file-name)))
+    (if buffer
+        (progn
+          (call-process my-standard-exec nil nil nil "--fix" buffer)
+          (revert-buffer nil t t))
+      (message "Formatting does not work yet. Save file first!"))))
 
-(defun my-use-eslint-from-node-modules ()
-  "Try to use local .eslint file instead of global."
-  (let* ((root (locate-dominating-file
-                (or (buffer-file-name) default-directory)
-                "node_modules"))
-         (eslint (and root
-                      (expand-file-name "node_modules/eslint/bin/eslint.js"
-                                        root))))
-    (when (and eslint (file-executable-p eslint))
-      (setq-local flycheck-javascript-eslint-executable eslint)
-      (flycheck-select-checker 'javascript-eslint)
-      t)))
+(defun my-find-js-executable-in-nm (nm-exec-name)
+  "Search for the NM-EXEC-NAME executable in node_modules.
 
+It first tries to find a `node_modules' dir starting with current buffer
+and then tests for the existance of the exec in `.bin' directory.
 
-(defun my-enable-standard-if-possible ()
-  "Try to use standard if exists.
-Return t on success, nil on failure."
-  (let* ((root (locate-dominating-file (or (buffer-file-name) default-directory) "node_modules"))
-         (standard (and (concat root "/node_modules/.bin/standard"))))
+Returns the full path of the executable."
 
-    (if (file-executable-p standard)
-        (progn (setq-local flycheck-javascript-standard-executable standard)
-               (flycheck-select-checker 'javascript-standard)
-               (setq prettier-js-command "prettier-standard")
-               t))))
+  (let* ((start (or (buffer-file-name) default-directory))
+         (dir
+          (locate-dominating-file
+           start
+           (lambda (search-dir)
+             (let ((nm-dir (concat search-dir "node_modules")))
+               (and
+                (file-directory-p nm-dir)
+                (file-executable-p (concat nm-dir "/.bin/" nm-exec-name))))))))
+    (when dir
+      (concat dir "node_modules/.bin/" nm-exec-name))))
+
+(defun my-try-use-standard ()
+  "Try to use  `standard' for both `flycheck' and reformat.
+If `standard' is found in local node_modules is used as
+ `flycheck-javascript-standard-executable'."
+
+  (let ((standard-exec (my-find-js-executable-in-nm "standard")))
+    (when standard-exec
+      (progn
+        (print standard-exec)
+        (setq-local flycheck-javascript-standard-executable standard-exec)
+        (add-hook 'after-save-hook 'my-poor-standard-format)
+        (setq-local my-standard-exec standard-exec)))))
+
+(defun my-try-use-local-prettier ()
+  "Set `prettier-js-command' to local node_modules executable."
+  (let ((prettier-exec (my-find-js-executable-in-nm "prettier")))
+    (when (and prettier-exec (file-executable-p prettier-exec))
+      (progn
+        (setq-local prettier-js-command prettier-exec)
+        (prettier-js-mode 1)))))
+
+(defun my-try-use-eslint ()
+  "Set `flycheck-javascript-eslint-executable' to local node_modules executable."
+  (let ((eslint-exec (my-find-js-executable-in-nm "eslint")))
+    (when (and eslint-exec (file-executable-p eslint-exec))
+      (setq-local flycheck-javascript-eslint-executable eslint-exec))))
+
+(defun my-try-use-prettier-eslint ()
+  "Try to use local or global `prettier-eslint'."
+  (let ((prettier-eslint
+         (or (my-find-js-executable-in-nm "prettier-eslint")
+             (executable-find "prettier-eslint"))))
+    (when prettier-eslint
+      (progn
+        (setq-local prettier-js-command prettier-eslint)
+        (prettier-js-mode 1)))))
+
+(defun my-setup-js-checker-formater ()
+  "Setup error checker and formatter for javascript.
+The order is: `standard', `eslint' `prettier' `prettier-eslint'."
+  (or (my-try-use-standard)
+      (my-try-use-eslint)
+      (or (my-try-use-local-prettier)
+        (my-try-use-prettier-eslint))))
 
 (defun my-company-transformer (candidates)
   (let ((completion-ignore-case t))
@@ -48,8 +99,6 @@ Return t on success, nil on failure."
     (progn
       ;; Enable autocomplete
       (company-mode 1)
-      ;; Enable auto formatting
-      (prettier-js-mode 1)
       ;; Enable yasnippet
       (yas-minor-mode 1)
       ;; Enable code navigation
@@ -61,6 +110,9 @@ Return t on success, nil on failure."
       ;; Use editor config
       (editorconfig-mode 1)
 
+      ;; Try to use eslint & prettier
+      (my-setup-js-checker-formater)
+
       (setq-local company-backends
                   '(company-lsp
                     company-dabbrev-code
@@ -70,8 +122,6 @@ Return t on success, nil on failure."
 
       ;; Change mode name to JS
       (setq mode-name "JS")
-      (unless (my-enable-standard-if-possible)
-        (my-use-eslint-from-node-modules))
 
       ;; for lsp-javascript
       (make-local-variable 'company-transformers)
