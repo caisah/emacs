@@ -73,13 +73,6 @@
                sgml-skip-tag-forward
                nil))
 
-;; WTTrin | Weather
-(setq-default wttrin-default-cities '("Cluj-Napoca")
-              wttrin-default-accept-language '("Accept-Language" . "ro-RO"))
-
-;; on `show-weather' call wttrin
-(defalias 'show-weather 'wttrin)
-
 ;; nov-mode for epub
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
 
