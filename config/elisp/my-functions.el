@@ -42,6 +42,11 @@
   (delete-horizontal-space)
   (insert-char 32))
 
+(defun my-copy-buffer-file-name ()
+  "Copy buffer file name."
+  (interactive)
+  (kill-new (buffer-file-name))
+  (message "Copied: %s" buffer-file-name))
 
 ;; Export
 (provide 'my-functions)
