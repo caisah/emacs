@@ -28,6 +28,54 @@
 
 (deftheme paleolithic
  "A Dark Gray Theme")
+
+;; Define custom faces
+(defface twittering-user-name
+  '((t (:weight bold)))
+  "Twitter user name"
+  :group 'faces)
+
+(defface twittering-time
+  '((t (:inherit (font-lock-comment-face))))
+  "Twitter time"
+  :group 'faces)
+
+(defface twittering-location
+  '((t (:inherit (font-lock-comment-face))))
+  "Twitter location"
+  :group 'faces)
+
+(defface twittering-reply
+  '((t (:inherit (font-lock-doc-face))))
+  "Twitter location"
+  :group 'faces)
+
+(defface twittering-delimiter
+  '((t (:inherit (vertical-border))))
+  "Twitter delimiter"
+  :group 'faces)
+
+(defface ibuffer-read-only-face
+  '((t (:inherit default)))
+  "Ibuffer face for read only buffers"
+  :group 'faces)
+
+(defface ibuffer-modified-face
+  '((t (:inherit default)))
+  "Ibuffer face for modified file buffers"
+  :group 'faces)
+
+(defface ibuffer-emacs-buffer-face
+  '((t (:inherit default)))
+  "Ibuffer face for ** files"
+  :group 'faces)
+
+(defface ibuffer-dired-buffer-face
+  '((t (:inherit default)))
+  "Ibuffer face for dired buffers"
+  :group 'faces)
+
+
 (let ((font-height (if (eql system-type 'darwin) 160 128)))
   (custom-theme-set-faces
    'paleolithic
@@ -38,6 +86,12 @@
    `(highlight ((t (:foreground "wheat3" :background nil :weight bold))))
    `(hl-line ((t (:foreground "gray80" :background "gray20" :weight bold))))
    `(minibuffer-prompt ((t (:foreground "gray55" :background "gray8" :height 0.9 :box (:line-width 4 :color "gray8")))))
+
+   ;; ibuffer
+   `(ibuffer-read-only-face ((t (:foreground "gray50"))))
+   `(ibuffer-modified-face ((t (:foreground "IndianRed2"))))
+   `(ibuffer-emacs-buffer-face ((t (:inherit font-lock-comment-face))))
+   `(ibuffer-dired-buffer-face ((t (:weight bold))))
 
    ;; font-lock
    `(font-lock-builtin-face ((t (:foreground "gray60"))))

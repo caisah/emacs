@@ -7,32 +7,6 @@
 
 (require 'twittering-mode)
 
-(defface twittering-user-name
-  '((t (:weight bold)))
-  "test face"
-  :group 'faces)
-
-(defface twittering-time
-  '((t (:inherit (font-lock-comment-face))))
-  "test face"
-  :group 'faces)
-
-(defface twittering-location
-  '((t (:inherit (font-lock-comment-face))))
-  "test face"
-  :group 'faces)
-
-(defface twittering-reply
-  '((t (:inherit (font-lock-doc-face))))
-  "test face"
-  :group 'faces)
-
-(defface twittering-delimiter
-  '((t (:inherit (vertical-border))))
-  "test face"
-  :group 'faces)
-
-
 (setq twittering-icon-mode t)
 (setq twittering-use-master-password t)
 (setq twittering-convert-fix-size 35)
