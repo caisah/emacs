@@ -79,5 +79,8 @@
 ;; Editor config
 (require 'editorconfig)
 
+;; Enable emoji
+(global-emojify-mode 1)
+
 (provide 'othermodes-settings)
 ;;; othermodes-settings.el ends here
