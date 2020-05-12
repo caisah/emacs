@@ -20,6 +20,7 @@
 (depends-on "elfeed")
 (depends-on "elm-mode")
 (depends-on "elpy")
+(depends-on "emojify")
 (depends-on "epl")
 (depends-on "exec-path-from-shell")
 (depends-on "expand-region")

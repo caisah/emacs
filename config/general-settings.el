@@ -124,6 +124,7 @@
 (global-set-key (kbd "<C-tab>") 'indent-relative)
 
 (global-set-key (kbd "C-c C-f") 'hs-toggle-hiding)
+(global-set-key (kbd "s-u") 'revert-buffer)
 
 ;; Emacs
 (global-set-key (kbd "C-h C-s") 'elisp-index-search)
@@ -135,7 +136,7 @@
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
 (global-set-key (kbd "<f1>")
-                '(lambda () (interactive) (switch-to-buffer "*Messages*")))
+                (lambda () (interactive) (switch-to-buffer "*Messages*")))
 
 (global-set-key (kbd "C-`") 'er/expand-region)
 

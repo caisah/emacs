@@ -60,16 +60,16 @@
         ("img"
          :base-directory ,blog-img-dir
          :base-extension "jpg\\|gif\\|png"
-         :publishing-directory blog-pub-img-dir
+         :publishing-directory ,blog-pub-img-dir
          :publishing-function org-publish-attachment)
 
         ("css"
          :base-directory ,blog-css-dir
          :base-extension "css\\|el"
-         :publishing-directory blog-pub-css-dir
+         :publishing-directory ,blog-pub-css-dir
          :publishing-function org-publish-attachment)
 
-        ("website" :components ("root" "blog" "images" "css"))))
+        ("website" :components ("root" "blog" "img" "css"))))
 
 
 (provide 'blog-settings)
