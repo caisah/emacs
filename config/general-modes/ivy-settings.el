@@ -26,7 +26,7 @@
 (global-set-key (kbd "C-c b") 'counsel-bookmark)
 (global-set-key (kbd "C-c d") 'counsel-descbinds)
 (global-set-key (kbd "C-c f") 'counsel-recentf)
-(global-set-key (kbd "C-x B") 'counsel-ibuffer)
+(global-set-key (kbd "C-x M-i") 'counsel-ibuffer)
 
 ;; Swiper
 (global-set-key (kbd "C-s") 'swiper-isearch)

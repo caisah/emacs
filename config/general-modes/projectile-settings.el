@@ -18,7 +18,7 @@
      ;; When switching a project switch to a dir
      projectile-switch-project-action #'projectile-dired)
 
-    (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)))
+    (define-key projectile-mode-map (kbd "s-h") 'projectile-command-map)))
 
 ;; Always use projectile
 (projectile-mode 1)
