@@ -82,5 +82,9 @@
 ;; Enable emoji
 (global-emojify-mode 1)
 
+;; Use package lint for elisp
+(eval-after-load 'flycheck
+  '(flycheck-package-setup))
+
 (provide 'othermodes-settings)
 ;;; othermodes-settings.el ends here
