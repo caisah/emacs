@@ -8,9 +8,9 @@
   (progn
     "My init :: epa loaded"
     ;; can export to text
-    (setq-default epa-armor t)
-    ;; Use gpg2 by default
-    (setq-default epg-gpg-program "gpg2")))
+    (setq epa-armor t
+	  ;; Use gpg2 by default
+	  epg-gpg-program "gpg2")))
 
 (provide 'epa-settings)
 ;;; epa-settings.el ends here

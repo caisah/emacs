@@ -32,9 +32,9 @@
 
 ;; Files created by Emacs
 ;; Set .litter as the default dir for custom emacs files
-(setq-default no-littering-etc-directory
+(setq no-littering-etc-directory
       (expand-file-name ".litter/etc/" user-emacs-directory))
-(setq-default no-littering-var-directory
+(setq no-littering-var-directory
       (expand-file-name ".litter/var/" user-emacs-directory))
 (require 'no-littering)
 ;; Set backup dir
@@ -48,27 +48,27 @@
 (setq uniquify-buffer-name-style 'post-forward)
 
 ;; Calendar
-(setq-default calendar-latitude 46.7667
-              calendar-longitude 23.5833)
+(setq calendar-latitude 46.7667
+      calendar-longitude 23.5833)
 
 ;; Consider all themes safe
-(setq-default custom-safe-themes t
-              ;; don't ask to save when copiling
-              compilation-ask-about-save nil
-              ;; don't save abbrevs
-              save-abbrevs nil
-              ;; don't insert tabs on indent
-              indent-tabs-mode nil
-              ;; start emacs fullscreen and maximized
-              initial-frame-alist (quote ((fullscreen . maximized)))
-              ;; don't use angle brackets
-              uniquify-buffer-name-style 'post-forward
-              ;; don't put anything is *scratch*
-              initial-scratch-message ""
-              ;; highlight trailing spaces & tabs
-              whitespace-style '(face trailing indentation::tabs)
-              ;; highlight if more than 180 chars on line
-              whitespace-line-column 180)
+(setq custom-safe-themes t
+      ;; don't ask to save when copiling
+      compilation-ask-about-save nil
+      ;; don't save abbrevs
+      save-abbrevs nil
+      ;; don't insert tabs on indent
+      indent-tabs-mode nil
+      ;; start emacs fullscreen and maximized
+      initial-frame-alist (quote ((fullscreen . maximized)))
+      ;; don't use angle brackets
+      uniquify-buffer-name-style 'post-forward
+      ;; don't put anything is *scratch*
+      initial-scratch-message ""
+      ;; highlight trailing spaces & tabs
+      whitespace-style '(face trailing indentation::tabs)
+      ;; highlight if more than 180 chars on line
+      whitespace-line-column 180)
 
 ;; set language for time to Eng
 (setq system-time-locale "C")
@@ -160,7 +160,7 @@
 (delete-selection-mode 1)
 ;; Save state between sessions
 (desktop-save-mode t)
-(setq-default desktop-save t)
+(setq desktop-save t)
 
 ;; Visual Stuff
 ;;

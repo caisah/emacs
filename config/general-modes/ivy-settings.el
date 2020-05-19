@@ -10,13 +10,13 @@
 (counsel-mode 1)
 
 ;; Yes, use virtual buffers
-(setq-default ivy-use-virtual-buffers t)
+(setq ivy-use-virtual-buffers t)
 ;; Format the count
-(setq-default ivy-count-format "%d/%d ")
+(setq ivy-count-format "%d/%d ")
 ;; Continue scrolling at the top when hitting the end.
-(setq-default ivy-wrap t)
+(setq ivy-wrap t)
 ;; Make ivy larger
-(setq-default ivy-height 20)
+(setq ivy-height 20)
 
 ;; Counsel
 (global-set-key (kbd "M-x") 'counsel-M-x)

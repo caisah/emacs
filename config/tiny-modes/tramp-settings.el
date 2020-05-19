@@ -4,6 +4,8 @@
 ;;  Tramp config
 
 ;;; Code:
+(require 'tramp)
+
 (setq-default tramp-auto-save-directory "~/.emacs.d/cache"
               tramp-backup-directory-alist "~/.emacs.d/cache"
               tramp-persistency-file-name "tramp-persistency.el"
@@ -15,9 +17,7 @@
 
 (with-eval-after-load 'tramp
   (progn
-    (message "tramp loaded")))
-
-
+    (message "My init :: tramp loaded")))
 
 (provide 'tramp-settings)
 ;;; tramp-settings ends here

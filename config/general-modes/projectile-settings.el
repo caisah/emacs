@@ -8,7 +8,7 @@
   (progn
     (message "My init :: projectile loaded")
 
-    (setq-default
+    (setq
      ;; Use elisp
      projectile-indexing-method 'alien
      ;; Use ivy

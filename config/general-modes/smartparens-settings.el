@@ -11,8 +11,10 @@
     (require 'smartparens-config)
     (require 'smartparens-html)
 
-    (setq-default sp-highlight-pair-overlay nil
-                  sp-hybrid-kill-excessive-whitespace t)
+    (setq
+     sp-highlight-pair-overlay nil
+     sp-hybrid-kill-excessive-whitespace t)
+
     ;; Keys
     (define-key smartparens-mode-map (kbd "C-M-f") 'sp-forward-sexp)
     (define-key smartparens-mode-map (kbd "C-M-b") 'sp-backward-sexp)

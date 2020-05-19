@@ -9,7 +9,7 @@
   "Lines will not be wrapped."
   (toggle-truncate-lines 1))
 
-(setq-default
+(setq
  ;; Set modified char to 'm'
  ibuffer-modified-char 109
  ;; Set marked char to '*'
@@ -20,7 +20,7 @@
  ibuffer-default-sorting-mode 'major-mode)
 
 ;; Customize colors for buffer names
-(setq-default ibuffer-fontification-alist
+(setq ibuffer-fontification-alist
   '((10 (and buffer-file-name
              (buffer-modified-p (get-file-buffer buffer-file-name))) ibuffer-modified-face)
     (20 buffer-read-only ibuffer-read-only-face)

@@ -9,7 +9,7 @@
   (progn
     (message "org-mode loaded")
 
-    (setq-default org-src-fontify-natively t)))
+    (setq org-src-fontify-natively t)))
 
 (add-hook 'org-mode-hook 'flyspell-mode)
 (add-hook 'org-mode-hook 'turn-off-smartparens-mode)
