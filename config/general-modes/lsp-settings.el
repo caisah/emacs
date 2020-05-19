@@ -4,10 +4,10 @@
 ;; LSP configuration
 
 ;;; Code:
-(setq-default lsp-keymap-prefix "C-c l"
-              lsp-idle-delay 0.500
-              lsp-print-performance t
-              lsp-diagnostic-package :none)
+(setq lsp-keymap-prefix "C-c l"
+      lsp-idle-delay 0.500
+      lsp-print-performance t
+      lsp-diagnostic-package :none)
 
 (with-eval-after-load 'lsp-mode
   (progn

@@ -19,7 +19,7 @@
   (progn
     (message "My init :: company-quickhelp loaded")
     ;; show tooltip popup on key press
-    (setq-default company-quickhelp-delay nil)
+    (setq company-quickhelp-delay nil)
     (define-key company-active-map (kbd "C-j") #'company-quickhelp-manual-begin)))
 
 ;; show documentation when using company

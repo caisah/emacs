@@ -4,7 +4,7 @@
 ;; Calendar configuration
 
 ;;; Code:
-(setq-default european-calendar-style 't
+(setq european-calendar-style 't
               calendar-week-start-day 1
               holiday-local-holidays '((holiday-fixed 1 1 "Anul Nou")
                                        (holiday-fixed 1 2 "A doua zi de anul nou")

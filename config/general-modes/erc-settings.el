@@ -10,14 +10,14 @@
   (if (file-exists-p ercpass)
       (load ercpass)
     (progn
-      (setq-default freenode-pass "")
-      (setq-default snoonet-pass "")
+      (setq freenode-pass ""
+            snoonet-pass "")
       (message "My init :: warn :: Could not load .ercpass"))))
 
 (erc-services-mode 1)
 (erc-autojoin-mode 0)
 
-(setq-default erc-nickserv-identify-mode 'both
+(setq erc-nickserv-identify-mode 'both
               erc-nickserv-passwords
               `((freenode (("caisah" . ,freenode-pass)))
                 (Snoonet (("caisah" . ,snoonet-pass))))

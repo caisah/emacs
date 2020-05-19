@@ -24,7 +24,7 @@
          (name (car (last (split-string dir "/") 2))))
 
     (eshell "")
-    (rename-buffer (concat name " *shell*"))))
+    (rename-buffer (concat "* " name " shell*"))))
 
 (defun my-shell-other ()
   "Open shell buffer in the other window."

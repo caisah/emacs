@@ -8,7 +8,7 @@
   (progn
     (message "My init :: doc-view loaded")
 
-    (setq-default doc-view-continuous t)))
+    (setq doc-view-continuous t)))
 
 
 (provide 'docview-settings)
