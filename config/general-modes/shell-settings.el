@@ -6,9 +6,7 @@
 ;;; Code:
 (with-eval-after-load 'esh-mode
   (progn
-    (message "My init :: eshell-mode loaded")
-
-    (define-key eshell-mode-map (kbd "C-x l") 'rename-buffer)))
+    (message "My init :: eshell-mode loaded")))
 
 ;; show full width lines in shell mode
 (add-hook 'eshell-mode-hook '(lambda ()
@@ -24,7 +22,7 @@
          (name (car (last (split-string dir "/") 2))))
 
     (eshell "")
-    (rename-buffer (concat "* " name " shell*"))))
+    (rename-buffer (concat "*" name " shell*"))))
 
 (defun my-shell-other ()
   "Open shell buffer in the other window."
