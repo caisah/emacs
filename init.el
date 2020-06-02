@@ -18,13 +18,13 @@
 
 (defun my-subdirs-and-dir (dir)
   "Return a list containing the DIR and all subdirs of DIR."
-  (append
+  (cons
+   dir
    (seq-filter
     'file-directory-p
     (mapcar (lambda (name)
-              (expand-file-name name dir))
-            (cddr (directory-files dir))))
-   (list dir)))
+	      (expand-file-name name dir))
+	    (cddr (directory-files dir))))))
 
 (defun my-add-to-path-dirs (dirs)
   "Add to `load-path' all DIRS and subdirectories of DIRS."
