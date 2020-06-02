@@ -7,6 +7,7 @@
 (defvar *start-time* (current-time))
 
 (require 'cl-lib)
+
 ;; Defun my config dirs
 (defconst my-config-dir "~/.emacs.d/config")
 (defconst my-custom-package-dir "~/.emacs.d/custom-packages")
@@ -21,7 +22,7 @@
    (seq-filter
     'file-directory-p
     (mapcar (lambda (name)
-              (concat dir "/" name))
+              (expand-file-name name dir))
             (cddr (directory-files dir))))
    (list dir)))
 
