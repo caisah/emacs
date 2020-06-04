@@ -77,7 +77,6 @@
 (depends-on "tide")
 (depends-on "toml-mode")
 (depends-on "tuareg")
-(depends-on "twittering-mode")
 (depends-on "typescript-mode")
 (depends-on "web-mode")
 (depends-on "yaml-mode")

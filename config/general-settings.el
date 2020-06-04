@@ -204,7 +204,6 @@
 (require 'mc-settings)
 (require 'tramp-settings)
 (require 'calendar-settings)
-(require 'twitter-settings)
 (require 'eww-settings)
 (require 'erc-settings)
 (require 'lsp-settings)
