@@ -7,6 +7,7 @@
 (defvar *start-time* (current-time))
 
 (require 'cl-lib)
+(require 'seq)
 
 ;; Defun my config dirs
 (defconst my-config-dir "~/.emacs.d/config")
