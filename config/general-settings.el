@@ -217,6 +217,7 @@
 (require 'elm-config)
 (require 'typescript-config)
 (require 'reason-config)
+(require 'go-config)
 ;; (require 'ocaml-config)
 ;; (require 'other-languages-config)
 
