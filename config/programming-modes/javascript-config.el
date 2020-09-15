@@ -93,6 +93,19 @@ The order is: `standard', `eslint' `prettier' `prettier-eslint'."
   (let ((completion-ignore-case t))
     (all-completions (company-grab-symbol) candidates)))
 
+(defun my-js-repl-open-other-window ()
+  "Open js REPL in a new window."
+  (interactive)
+  (js-comint-repl js-comint-module-paths)
+  (other-window -1))
+
+(defun my-js-repl-reset ()
+  "Reset and clears js REPL."
+  (interactive)
+  (js-comint-reset-repl)
+  (js-comint-clear)
+  (other-window -1))
+
 (defun my-js-specific ()
   "Personal hook for \"js-mode\" major mode."
   (if (eq major-mode 'js-mode)
@@ -130,6 +143,11 @@ The order is: `standard', `eslint' `prettier' `prettier-eslint'."
       (local-set-key (kbd "C-c C-f") 'hs-toggle-hiding)
       (local-set-key  (kbd "M-.") 'xref-find-definitions)
       (local-set-key  (kbd "C-,") 'lsp-find-references)
+
+      (local-set-key (kbd "C-c C-r") 'my-js-repl-open-other-window)
+      (local-set-key (kbd "C-c C-e") 'js-comint-send-last-sexp)
+      (local-set-key (kbd "C-c C-b") 'js-comint-send-buffer)
+      (local-set-key (kbd "C-c C-c") 'my-js-repl-reset)
       )))
 
 (with-eval-after-load 'js
