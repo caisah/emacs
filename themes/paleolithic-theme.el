@@ -156,9 +156,9 @@
    `(show-paren-match ((t (:foreground "black" :background "gray60"))))
    `(show-paren-mismatch ((t (:foreground "black" :background "firebrick"))))
 
-   `(linum ((t (:foreground "gray40" :background "gray10" :weight light :height 0.9))))
-   `(line-number ((t (:inherit linum))))
-   `(line-number-current-line ((t (:inherit linum))))
+   `(line-number ((t (:foreground "gray40" :background "gray10" :weight light :height 0.9))))
+   `(line-number-current-line ((t (:inherit line-number))))
+   `(linum ((t (:inherit line-humber))))
 
    `(header-line ((t (:foreground "gray70" :background "gray20"))))
 
@@ -298,6 +298,14 @@
    `(helm-xref-file-name ((t (:inherit 'helm-moccur-buffer))))
    `(helm-xref-line-number ((t (:inherit 'helm-grep-lineno))))
 
+   ;; xref
+   `(xref-file-header ((t (:foreground "gray70" :background "gray20" :box (:line-width 4 :color "gray20")))))
+   `(xref-line-number ((t (:inherit line-number))))
+
+   ;; lsp
+   `(lsp-ui-doc-header ((t (:inherit 'xref-file-header))))
+   `(lsp-ui-doc-background ((t (:inherit 'default ))))
+   `(lsp-face-highlight-write ((t (:background "red" :foreground "gray85"))))
 
    ;; js2-mode
    `(js2-error ((t (:foreground "firebrick"))))
@@ -426,9 +434,6 @@
 
    ;; Merlin
    `(merlin-compilation-error-face ((t (:inherit 'flycheck-error))))
-
-   ;; LSP
-   `(lsp-face-highlight-write ((t (:background "gray35" :foreground "gray85"))))
 
    ;; discover key mode
    `(makey-key-mode-button-face ((t (:foreground "wheat3" :underline t))))
