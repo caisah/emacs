@@ -124,7 +124,7 @@ The order is: `standard', `eslint' `prettier' `prettier-eslint'."
       (editorconfig-mode 1)
 
       ;; Try to use eslint & prettier
-      (my-setup-js-checker-formater)
+      ;; (my-setup-js-checker-formater)
 
       (setq-local company-backends
                   '(company-lsp

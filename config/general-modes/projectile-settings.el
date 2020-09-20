@@ -23,8 +23,16 @@
 ;; Always use projectile
 (projectile-mode 1)
 
+(with-eval-after-load 'counsel-projectile
+  (progn
+    (message "My init :: counsel projectile loaded")
+
+    (define-key projectile-mode-map (kbd "s-h g") 'projectile-ag)
+))
+
 ;; Use counsel with projectile
 (counsel-projectile-mode 1)
+
 
 (provide 'projectile-settings)
 ;;; projectile-settings ends here
