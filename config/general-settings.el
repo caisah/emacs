@@ -46,6 +46,8 @@
 (setq custom-file (expand-file-name "config/emacs-custom.el" user-emacs-directory))
 ;; Make buffer names unique
 (setq uniquify-buffer-name-style 'post-forward)
+;; Don't create lock files
+(setq create-lockfiles nil)
 
 ;; Calendar
 (setq calendar-latitude 46.7667
