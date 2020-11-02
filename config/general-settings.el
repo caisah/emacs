@@ -21,6 +21,7 @@
 (when (eql system-type 'darwin)
   (progn
     (setq mac-command-modifier 'super)
+    (setq mac-option-modifier 'meta)
     (setq insert-directory-program "/usr/local/opt/coreutils/libexec/gnubin/ls")
     (setq shell-file-name "/usr/local/bin/bash")))
 
