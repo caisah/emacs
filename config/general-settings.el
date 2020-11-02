@@ -20,8 +20,12 @@
 ;; MAC
 (when (eql system-type 'darwin)
   (progn
+    ;; Use command as super
     (setq mac-command-modifier 'super)
+    ;; Use option as meta
     (setq mac-option-modifier 'meta)
+    ;; Used to disable s-h default shortcut
+    (setq mac-pass-command-to-system nil)
     (setq insert-directory-program "/usr/local/opt/coreutils/libexec/gnubin/ls")
     (setq shell-file-name "/usr/local/bin/bash")))
 
