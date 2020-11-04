@@ -6,10 +6,9 @@
 ;;; Code:
 (require 'tramp)
 
-(setq-default tramp-auto-save-directory "~/.emacs.d/cache"
-              tramp-backup-directory-alist "~/.emacs.d/cache"
-              tramp-persistency-file-name "tramp-persistency.el"
-              tramp-default-method "ssh")
+(setq-default tramp-default-method "ssh"
+	      tramp-verbose 9
+	      tramp-backup-directory-alist backup-directory-alist)
 
 ;; easily sudo with /sudo:root@remote-host:<path-to-file>
 (add-to-list 'tramp-default-proxies-alist '(nil "\\`root\\'" "/ssh:%h:"))
