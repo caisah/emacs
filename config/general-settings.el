@@ -31,8 +31,6 @@
 
 ;; Set gc limit
 (setq gc-cons-threshold (* 40 1024 1024))
-;; Enter debugger if an error is signaled.
-(setq debug-on-error t)
 ;; add node to the path
 (exec-path-from-shell-copy-env "NVM_DIR")
 
