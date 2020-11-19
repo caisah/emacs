@@ -17,7 +17,7 @@
  rm-excluded-modes (list " Anzu" " ARev" " SP/s" " SP" " Abbrev" " Isearch"
                          " A" " Guide"  " Undo-Tree" " PgLn" " MRev"
                          " skewer-html" " skewer-css"" Emmet" " hs"
-                         " λ" " Rbow" " vl" " Wrap" " Helm" " Projectile" " yas"
+                         " λ" " Rbow" " vl" " Wrap" " Projectile" " yas"
                          " company" " Tern" " ws" " WS" " Fly" " Merlin (default)"
                          " Interactive" " prettier" " EditorConfig" " ElDoc"
                          " Prettier" " Omit" " Async" " counsel" " ivy"))
