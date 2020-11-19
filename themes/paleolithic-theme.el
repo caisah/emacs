@@ -83,7 +83,7 @@
    `(cursor ((t (:background "chartreuse3" :foreground "black"))))
    `(region ((t (:background "gray20" :foreground "gray90"))))
    `(secondary-selection ((t (:background "gray25"))))
-   `(highlight ((t (:foreground "wheat3" :background nil :weight bold))))
+   `(highlight ((t (:foreground "Wheat3" :background "gray25"))))
    `(hl-line ((t (:foreground "gray80" :background "gray20" :weight bold))))
    `(minibuffer-prompt ((t (:foreground "gray55" :background "gray8" :height 0.9 :box (:line-width 4 :color "gray8")))))
 
@@ -305,7 +305,6 @@
    ;; lsp
    `(lsp-ui-doc-header ((t (:inherit 'xref-file-header))))
    `(lsp-ui-doc-background ((t (:inherit 'default ))))
-   `(lsp-face-highlight-write ((t (:background "red" :foreground "gray85"))))
 
    ;; js2-mode
    `(js2-error ((t (:foreground "firebrick"))))
