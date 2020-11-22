@@ -75,6 +75,8 @@
 
 ;; nov-mode for epub
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+;; dot-env-mode for .env files
+(add-to-list 'auto-mode-alist '("\\.env\\..*\\'" . dotenv-mode))
 
 ;; Editor config
 (require 'editorconfig)
