@@ -8,6 +8,8 @@
 (ivy-mode 1)
 ;; Use counsel
 (counsel-mode 1)
+;; Use avy
+(avy-setup-default)
 
 ;; Yes, use virtual buffers
 (setq ivy-use-virtual-buffers t)
@@ -34,7 +36,7 @@
 (global-set-key (kbd "M-o") 'swiper-avy)
 
 ;; avy
-(global-set-key (kbd "C-'") 'ivy-avy)
+(global-set-key (kbd "C-'") 'avy-goto-word-1)
 
 ;; Ivy
 (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
