@@ -18,6 +18,7 @@
 (depends-on "discover-my-major")
 (depends-on "djvu")
 (depends-on "dockerfile-mode")
+(depends-on "dotenv-mode")
 (depends-on "editorconfig")
 (depends-on "elfeed")
 (depends-on "elm-mode")
