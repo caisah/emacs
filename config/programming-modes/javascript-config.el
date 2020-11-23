@@ -12,7 +12,8 @@
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js-mode))
-(add-to-list 'interpreter-mode-alist '("node" . js-mode))
+(add-to-list 'auto-mode-alist '("mjs" . js-mode))
+
 
 (defun my-poor-standard-format ()
   "Formats buffer with prettier standard.
