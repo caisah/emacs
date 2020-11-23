@@ -116,7 +116,7 @@ The order is: `standard', `eslint' `prettier' `prettier-eslint'."
       ;; Enable yasnippet
       (yas-minor-mode 1)
       ;; Enable code navigation
-      (lsp t)
+      (lsp)
       ;; Don't consider camelcased full words
       (subword-mode 1)
       ;; Don't consider underscored full words
@@ -126,13 +126,6 @@ The order is: `standard', `eslint' `prettier' `prettier-eslint'."
 
       ;; Try to use eslint & prettier
       ;; (my-setup-js-checker-formater)
-
-      (setq-local company-backends
-                  '(company-lsp
-                    company-dabbrev-code
-                    company-dabbrev
-                    company-files
-                    company-keywords))
 
       ;; Change mode name to JS
       (setq mode-name "JS")
