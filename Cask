@@ -7,7 +7,6 @@
 (depends-on "anzu")
 (depends-on "async")
 (depends-on "company")
-(depends-on "company-lsp")
 (depends-on "company-quickhelp")
 (depends-on "counsel")
 (depends-on "counsel-projectile")

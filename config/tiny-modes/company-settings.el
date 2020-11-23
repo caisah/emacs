@@ -12,7 +12,7 @@
     (define-key company-active-map (kbd "M-p") nil)
     (define-key company-active-map (kbd "C-n") #'company-select-next)
     (define-key company-active-map (kbd "C-p") #'company-select-previous)
-    (define-key company-mode-map (kbd "C-o") 'company-complete)))
+    (define-key company-mode-map (kbd "C-o") #'company-capf)))
 
 
 (with-eval-after-load 'company-quickhelp
