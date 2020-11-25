@@ -13,72 +13,73 @@
 (require 'pallet)
 (pallet-mode t)
 
-;; Don't log bash profile warning
-(setq-default exec-path-from-shell-check-startup-files nil)
-;; Set exec-path as $PATH
-(exec-path-from-shell-initialize)
-;; MAC
-(when (eql system-type 'darwin)
-  (progn
-    ;; Use command as super
-    (setq mac-command-modifier 'super)
-    ;; Use option as meta
-    (setq mac-option-modifier 'meta)
-    ;; Used to disable s-h default shortcut
-    (setq mac-pass-command-to-system nil)
-    (setq insert-directory-program "/usr/local/opt/coreutils/libexec/gnubin/ls")
-    (setq shell-file-name "/usr/local/bin/bash")))
-
 ;; Set gc limit
 (setq gc-cons-threshold (* 40 1024 1024))
 ;; add node to the path
 (exec-path-from-shell-copy-env "NVM_DIR")
+;; Don't log bash profile warning
+(setq-default exec-path-from-shell-check-startup-files nil)
+;; Set exec-path as $PATH
+(exec-path-from-shell-initialize)
 
+;; MAC
+(when (eql system-type 'darwin)
+  (setq-default
+   ;; Use command as super
+   mac-command-modifier 'super
+   ;; Use option as meta
+   mac-option-modifier 'meta
+   ;; Used to disable s-h default shortcut
+   mac-pass-command-to-system nil
+
+   insert-directory-program "/usr/local/opt/coreutils/libexec/gnubin/ls"
+   shell-file-name "/usr/local/bin/bash"))
 
 ;; Files created by Emacs
 ;; Set .litter as the default dir for custom emacs files
-(setq no-littering-etc-directory
-      (expand-file-name ".litter/etc/" user-emacs-directory))
-(setq no-littering-var-directory
-      (expand-file-name ".litter/var/" user-emacs-directory))
+(setq-default
+ no-littering-etc-directory (expand-file-name ".litter/etc/" user-emacs-directory)
+ no-littering-var-directory (expand-file-name ".litter/var/" user-emacs-directory))
 (require 'no-littering)
+
 ;; Set backup dir
 (setq auto-save-file-name-transforms
-      `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
-;; Set the temp dir
-(setq temporary-file-directory "~/.emacs.d/.litter/temp")
-;; Set custom file to emacs-custom.el
-(setq custom-file (expand-file-name "config/emacs-custom.el" user-emacs-directory))
-;; Make buffer names unique
-(setq uniquify-buffer-name-style 'post-forward)
-;; Don't create lock files
-(setq create-lockfiles nil)
+      `((".*" ,(no-littering-expand-var-file-name "auto-save/") t))
+      ;; Set the temp dir
+      temporary-file-directory "~/.emacs.d/.litter/temp"
+      ;; Set custom file to emacs-custom.el
+      custom-file (expand-file-name "config/emacs-custom.el" user-emacs-directory))
 
-;; Calendar
-(setq calendar-latitude 46.7667
-      calendar-longitude 23.5833)
-
-;; Consider all themes safe
-(setq custom-safe-themes t
-      ;; don't ask to save when copiling
-      compilation-ask-about-save nil
-      ;; don't save abbrevs
-      save-abbrevs nil
-      ;; don't insert tabs on indent
-      indent-tabs-mode nil
-      ;; start emacs fullscreen and maximized
-      initial-frame-alist (quote ((fullscreen . maximized)))
-      ;; don't use angle brackets
-      uniquify-buffer-name-style 'post-forward
-      ;; don't put anything is *scratch*
-      initial-scratch-message ""
-      ;; highlight trailing spaces & tabs
-      whitespace-style '(face trailing indentation::tabs)
-      ;; highlight if more than 180 chars on line
-      whitespace-line-column 180)
-
-;; set language for time to Eng
-(setq system-time-locale "C")
+(setq-default
+ ;; Make buffer names unique
+ uniquify-buffer-name-style 'post-forward
+ ;; Don't create lock files
+ create-lockfiles nil
+ ;; Calendar
+ calendar-latitude 46.7667
+ calendar-longitude 23.5833
+ ;; Consider all themes safe
+ custom-safe-themes t
+ ;; don't ask to save when copiling
+ compilation-ask-about-save nil
+ ;; don't save abbrevs
+ save-abbrevs nil
+ ;; don't insert tabs on indent
+ indent-tabs-mode nil
+ ;; start emacs fullscreen and maximized
+ initial-frame-alist (quote ((fullscreen . maximized)))
+ ;; don't use angle brackets
+ uniquify-buffer-name-style 'post-forward
+ ;; don't put anything is *scratch*
+ initial-scratch-message ""
+ ;; highlight trailing spaces & tabs
+ whitespace-style '(face trailing indentation::tabs)
+ ;; highlight if more than 180 chars on line
+ whitespace-line-column 180
+ ;; set language for time to Eng
+ system-time-locale "C"
+ ;; Always save desktop
+ desktop-save t)
 
 ;; use UTF-8
 (set-language-environment "UTF-8")
@@ -167,7 +168,6 @@
 (delete-selection-mode 1)
 ;; Save state between sessions
 (desktop-save-mode t)
-(setq desktop-save t)
 
 ;; Visual Stuff
 ;;
