@@ -1,7 +1,7 @@
 ;;; paleolithic-theme.el --- Dark Gray Theme
 
 ;; Author: Vlad Piersec <vlad.piersec@gmail.com>
-;; Keywords: theme, themes, gray, grey, dark
+;; Keywords: faces
 ;; Version: 1.0
 
 ;;;; License:
@@ -85,7 +85,7 @@
    `(secondary-selection ((t (:background "gray25"))))
    `(highlight ((t (:foreground "Wheat3" :background "gray25"))))
    `(hl-line ((t (:foreground "gray80" :background "gray20" :weight bold))))
-   `(minibuffer-prompt ((t (:foreground "gray55" :background "gray8" :height 0.9 :box (:line-width 4 :color "gray8")))))
+   `(minibuffer-prompt ((t (:foreground "gray55" :background "gray10" :height 0.9))))
 
    ;; ibuffer
    `(ibuffer-read-only-face ((t (:foreground "gray50"))))
@@ -121,17 +121,17 @@
    `(hi-yellow ((t (:background "LightGoldenrod" :foreground "gray10"))))
 
    ;; modeline
-   `(mode-line ((t (:background "black" :foreground "gray70" :box (:line-width 4 :color "black")))))
+   `(mode-line ((t (:background "gray20" :foreground "gray70" :box (:line-width 4 :color "gray20")))))
    `(mode-line-buffer-id ((t (:weight bold))))
    `(mode-line-emphasis ((t (:weight bold))))
-   `(mode-line-inactive ((t (:background "gray15" :foreground "gray50" :box (:line-width 4 :color "gray15")))))
+   `(mode-line-inactive ((t (:background "gray13" :foreground "gray50" :box (:line-width 4 :color "gray13")))))
    `(anzu-mode-line ((t (:foreground "firebrick"))))
    `(anzu-replace-to ((t (:foreground "gray90" :background "gray20" :weight bold))))
 
    ;; sml
-   `(sml/col-number ((t (:foreground "gray30"))))
+   `(sml/col-number ((t (:foreground "gray40"))))
    `(sml/numbers-separator ((t (:foreground "gray30"))))
-   `(sml/line-number ((t (:foreground "gray70" :weight normal))))
+   `(sml/line-number ((t (:foreground "gray80" :weight normal))))
    `(sml/filename ((t (:foreground "gray70" :weight bold))))
    `(sml/folder ((t (:foreground "gray40"))))
    `(sml/position-percentage ((t (:foreground "gray40" :weight normal))))
@@ -437,8 +437,7 @@
    ;; discover key mode
    `(makey-key-mode-button-face ((t (:foreground "wheat3" :underline t))))
 
-   `(Info-quoted ((t (:background "gray20" :box (:line-width 2 :color "grey20") :height 1.0 :width condensed))))
-   ))
+   `(Info-quoted ((t (:background "gray20" :box (:line-width 2 :color "grey20") :height 1.0 :width condensed))))))
 
 (custom-theme-set-variables
  'paleolithic
