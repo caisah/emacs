@@ -248,6 +248,7 @@
    `(ivy-subdir ((t (:foreground "gray85" :weight bold))))
    `(ivy-remote ((t (:foreground "ForestGreen"))))
    `(ivy-virtual ((t (:foreground "gray50"))))
+   `(ivy-highlight-face ((t nil)))
 
    ;; swiper
    `(swiper-line-face ((t (:background "gray25"))))
