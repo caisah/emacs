@@ -14,13 +14,7 @@
  ;; max 15 chars
  sml/mode-width 15
  ;; don't show these modes in mode-line
- rm-excluded-modes (list " Anzu" " ARev" " SP/s" " SP" " Abbrev" " Isearch"
-                         " A" " Guide"  " Undo-Tree" " PgLn" " MRev"
-                         " skewer-html" " skewer-css"" Emmet" " hs"
-                         " λ" " Rbow" " vl" " Wrap" " Projectile" " yas"
-                         " company" " Tern" " ws" " WS" " Fly" " Merlin (default)"
-                         " Interactive" " prettier" " EditorConfig" " ElDoc"
-                         " Prettier" " Omit" " Async" " counsel" " ivy"))
+ rm-whitelist (mapconcat 'identity '("FlyC") "\\|"))
 
 (sml/setup)
 

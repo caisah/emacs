@@ -19,6 +19,8 @@
     (setq-default
      lsp-idle-delay 0.500
      lsp-print-performance t
+     lsp-modeline-diagnostics-enable nil
+     lsp-diagnostics-disabled-modes '(js-mode)
      lsp-diagnostic-package :none)
     (define-key lsp-mode-map (kbd "s-l i") 'lsp-ivy-workspace-symbol)))
 
