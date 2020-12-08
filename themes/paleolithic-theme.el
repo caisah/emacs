@@ -306,6 +306,8 @@
    ;; lsp
    `(lsp-ui-doc-header ((t (:inherit 'xref-file-header))))
    `(lsp-ui-doc-background ((t (:inherit 'default ))))
+   `(lsp-modeline-code-actions-face ((t (:foreground "grey60"))))
+   `(lsp-modeline-code-actions-preferred-face ((t (:foreground "grey70"))))
 
    ;; js2-mode
    `(js2-error ((t (:foreground "firebrick"))))
