@@ -37,6 +37,7 @@
 (depends-on "htmlize")
 (depends-on "inf-mongo")
 (depends-on "ivy-hydra")
+(depends-on "ivy-rich")
 (depends-on "js-comint")
 (depends-on "json-mode")
 (depends-on "json-reformat")
