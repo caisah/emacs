@@ -18,6 +18,7 @@
 
     (setq-default
      lsp-idle-delay 0.500
+     lsp-headerline-breadcrumb-enable nil
      lsp-print-performance t
      lsp-modeline-diagnostics-enable nil
      lsp-diagnostics-disabled-modes '(js-mode)
