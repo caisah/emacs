@@ -25,10 +25,10 @@
 ;; MAC
 (when (eql system-type 'darwin)
   (setq-default
-   ;; Use command as super
-   mac-command-modifier 'super
-   ;; Use option as meta
-   mac-option-modifier 'meta
+   ;; Use command as meta
+   mac-command-modifier 'meta
+   ;; Use option as super
+   mac-option-modifier 'super
    ;; Used to disable s-h default shortcut
    mac-pass-command-to-system nil
 
