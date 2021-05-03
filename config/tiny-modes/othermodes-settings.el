@@ -81,9 +81,6 @@
 ;; Editor config
 (require 'editorconfig)
 
-;; Enable emoji
-(global-emojify-mode 1)
-
 ;; Enable undo tree mode
 (global-undo-tree-mode 1)
 
