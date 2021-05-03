@@ -163,7 +163,7 @@
 (global-set-key (kbd "<f1>")
                 (lambda () (interactive) (switch-to-buffer "*Messages*")))
 
-(global-set-key (kbd "C-`") 'er/expand-region)
+(global-set-key (kbd "C-§") 'er/expand-region)
 
 (global-set-key (kbd "C-S-s") 'anzu-query-replace-regexp)
 
