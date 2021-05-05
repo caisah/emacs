@@ -9,7 +9,7 @@
                              (m1-bash . "/opt/homebrew/bin/bash")
                              (x64-cask . "/usr/local/share/emacs/site-lisp/cask/cask.el")
                              (x64-ls . "/usr/local/opt/coreutils/libexec/gnubin/ls")
-                             (x65-bash . "/usr/local/bin/bash")))
+                             (x64-bash . "/usr/local/bin/bash")))
 
 ;; Cask & coreutils + bash
 (if (eql system-type 'darwin)
@@ -24,8 +24,8 @@
         (progn
           (require 'cask (cdr (assoc 'x64-cask darwin-assoc)))
           (setq-default
-             insert-directory-program (cdr (assoc 'm1-ls darwin-assoc))
-             shell-file-name (cdr (assoc 'm1-bash darwin-assoc)))))
+             insert-directory-program (cdr (assoc 'x64-ls darwin-assoc))
+             shell-file-name (cdr (assoc 'x64-bash darwin-assoc)))))
 
       ;; Set mac modifiers
       (setq-default
