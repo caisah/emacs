@@ -258,10 +258,10 @@
    `(swiper-match-face-4 ((t (:foreground "wheat3" :background nil :weight bold))))
 
    ;; avy
-   `(avy-lead-face ((t (:foreground "LemonChiffon3" :background "gray20" :height 0.9))))
-   `(avy-lead-face-0 ((t (:foreground "LemonChiffon3" :background "gray20" :height 0.9))))
-   `(avy-lead-face-1 ((t (:foreground "LemonChiffon3" :background "gray20" :height 0.9))))
-   `(avy-lead-face-2 ((t (:foreground "LemonChiffon3" :background "gray20" :height 0.9))))
+   `(avy-lead-face ((t (:foreground "wheat3" :background "gray20" :weight bold))))
+   `(avy-lead-face-0 ((t (:foreground "wheat3" :background "gray20" :weight bold))))
+   `(avy-lead-face-1 ((t (:foreground "wheat3" :background "gray20" :weight bold))))
+   `(avy-lead-face-2 ((t (:foreground "wheat3" :background "gray20" :weight bold))))
 
    ;; hydra
    `(hydra-face-pink ((t (:foreground "wheat3" :weight bold))))
