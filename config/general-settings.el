@@ -4,37 +4,11 @@
 ;;  General settings loads all the other specific settings & set variables
 
 ;;; Code:
-(setq-default darwin-assoc '((m1-cask . "/opt/homebrew/share/emacs/site-lisp/cask/cask.el")
-                             (m1-ls . "/opt/homebrew/opt/coreutils/libexec/gnubin/ls")
-                             (m1-bash . "/opt/homebrew/bin/bash")
-                             (x64-cask . "/usr/local/share/emacs/site-lisp/cask/cask.el")
-                             (x64-ls . "/usr/local/opt/coreutils/libexec/gnubin/ls")
-                             (x64-bash . "/usr/local/bin/bash")))
+
 
 ;; Cask & coreutils + bash
 (if (eql system-type 'darwin)
-    (progn
-      ;; use specific files based on cask location
-      (if (file-exists-p (cdr (assoc 'm1-cask darwin-assoc)))
-	  (progn
-            (require 'cask (cdr (assoc 'm1-cask darwin-assoc)))
-            (setq-default
-             insert-directory-program (cdr (assoc 'm1-ls darwin-assoc))
-             shell-file-name (cdr (assoc 'm1-bash darwin-assoc))))
-        (progn
-          (require 'cask (cdr (assoc 'x64-cask darwin-assoc)))
-          (setq-default
-             insert-directory-program (cdr (assoc 'x64-ls darwin-assoc))
-             shell-file-name (cdr (assoc 'x64-bash darwin-assoc)))))
-
-      ;; Set mac modifiers
-      (setq-default
-       ;; Use command as meta
-       mac-command-modifier 'meta
-       ;; Use option as super
-       mac-option-modifier 'super
-       ;; Used to disable s-h default shortcut
-       mac-pass-command-to-system nil))
+    (require 'mac-settings)
 
   ;; On linux load cask from specific dir
   (require 'cask "~/.cask/cask.el"))
