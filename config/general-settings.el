@@ -19,6 +19,10 @@
 
 ;; Set gc limit
 (setq gc-cons-threshold (* 40 1024 1024))
+
+;; Increase the amount of data which Emacs reads from the process
+(setq read-process-output-max (* 3 1024 1024))
+
 ;; add node to the path
 (exec-path-from-shell-copy-env "NVM_DIR")
 ;; Don't log bash profile warning
