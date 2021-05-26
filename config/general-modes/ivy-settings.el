@@ -33,10 +33,9 @@
 ;; Swiper
 (global-set-key (kbd "C-s") 'swiper-isearch)
 (global-set-key (kbd "M-i") 'swiper-thing-at-point)
-(global-set-key (kbd "M-o") 'swiper-avy)
 
 ;; avy
-(global-set-key (kbd "C-'") 'avy-goto-word-1)
+(global-set-key (kbd "M-o") 'avy-goto-word-1)
 
 ;; Ivy
 (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
