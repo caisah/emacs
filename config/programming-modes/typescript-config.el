@@ -14,7 +14,7 @@
   (setq mode-name "TypeScript")
 
   ;; Enable TIDE
-  (tide-setup)
+  ;; (tide-setup)
 
   ;; Enable flycheck & eldoc
   (flycheck-mode +1)
