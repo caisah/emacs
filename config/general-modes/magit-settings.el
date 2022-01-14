@@ -12,6 +12,8 @@
   (progn
     (message "My init :: magit loaded")
 
+    (define-key magit-mode-map (kbd "C-c a") 'magit-commit-amend)
+
     (setq magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1
           transient-default-level 5)))
 
