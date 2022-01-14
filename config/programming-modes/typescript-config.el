@@ -19,6 +19,8 @@
   ;; Enable flycheck & eldoc
   (flycheck-mode +1)
   (eldoc-mode +1)
+
+  (lsp)
   ;; Enable yasnippet
   (yas-reload-all)
   (yas-minor-mode-on)
