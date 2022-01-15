@@ -123,6 +123,8 @@
 (global-set-key (kbd "C-S-d") 'delete-region)
 (global-set-key (kbd "C-x M-w") 'my-copy-buffer-file-name)
 (global-set-key (kbd "C-x i") 'ibuffer)
+(global-unset-key (kbd "C-S-K"))
+(global-set-key (kbd "C-S-K") 'kill-whole-line)
 
 (global-set-key (kbd "<C-tab>") 'indent-relative)
 
