@@ -5,7 +5,7 @@ recentf
 /.cask/
 /cache/
 /.litter/
-!/cache/temp/.empty
+/!.litter/temp/.empty
 /themes/color-theme.el
 /projectile-bookmarks.eld
 /.mc-lists.el
@@ -18,3 +18,4 @@ recentf
 /image-dired/
 /nov-places
 /config/general-modes/elfeed-settings.el
+/.DS_Store
