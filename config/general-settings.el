@@ -74,7 +74,9 @@
  ;; set language for time to Eng
  system-time-locale "C"
  ;; Always save desktop
- desktop-save t)
+ desktop-save t
+ ;; Move to help buffer when opened
+ help-window-select t)
 
 ;; use UTF-8
 (set-language-environment "UTF-8")
