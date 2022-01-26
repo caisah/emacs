@@ -142,6 +142,9 @@
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
+;; Window navigation
+(global-set-key (kbd "C-S-o") 'previous-window-any-frame)
+
 (global-set-key (kbd "<f1>")
                 (lambda () (interactive) (switch-to-buffer "*Messages*")))
 
