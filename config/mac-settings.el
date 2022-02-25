@@ -33,6 +33,8 @@
  ;; Used to disable s-h default shortcut
  mac-pass-command-to-system nil)
 
+;; Use aspell instead of ispell
+(setq ispell-program-name "/opt/homebrew/bin/aspell")
 
 (provide 'mac-settings)
 ;;; mac-settings ends here
