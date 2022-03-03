@@ -39,6 +39,7 @@
 
 (with-eval-after-load 'typescript-mode
   (progn
+    (require 'eslint-fix)
     (message "typescript-mode loaded")))
 
 ;; Export
