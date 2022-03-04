@@ -36,8 +36,8 @@
   :global nil
   :lighter " ESFix"
   (if eslint-fix-mode
-      (add-hook 'before-save-hook 'eslint-fix nil 'local)
-    (remove-hook 'before-save-hook 'eslint-fix 'local)))
+      (add-hook 'after-save-hook 'eslint-fix nil 'local)
+    (remove-hook 'after-save-hook 'eslint-fix 'local)))
 
 (provide 'eslint-fix)
 
