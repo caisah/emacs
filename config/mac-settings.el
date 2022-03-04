@@ -36,5 +36,12 @@
 ;; Use aspell instead of ispell
 (setq ispell-program-name "/opt/homebrew/bin/aspell")
 
+;; Support emojis
+(if (version< "27.0" emacs-version)
+           (set-fontset-font
+            "fontset-default" 'unicode "Apple Color Emoji" nil 'prepend)
+         (set-fontset-font
+          t 'symbol (font-spec :family "Apple Color Emoji") nil 'prepend))
+
 (provide 'mac-settings)
 ;;; mac-settings ends here
