@@ -48,6 +48,33 @@
   (kill-new (buffer-file-name))
   (message "Copied: %s" buffer-file-name))
 
+(defun index-template (name)
+  (format "export { default } from './%s';" name))
+
+(defun styles-template (name)
+  (format "import { createUsestyles } from 'react-jss';\n\nexport default createUseStyles({\nroot:{\n\n}\n}, { name: '%s'});" name))
+
+(defun main-template (name)
+  (format "export default function %s({}){\n\n};" name))
+
+(defun my-new-ts-component (name)
+  "New NAME ts component."
+  (interactive "sComponent: ")
+  (progn
+    (let ((types-file (concat name "/types.ts"))
+          (styles-file (concat name "/styles.ts"))
+          (main-file (concat name "/" name ".tsx"))
+          (index-file (concat name "/index.ts")))
+      (make-empty-file types-file)
+      (make-empty-file styles-file)
+      (make-empty-file main-file)
+      (make-empty-file index-file)
+
+      (append-to-file (index-template name) nil index-file)
+      (append-to-file (styles-template name) nil styles-file)
+      (append-to-file (main-template name) nil main-file)
+      (message (concat "Created component " name)))))
+
 ;; Export
 (provide 'my-functions)
 
