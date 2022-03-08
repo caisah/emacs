@@ -16,14 +16,11 @@
   ;; Enable TIDE
   ;; (tide-setup)
 
+  (lsp)
+
   ;; Enable flycheck & eldoc
   (flycheck-mode +1)
   (eldoc-mode +1)
-
-  (lsp)
-  ;; Enable yasnippet
-  (yas-reload-all)
-  (yas-minor-mode-on)
 
   (setq flycheck-check-syntax-automatically '(save mode-enabled)))
 

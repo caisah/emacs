@@ -61,7 +61,7 @@
 (depends-on "list-environment")
 (depends-on "logito")
 (depends-on "lsp-ivy")
-(depends-on "lsp-mode" "6.2.1")
+(depends-on "lsp-mode")
 (depends-on "lv" "0")
 (depends-on "magit")
 (depends-on "magit-section" "20211004")
