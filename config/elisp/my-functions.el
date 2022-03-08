@@ -48,14 +48,22 @@
   (kill-new (buffer-file-name))
   (message "Copied: %s" buffer-file-name))
 
+
+(defun my-read-file (filename)
+  "Return the contents of FILENAME."
+  (with-temp-buffer
+    (insert-file-contents filename)
+    (buffer-string)))
+
 (defun index-template (name)
-  (format "export { default } from './%s';" name))
+  (format  (my-read-file "~/.emacs.d/config/elisp/templates/index.ts") name))
 
 (defun styles-template (name)
-  (format "import { createUsestyles } from 'react-jss';\n\nexport default createUseStyles({\nroot:{\n\n}\n}, { name: '%s'});" name))
+  (format  (my-read-file "~/.emacs.d/config/elisp/templates/styles.ts") name))
+
 
 (defun main-template (name)
-  (format "export default function %s({}){\n\n};" name))
+  (format (my-read-file "~/.emacs.d/config/elisp/templates/main.ts") name))
 
 (defun my-new-ts-component (name)
   "New NAME ts component."
