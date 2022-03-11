@@ -1,3 +1,6 @@
+#!/bin/bash
+set -e
+
 echo "Cleaning..."
 cd ~/.emacs.d
 echo "Removing old packages"
