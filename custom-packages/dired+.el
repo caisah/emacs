@@ -4,13 +4,13 @@
 ;; Description: Extensions to Dired.
 ;; Author: Drew Adams
 ;; Maintainer: Drew Adams (concat "drew.adams" "@" "oracle" ".com")
-;; Copyright (C) 1999-2021, Drew Adams, all rights reserved.
+;; Copyright (C) 1999-2022, Drew Adams, all rights reserved.
 ;; Created: Fri Mar 19 15:58:58 1999
-;; Version: 2020.12.01
+;; Version: 2022.02.17
 ;; Package-Requires: ()
-;; Last-Updated: Mon May 10 09:08:06 2021 (-0700)
+;; Last-Updated: Thu Mar 31 09:14:00 2022 (-0700)
 ;;           By: dradams
-;;     Update #: 12975
+;;     Update #: 13097
 ;; URL: https://www.emacswiki.org/emacs/download/dired%2b.el
 ;; Doc URL: https://www.emacswiki.org/emacs/DiredPlus
 ;; Keywords: unix, mouse, directories, diredp, dired
@@ -18,24 +18,27 @@
 ;;
 ;; Features that might be required by this library:
 ;;
-;;   `apropos', `apropos+', `autofit-frame', `avoid', `backquote',
-;;   `bookmark', `bookmark+', `bookmark+-1', `bookmark+-bmu',
-;;   `bookmark+-key', `bookmark+-lit', `button', `bytecomp', `cconv',
-;;   `cl', `cl-lib', `cmds-menu', `col-highlight', `crosshairs',
-;;   `custom', `dired', `dired+', `dired-aux', `dired-loaddefs',
-;;   `dired-x', `doremi', `doremi-frm', `easymenu', `facemenu',
-;;   `facemenu+', `faces', `faces+', `fit-frame', `font-lock',
-;;   `font-lock+', `font-lock-menus', `format-spec', `frame-cmds',
-;;   `frame-fns', `gv', `help+', `help-fns', `help-fns+',
-;;   `help-macro', `help-macro+', `help-mode', `hexrgb', `highlight',
-;;   `hl-line', `hl-line+', `image', `image-dired', `image-file',
-;;   `image-mode', `info', `info+', `kmacro', `macroexp', `menu-bar',
-;;   `menu-bar+', `misc-cmds', `misc-fns', `mwheel', `naked',
-;;   `palette', `pp', `pp+', `radix-tree', `replace', `ring',
-;;   `second-sel', `strings', `syntax', `text-mode', `thingatpt',
-;;   `thingatpt+', `timer', `vline', `w32-browser',
-;;   `w32browser-dlgopen', `wid-edit', `wid-edit+', `widget',
-;;   `zones'.
+;;   `apropos', `apropos+', `auth-source', `autofit-frame', `avoid',
+;;   `backquote', `bookmark', `bookmark+', `bookmark+-1',
+;;   `bookmark+-bmu', `bookmark+-key', `bookmark+-lit', `button',
+;;   `bytecomp', `cconv', `cl', `cl-generic', `cl-lib', `cl-macs',
+;;   `cmds-menu', `col-highlight', `crosshairs', `custom', `dired',
+;;   `dired+', `dired-aux', `dired-loaddefs', `dired-x', `doremi',
+;;   `doremi-frm', `easymenu', `eieio', `eieio-core',
+;;   `eieio-loaddefs', `epg-config', `facemenu', `facemenu+',
+;;   `faces', `faces+', `fit-frame', `font-lock', `font-lock+',
+;;   `font-lock-menus', `format-spec', `frame-cmds', `frame-fns',
+;;   `gv', `help+', `help-fns', `help-fns+', `help-macro',
+;;   `help-macro+', `help-mode', `hexrgb', `highlight', `hl-line',
+;;   `hl-line+', `image', `image-dired', `image-file', `image-mode',
+;;   `info', `info+', `kmacro', `macroexp', `menu-bar', `menu-bar+',
+;;   `misc-cmds', `misc-fns', `mwheel', `naked', `package',
+;;   `palette', `password-cache', `pp', `pp+', `radix-tree', `rect',
+;;   `replace', `ring', `second-sel', `seq', `strings', `syntax',
+;;   `tabulated-list', `text-mode', `thingatpt', `thingatpt+',
+;;   `timer', `url-handlers', `url-parse', `url-vars', `vline',
+;;   `w32-browser', `w32browser-dlgopen', `wid-edit', `wid-edit+',
+;;   `widget', `zones'.
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -486,10 +489,11 @@
 ;;    `diredp-copy-abs-filenames-as-kill-recursive',
 ;;    `diredp-copy-filename-as-kill-recursive',
 ;;    `diredp-copy-tags-this-file', `diredp-copy-this-file',
-;;    `diredp-decrypt-this-file', `diredp-delete-this-file',
-;;    `diredp-describe-autofile', `diredp-describe-file',
-;;    `diredp-describe-marked-autofiles', `diredp-describe-mode',
-;;    `diredp-dired-for-files', `diredp-dired-for-files-other-window',
+;;    `diredp-create-file-here', `diredp-decrypt-this-file',
+;;    `diredp-delete-this-file', `diredp-describe-autofile',
+;;    `diredp-describe-file', `diredp-describe-marked-autofiles',
+;;    `diredp-describe-mode', `diredp-dired-for-files',
+;;    `diredp-dired-for-files-other-window',
 ;;    `diredp-dired-inserted-subdirs', `diredp-dired-plus-help',
 ;;    `diredp-dired-recent-dirs',
 ;;    `diredp-dired-recent-dirs-other-window',
@@ -565,7 +569,8 @@
 ;;    `diredp-mark-files-tagged-all', `diredp-mark-files-tagged-none',
 ;;    `diredp-mark-files-tagged-not-all',
 ;;    `diredp-mark-files-tagged-some',
-;;    `diredp-mark-files-tagged-regexp', `diredp-mark-region-files',
+;;    `diredp-mark-files-tagged-regexp', `diredp-mark-if-sexp',
+;;    `diredp-mark-if-sexp-recursive', `diredp-mark-region-files',
 ;;    `diredp-mark-region-files-with-char',
 ;;    `diredp-mark-sexp-recursive' (Emacs 22+),
 ;;    `diredp-mark/unmark-autofiles', `diredp-mark/unmark-extension',
@@ -590,6 +595,7 @@
 ;;    `diredp-mouse-mark-region-files', `diredp-mouse-mark/unmark',
 ;;    `diredp-mouse-unmark', `diredp-mouse-upcase',
 ;;    `diredp-mouse-view-file', `diredp-move-file' (Emacs 24+),
+;;    `diredp-move-files-named-in-kill-ring',
 ;;    `diredp-multiple-w32-browser-recursive',
 ;;    `diredp-nb-marked-in-mode-name', `diredp-next-dirline',
 ;;    `diredp-next-line', `diredp-next-subdir', `diredp-omit-marked',
@@ -601,6 +607,7 @@
 ;;    `diredp-relsymlink-this-file',
 ;;    `diredp-remove-all-tags-this-file',
 ;;    `diredp-remove-file-from-recentf',
+;;    `diredp-remove-inserted-subdirs',
 ;;    `diredp-remove-this-from-recentf', `diredp-rename-this-file',
 ;;    `diredp-send-bug-report',
 ;;    `diredp-set-bookmark-file-bookmark-for-marked',
@@ -647,6 +654,7 @@
 ;;    `diredp-prompt-for-bookmark-prefix-flag',
 ;;    `diredp-recent-files-quit-kills-flag',
 ;;    `diredp-switches-in-mode-line',
+;;    `diredp-toggle-dot+dot-dot-flag',
 ;;    `diredp-visit-ignore-extensions', `diredp-visit-ignore-regexps',
 ;;    `diredp-w32-local-drives', `diredp-wrap-around-flag'.
 ;;
@@ -676,7 +684,8 @@
 ;;    `diredp-file-for-compilation-hit-at-point' (Emacs 24+),
 ;;    `diredp-files-within', `diredp-files-within-1',
 ;;    `diredp-fit-frame-unless-buffer-narrowed' (Emacs 24.4+),
-;;    `diredp-full-file-name-less-p', `diredp-full-file-name-more-p',
+;;    `diredp-fit-one-window-frame', `diredp-full-file-name-less-p',
+;;    `diredp-full-file-name-more-p',
 ;;    `diredp-get-confirmation-recursive', `diredp-get-files',
 ;;    `diredp-get-files-for-dir', `diredp-get-image-filename',
 ;;    `diredp-get-subdirs', `diredp-hide-details-if-dired' (Emacs
@@ -801,6 +810,7 @@
 ;;; ;;                              `dired-insert-directory'.  (Emacs 23+,
 ;;; ;;                              and only for MS Windows)
 ;;
+;;  `dired-repeat-over-lines' - Skip dir header line (bug #48883).
 ;;  `dired-revert'            - Reset `mode-line-process' to nil.
 ;;  `dired-sort-set-mode-line' - Respect `diredp-switches-in-mode-line'.
 ;;  `dired-switches-escape-p' - Made compatible with Emacs 20, 21.
@@ -840,6 +850,7 @@
 ;;        Use new `dired-get-marked-files'.
 ;;  `dired-insert-subdir-newpos' - If not a descendant, put at eob.
 ;;  `dired-insert-subdir-validate' - Do nothing: no restrictions.
+;;  `dired-do-touch' - Zero prefix arg creates empty file.
 ;;  `dired-do-kill-lines' - Added optional arg INIT-COUNT.
 ;;  `dired-maybe-insert-subdir' - Go back to subdir line if in listing.
 ;;  `dired-handle-overwrite' - Added optional arg FROM, for listing.
@@ -876,6 +887,48 @@
 ;;
 ;;; Change Log:
 ;;
+;; 2022/03/31 dadams
+;;     diredp-move-files-named-in-kill-ring: Use diredp-filename-separator for split-string.
+;; 2022/03/27 dadams
+;;     Added (aliases) diredp-mark-if-sexp, diredp-mark-if-sexp-recursive.
+;; 2022/01/28 dadams
+;;     dired-buffers-for-dir:
+;;       Revert to using dired-in-this-tree, not file-in-directory-p.  (Previous Emacs 28 change was wrong.)
+;;       Apply expand-file-name to DIR, not to result of file-name-as-directory.
+;;     dired-hide-details-mode: Update for Emacs 28 - include wdired-mode for derived-mode-p.
+;;     Everywhere: No need any more to apply expand-file-name to arg of dired-buffers-for-dir.
+;; 2021/12/11 dadams
+;;     diredp-display-image: Removed unneeded binding of inhibit-changing-match-data (deprecated in Emacs 29).
+;; 2021/12/10 dadams
+;;     Added: diredp-create-file-here, redefinition of dired-do-touch.
+;;     diredp-menu-bar-dir-menu: Added diredp-create-file-here.
+;;                               Moved it and New Directory after dired-maybe-insert-subdir and a separator.
+;;     dired-do-delete(-recursive): Zero ARG now deletes marked, but with delete-by-moving-to-trash flipped.
+;;     Protect delete-by-moving-to-trash with boundp everywhere.
+;; 2021/12/09 dadams
+;;     dired-buffers-for-dir: Expand DIR arg with expand-file-name (fixes Emacs bug #52395).
+;; 2021/11/30 dadams
+;;     diredp-do-apply/eval-marked-recursive:
+;;       Typo in body: current-prefix-arg -> arg.  Corrected first argument to diredp-get-files.
+;; 2021/10/03 dadams
+;;     Added: diredp-toggle-dot+dot-dot-flag.
+;;     dired-toggle-marks: Added optional arg FLIP.  Respect diredp-toggle-dot+dot-dot-flag.
+;; 2021/09/23 dadams
+;;     diredp-menu-bar-multiple-menu: Removed items that are anyway on Apply (Map) submenu.
+;; 2021/07/22 dadams
+;;     Added: diredp-remove-inserted-subdirs, diredp-fit-one-window-frame.
+;;     dired-maybe-insert-subdir: With negative prefix arg, remove all inserted subdir listings.
+;;     diredp-fit-frame-unless-buffer-narrowed, diredp-toggle-marks-in-region: Use diredp-fit-one-window-frame.
+;; 2021/06/21 dadams
+;;     dired-buffers-for-dir: Updated for Emacs 28: Added optional arg SUBDIRS.
+;;     diredp-dired-inserted-subdirs, diredp-next-subdir: dired-get-subdir-min -> cdr (Emacs 27 removed it).
+;;     dired-get-filename: Updated per Emacs 27: Removed Emacs 22-26 string-to-multibyte hack.
+;;     dired-do(-flagged)-delete: Applied fix for bug #48805.
+;;     dired-mark-pop-up: Updated per Emacs 27+: Reset tab-line-exclude to nil.
+;; 2021/06/16 dadams
+;;     diredp--dired-recent-files-1: Bug fix in generated rev-fn: use BUFNAME, not BUFFER.
+;; 2021/06/07 dadams
+;;     Added redefinitions of dired-repeat-over-lines and dired-toggle-marks (bug #48883).
 ;; 2021/05/10 dadams
 ;;     diredp-copy-filename-as-kill-recursive: use diredp-filename-separator, not SPC.
 ;;     dired-copy-filename-as-kill, diredp-yank-files: Mention diredp-filename-separator in doc string.
@@ -1174,8 +1227,7 @@
 ;;       Corrected interactive spec, which was missing nil DIRNAME arg.  Corrected body: use DIRNAME.
 ;;     diredp-get-files-for-dir, diredp-do-bookmark-dirs-recursive, diredp-change-marks-recursive,
 ;;       diredp-unmark-all-files-recursive, diredp-mark-files-regexp-recursive, diredp-mark-recursive-1,
-;;       diredp-do-delete-recursive:
-;;         Factor out (dired-buffers-for-dir (expand-file-name directory)).
+;;       diredp-do-delete-recursive: Factor out (dired-buffers-for-dir (expand-file-name directory)).
 ;; 2018/01/03 dadams
 ;;     dired-mark-files-regexp: Corrected doc string wrt prefix args.  Thx to John Mastro.
 ;;     diredp-do-grep-recursive: Removed unused optional arg IGNORE-MARKS-P.
@@ -2348,6 +2400,7 @@ of that nature."
 ;; (defvar rgrep-find-ignored-directories)
 (defvar save-some-buffers-action-alist)           ; In `files.el'
 (defvar switch-to-buffer-preserve-window-point)   ; In `window.el', Emacs 24+
+(defvar tab-line-exclude)                         ; In `tab-line.el', Emacs 27+
 (defvar tooltip-mode)                             ; In `tooltip.el'
 (defvar vc-directory-exclusion-list)              ; In `vc'
 (defvar w32-browser-wait-time)                    ; In `w32-browser.el'
@@ -2681,6 +2734,11 @@ Possible values:
           (const    :tag "Show full switches"                    as-is)
           (integer  :tag "Show first N chars of switches" :value 10)
           (function :tag "Format with function"           :value identity)))
+
+;;;###autoload
+(defcustom diredp-toggle-dot+dot-dot-flag t
+  "Non-nil means `dired-toggle-marks' acts also on `.' and `..'."
+  :type 'boolean :group 'Dired-Plus)
 
 ;;;###autoload
 (defcustom diredp-visit-ignore-extensions '("elc")
@@ -3214,6 +3272,26 @@ version in these respects:
       (when (and (null result)  error-if-none-p)
         (diredp-user-error (if (stringp error-if-none-p) error-if-none-p "No files specified")))
       result)))
+
+
+;; REPLACE ORIGINAL in `dired-aux.el'.
+;;
+;; Zero prefix arg means create empty file, prompting for file name.
+;;
+;;;###autoload
+(defun dired-do-touch (&optional arg)
+  "Change the timestamp of the marked (or next ARG) files.
+As an exception, if ARG is zero then create a single new (empty) file
+instead.  You are prompted for the file name.
+
+This invokes system program `touch'.
+
+Use `M-n' to pull the file attributes of the file at point
+into the minibuffer."
+  (interactive "P")
+  (if (zerop (prefix-numeric-value arg))
+      (call-interactively #'diredp-create-file-here)
+    (dired-do-chxxx "Timestamp" dired-touch-program 'touch arg)))
 
 
 ;; REPLACE ORIGINAL in `dired-aux.el'.
@@ -4044,8 +4122,7 @@ A prefix argument ARG specifies files to use instead of those marked.
   (let ((file     (dired-get-filename t 'NO-ERROR))
         (failure  nil))
     (save-excursion
-      (if (let ((inhibit-changing-match-data  t))
-            (and file  (diredp-string-match-p (image-file-name-regexp) file)))
+      (if (and file  (diredp-string-match-p (image-file-name-regexp) file))
           (condition-case err
               (let ((find-file-run-dired  nil)) (find-file-other-window file))
             (error (setq failure  (error-message-string err))))
@@ -4638,7 +4715,7 @@ When called from Lisp:
                        (message "Reverting...")
                        (kill-buffer)
                        (funcall ,(if dirs-p '#'diredp-dired-recent-dirs '#'diredp-dired-recent-files)
-                                ',buffer current-prefix-arg (and (not current-prefix-arg)  ',fils))
+                                ',bufname current-prefix-arg (and (not current-prefix-arg)  ',fils))
                        (message "Reverting...done"))))
     (funcall (if other-window-p #'dired-other-window #'dired) (cons bufname fils) switches)
     (with-current-buffer bufname
@@ -5219,7 +5296,7 @@ Markings and current Dired switches are preserved."
            (dolist (entry  dired-subdir-alist)
              (unless (string= (car entry) this-dir)
                (setq marked  (with-current-buffer this-buff
-                               (dired-remember-marks (dired-get-subdir-min entry) (dired-get-subdir-max entry))))
+                               (dired-remember-marks (cdr entry) (dired-get-subdir-max entry))))
                (if (not no-show-p)
                    (dired-other-window (car entry) dired-actual-switches)
                  (dired-noselect (car entry) dired-actual-switches)
@@ -5332,7 +5409,7 @@ instead of collecting all files if none are marked.
 
 If there is more than one Dired buffer for DIRECTORY then raise an
 error."
-  (let ((dbufs  (dired-buffers-for-dir (expand-file-name directory))))
+  (let ((dbufs  (dired-buffers-for-dir directory)))
     (dolist (file  (if (not dbufs)
                        (and (not only-marked-p)  (directory-files directory 'FULL diredp-re-no-dot))
                      (when (cadr dbufs) (error "More than one Dired buffer for `%s'" directory))
@@ -5670,8 +5747,7 @@ satisfy PREDICATE are included in the result."
                        (not (member (file-truename file) diredp-files-within-dirs-done))
                        (file-accessible-directory-p file))
               (setq res  (diredp-files-within-1 (or (and (functionp file-list)
-                                                         (dired-buffers-for-dir
-                                                          (expand-file-name file)) ; Removes killed buffers.
+                                                         (dired-buffers-for-dir file) ; Removes killed buffers.
                                                          (with-current-buffer
                                                              (cdr (assoc (file-name-as-directory file)
                                                                          dired-buffers))
@@ -5724,9 +5800,7 @@ Non-interactively:
                                "Insert this dir into ancestor dir: "
                                (mapcar #'list (diredp-ancestor-dirs default-directory)))
                               t)))
-    (let ((child-dired-buf  (if in-dired-now-p
-                                (current-buffer)
-                              (dired-buffers-for-dir (expand-file-name child))))
+    (let ((child-dired-buf  (if in-dired-now-p (current-buffer) (dired-buffers-for-dir child)))
           (switches         ())
           (marked           ()))
       (when (consp child-dired-buf)
@@ -5945,7 +6019,8 @@ Optional arg DETAILS is passed to `diredp-y-or-n-files-p'."
   (unless (file-directory-p dir) (error "Not a directory: `%s'" dir))
   (let ((files  diredp-last-copied-filenames))
     (unless (stringp files)  (error "No copied file names"))
-    (setq files  (diredp-delete-if-not (lambda (file) (file-name-absolute-p file)) (split-string files)))
+    (setq files  (diredp-delete-if-not (lambda (file) (file-name-absolute-p file))
+                                       (split-string files (regexp-quote diredp-filename-separator))))
     (unless files  (error "No copied (absolute* file names (Did you use `M-0 w'?)"))
     (if (and (not no-confirm-p)
              (diredp-y-or-n-files-p "MOVE files whose names you copied? " files nil details))
@@ -6398,7 +6473,7 @@ When called from Lisp, optional arg DETAILS is passed to
         dbufs)
     (when (and msgp  sdirs) (message "Checking descendant directories..."))
     (dolist (dir  (cons default-directory sdirs))
-      (when (setq dbufs  (dired-buffers-for-dir (expand-file-name dir))) ; Dirs with Dired buffers only.
+      (when (setq dbufs  (dired-buffers-for-dir dir)) ; Dirs with Dired buffers only.
         (with-current-buffer (car dbufs)
           (let ((bname  (bookmark-buffer-name))
                 (count  2))
@@ -6706,7 +6781,7 @@ When called from Lisp:
       (unless (char-displayable-p new) (error "Not a displayable character: `%c'" new))
       (message "Changing mark `%c' to `%c'..." old new)
       (dolist (dir  (cons default-directory sdirs))
-        (when (setq dbufs  (dired-buffers-for-dir (expand-file-name dir))) ; Dirs with Dired buffers only.
+        (when (setq dbufs  (dired-buffers-for-dir dir)) ; Dirs with Dired buffers only.
           (with-current-buffer (car dbufs)
             (let ((inhibit-read-only  t)
                   (file               nil))
@@ -6775,7 +6850,7 @@ When called from Lisp:
           (message "Unmarking ALL marks here and below...")
         (message "Unmarking mark `%c' here and below..." mark))
       (dolist (dir  (cons default-directory sdirs))
-        (when (setq dbufs  (dired-buffers-for-dir (expand-file-name dir))) ; Dirs with Dired buffers only.
+        (when (setq dbufs  (dired-buffers-for-dir dir)) ; Dirs with Dired buffers only.
           (with-current-buffer (car dbufs)
             (let ((inhibit-read-only  t)
                   (file               nil))
@@ -6916,7 +6991,7 @@ When called from Lisp, DETAILS is passed to `diredp-get-subdirs'."
         dbufs chg.mtch)
     (message "%s files..." (if (eq ?\040 dired-marker-char) "UNmarking" "Marking"))
     (dolist (dir  (cons default-directory sdirs))
-      (when (setq dbufs  (dired-buffers-for-dir (expand-file-name dir))) ; Dirs with Dired buffers only.
+      (when (setq dbufs  (dired-buffers-for-dir dir)) ; Dirs with Dired buffers only.
         (with-current-buffer (car dbufs)
           (setq chg.mtch  (diredp-mark-if (and (not (diredp-looking-at-p dired-re-dot))
                                                (not (eolp)) ; Empty line
@@ -6972,7 +7047,7 @@ When called from Lisp, DETAILS is passed to `diredp-get-subdirs'."
         dbufs chg.mtch)
     (message "%s files..." (if (eq ?\040 dired-marker-char) "UNmarking" "Marking"))
     (dolist (dir  (cons default-directory sdirs))
-      (when (setq dbufs  (dired-buffers-for-dir (expand-file-name dir))) ; Dirs with Dired buffers only.
+      (when (setq dbufs  (dired-buffers-for-dir dir)) ; Dirs with Dired buffers only.
         (with-current-buffer (car dbufs)
           (setq chg.mtch
                 (diredp-mark-if
@@ -7059,6 +7134,10 @@ When called from Lisp, DETAILS is passed to `diredp-mark-files-regexp-recursive'
 ;;
 (when (fboundp 'minibuffer-with-setup-hook) ; Emacs 22+
 
+  ;; Just to help discovery.  And can't use the name `dired-mark-if', since that's a macro.
+  ;;
+  (defalias 'diredp-mark-if-sexp-recursive 'dired-mark-sexp-recursive)
+  ;;
   (defun diredp-mark-sexp-recursive (predicate &optional arg details) ; Bound to `M-+ M-(', `M-+ * ('
     "Mark files here and below for which PREDICATE returns non-nil.
 Like `diredp-mark-sexp', but act recursively on subdirs.
@@ -7129,7 +7208,7 @@ When called from Lisp, DETAILS is passed to `diredp-get-subdirs'."
            (changed            0)
            dbufs chg.mtch mode nlink uid gid size time name sym)
       (dolist (dir  (cons default-directory (diredp-get-subdirs ignorep nil details)))
-        (when (setq dbufs  (dired-buffers-for-dir (expand-file-name dir))) ; Dirs with Dired buffers only.
+        (when (setq dbufs  (dired-buffers-for-dir dir)) ; Dirs with Dired buffers only.
           (with-current-buffer (car dbufs)
             (setq chg.mtch
                   (diredp-mark-if
@@ -7335,7 +7414,7 @@ When called from Lisp, optional arg DETAILS is passed to
          dbufs chg.mtch)
     (message "%s %s..." (if (eq ?\040 dired-marker-char) "UNmarking" "Marking") plural)
     (dolist (dir  (cons default-directory sdirs))
-      (when (setq dbufs  (dired-buffers-for-dir (expand-file-name dir))) ; Dirs with Dired buffers only.
+      (when (setq dbufs  (dired-buffers-for-dir dir)) ; Dirs with Dired buffers only.
         (with-current-buffer (car dbufs)
           (setq chg.mtch  (diredp-mark-if (eval predicate-sexp) singular)
                 changed   (+ changed (or (car chg.mtch)  0))
@@ -7762,7 +7841,7 @@ When called from Lisp:
                                     (and (boundp 'function-name-history)  'function-name-history))))
            current-prefix-arg
            diredp-list-file-attributes)))
-  (let ((use-no-args-p  (and (consp current-prefix-arg)  (< (car current-prefix-arg) 16))))
+  (let ((use-no-args-p  (and (consp arg)  (< (car arg) 16))))
     (if use-no-args-p
         (when (functionp fun/sexp)
           (unless (or (not (fboundp 'func-arity)) ; Emacs < 26
@@ -7772,7 +7851,7 @@ When called from Lisp:
                   (let ((max  (cdr (func-arity fun/sexp))))
                     (or (eq max 'many)  (> max 0))))
         (error "Function `%s' cannot accept any args" fun/sexp))) ; Function to apply to file name.
-    (let* ((files     (diredp-get-files arg nil nil nil nil details)) ; @@@@ is ARG correct here? Copied from
+    (let* ((files     (diredp-get-files (and (not use-no-args-p)  arg) nil nil nil nil details))
            (fbufs     (delq nil (mapcar #'find-buffer-visiting files)))
            (mod-bufs  (diredp-remove-if-not #'buffer-modified-p fbufs))
            (new-bufs  ())
@@ -7814,49 +7893,55 @@ subdirectories are handled recursively in the same way.
 When called from Lisp, optional arg DETAILS is passed to
 `diredp-get-files' and `diredp-get-subdirs'."
   (interactive (progn (diredp-get-confirmation-recursive) (list current-prefix-arg diredp-list-file-attributes)))
-  (unless arg
-    (ding)
-    (message "NOTE: Deletion of files marked `%c' (not those flagged `%c')."
-             dired-marker-char dired-del-marker))
-  (let* ((files     (diredp-get-files nil nil nil nil 'ONLY-MARKED-P details))
-         (count     (length files))
-         (trashing  (and (boundp 'delete-by-moving-to-trash)  delete-by-moving-to-trash))
-         (succ      0))
-    (if (dired-mark-pop-up
-         " *Deletions*" 'delete files dired-deletion-confirmer
-         (format "%s %s " (if trashing "Trash" "Delete") (dired-mark-prompt arg files)))
-        (let ((progress-reporter  (and (fboundp 'make-progress-reporter)
-                                       (make-progress-reporter (if trashing "Trashing..." "Deleting...")
-                                                               succ
-                                                               count)))
-              (failures           ()))
-          (unless progress-reporter (message "Deleting..."))
-          (dolist (file  files)
-            (condition-case err
-                (progn (if (fboundp 'dired-delete-file) ; Emacs 22+
-                           (dired-delete-file file dired-recursive-deletes trashing)
-                         ;; This test is equivalent to (and (file-directory-p file)  (not (file-symlink-p file)))
-                         ;; but more efficient.
-                         (if (eq t (car (file-attributes file))) (delete-directory file) (delete-file file)))
-                       (setq succ  (1+ succ))
-                       (when (fboundp 'progress-reporter-update)
-                         (progress-reporter-update progress-reporter succ)))
-              (error (dired-log "%s\n" err) ; Catch errors from failed deletions.
-                     (setq failures  (cons file failures))))
-            (dired-clean-up-after-deletion file))
-          (if failures
-              (dired-log-summary (format "%d of %d deletion%s failed"
-                                         (length failures) count (dired-plural-s count))
-                                 failures)
-            (if (fboundp 'progress-reporter-done)
-                (progress-reporter-done progress-reporter)
-              (message "Deleting...done")))
-          (let ((sdirs  (diredp-get-subdirs nil nil details))
-                dbufs)
-            (dolist (dir  (cons default-directory sdirs))
-              (when (setq dbufs  (dired-buffers-for-dir (expand-file-name dir))) ; Dirs with Dired buffers only.
-                (with-current-buffer (car dbufs) (dired-revert))))))
-      (message "OK. NO deletions performed"))))
+  (let* ((flip                       (zerop (prefix-numeric-value arg)))
+         (delete-by-moving-to-trash  (and (boundp 'delete-by-moving-to-trash)
+                                          (if flip
+                                              (not delete-by-moving-to-trash)
+                                            delete-by-moving-to-trash))))
+    (when flip (setq arg  nil))
+    (unless arg
+      (ding)
+      (message "NOTE: Deletion of files marked `%c' (not those flagged `%c')."
+               dired-marker-char dired-del-marker))
+    (let* ((files  (diredp-get-files nil nil nil nil 'ONLY-MARKED-P details))
+           (count  (length files))
+           (succ   0))
+      (if (dired-mark-pop-up
+           " *Deletions*" 'delete files dired-deletion-confirmer
+           (format "%s %s " (if delete-by-moving-to-trash "Trash" "Delete") (dired-mark-prompt arg files)))
+          (let ((progress-reporter  (and (fboundp 'make-progress-reporter)
+                                         (make-progress-reporter
+                                          (if delete-by-moving-to-trash "Trashing..." "Deleting...")
+                                          succ
+                                          count)))
+                (failures           ()))
+            (unless progress-reporter (message "Deleting..."))
+            (dolist (file  files)
+              (condition-case err
+                  (progn (if (fboundp 'dired-delete-file) ; Emacs 22+
+                             (dired-delete-file file dired-recursive-deletes delete-by-moving-to-trash)
+                           ;; This test is equivalent to (and (file-directory-p file)  (not (file-symlink-p file)))
+                           ;; but more efficient.
+                           (if (eq t (car (file-attributes file))) (delete-directory file) (delete-file file)))
+                         (setq succ  (1+ succ))
+                         (when (fboundp 'progress-reporter-update)
+                           (progress-reporter-update progress-reporter succ)))
+                (error (dired-log "%s\n" err) ; Catch errors from failed deletions.
+                       (setq failures  (cons file failures))))
+              (dired-clean-up-after-deletion file))
+            (if failures
+                (dired-log-summary (format "%d of %d deletion%s failed"
+                                           (length failures) count (dired-plural-s count))
+                                   failures)
+              (if (fboundp 'progress-reporter-done)
+                  (progress-reporter-done progress-reporter)
+                (message "Deleting...done")))
+            (let ((sdirs  (diredp-get-subdirs nil nil details))
+                  dbufs)
+              (dolist (dir  (cons default-directory sdirs))
+                (when (setq dbufs  (dired-buffers-for-dir dir)) ; Dirs with Dired buffers only.
+                  (with-current-buffer (car dbufs) (dired-revert))))))
+        (message "OK. NO deletions performed")))))
 
 ;;;###autoload
 (defun diredp-do-move-recursive (&optional ignore-marks-p details) ; Bound to `M-+ R'
@@ -9123,24 +9208,34 @@ Non-interactively:
 
 ;; REPLACE ORIGINAL in `dired.el'.
 ;;
-;; Allows for consp `dired-directory' too.
+;; 1. Allow for consp `dired-directory' too.
+;; 2. Updated for Emacs 28: Added optional arg SUBDIRS-P.
+;; 3. Fix for Emacs bug #52395.  Expand DIR with `default-directory', so `file-name-as-directory' gets applied to
+;;    absolute name.  Otherwise, (dired-buffers-for-dir "~/some/dir/") returns nil, because the element in
+;;    `dired-subdir-alist' is ("/the/home/dir/some/dir/" . #<buffer dir>), not ("~/some/dir/" . #<buffer dir>).
 ;;
-(defun dired-buffers-for-dir (dir &optional file)
+(defun dired-buffers-for-dir (dir &optional file subdirs-p)
   "Return a list of buffers that Dired DIR (top level or in-situ subdir).
+DIR is automatically expanded with `expand-file-name' using the
+ `default-directory'.  If you need expansion relative to some other
+ directory then do that before calling `dired-buffers-for-dir'.
 If FILE is non-nil, include only those whose wildcard pattern (if any)
-matches FILE.
+ matches FILE.
+If SUBDIRS-P is non-nil, also include the dired buffers of directories
+ below DIR.
+
 The list is in reverse order of buffer creation, most recent last.
 As a side effect, killed Dired buffers for DIR are removed from
-`dired-buffers'."
-  (setq dir  (file-name-as-directory dir))
+ `dired-buffers'."
+  (setq dir  (file-name-as-directory (expand-file-name dir)))
   (let (result buf)
     (dolist (elt  dired-buffers)
       (setq buf  (cdr elt))
       (cond ((null (buffer-name buf))   ; Buffer is killed - clean up.
              (setq dired-buffers  (delq elt dired-buffers)))
-            ((dired-in-this-tree dir (car elt))
+            ((dired-in-this-tree (car elt) dir)
              (with-current-buffer buf
-               (and (assoc dir dired-subdir-alist)
+               (and (or subdirs-p  (assoc dir dired-subdir-alist))
                     (or (null file)
                         (if (stringp dired-directory)
                             ;; Allow for consp `dired-directory' too.
@@ -9317,6 +9412,46 @@ directory then bind `mouse-2' to `dired-mouse-find-file' instead."
   (substitute-key-definition 'dired-w32-browser-reuse-dir-buffer 'dired-w32-browser dired-mode-map)
   (substitute-key-definition 'dired-mouse-w32-browser-reuse-dir-buffer 'dired-mouse-w32-browser dired-mode-map)
   (message "Reusing Dired buffers is now OFF"))
+
+;;;###autoload
+(defun diredp-create-file-here (file)   ; Not bound
+  "Create new FILE in the directory of this Dired listing.
+You are prompted for the (relative) file name, which is relative to
+the directory of the current listing.
+
+If called from Lisp, the buffer must be in Dired (or a derived) mode,
+and FILE is expanded in `default-directory'."
+  (interactive
+   (let* ((_IGNORE        (diredp-ensure-mode))
+          (this-dir       default-directory)
+          (this-subdir    (diredp-this-subdir))
+          (on-dir-line-p  (atom this-subdir)))
+     (unless on-dir-line-p ; Subdir header line or non-directory file.
+       (setq this-subdir  (car this-subdir)))
+     (let* ((input  (read-string (format "Create file in `%s': " this-subdir)))
+            (file   (expand-file-name input this-subdir)))
+       (while (or  (string= input "")  (file-exists-p file))
+         (setq input  (read-string (if (string= input "")
+                                       "Empty input.  Create file: "
+                                     (format "`%s' already exists.  Create file: " file)))
+               file   (expand-file-name input this-subdir)))
+       (list file))))
+  (unless (if (or (> emacs-major-version 23)
+                  (and (= emacs-major-version 23)  (> emacs-minor-version 1)))
+              (called-interactively-p 'interactive)
+            (interactive-p))
+    (diredp-ensure-mode)
+    (when (file-exists-p (expand-file-name file)) (error "File `%s' already exists")))
+  (let ((failures  (dired-bunch-files
+                    2
+		    #'dired-check-process
+		    (append
+		     (list (concat dired-touch-program " " file) dired-touch-program)
+		     (if (string-match-p "gnu" system-configuration) '("--") nil))
+		    (list file))))
+    (if failures
+        (dired-log-summary (format "%s: error" 'touch) nil)
+      (dired-relist-entry (expand-file-name file)))))
 
 ;;;###autoload
 (defun diredp-omit-marked ()            ; Not bound
@@ -9548,7 +9683,7 @@ If after invoking COMMAND in all of the marked files new buffers have
 been created to visit some of them then you are prompted to kill those
 buffers.
 
-An errors are logged by `dired-log'.  Use `?'  to see the error
+Any errors are logged by `dired-log'.  Use `?'  to see the error
 messages.
 
 Be aware that COMMAND could be invoked in a directory (Dired) buffer.
@@ -10412,12 +10547,16 @@ Binding variable `help-form' will help the user who types the help key."
 ;; 1. Use `diredp-this-subdir' instead of `dired-get-filename'.
 ;; 2. If on a subdir listing header line or a non-dir file in a subdir listing, go to
 ;;    the line for the subdirectory in the parent directory listing.
-;; 3. Fit one-window frame after inserting subdir.
+;; 3. A negative prefix arg means remove all inserted subdir listings.
+;; 4. Fit one-window frame after inserting subdir.
 ;;
 ;;;###autoload
-(defun dired-maybe-insert-subdir (dirname &optional switches no-error-if-not-dir-p)
-                                        ; Bound to `i'
-  "Move to Dired subdirectory line or subdirectory listing.
+(defun dired-maybe-insert-subdir (dirname &optional arg no-error-if-not-dir-p) ; Bound to `i'
+  "Insert subdir listing or move to subdir line or listing.
+With a negative prefix arg, just remove all inserted subdir listings.
+
+Otherwise (non-negative prefix arg or none):
+
 This bounces you back and forth between a subdirectory line and its
 inserted listing header line.  Using it on a non-directory line in a
 subdirectory listing acts the same as using it on the subdirectory
@@ -10435,40 +10574,63 @@ header line.
 
 Subdirectories are listed in the same position as for `ls -lR' output.
 
-With a prefix arg, you can edit the `ls' switches used for this
-listing.  Add `R' to the switches to expand the directory tree under a
-subdirectory.
+With a non-negative prefix arg, you can edit the `ls' switches used
+for this subdir listing.  Add `R' to the switches to expand the
+directory tree under a subdirectory.
 
 Dired remembers switches specified with a prefix arg, so reverting the
 buffer does not reset them.  However, you might sometimes need to
 reset some subdirectory switches after using \\<dired-mode-map>`\\[dired-undo]'.  You can reset all
 subdirectory switches to the default value using
 `\\[dired-reset-subdir-switches]'.
-See Info node `(emacs) Subdir switches' for more details."
+See Info node `(emacs) Subdir switches' for more details.
+
+If called from Lisp, non-nil ARG is an `ls' switches string or a
+number.  A number means remove all inserted subdir listings."
   (interactive (list (diredp-this-subdir)
                      (and current-prefix-arg
-                          (read-string "Switches for listing: "
-                                       (or (and (boundp 'dired-subdir-switches)  dired-subdir-switches)
-                                           dired-actual-switches)))))
-  (let ((opoint    (point))
-        (filename  dirname))
-    (cond ((consp filename)             ; Subdir header line or non-directory file.
-           (setq filename  (car filename))
+                          (if (natnump (prefix-numeric-value current-prefix-arg))
+                              (read-string "Switches for listing: "
+                                           (or (and (boundp 'dired-subdir-switches)  dired-subdir-switches)
+                                               dired-actual-switches))
+                            (prefix-numeric-value current-prefix-arg)))))
+  (if (numberp arg)
+      (diredp-remove-inserted-subdirs)
+    (let ((opoint    (point))
+          (filename  dirname))
+      (cond ((consp filename) ; Subdir header line or non-directory file.
+             (setq filename  (car filename))
            (if (assoc filename dired-subdir-alist)
-               (dired-goto-file filename) ;  Subdir header line.
+               (dired-goto-file filename) ;  On subdir header line.  Go to subdir line in parent listing.
              (dired-insert-subdir (substring (file-name-directory filename) 0 -1))))
-          (t
-           ;; We don't need a marker for opoint as the subdir is always
-           ;; inserted *after* opoint.
-           (setq dirname  (file-name-as-directory dirname))
-           (or (and (not switches)  (dired-goto-subdir dirname))
-               (dired-insert-subdir dirname switches no-error-if-not-dir-p))
-           ;; Push mark so that it's easy to go back.  Do this after the
-           ;; insertion message so that the user sees the `Mark set' message.
-           (push-mark opoint)
-           (when (and (get-buffer-window (current-buffer)) ; Fit one-window frame.
-                      (fboundp 'fit-frame-if-one-window)) ; In `autofit-frame.el'.
-             (fit-frame-if-one-window))))))
+            (t
+             ;; We don't need a marker for opoint as the subdir is always
+             ;; inserted *after* opoint.
+             (setq dirname  (file-name-as-directory dirname))
+             (or (and (not arg)  (dired-goto-subdir dirname))
+                 (dired-insert-subdir dirname arg no-error-if-not-dir-p))
+             ;; Push mark so that it's easy to go back.  Do this after the
+             ;; insertion message so that the user sees the `Mark set' message.
+             (push-mark opoint)
+             (diredp-fit-one-window-frame))))))
+
+(defun diredp-remove-inserted-subdirs () ; Not bound
+  "Remove all inserted subdir listings.
+Note that `C-x C-v' and accept the default directory does this, as it
+rereads the main directory."
+  (interactive)
+  (diredp-ensure-mode)
+  (dolist (entry  dired-subdir-alist)
+    (unless (string= (car entry) default-directory)
+      ;; Could just use (dired-goto-subdir (car entry)) but next two lines are the relevant part.
+      (goto-char (cdr entry))
+      (skip-chars-forward "^\r\n")
+      (dired-kill-subdir))))
+
+(defun diredp-fit-one-window-frame ()
+  "Fit one-window selected frame to its buffer."
+  (when (and (get-buffer-window (current-buffer))  (fboundp 'fit-frame-if-one-window)) ; In `autofit-frame.el'.
+    (fit-frame-if-one-window)))
 
 (defun diredp-this-subdir ()
   "This line's filename, if directory, or `dired-current-directory' list.
@@ -10981,7 +11143,7 @@ With a numeric prefix arg N, hide this subdirectory and the next N-1
 ;;;                (elt       (assoc cur-dir dired-subdir-alist))
 ;;;                (end-pos   (1- (dired-get-subdir-max elt)))
 ;;;                buffer-read-only)
-;;;           (goto-char (dired-get-subdir-min elt)) ; Keep header line visible, hide rest
+;;;           (goto-char (cdr elt)) ; Keep header line visible, hide rest
 ;;;           (skip-chars-forward "^\n\r")
 ;;;           (if hidden-p
 ;;;               (subst-char-in-region (point) end-pos ?\r ?\n)
@@ -11390,7 +11552,7 @@ show an image preview, then do so.  Otherwise, show text help."
           "Hide details in Dired mode."
           (and diredp-hide-details-propagate-flag  diredp-hide-details-last-state)
           :group 'dired
-          (unless (derived-mode-p 'dired-mode) (error "Not a Dired buffer"))
+          (unless (derived-mode-p 'dired-mode 'wdired-mode) (error "Not a Dired buffer"))
           (dired-hide-details-update-invisibility-spec)
           (setq diredp-hide-details-toggled  t)
           (when diredp-hide-details-propagate-flag
@@ -11417,8 +11579,7 @@ according to option `diredp-hide-details-initially-flag'."
   (defun diredp-fit-frame-unless-buffer-narrowed ()
     "Fit frame unless Dired buffer is narrowed.
 Requires library `autofit-frame.el'."
-    (when (and (get-buffer-window (current-buffer))  (not (buffer-narrowed-p)))
-      (fit-frame-if-one-window)))
+    (unless (buffer-narrowed-p) (diredp-fit-one-window-frame)))
 
   ;; Fit frame only if not narrowed.  Put it on this hook because `dired-hide-details-mode' is
   ;; invoked from `dired-after-readin-hook' via `diredp-hide/show-details', even for an update
@@ -11562,8 +11723,9 @@ nil."
 
 ;;;###autoload
 (defun diredp-next-subdir (arg &optional no-error-if-not-found no-skip) ; Bound to `C-M-n'
-  "Go to the next subdirectory, regardless of level.
-If ARG = 0 then go to this directory's header line.
+  "Go to the Nth next subdirectory, regardless of level.
+N is the numeric prefix arg (defaults to 1).
+If N = 0 then go to this directory's header line.
 
 If `diredp-wrap-around-flag' is non-nil then wrap around if none is
 found before the buffer end (buffer beginning, if ARG is negative).
@@ -11581,7 +11743,7 @@ the position moved to so far."
     (setq index  (if diredp-wrap-around-flag
                      (mod (- (dired-subdir-index this-dir) arg) (length dired-subdir-alist))
                    (- (dired-subdir-index this-dir) arg))
-          pos    (and (>= index 0)  (dired-get-subdir-min (nth index dired-subdir-alist))))
+          pos    (and (>= index 0)  (cdr (nth index dired-subdir-alist))))
     (if pos
         (progn (goto-char pos)
                (or no-skip  (skip-chars-forward "^\n\r"))
@@ -11592,7 +11754,7 @@ the position moved to so far."
 
 ;;;###autoload
 (defun diredp-prev-subdir (arg &optional no-error-if-not-found no-skip) ; Bound to `C-M-p'
-  "Go to the previous subdirectory, regardless of level.
+  "Go to the Nth previous subdirectory, regardless of level.
 When called interactively and not on a subdir line, go to this subdir's line.
 Otherwise, this is a mirror image of `diredp-next-subdir'."
   ;;(interactive "^p")
@@ -11678,8 +11840,10 @@ Otherwise, an error occurs in these cases."
       ;; Hence we don't need to worry about converting `\\' back to `\'.
       (setq file  (read (concat "\"" file "\"")))
 
+      ;; Emacs 22-26 only.
       ;; Above `read' returns a unibyte string if FILE contains eight-bit-control/graphic chars.
       (when (and (fboundp 'string-to-multibyte) ; Emacs 22
+                 (< emacs-major-version 27)
                  enable-multibyte-characters
                  (not (multibyte-string-p file)))
         (setq file  (string-to-multibyte file))))
@@ -11869,6 +12033,7 @@ Return buffer position on success, else nil."
 ;;
 ;; 1. Display a message to warn that flagged, not marked, files will be deleted.
 ;; 2. Use `diredp-internal-do-deletions', so it works with all Emacs versions.
+;; 3. Applies fix for bug #48805.
 ;;
 ;;;###autoload
 (defun dired-do-flagged-delete (&optional no-msg) ; Bound to `x'
@@ -11887,13 +12052,19 @@ non-empty directories is allowed."
     )
   (let* ((dired-marker-char  dired-del-marker)
          (regexp             (dired-marker-regexp))
-         (case-fold-search   nil))
+         (case-fold-search   nil)
+         (markers            ()))
     (if (save-excursion (goto-char (point-min)) (re-search-forward regexp nil t))
         (diredp-internal-do-deletions
-         ;; This cannot move point since last arg is nil.
-         (dired-map-over-marks (cons (dired-get-filename) (point)) nil)
+         (nreverse
+          ;; This cannot move point since last arg is nil.
+          (dired-map-over-marks (cons (dired-get-filename) (let ((mk  (point-marker)))
+                                                             (push mk markers)
+                                                             mk))
+                                nil))
          nil
-         'USE-TRASH-CAN)                ; This arg is for Emacs 24+ only.
+         'USE-TRASH-CAN)             ; This arg is for Emacs 24+ only.
+      (dolist (mk  markers) (set-marker mk nil))
       (unless no-msg (message "(No deletions requested.)")))))
 
 
@@ -11901,32 +12072,52 @@ non-empty directories is allowed."
 ;;
 ;; 1. Display a message to warn that marked, not flagged, files will be deleted.
 ;; 2. Use `diredp-internal-do-deletions', so it works with all Emacs versions.
+;; 3. Applies fix for bug #48805.
+;; 4. Zero ARG deletes marked, but with `delete-by-moving-to-trash' flipped.
 ;;
 ;;;###autoload
 (defun dired-do-delete (&optional arg)  ; Bound to `D'
   "Delete all marked (or next ARG) files.
-NOTE: This deletes marked, not flagged, files.
-`dired-recursive-deletes' controls whether deletion of
-non-empty directories is allowed."
+NOTE: This deletes the marked (`*'), not the flagged (`D'), files.
+
+User option `dired-recursive-deletes' controls whether deletion of
+non-empty directories is allowed.
+
+ARG is the prefix argument.
+
+As an exception, if ARG is zero then delete the marked files, but with
+the behavior specified by option `delete-by-moving-to-trash' flipped."
   (interactive "P")
-  ;; This is more consistent with the file-marking feature than
-  ;; `dired-do-flagged-delete'.  But it can be confusing to the user,
-  ;; especially since this is usually bound to `D', which is also the
-  ;; `dired-del-marker'.  So offer this warning message:
-  (unless arg
-    (ding)
-    (message "NOTE: Deletion of files marked `%c' (not those flagged `%c')."
-             dired-marker-char dired-del-marker))
-  (diredp-internal-do-deletions
-   ;; This can move point if ARG is an integer.
-   (dired-map-over-marks (cons (dired-get-filename) (point)) arg)
-   arg
-   'USE-TRASH-CAN))                     ; This arg is for Emacs 24+ only.
+  (let* ((flip                       (zerop (prefix-numeric-value arg)))
+         (delete-by-moving-to-trash  (and (boundp 'delete-by-moving-to-trash)  (if flip
+                                                                                   (not delete-by-moving-to-trash)
+                                                                                 delete-by-moving-to-trash)))
+         (markers                    ()))
+    (when flip (setq arg  nil))
+    ;; This is more consistent with the file-marking feature than
+    ;; `dired-do-flagged-delete'.  But it can be confusing to the user,
+    ;; especially since this is usually bound to `D', which is also the
+    ;; `dired-del-marker'.  So offer this warning message.
+    (unless arg
+      (ding)
+      (message "NOTE: Deletion of files marked `%c' (not those flagged `%c')."
+               dired-marker-char dired-del-marker))
+    (diredp-internal-do-deletions
+     (nreverse
+      ;; This can move point if ARG is an integer.
+      (dired-map-over-marks (cons (dired-get-filename) (let ((mk  (point-marker)))
+                                                         (push mk markers)
+                                                         mk))
+                            arg))
+     arg
+     t)          ; Gets ANDed anyway with `delete-by-moving-to-trash'.
+    (dolist (mk  markers) (set-marker mk nil))))
 
 (defun diredp-internal-do-deletions (file-alist arg &optional trash)
   "`dired-internal-do-deletions', but for any Emacs version.
 FILE-ALIST is an alist of files to delete, with their buffer positions.
-ARG is the prefix arg.  Filenames are absolute.
+ Filenames are absolute.
+ARG is normally the raw prefix arg for the calling command.
 Non-nil TRASH means use the trash can."
   ;; \(car FILE-ALIST) *must* be the *last* (bottommost) file in the dired
   ;; buffer.  That way as changes are made in the buffer they do not shift
@@ -11998,7 +12189,8 @@ FUNCTION should not manipulate the files.  It should just read input
         ;; to mean just one file that was marked, rather than the current-line file.
         (dired-format-columns-of-files (if (eq (car files) t) (cdr files) files))
         (remove-text-properties (point-min) (point-max)
-                                '(mouse-face nil help-echo nil)))
+                                '(mouse-face nil help-echo nil))
+        (when (boundp 'tab-line-exclude) (setq tab-line-exclude  nil))) ; Emacs 27+
       (unwind-protect
            (save-window-excursion
              ;; Do not show menu bar, if buffer is popped up in a separate frame.
@@ -12018,6 +12210,67 @@ FUNCTION should not manipulate the files.  It should just read input
             (error nil)))
         (bury-buffer buffer-or-name)))
     result))
+
+
+;; REPLACE ORIGINAL in `dired.el':
+;;
+;; Do not mark dir header line (see bug #48883).
+;;
+;;;###autoload
+(defun dired-repeat-over-lines (arg function)
+  "Repeat FUNCTION over this line and the next ARG lines.
+\(Negative ARG means previous, not next.)
+Non-file lines are skipped."
+  (let ((pos  (make-marker)))
+    (beginning-of-line)
+    (while (and (> arg 0)  (not (eobp)))
+      (setq arg  (1- arg))
+      (beginning-of-line)
+      (while (and (not (eobp)) (dired-between-files)) (forward-line 1))
+      (save-excursion
+	(forward-line 1)
+	(move-marker pos (1+ (point))))
+      (save-excursion (funcall function))
+      ;; Advance to the next line--actually, to the line that *was* next.
+      ;; (If FUNCTION inserted some new lines in between, skip them.)
+      (goto-char pos))
+    (while (and (< arg 0)  (not (bobp)))
+      (setq arg  (1+ arg))
+      (forward-line -1)
+      (while (and (not (bobp))  (dired-between-files)) (forward-line -1))
+      (beginning-of-line)
+      (when (dired-get-filename nil t) (save-excursion (funcall function))))
+    (move-marker pos nil)
+    (dired-move-to-filename)))
+
+
+;; REPLACE ORIGINAL in `dired.el':
+;;
+;; Toggle also `.' and `..', according to option `diredp-toggle-dot+dot-dot-flag'.
+;; See also Emacs bug #48883.
+;;
+(defun dired-toggle-marks (&optional flip)
+  "Toggle marks: marked files become unmarked, and vice versa.
+Marks (such as `C' and `D') other than `*' are not affected.
+Hidden subdirs are also not affected.
+
+Whether `.' and `..' are toggled is controlled by option
+`diredp-toggle-dot+dot-dot-flag'.  A prefix arg acts as if the option
+had the opposite value."
+  (interactive "P")
+  (save-excursion
+    (goto-char (point-min))
+    (let ((inhibit-read-only     t))
+      (while (not (eobp))
+        (or (dired-between-files)
+            (and (if flip diredp-toggle-dot+dot-dot-flag (not diredp-toggle-dot+dot-dot-flag))
+                 (member (dired-get-filename t t) '("." "..")))
+            (apply 'subst-char-in-region (point)
+                   (1+ (point))
+                   (if (eq ?\   (following-char))
+                       (list ?\   dired-marker-char)
+                     (list dired-marker-char ?\  ))))
+        (forward-line 1)))))
 
 
 ;; REPLACE ORIGINAL in `dired.el':
@@ -12243,7 +12496,9 @@ For Emacs 24 and later, a prefix arg means that if
 deleting it."
   (interactive "P")
   (let ((file  (dired-get-filename)))
-    (if (not (yes-or-no-p (format "%s file `%s'? " (if (and use-trash-can  delete-by-moving-to-trash)
+    (if (not (yes-or-no-p (format "%s file `%s'? " (if (and use-trash-can
+                                                            (boundp 'delete-by-moving-to-trash)
+                                                            delete-by-moving-to-trash)
                                                        "Trash"
                                                      "Permanently delete")
                                   file)))
@@ -12611,6 +12866,11 @@ When called from Lisp, optional arg DETAILS is passed to
     (interactive) (dired-do-touch 1)))
 
 
+;; Just to help discovery.  And can't use the name `dired-mark-if', since that's a macro.
+;;
+;;;###autoload
+(defalias 'diredp-mark-if-sexp 'dired-mark-sexp)
+;;
 ;; REPLACE ORIGINAL in `dired-x.el'.
 ;;
 ;; 1. Variable (symbol) `s' -> `blks'.
@@ -12905,8 +13165,7 @@ With non-nil prefix arg, mark them instead."
             (when details-hidden-p (dired-details-hide)))
         (narrow-to-region beg end)
         (dired-toggle-marks))))
-  (when (and (get-buffer-window (current-buffer))  (fboundp 'fit-frame-if-one-window))
-    (fit-frame-if-one-window)))
+  (diredp-fit-one-window-frame))
 
 
 ;;; Mouse 3 menu.
@@ -13785,7 +14044,7 @@ Marked (or next prefix arg) files & subdirs here
   \\[diredp-insert-subdirs]\t\t- Insert marked subdirectories
 
   \\[dired-copy-filename-as-kill]\t\t- Copy names for pasting
-  M-o \\[dired-copy-filename-as-kill]\t\t- Copy absolute names for pasting
+  M-0 \\[dired-copy-filename-as-kill]\t\t- Copy absolute names for pasting
   \\[diredp-yank-files]\t\t- Paste files whose absolute names you copied
   \\[dired-do-find-marked-files]\t\t- Visit
   \\[dired-do-print]\t\t- Print
@@ -14105,7 +14364,7 @@ File `dired+.el' has a header `Update #' that you can use to identify it.\
 
 (defun diredp-visit-ignore-regexp ()    ; Taken from `image-file-name-regexp'.
   "Return a regular expression matching file names to skip.
-This is used by `dired-visit-(next|previous)'."
+This is used by `diredp-visit-(next|previous)'."
   (let ((exts-regexp  (and diredp-visit-ignore-extensions
                            (concat "\\." (regexp-opt (nconc (mapcar #'upcase diredp-visit-ignore-extensions)
                                                             diredp-visit-ignore-extensions)
@@ -14126,7 +14385,7 @@ With numeric prefix arg N, move down N-1 lines first.
 After moving N lines, skip any lines with file names that match either
 `diredp-visit-ignore-extensions' or `diredp-visit-ignore-regexps'.
 
-Kill the last buffer visited by a `dired-visit-*' command."
+Kill the last buffer visited by a `diredp-visit-*' command."
   (interactive "p")
   (dired-next-line arg)
   (while (diredp-string-match-p (diredp-visit-ignore-regexp) (dired-get-file-for-visit))
@@ -14141,7 +14400,7 @@ With numeric prefix arg N, move up N-1 lines first.
 After moving N lines, skip any lines with file names that match either
 `diredp-visit-ignore-extensions' or `diredp-visit-ignore-regexps'.
 
-Kill the last buffer visited by a `dired-visit-*' command."
+Kill the last buffer visited by a `diredp-visit-*' command."
   (interactive "p")
   (dired-previous-line arg)
   (while (diredp-string-match-p (diredp-visit-ignore-regexp) (dired-get-file-for-visit))
@@ -14152,7 +14411,7 @@ Kill the last buffer visited by a `dired-visit-*' command."
 (defun diredp-visit-this-file ()        ; Bound to `e' (replaces `dired-find-file' binding)
   "View the file on this line in another window in the same frame.
 If it was not already shown there then kill the previous buffer
-visited by a `dired-visit-*' command.
+visited by a `diredp-visit-*' command.
 
 If it was already shown there, and if it and Dired are the only
 windows there, then delete its window (toggle : show/hide the file)."
@@ -14539,18 +14798,18 @@ If no one is selected, symmetric encryption will be performed.  "
     '(menu-item "Add Marked Files To Recent Visits" diredp-do-add-to-recentf
       :help "Add the files marked here to the list of recently visited files"
       :enable (featurep 'recentf)))
-(define-key diredp-menu-bar-multiple-menu [diredp-do-eval-in-marked]
-  '(menu-item "Eval Sexp In..." diredp-do-eval-in-marked
-              :help "Evaluate a Lisp sexp in each marked file"))
-;;; (define-key diredp-menu-bar-multiple-menu [diredp-do-invoke-in-marked]
-;;;   '(menu-item "Invoke Function In..." diredp-do-invoke-in-marked
-;;;               :help "Invoke a Lisp function in each marked file"))
-(define-key diredp-menu-bar-multiple-menu [diredp-do-apply-to-marked]
-  '(menu-item "Apply Function To..." diredp-do-apply-to-marked
-              :help "Apply a Lisp function to each marked file name"))
-(define-key diredp-menu-bar-multiple-menu [diredp-do-command-in-marked]
-    '(menu-item "Invoke Command/Macro In..." diredp-do-command-in-marked
-      :help "Invoke an Emacs command or keyboard macro in each marked file"))
+;;;; (define-key diredp-menu-bar-multiple-menu [diredp-do-eval-in-marked]
+;;;;   '(menu-item "Eval Sexp In..." diredp-do-eval-in-marked
+;;;;               :help "Evaluate a Lisp sexp in each marked file"))
+;;;; ;;; (define-key diredp-menu-bar-multiple-menu [diredp-do-invoke-in-marked]
+;;;; ;;;   '(menu-item "Invoke Function In..." diredp-do-invoke-in-marked
+;;;; ;;;               :help "Invoke a Lisp function in each marked file"))
+;;;; (define-key diredp-menu-bar-multiple-menu [diredp-do-apply-to-marked]
+;;;;   '(menu-item "Apply Function To..." diredp-do-apply-to-marked
+;;;;               :help "Apply a Lisp function to each marked file name"))
+;;;; (define-key diredp-menu-bar-multiple-menu [diredp-do-command-in-marked]
+;;;;     '(menu-item "Invoke Command/Macro In..." diredp-do-command-in-marked
+;;;;       :help "Invoke an Emacs command or keyboard macro in each marked file"))
 (define-key diredp-menu-bar-multiple-menu [print]
   '(menu-item "Print..." dired-do-print :help "Print marked files, supplying print command"))
 (define-key diredp-menu-bar-multiple-menu [compress]
@@ -15410,7 +15669,7 @@ If no one is selected, symmetric encryption will be performed.  "
     :help "Mark files whose contents matches regexp"))
 (define-key diredp-marks-mark-menu [marks-mark-sexp]
   '(menu-item "Mark If..." dired-mark-sexp ; In `dired-x.el'.
-              :help "Mark files that satisfy specified condition"))
+              :help "Mark files that satisfy condition specified by a sexp"))
 (define-key diredp-marks-mark-menu [marks-image-dired-mark-tagged-files]
   '(menu-item "Mark Image Files Tagged..." image-dired-mark-tagged-files
     :enable (fboundp 'image-dired-mark-tagged-files) ; In `image-dired.el'.
@@ -15672,6 +15931,14 @@ If no one is selected, symmetric encryption will be performed.  "
 
 (define-key diredp-menu-bar-dir-menu [separator-dired] '("--")) ; ---------------------
 
+(define-key diredp-menu-bar-dir-menu [diredp-create-file-here]
+  '(menu-item "New (Empty) File Here..." diredp-create-file-here
+              :help "Create a new empty file in this (sub)directory"))
+(define-key diredp-menu-bar-dir-menu [create-directory] ; Moved from "Immediate".
+  '(menu-item "New Directory..." dired-create-directory :help "Create a directory"))
+
+(define-key diredp-menu-bar-dir-menu [separator-create-new] '("--")) ; ---------------------
+
 (define-key diredp-menu-bar-dir-menu [insert]
   '(menu-item "Insert/Move-To This Subdir" dired-maybe-insert-subdir
     :help "Move to subdirectory line or listing"))
@@ -15679,8 +15946,6 @@ If no one is selected, symmetric encryption will be performed.  "
   '(menu-item "Undo" dired-undo :help "Undo changes: marks, killed lines, and subdir listings"))
 (define-key diredp-menu-bar-dir-menu [revert]
   '(menu-item "Refresh (Sync \& Show All)" revert-buffer :help "Update directory contents"))
-(define-key diredp-menu-bar-dir-menu [create-directory] ; Moved from "Immediate".
-  '(menu-item "New Directory..." dired-create-directory :help "Create a directory"))
 
 
 ;;; Mouse-3 menu binding.
@@ -15751,7 +16016,7 @@ If no one is selected, symmetric encryption will be performed.  "
 (define-key dired-mode-map "@"           nil) ; For Emacs 20
 (define-key dired-mode-map "@@"          'diredp-do-apply-to-marked)                ; `@ @'
 ;;; (define-key dired-mode-map (kbd "@ M-@") 'diredp-do-invoke-in-marked)               ; `@ M-@'
-(define-key dired-mode-map (kbd "@ M-x") 'diredp-do-command-in-marked)        ; `@ M-x'
+(define-key dired-mode-map (kbd "@ M-x") 'diredp-do-command-in-marked)              ; `@ M-x'
 (define-key dired-mode-map (kbd "@ M-:") 'diredp-do-eval-in-marked)                 ; `@ M-:'
 (define-key dired-mode-map "$"       'diredp-hide-subdir-nomove)                    ; `$'
 (define-key dired-mode-map "\M-$"    'dired-hide-subdir)                            ; `M-$'
@@ -15881,7 +16146,7 @@ If no one is selected, symmetric encryption will be performed.  "
   (define-key diredp-recursive-map "\M-\C-?"   'diredp-unmark-all-files-recursive))     ; `M-DEL'
 (define-key diredp-recursive-map "@@"          'diredp-do-apply-to-marked-recursive)    ; `@ @'
 ;;; (define-key diredp-recursive-map (kbd "@ M-@") 'diredp-do-invoke-in-marked-recursive)   ; `@ M-@'
-(define-key diredp-recursive-map (kbd "@ M-x") 'diredp-do-command-in-marked-recursive) ; `@ M-x'
+(define-key diredp-recursive-map (kbd "@ M-x") 'diredp-do-command-in-marked-recursive)  ; `@ M-x'
 (define-key diredp-recursive-map (kbd "@ M-:") 'diredp-do-eval-in-marked-recursive)     ; `@ M-:'
 (define-key diredp-recursive-map "#"           'diredp-flag-auto-save-files-recursive)  ; `#'
 (define-key diredp-recursive-map "*@"          'diredp-mark-symlinks-recursive)         ; `* @'
