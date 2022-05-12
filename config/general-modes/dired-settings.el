@@ -10,20 +10,6 @@
   (find-alternate-file ".."))
 
 
-(defun dired-sort-criteria (criteria)
-  "Sort-dired by different CRITERIA."
-  (interactive
-   (list
-    (or (completing-read "criteria [name]: "
-                         '("size(S)" "extension(X)" "creation-time(ct)"
-                           "access-time(ut)" "time(t)" "name()"))
-        "")))
-  (string-match ".*(\\(.*\\))" criteria)
-  (dired-sort-other
-   (concat dired-listing-switches
-           (match-string 1 criteria))))
-
-
 (with-eval-after-load 'dired
   (progn
     (message "My init :: dired loaded")
@@ -35,7 +21,8 @@
     (dired-async-mode 1)
 
     ;; Show directories first
-    (setq dired-listing-switches "-la --group-directories-first"
+    (setq dired-use-ls-dired t
+          dired-listing-switches "-aBhl"
           ;; Don't ask for confirmation on recursion when copying
           dired-recursive-copies 'always
           ;; Don't ask for confirmation on recursion when deleting
