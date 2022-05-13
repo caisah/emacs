@@ -22,7 +22,7 @@
 
     ;; Show directories first
     (setq dired-use-ls-dired t
-          dired-listing-switches "-aBhl"
+          dired-listing-switches "-aBhl --group-directories-first"
           ;; Don't ask for confirmation on recursion when copying
           dired-recursive-copies 'always
           ;; Don't ask for confirmation on recursion when deleting
