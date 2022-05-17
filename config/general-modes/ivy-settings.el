@@ -25,6 +25,7 @@
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "M-p") 'counsel-command-history)
 (global-set-key (kbd "C-c J") 'counsel-file-jump)
+(global-set-key (kbd "C-c g") 'counsel-ag)
 (global-set-key (kbd "C-c b") 'counsel-bookmark)
 (global-set-key (kbd "C-c d") 'counsel-descbinds)
 (global-set-key (kbd "C-c f") 'counsel-recentf)
