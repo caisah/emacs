@@ -10,6 +10,24 @@
   (find-alternate-file ".."))
 
 
+(defun dired-sort-criteria (criteria)
+  "Sort-dired by different CRITERIA."
+  (interactive
+   (list
+    (or (completing-read "criteria [name]: "
+                         '("size(S)" "extension(X)" "creation-time(ct)"
+                           "access-time(ut)" "time(t)" "name()"))
+        "")))
+  (string-match ".*(\\(.*\\))" criteria)
+  (dired-sort-other
+   (concat dired-listing-switches
+           (match-string 1 criteria))))
+
+(defun my-dired-kill-subdir ()
+  (interactive)
+  (dired-kill-subdir)
+  (pop-global-mark))
+
 (with-eval-after-load 'dired
   (progn
     (message "My init :: dired loaded")
@@ -42,7 +60,7 @@
 
     ;; Define specific keys
     (define-key dired-mode-map (kbd "^") 'dired-go-up-dir)
-    (define-key dired-mode-map (kbd "k") 'dired-kill-subdir)
+    (define-key dired-mode-map (kbd "k") 'my-dired-kill-subdir)
 
     ;; Hooks
     ;; Omit uninteresting files in Dired including .. and .
