@@ -42,6 +42,7 @@
 (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
 (global-set-key (kbd "C-c v") 'ivy-push-view)
 (global-set-key (kbd "C-c V") 'ivy-pop-view)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
 
 ;; Customize ivy-rich
 (setq-default ivy-rich-display-transformers-list
@@ -91,6 +92,11 @@
                   (ivy-rich-package-version (:width 16 :face font-lock-comment-face))
                   (ivy-rich-package-archive-summary (:width 7 :face font-lock-builtin-face))
                   (ivy-rich-package-install-summary (:face font-lock-doc-face))))))
+
+;; Add the option to open new dired buffer in other window
+(ivy-set-actions
+ 'dired
+ '(("o" dired-other-window "other window")))
 
 ;; Ivy rich
 (require 'ivy-rich)
