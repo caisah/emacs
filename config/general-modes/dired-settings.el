@@ -1,14 +1,13 @@
 ;;; dired-settings.el --- Dired
 
 ;;; Commentary:
-;; dired, dired-aux & dired+ settings
+;; Dired, dired-aux & dired+ settings
 
 ;;; Code:
 (defun dired-go-up-dir ()
   "Navigates to the parent dir."
   (interactive)
   (find-alternate-file ".."))
-
 
 (defun dired-sort-criteria (criteria)
   "Sort-dired by different CRITERIA."
