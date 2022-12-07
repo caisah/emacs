@@ -162,6 +162,8 @@
 
    `(header-line ((t (:foreground "gray70" :background "gray20"))))
 
+   `(help-key-binding ((t (:background "gray20" :foreground "grey65" :box (:line-width 3 :color "grey20")))))
+
    `(message-header-name ((t (:foreground "gray50" :weight bold))))
    `(message-header-subject ((t (:foreground "gray70"))))
    `(message-header-other ((t (:foreground "gray40"))))
