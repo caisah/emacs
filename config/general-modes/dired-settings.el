@@ -9,19 +9,6 @@
   (interactive)
   (find-alternate-file ".."))
 
-(defun dired-sort-criteria (criteria)
-  "Sort-dired by different CRITERIA."
-  (interactive
-   (list
-    (or (completing-read "criteria [name]: "
-                         '("size(S)" "extension(X)" "creation-time(ct)"
-                           "access-time(ut)" "time(t)" "name()"))
-        "")))
-  (string-match ".*(\\(.*\\))" criteria)
-  (dired-sort-other
-   (concat dired-listing-switches
-           (match-string 1 criteria))))
-
 (defun my-dired-kill-subdir ()
   (interactive)
   (dired-kill-subdir)
@@ -33,9 +20,13 @@
 
     (require 'dired-aux)
     (require 'dired+)
+    (require 'dired-quick-sort)
 
     ;; Do async operations when dealing with files
     (dired-async-mode 1)
+
+    ;; Enable hydra sort on "S" press
+    (dired-quick-sort-setup)
 
     ;; Show directories first
     (setq dired-use-ls-dired t
