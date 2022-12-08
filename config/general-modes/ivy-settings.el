@@ -96,7 +96,7 @@
 ;; Add the option to open new dired buffer in other window
 (ivy-set-actions
  'dired
- '(("o" dired-other-window "other window")))
+ '(("j" dired-other-window "other window")))
 
 ;; Ivy rich
 (require 'ivy-rich)
