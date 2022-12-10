@@ -4,6 +4,10 @@
 
 ;;; Code:
 
+;; Use projectile package
+(straight-use-package 'projectile)
+(straight-use-package 'counsel-projectile)
+
 (with-eval-after-load 'projectile
   (progn
     (message "My init :: projectile loaded")
@@ -30,7 +34,6 @@
 
 ;; Use counsel with projectile
 (counsel-projectile-mode 1)
-
 
 (provide 'projectile-settings)
 ;;; projectile-settings ends here

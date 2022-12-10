@@ -5,6 +5,9 @@
 
 ;;; Code:
 
+;; Use ace-window package
+(straight-use-package 'ace-window)
+
 (global-set-key (kbd "C-c o") 'ace-window)
 
 (with-eval-after-load 'ace-window

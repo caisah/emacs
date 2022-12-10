@@ -8,5 +8,8 @@
 ;; Mongo
 (setq-default inf-mongo-command "/usr/bin/mongo")
 
+;; Terraform
+(straight-use-package 'terraform-mode)
+
 (provide 'other-languages-config)
 ;;; other-languages-config.el ends here

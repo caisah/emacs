@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;  Settings for parens
 
+;; Use smartparens
+(straight-use-package 'smartparens)
 
 ;;; Code:
 (with-eval-after-load 'smartparens

@@ -45,6 +45,3 @@
 (require 'general-settings)
 
 ;;; init.el ends here
-
-
-

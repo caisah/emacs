@@ -22,5 +22,7 @@
 (add-hook 'emacs-lisp-mode-hook 'flycheck-mode)
 (add-hook 'emacs-lisp-mode-hook 'whitespace-mode)
 
+(straight-use-package 'elisp-format)
+
 (provide 'elisp-config)
 ;;; elisp-config.el ends here

@@ -8,7 +8,8 @@
 ;; Re-Builder
 (setq-default reb-re-syntax 'string)
 
-
+;; Use markdown-mode package
+(straight-use-package 'markdown-mode)
 ;; Markdown mode
 (autoload 'markdown-mode "markdown-mode"
   "Major mode for editing Markdown files" t)
@@ -33,37 +34,19 @@
                                               (overlay-end ov)))
                          'face 'hs-face)))))
 
-
-;; Yasnippet https://github.com/capitaomorte/yasnippet
-(setq-default yas-snippet-dirs '("~/.emacs.d/snippets"))
+;; Use yas
+(straight-use-package 'yasnippet)
 
 ;; YAML
+(straight-use-package 'yaml-mode)
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
 ;; KeyFreq https://github.com/dacap/keyfreq
+(straight-use-package 'keyfreq)
 (require 'keyfreq)
 (keyfreq-mode 1)
 (keyfreq-autosave-mode 1)
-
-
-;;  JSON mode
-(defun my-json-hook ()
-  "Personal hook for json-mode."
-  (progn
-    (make-local-variable 'js-indent-level)
-    (setq js-indent-level 2)
-
-    (local-set-key (kbd "C-c C-b") 'json-mode-beautify)
-    (local-set-key (kbd "C-c C-f") 'hs-toggle-hiding)))
-
-(add-hook 'json-mode-hook 'flycheck-mode)
-(add-hook 'json-mode-hook 'hs-minor-mode)
-(add-hook 'json-mode-hook 'my-json-hook)
-
-;; XML
-(add-hook 'nxml-mode-hook 'sgml-mode)
-(add-hook 'nxml-mode-hook 'hs-minor-mode)
 
 (add-to-list 'hs-special-modes-alist
              '(nxml-mode
@@ -79,14 +62,24 @@
 (add-to-list 'auto-mode-alist '("\\.env\\..*\\'" . dotenv-mode))
 
 ;; Editor config
+(straight-use-package 'editorconfig)
 (require 'editorconfig)
 
+;; Use prettier-js package
+(straight-use-package 'prettier-js)
+;; Use undo-tree package
+(straight-use-package 'undo-tree)
 ;; Enable undo tree mode
 (global-undo-tree-mode 1)
 
-;; Use package lint for elisp
-(eval-after-load 'flycheck
-  '(flycheck-package-setup))
+(straight-use-package 'flycheck)
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+(straight-use-package 'pretty-symbols)
+
+(straight-use-package 'rainbow-delimiters)
+
+(straight-use-package 'expand-region)
 
 (provide 'othermodes-settings)
 ;;; othermodes-settings.el ends here

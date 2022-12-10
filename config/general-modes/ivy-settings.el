@@ -4,11 +4,21 @@
 ;; Be fast with Ivy
 
 ;;; Code:
-;; Use ivy
+
+;; Use ivy package
+(straight-use-package 'ivy)
+;; Use counsel package
+(straight-use-package 'counsel)
+;; Use avy package
+(straight-use-package 'avy)
+;; Use ivy-rich package
+(straight-use-package 'ivy-rich)
+
+;; Enable ivy
 (ivy-mode 1)
-;; Use counsel
+;; Enable counsel
 (counsel-mode 1)
-;; Use avy
+;; Enable avy
 (avy-setup-default)
 
 ;; Yes, use virtual buffers
