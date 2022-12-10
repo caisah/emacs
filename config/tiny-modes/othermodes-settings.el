@@ -81,5 +81,7 @@
 
 (straight-use-package 'expand-region)
 
+(straight-use-package 'rainbow-mode)
+
 (provide 'othermodes-settings)
 ;;; othermodes-settings.el ends here
