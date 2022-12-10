@@ -4,6 +4,8 @@
 
 ;;; Code:
 
+;; Use org package
+(straight-use-package 'org)
 ;; enable toc
 (with-eval-after-load 'org
   (progn

@@ -4,6 +4,8 @@
 ;; LSP configuration
 
 ;;; Code:
+;; Use lsp-mode
+(straight-use-package 'lsp-mode)
 
 (defun my-lsp-hook ()
   "Hook used for lsp-mode."

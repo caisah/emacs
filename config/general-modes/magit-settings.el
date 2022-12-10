@@ -4,7 +4,8 @@
 ;; https://github.com/magit/magit
 
 ;;; Code:
-
+;; Use magit
+(straight-use-package 'magit)
 ;; Set global key for magit
 (global-set-key (kbd "C-x m") 'magit-status)
 

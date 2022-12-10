@@ -4,6 +4,9 @@
 ;; Settings for smart-mode-line
 
 ;;; Code:
+;; Use smart-mode-line package
+(straight-use-package 'smart-mode-line)
+
 (require 'smart-mode-line)
 
 (setq-default

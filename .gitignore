@@ -19,3 +19,5 @@ recentf
 /nov-places
 /config/general-modes/elfeed-settings.el
 /.DS_Store
+/straight/build
+/straight/repos

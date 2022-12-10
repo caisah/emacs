@@ -25,6 +25,7 @@
     (progn
       (eww input)
       (rename-buffer (concat "*eww " input "*")))))
+
 (require 'eww)
 ;; Export:
 (provide 'eww-settings)

@@ -3,7 +3,11 @@
 ;;; Commentary:
 ;;  Company mode config
 
-;;; Code:
+;; Use company package
+(straight-use-package 'company)
+;; Use company-quickhelp package
+(straight-use-package 'company-quickhelp)
+
 (with-eval-after-load 'company
   (progn
     (message "My init :: company-mode loaded")

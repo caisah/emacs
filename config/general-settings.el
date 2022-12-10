@@ -5,17 +5,24 @@
 
 ;;; Code:
 
+;; Bootstrap Straight
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 6))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
 
-;; Cask & coreutils + bash
+
+;; Coreutils + bash
 (if (eql system-type 'darwin)
-    (require 'mac-settings)
-
-  ;; On linux load cask from specific dir
-  (require 'cask "~/.cask/cask.el"))
-
-(cask-initialize)
-(require 'pallet)
-(pallet-mode t)
+    (require 'mac-settings))
 
 ;; Set gc limit
 (setq gc-cons-threshold (* 40 1024 1024))
@@ -23,27 +30,8 @@
 ;; Increase the amount of data which Emacs reads from the process
 (setq read-process-output-max (* 3 1024 1024))
 
-;; add node to the path
-(exec-path-from-shell-copy-env "NVM_DIR")
-;; Don't log bash profile warning
-(setq-default exec-path-from-shell-check-startup-files nil)
-;; Set exec-path as $PATH
-(exec-path-from-shell-initialize)
-
-;; Files created by Emacs
-;; Set .litter as the default dir for custom emacs files
-(setq-default
- no-littering-etc-directory (expand-file-name ".litter/etc/" user-emacs-directory)
- no-littering-var-directory (expand-file-name ".litter/var/" user-emacs-directory))
-(require 'no-littering)
-
-;; Set backup dir
-(setq auto-save-file-name-transforms
-      `((".*" ,(no-littering-expand-var-file-name "auto-save/") t))
-      ;; Set the temp dir
-      temporary-file-directory "~/.emacs.d/.litter/temp"
-      ;; Set custom file to emacs-custom.el
-      custom-file (expand-file-name "config/emacs-custom.el" user-emacs-directory))
+;; Set all default dirs
+(require 'litter)
 
 (setq-default
  ;; Make buffer names unique
@@ -160,9 +148,9 @@
 (show-paren-mode t)
 ;; Disable electric indent mode
 (electric-indent-mode -1)
-;; Show info about search
-(global-anzu-mode t)
+
 ;; Show beautified page breaks
+(straight-use-package 'page-break-lines)
 (global-page-break-lines-mode t)
 ;; Revert buffer when the file changes on disk
 (global-auto-revert-mode 1)
@@ -195,6 +183,9 @@
 (require 'my-functions)
 
 ;; Configure all the other modes
+(require 'exec-path)
+(require 'litter)
+(require 'othermodes-settings)
 (require 'dired-settings)
 (require 'ibuffer-settings)
 (require 'projectile-settings)
@@ -216,19 +207,16 @@
 (require 'eww-settings)
 (require 'erc-settings)
 (require 'lsp-settings)
-(require 'othermodes-settings)
 
 ;; Programming
+(require 'other-languages-config)
 (require 'javascript-config)
+(require 'json)
+(require 'xml)
 (require 'web-config)
 (require 'sh-config)
 (require 'elisp-config)
-(require 'elm-config)
 (require 'typescript-config)
-(require 'reason-config)
-(require 'go-config)
-;; (require 'ocaml-config)
-;; (require 'other-languages-config)
 
 (require 'blog-settings)
 

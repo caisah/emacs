@@ -3,6 +3,10 @@
 ;;; Commentary:
 ;; Dired, dired-aux & dired+ settings
 
+(straight-use-package 'dired+)
+(straight-use-package 'dired-quick-sort)
+(straight-use-package 'async)
+
 ;;; Code:
 (defun dired-go-up-dir ()
   "Navigates to the parent dir."
