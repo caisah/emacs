@@ -21,4 +21,4 @@ recentf
 /.DS_Store
 /straight/build
 /straight/repos
-/straight/build*
+/straight/build-cache.el
