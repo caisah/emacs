@@ -196,8 +196,8 @@
 ;; Programming
 (require 'other-languages-config)
 (require 'javascript-config)
-(require 'json)
-(require 'xml)
+(require 'json-config)
+(require 'xml-config)
 (require 'web-config)
 (require 'sh-config)
 (require 'elisp-config)
