@@ -45,9 +45,10 @@
 (defun my-copy-buffer-file-name ()
   "Copy buffer file name."
   (interactive)
-  (kill-new (buffer-file-name))
-  (message "Copied: %s" buffer-file-name))
-
+  (let ((buff (buffer-file-name)))
+    (if buff (progn ((kill-new buff)
+                     (message "Copied: %s" buffer-file-name)))
+      (message "No file to copy in: %s" major-mode))))
 
 (defun my-read-file (filename)
   "Return the contents of FILENAME."
