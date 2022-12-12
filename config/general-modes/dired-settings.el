@@ -6,17 +6,13 @@
 (straight-use-package 'dired+)
 (straight-use-package 'dired-quick-sort)
 (straight-use-package 'async)
+(straight-use-package 'dired-subtree)
 
 ;;; Code:
 (defun dired-go-up-dir ()
   "Navigates to the parent dir."
   (interactive)
   (find-alternate-file ".."))
-
-(defun my-dired-kill-subdir ()
-  (interactive)
-  (dired-kill-subdir)
-  (pop-global-mark))
 
 (with-eval-after-load 'dired
   (progn
@@ -52,7 +48,11 @@
 
     ;; Define specific keys
     (define-key dired-mode-map (kbd "^") 'dired-go-up-dir)
-    (define-key dired-mode-map (kbd "k") 'my-dired-kill-subdir)
+    (define-key dired-mode-map (kbd "k") 'dired-subtree-remove)
+    (define-key dired-mode-map (kbd "i") 'dired-subtree-insert)
+    (define-key dired-mode-map (kbd "C-M-u") 'dired-subtree-up)
+    (define-key dired-mode-map (kbd "C-M-n") 'dired-subtree-next-sibling)
+    (define-key dired-mode-map (kbd "C-M-p") 'dired-subtree-previous-sibling)
 
     ;; Hooks
     ;; Omit uninteresting files in Dired including .. and .
