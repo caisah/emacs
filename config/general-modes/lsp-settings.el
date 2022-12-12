@@ -6,6 +6,7 @@
 ;;; Code:
 ;; Use lsp-mode
 (straight-use-package 'lsp-mode)
+(straight-use-package 'lsp-ivy)
 
 (defun my-lsp-hook ()
   "Hook used for lsp-mode."
