@@ -235,6 +235,14 @@
    `(diredp-deletion-file-name ((t (:foreground "black" :background "gray60"))))
    `(diredp-deletion ((t (:foreground "firebrick" :weight bold))))
 
+   ;; dired-subtree
+   `(dired-subtree-depth-1-face ((t (:foreground "gray70"))))
+   `(dired-subtree-depth-2-face ((t (:foreground "gray70"))))
+   `(dired-subtree-depth-3-face ((t (:foreground "gray70"))))
+   `(dired-subtree-depth-4-face ((t (:foreground "gray70"))))
+   `(dired-subtree-depth-5-face ((t (:foreground "gray70"))))
+   `(dired-subtree-depth-6-face ((t (:foreground "gray70"))))
+
    ;; ivy
    `(ivy-action ((t (:foreground "goldenrod3" :background nil :weight bold))))
    `(ivy-current-match ((t (:background "gray25"))))
