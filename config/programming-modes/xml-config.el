@@ -7,4 +7,4 @@
 (add-hook 'nxml-mode-hook 'sgml-mode)
 (add-hook 'nxml-mode-hook 'hs-minor-mode)
 
-(provide 'xml)
+(provide 'xml-config)

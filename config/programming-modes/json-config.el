@@ -21,4 +21,4 @@
 (add-hook 'json-mode-hook 'hs-minor-mode)
 (add-hook 'json-mode-hook 'my-json-hook)
 
-(provide 'json)
+(provide 'json-config)

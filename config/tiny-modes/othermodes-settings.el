@@ -83,5 +83,7 @@
 
 (straight-use-package 'rainbow-mode)
 
+(straight-use-package 'ag)
+
 (provide 'othermodes-settings)
 ;;; othermodes-settings.el ends here
