@@ -22,4 +22,5 @@
 
 (require 'no-littering)
 
-(provide 'litter)
+(provide 'no-littering-config)
+;;; no-littering-config.el ends here

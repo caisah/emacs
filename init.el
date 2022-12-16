@@ -11,7 +11,6 @@
 
 ;; Defun my config dirs
 (defconst my-config-dir "~/.emacs.d/config")
-(defconst my-custom-package-dir "~/.emacs.d/custom-packages")
 (defconst my-themes-dir "~/.emacs.d/themes")
 
 ;; Bootstrap Straight
@@ -50,7 +49,7 @@
          (mapcar 'my-subdirs-and-dir dirs))))
 
 ;; Add all dirs to load path
-(my-add-to-path-dirs (list my-config-dir my-custom-package-dir))
+(my-add-to-path-dirs (list my-config-dir))
 
 ;; Load Theme
 (load-theme 'paleolithic t)

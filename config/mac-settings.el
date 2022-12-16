@@ -3,18 +3,13 @@
 ;;; Commentary:
 ;;  Config file specific to mac
 
-;;; Code:
-(defconst my-darwin-assoc '((m1-ls . "/opt/homebrew/opt/coreutils/libexec/gnubin/ls")
-                            (m1-bash . "/opt/homebrew/bin/bash")
-                            (x64-ls . "/usr/local/opt/coreutils/libexec/gnubin/ls")
-                            (x64-bash . "/usr/local/bin/bash")))
-
 ;; Set mac modifiers
+;;; Code:
 (setq-default
  ;; Use coreutils ls
- insert-directory-program (cdr (assoc 'm1-ls my-darwin-assoc))
+ insert-directory-program "/opt/homebrew/opt/coreutils/libexec/gnubin/ls"
  ;; use local bash
- shell-file-name (cdr (assoc 'm1-bash my-darwin-assoc))
+ shell-file-name "/opt/homebrew/bin/bash"
  ;; Use command as meta
  mac-command-modifier 'meta
  ;; Use option as super
@@ -25,4 +20,4 @@
  ispell-program-name "/opt/homebrew/bin/aspell")
 
 (provide 'mac-settings)
-;;; mac-settings ends here
+;;; mac-settings.el ends here
