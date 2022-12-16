@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-;; use exec-path-from-shell package
+;; Use exec-path-from-shell package
 (straight-use-package 'exec-path-from-shell)
 ;; add node to the path
 (exec-path-from-shell-copy-env "NVM_DIR")
@@ -14,3 +14,4 @@
 (exec-path-from-shell-initialize)
 
 (provide 'exec-path)
+;;; exec-path.el ends here

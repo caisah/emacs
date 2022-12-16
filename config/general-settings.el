@@ -7,7 +7,8 @@
 
 ;; Coreutils + bash
 (if (eql system-type 'darwin)
-    (require 'mac-settings))
+    (require 'mac-settings)
+  (require 'linux-settings))
 
 ;; Set gc limit
 (setq gc-cons-threshold (* 40 1024 1024))
@@ -16,7 +17,9 @@
 (setq read-process-output-max (* 3 1024 1024))
 
 ;; Set all default dirs
-(require 'litter)
+(require 'no-littering-config)
+;; required for "true" init file timing
+(require 'my-functions)
 
 (setq-default
  ;; Make buffer names unique
@@ -78,16 +81,10 @@
 ;; display startup time
 (add-hook 'window-setup-hook 'my-show-startup-time)
 
-;; Improve navigation & editing
-(defun my-buffer-too-big-p ()
-  "Check if a buffer is really big."
-  (or (> (buffer-size) (* 5000 80))
-      (> (line-number-at-pos (point-max)) 5000)))
-
 ;; Disable `flycheck-mode' for big buffers
 (add-hook 'prog-mode-hook
           (lambda ()
-            (if (my-buffer-too-big-p)
+            (if (my-current-buffer-too-big-p)
                 (progn
                   (flycheck-mode -1)))))
 
@@ -134,9 +131,6 @@
 ;; Disable electric indent mode
 (electric-indent-mode -1)
 
-;; Show beautified page breaks
-(straight-use-package 'page-break-lines)
-(global-page-break-lines-mode t)
 ;; Revert buffer when the file changes on disk
 (global-auto-revert-mode 1)
 ;; Delete selected text when starting to type
@@ -164,12 +158,8 @@
 ;; Show column number
 (column-number-mode t)
 
-;; required for "true" init file timing
-(require 'my-functions)
-
 ;; Configure all the other modes
 (require 'exec-path)
-(require 'litter)
 (require 'othermodes-settings)
 (require 'dired-settings)
 (require 'ibuffer-settings)
@@ -209,5 +199,5 @@
 ;; (require 'abbrevs)
 
 (provide 'general-settings)
-;;; general-settings ends here
+;;; general-settings.el ends here
 

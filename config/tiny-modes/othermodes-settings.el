@@ -85,5 +85,13 @@
 
 (straight-use-package 'ag)
 
+;; Use anzu
+(straight-use-package 'anzu)
+(global-anzu-mode t)
+
+;; Show beautified page breaks
+(straight-use-package 'page-break-lines)
+(global-page-break-lines-mode t)
+
 (provide 'othermodes-settings)
 ;;; othermodes-settings.el ends here

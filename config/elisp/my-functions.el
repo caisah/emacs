@@ -14,6 +14,10 @@
     (+ (- e-lo s-lo)
        (/ (- e-us  s-us) 1e6))))
 
+(defun my-current-buffer-too-big-p ()
+  "Check if a buffer is really big."
+  (or (> (buffer-size) (* 5000 80))
+      (> (line-number-at-pos (point-max)) 5000)))
 
 (defun my-show-startup-time ()
   "Message the time since .init file loaded."

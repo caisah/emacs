@@ -8,11 +8,16 @@
   (progn
     (message "My init :: eshell-mode loaded")))
 
-;; show full width lines in shell mode
-(add-hook 'eshell-mode-hook '(lambda ()
-                              (visual-line-mode nil)
-                              (setq truncate-lines t)))
-(add-hook 'eshell-mode-hook 'company-mode)
+
+(defun my-eshell-hook ()
+  "Hook envoked on eshell start."
+
+  ;; disable line mode
+  (visual-line-mode nil)
+  ;; show full width lines in shell mode
+  (setq truncate-lines t)
+  ;; start company
+  (company-mode 1))
 
 ;; opening shells
 (defun my-shell-here ()
@@ -49,6 +54,8 @@
     (my-shell-here))
 
 (global-set-key (kbd "C-c s") 'my-shell-here)
+
+(add-hook 'eshell-mode-hook 'my-eshell-hook)
 
 (provide 'shell-settings)
 ;;; shell-settings ends here
