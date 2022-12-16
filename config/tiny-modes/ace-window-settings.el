@@ -9,6 +9,7 @@
 (straight-use-package 'ace-window)
 
 (global-set-key (kbd "C-c o") 'ace-window)
+(global-set-key (kbd "C-c M-o") 'ace-swap-window)
 
 (with-eval-after-load 'ace-window
   (progn
