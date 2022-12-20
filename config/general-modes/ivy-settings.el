@@ -13,6 +13,8 @@
 (straight-use-package 'avy)
 ;; Use ivy-rich package
 (straight-use-package 'ivy-rich)
+;; Use counsel-tramp
+(straight-use-package 'counsel-tramp)
 
 ;; Enable ivy
 (ivy-mode 1)
@@ -29,6 +31,8 @@
 (setq-default ivy-wrap t)
 ;; Make ivy larger
 (setq-default ivy-height 20)
+;; Use ssh
+(setq-default tramp-default-method "ssh")
 
 ;; Counsel
 (global-set-key (kbd "M-x") 'counsel-M-x)
