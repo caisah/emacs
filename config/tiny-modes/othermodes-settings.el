@@ -36,6 +36,8 @@
 
 ;; Use yas
 (straight-use-package 'yasnippet)
+;; Enable yasnippet globally
+(yas-global-mode)
 
 ;; YAML
 (straight-use-package 'yaml-mode)
