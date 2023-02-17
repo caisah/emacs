@@ -113,8 +113,6 @@ The order is: `standard', `eslint' `prettier' `prettier-eslint'."
     (progn
       ;; Enable autocomplete
       (company-mode 1)
-      ;; Enable yasnippet
-      (yas-minor-mode 1)
       ;; Enable code navigation
       (lsp)
       ;; Don't consider camelcased full words
