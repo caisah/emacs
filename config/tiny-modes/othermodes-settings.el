@@ -39,6 +39,9 @@
 ;; Enable yasnippet globally
 (yas-global-mode)
 
+;; Enable eldoc globally
+(global-eldoc-mode t)
+
 ;; YAML
 (straight-use-package 'yaml-mode)
 (require 'yaml-mode)
