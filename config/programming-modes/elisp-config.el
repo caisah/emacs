@@ -23,6 +23,11 @@
 (add-hook 'emacs-lisp-mode-hook 'whitespace-mode)
 
 (straight-use-package 'elisp-format)
+(straight-use-package 'elisp-slime-nav)
+
+(require 'elisp-slime-nav)
+(dolist (hook '(emacs-lisp-mode-hook ielm-mode-hook))
+  (add-hook hook 'elisp-slime-nav-mode))
 
 (provide 'elisp-config)
 ;;; elisp-config.el ends here
