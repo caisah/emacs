@@ -81,6 +81,7 @@
 ;; display startup time
 (add-hook 'window-setup-hook 'my-show-startup-time)
 
+(straight-use-package 'flycheck)
 ;; Disable `flycheck-mode' for big buffers
 (add-hook 'prog-mode-hook
           (lambda ()
@@ -120,7 +121,7 @@
 
 (global-set-key (kbd "C-`") 'er/expand-region)
 
-(global-set-key (kbd "C-S-s") 'anzu-query-replace-regexp)
+(global-set-key (kbd "C-S-s") 'query-replace-regexp)
 
 
 ;; Global Modes:
