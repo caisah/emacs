@@ -20,7 +20,10 @@
       ;; Set custom file to emacs-custom.el
       custom-file (expand-file-name "config/emacs-custom.el" user-emacs-directory))
 
+
 (require 'no-littering)
+
+(no-littering-theme-backups)
 
 (provide 'no-littering-config)
 ;;; no-littering-config.el ends here
