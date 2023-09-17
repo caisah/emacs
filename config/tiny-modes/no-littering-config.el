@@ -23,7 +23,7 @@
 
 (require 'no-littering)
 
-(no-littering-theme-backups)
+;; (no-littering-theme-backups)
 
 (provide 'no-littering-config)
 ;;; no-littering-config.el ends here
