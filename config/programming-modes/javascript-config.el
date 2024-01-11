@@ -7,6 +7,9 @@
 ;;; add hippie expand `hippie-expand-try-functions-list
 
 ;;; Code:
+(use-package js-comint
+  :straight t)
+
 (defvar my-standard-exec nil
   "Local variable holding the executable for javascript standard.")
 
@@ -103,9 +106,11 @@ The order is: `standard', `eslint' `prettier' `prettier-eslint'."
 (defun my-js-repl-reset ()
   "Reset and clears js REPL."
   (interactive)
-  (js-comint-reset-repl)
-  (js-comint-clear)
-  (other-window -1))
+  (let ((my-last-window (selected-window)))
+    (js-comint-reset-repl)
+    (js-comint-clear)
+    (select-window my-last-window)))
+
 
 (defun my-js-specific ()
   "Personal hook for \"js-mode\" major mode."
