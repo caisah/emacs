@@ -10,6 +10,10 @@
     (require 'mac-settings)
   (require 'linux-settings))
 
+(package-initialize)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/"))
+
 ;; Set gc limit
 (setq gc-cons-threshold (* 40 1024 1024))
 
@@ -52,7 +56,11 @@
  ;; Always save desktop
  desktop-save t
  ;; Move to help buffer when opened
- help-window-select t)
+ help-window-select t
+;; Enable recursive minibuffers
+ enable-recursive-minibuffers t
+;; Ignore case check on completion
+completion-ignore-case t)
 
 ;; use UTF-8
 (set-language-environment "UTF-8")
@@ -170,7 +178,8 @@
 (require 'company-settings)
 (require 'shell-settings)
 (require 'magit-settings)
-(require 'ivy-settings)
+;; (require 'ivy-settings)
+(require 'complete-settings)
 (require 'docview-settings)
 (require 'ace-window-settings)
 (require 'sml-settings)

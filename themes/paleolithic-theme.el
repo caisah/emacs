@@ -116,6 +116,7 @@
    `(link ((t (:foreground "gray60" :underline t))))
    `(link-visited ((t (:foreground "gray35" :underline t))))
    `(fringe ((t (:background "gray10"))))
+   `(completions-common-part ((t (:foreground "goldenrod3" :background nil :weight bold))))
 
    ;; highlighting
    `(hi-yellow ((t (:background "LightGoldenrod" :foreground "gray10"))))
@@ -272,6 +273,19 @@
    `(avy-lead-face-0 ((t (:foreground "wheat3" :background "gray20" :weight bold))))
    `(avy-lead-face-1 ((t (:foreground "wheat3" :background "gray20" :weight bold))))
    `(avy-lead-face-2 ((t (:foreground "wheat3" :background "gray20" :weight bold))))
+
+   ;; vertico
+   `(vertico-quick1 ((t (:foreground "wheat3" :background "gray20" :weight bold))))
+   `(vertico-quick2 ((t (:foreground "wheat3" :background "gray20" :weight bold))))
+
+   ;; orderless
+   `(orderless-match-face-0 ((t (:foreground "wheat3" :background "gray20" :weight bold))))
+   `(orderless-match-face-1 ((t (:foreground "wheat3" :background "gray20" :weight bold))))
+   `(orderless-match-face-2 ((t (:foreground "goldenrod3" :background nil :weight bold))))
+   `(orderless-match-face-3 ((t (:foreground "goldenrod3" :background nil :weight bold))))
+
+   ;; embark
+   `(embark-keybinding ((t (:foreground "wheat3" :height 1.05 :weight bold))))
 
    ;; hydra
    `(hydra-face-pink ((t (:foreground "wheat3" :weight bold))))

@@ -5,35 +5,24 @@
 ;;; Code:
 
 ;; Use projectile package
-(straight-use-package 'projectile)
-(straight-use-package 'counsel-projectile)
+(use-package projectile
+  :straight t
 
-(with-eval-after-load 'projectile
-  (progn
-    (message "My init :: projectile loaded")
+  :init
+  (projectile-mode 1)
 
-    (setq
+  :config
+  (message "My init :: projectile loaded")
+  (setq
      ;; Use elisp
      projectile-indexing-method 'alien
-     ;; Use ivy
-     projectile-completion-system 'ivy
+
      ;; When switching a project switch to a dir
      projectile-switch-project-action #'projectile-dired)
 
-    (define-key projectile-mode-map (kbd "s-h") 'projectile-command-map)))
-
-;; Always use projectile
-(projectile-mode 1)
-
-(with-eval-after-load 'counsel-projectile
-  (progn
-    (message "My init :: counsel projectile loaded")
-
-    (define-key projectile-mode-map (kbd "s-h g") 'projectile-ag)
-))
-
-;; Use counsel with projectile
-(counsel-projectile-mode 1)
+  :bind (:map projectile-mode-map
+              ("s-h" . projectile-command-map)
+              ("s-h g" . consult-ripgrep)))
 
 (provide 'projectile-settings)
 ;;; projectile-settings ends here
