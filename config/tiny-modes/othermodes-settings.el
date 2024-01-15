@@ -93,6 +93,9 @@
 
 (straight-use-package 'ag)
 
+(use-package wgrep
+  :straight t)
+
 ;; Show beautified page breaks
 (straight-use-package 'page-break-lines)
 (global-page-break-lines-mode t)
