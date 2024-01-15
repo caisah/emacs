@@ -39,6 +39,9 @@
 ;; Enable yasnippet globally
 (yas-global-mode)
 
+;; Enable recentf
+(recentf-mode 1)
+
 ;; Enable eldoc globally
 (global-eldoc-mode t)
 
