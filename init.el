@@ -990,7 +990,6 @@
   :hook
   (typescript-mode . (lambda ()
                        (flycheck-mode 1)
-                       (eglot-ensure)
                        (setq flycheck-check-syntax-automatically '(save mode-enabled))
                        (flycheck-eglot-mode 1)
                        (rainbow-delimiters-mode 1)
@@ -1033,7 +1032,6 @@
 
   :hook
   (css-mode . (lambda ()
-                (eglot-ensure)
                 (company-mode-on)
                 (flycheck-mode 1))))
 
@@ -1070,10 +1068,13 @@
 
 (use-package eglot
   :config
-  (add-to-list 'eglot-server-programs
-               '(css-mode . ("vscode-css-language-server" "--stdio")))
+  (add-to-list 'eglot-server-programs '(css-mode . ("vscode-css-language-server" "--stdio")))
+  (add-to-list 'eglot-server-programs '((js-mode tsx-ts-mode typescript-mode) ("typescript-language-server" "--stdio")))
   :custom
-  (eglot-events-buffer-size 0))
+  (eglot-events-buffer-size 0)
+
+  :hook
+  (prog-mode . eglot-ensure))
 
 
 (use-package flycheck-eglot
