@@ -68,8 +68,9 @@
   "Copy buffer file name."
   (interactive)
   (let ((buff (buffer-file-name)))
-    (if buff (progn ((kill-new buff)
-                     (message "Copied: %s" buffer-file-name)))
+    (if buff (progn
+               (kill-new buff)
+               (message "Copied: %s" buffer-file-name))
       (message "No file to copy in: %s" major-mode))))
 
 (defun my-read-file (filename)
