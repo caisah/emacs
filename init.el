@@ -211,7 +211,15 @@
   ;; Ignore case check on completion
   (completion-ignore-case t)
   ;; Open files with default browser
-  (browse-url-browser-function 'browse-url-default-browser))
+  (browse-url-browser-function 'browse-url-default-browser)
+  ;; Use treesit modes
+  (major-mode-remap-alist
+   '((sh-mode . bash-ts-mode)
+     (css-mode . css-ts-mode)
+     (js-mode . js-ts-mode)
+     (json-mode . json-ts-mode)
+     (typescript-mode . typescript-ts-mode)
+     (yaml-mode . yaml-ts-mode))))
 
 
 (use-package exec-path-from-shell
@@ -1070,6 +1078,7 @@
   :config
   (add-to-list 'eglot-server-programs '(css-mode . ("vscode-css-language-server" "--stdio")))
   (add-to-list 'eglot-server-programs '((js-mode tsx-ts-mode typescript-mode) ("typescript-language-server" "--stdio")))
+
   :custom
   (eglot-events-buffer-size 0)
 
@@ -1093,5 +1102,18 @@
   :custom
   (avy-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)))
 
-;;; init.el ends here
+(use-package treesit
 
+  :custom
+  (treesit-language-source-alist
+   '((bash . ("https://github.com/tree-sitter/tree-sitter-bash"))
+     (css . ("https://github.com/tree-sitter/tree-sitter-css"))
+     (html . ("https://github.com/tree-sitter/tree-sitter-html"))
+     (javascript "https://github.com/tree-sitter/tree-sitter-javascript")
+     (json . ("https://github.com/tree-sitter/tree-sitter-json"))
+     (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "v0.20.3" "typescript/src")
+     (tsx "https://github.com/tree-sitter/tree-sitter-typescript")
+     (yaml "https://github.com/ikatyang/tree-sitter-yaml"))))
+
+
+;;; init.el ends here

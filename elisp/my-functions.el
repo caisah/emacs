@@ -195,5 +195,9 @@
   (interactive)
   (my-open-file-in-browser (buffer-file-name)))
 
+(defun my-install-treesit-languages ()
+  "Install/build all treesit languages."
+  (mapc #'treesit-install-language-grammar (mapcar #'car treesit-language-source-alist)))
+
 (provide 'my-functions)
 ;;; my-functions.el ends here
