@@ -14,7 +14,8 @@
     (message "My init :: magit loaded")
 
     (setq magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1
-          transient-default-level 5)))
+          transient-default-level 5))
+  (remove-hook 'magit-refs-sections-hook 'magit-insert-tags))
 
 (defun my-make-left-fringe-wider ()
   "Make left frige 20px."
