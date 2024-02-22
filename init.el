@@ -563,19 +563,6 @@
               ("C-j" . company-quickhelp-manual-begin)))
 
 
-(use-package esh-mode
-  :config
-  (keymap-global-set "C-c s" 'my-shell-here)
-
-  :hook (eshell-mode . (lambda ()
-                         ;; disable line mode
-                         (visual-line-mode nil)
-                         ;; show full width lines in shell mode
-                         (toggle-truncate-lines 1)
-                         ;; start company
-                         (company-mode 1))))
-
-
 (use-package magit
   :straight t
 
@@ -939,6 +926,31 @@
   :after (flycheck eglot))
 
 
+
+(use-package avy
+  :straight t
+
+  :config
+  (avy-setup-default)
+  (keymap-global-set "M-o" 'avy-goto-char)
+
+  :custom
+  (avy-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)))
+
+(use-package treesit
+
+  :custom
+  (treesit-language-source-alist
+   '((bash . ("https://github.com/tree-sitter/tree-sitter-bash"))
+     (css . ("https://github.com/tree-sitter/tree-sitter-css"))
+     (html . ("https://github.com/tree-sitter/tree-sitter-html"))
+     (javascript "https://github.com/tree-sitter/tree-sitter-javascript")
+     (json . ("https://github.com/tree-sitter/tree-sitter-json"))
+     (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
+     (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
+     (yaml . ("https://github.com/ikatyang/tree-sitter-yaml")))))
+
+
 (use-package js-comint
   :straight t)
 
@@ -1034,6 +1046,19 @@
                                (message "end ts hoook"))))
 
 
+(use-package esh-mode
+  :config
+  (keymap-global-set "C-c s" 'my-shell-here)
+
+  :hook (eshell-mode . (lambda ()
+                         ;; disable line mode
+                         (visual-line-mode nil)
+                         ;; show full width lines in shell mode
+                         (toggle-truncate-lines 1)
+                         ;; start company
+                         (company-mode 1))))
+
+
 (use-package nxml-mode
   :hook
   (nxml-mode . sgml-mode)
@@ -1100,30 +1125,5 @@
 
 (use-package terraform-mode
   :straight t)
-
-
-(use-package avy
-  :straight t
-
-  :config
-  (avy-setup-default)
-  (keymap-global-set "M-o" 'avy-goto-char)
-
-  :custom
-  (avy-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)))
-
-(use-package treesit
-
-  :custom
-  (treesit-language-source-alist
-   '((bash . ("https://github.com/tree-sitter/tree-sitter-bash"))
-     (css . ("https://github.com/tree-sitter/tree-sitter-css"))
-     (html . ("https://github.com/tree-sitter/tree-sitter-html"))
-     (javascript "https://github.com/tree-sitter/tree-sitter-javascript")
-     (json . ("https://github.com/tree-sitter/tree-sitter-json"))
-     (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
-     (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
-     (yaml . ("https://github.com/ikatyang/tree-sitter-yaml")))))
-
 
 ;;; init.el ends here
