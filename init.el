@@ -509,16 +509,16 @@
 (use-package hippie-exp
   :custom
   (hippie-expand-try-functions-list
-        '(try-expand-dabbrev
-          try-expand-dabbrev-all-buffers
-          try-expand-dabbrev-from-kill
-          try-complete-file-name-partially
-          try-complete-file-name
-          try-expand-all-abbrevs
-          try-expand-list
-          try-expand-line
-          try-complete-lisp-symbol-partially
-          try-complete-lisp-symbol))
+   '(try-expand-dabbrev
+     try-expand-dabbrev-all-buffers
+     try-expand-dabbrev-from-kill
+     try-complete-file-name-partially
+     try-complete-file-name
+     try-expand-all-abbrevs
+     try-expand-list
+     try-expand-line
+     try-complete-lisp-symbol-partially
+     try-complete-lisp-symbol))
   :config
   (keymap-global-set "M-/" 'hippie-expand))
 
@@ -538,12 +538,12 @@
   (company-auto-update-doc t)
 
   :bind (:map company-active-map
-         ("M-n" . nil)
-         ("M-p" . nil)
-         ("C-n" . company-select-next)
-         ("C-p" . company-select-previous)
-         :map  company-mode-map
-         ("C-o" . company-capf)))
+              ("M-n" . nil)
+              ("M-p" . nil)
+              ("C-n" . company-select-next)
+              ("C-p" . company-select-previous)
+              :map  company-mode-map
+              ("C-o" . company-capf)))
 
 
 (use-package company-capf
@@ -921,6 +921,23 @@
    erc-prompt-for-nickserv-password nil))
 
 
+(use-package eglot
+  :straight nil
+
+  :config
+  (add-to-list 'eglot-server-programs '(css-mode . ("vscode-css-language-server" "--stdio")))
+  (add-to-list 'eglot-server-programs '((js-mode tsx-ts-mode typescript-mode) ("typescript-language-server" "--stdio")))
+
+  :custom
+  (eglot-events-buffer-size 0))
+
+
+(use-package flycheck-eglot
+  :straight t
+
+  :after (flycheck eglot))
+
+
 (use-package js-comint
   :straight t)
 
@@ -956,7 +973,9 @@
                 (company-mode 1)
                 (whitespace-mode 1)
                 (hs-minor-mode 1)
+                (eglot-ensure)
                 (flycheck-mode 1)
+                (flycheck-eglot-mode 1)
                 (subword-mode 1)
                 (superword-mode 1)
                 (editorconfig-mode 1)
@@ -996,19 +1015,22 @@
   (prettify-symbols-alist '(("function" . "ƒ")))
 
   :hook
-  (typescript-mode . (lambda ()
-                       (flycheck-mode 1)
-                       (setq flycheck-check-syntax-automatically '(save mode-enabled))
-                       (flycheck-eglot-mode 1)
-                       (rainbow-delimiters-mode 1)
-                       (prettify-symbols-mode 1)
-                       (abbrev-mode 1)
-                       (hs-minor-mode 1)
-                       (whitespace-mode 1)
-                       (prettier-js-mode 1)
-                       (company-mode 1)
-                       (yas-minor-mode 1)
-                       (yas-reload-all))))
+  (typescript-ts-base-mode . (lambda ()
+                               (message "start ts hoook")
+                               (flycheck-mode 1)
+                               (setq flycheck-check-syntax-automatically '(save mode-enabled))
+                               (eglot-ensure)
+                               (flycheck-eglot-mode 1)
+                               (rainbow-delimiters-mode 1)
+                               (prettify-symbols-mode 1)
+                               (abbrev-mode 1)
+                               (hs-minor-mode 1)
+                               (whitespace-mode 1)
+                               (prettier-js-mode 1)
+                               (company-mode-on)
+                               (yas-minor-mode 1)
+                               (yas-reload-all)
+                               (message "end ts hoook"))))
 
 
 (use-package nxml-mode
@@ -1040,8 +1062,13 @@
 
   :hook
   (css-mode . (lambda ()
+                (abbrev-mode 1)
+                (whitespace-mode 1)
+                (hs-minor-mode 1)
                 (company-mode-on)
-                (flycheck-mode 1))))
+                (flycheck-mode 1)
+                (eglot-ensure)
+                (flycheck-eglot-mode 1))))
 
 
 (use-package sh-script
@@ -1074,24 +1101,6 @@
   :straight t)
 
 
-(use-package eglot
-  :config
-  (add-to-list 'eglot-server-programs '(css-mode . ("vscode-css-language-server" "--stdio")))
-  (add-to-list 'eglot-server-programs '((js-mode tsx-ts-mode typescript-mode) ("typescript-language-server" "--stdio")))
-
-  :custom
-  (eglot-events-buffer-size 0)
-
-  :hook
-  (prog-mode . eglot-ensure))
-
-
-(use-package flycheck-eglot
-  :straight t
-
-  :after (flycheck eglot))
-
-
 (use-package avy
   :straight t
 
@@ -1111,9 +1120,9 @@
      (html . ("https://github.com/tree-sitter/tree-sitter-html"))
      (javascript "https://github.com/tree-sitter/tree-sitter-javascript")
      (json . ("https://github.com/tree-sitter/tree-sitter-json"))
-     (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "v0.20.3" "typescript/src")
-     (tsx "https://github.com/tree-sitter/tree-sitter-typescript")
-     (yaml "https://github.com/ikatyang/tree-sitter-yaml"))))
+     (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
+     (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
+     (yaml . ("https://github.com/ikatyang/tree-sitter-yaml")))))
 
 
 ;;; init.el ends here
