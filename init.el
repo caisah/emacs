@@ -1,4 +1,4 @@
-;; init.el - Magic starts here. -*- lexical-binding: t -*-
+:;; init.el - Magic starts here. -*- lexical-binding: t -*-
 ;;; Code:
 
 (defvar *start-time* (current-time))
@@ -364,6 +364,8 @@
   (dired-dwim-target t)
   ;; Move deleted stuff to trash
   (delete-by-moving-to-trash t)
+  ;; Revert buffer on change
+  (dired-auto-revert-buffer t)
 
   :config
   ;; Disable annoying warining
@@ -914,7 +916,8 @@
 
   :config
   (add-to-list 'eglot-server-programs '(css-mode . ("vscode-css-language-server" "--stdio")))
-  (add-to-list 'eglot-server-programs '((js-mode tsx-ts-mode typescript-mode) ("typescript-language-server" "--stdio")))
+  (add-to-list 'eglot-server-programs '((js-mode tsx-ts-mode typescript-mode) . ("typescript-language-server" "--stdio")))
+  (add-to-list 'eglot-server-programs '((bash-ts-mode) . ("bash-language-server" "start")))
 
   :custom
   (eglot-events-buffer-size 0))
@@ -964,11 +967,10 @@
   :mode
   ("\\.js\\'" . js-mode)
   ("\\.jsx\\'" . js-mode)
-  ("\\.mjs\\" . js-mode)
-  ("\\.cjs\\" . js-mode)
+  ("\\.mjs\\'" . js-mode)
+  ("\\.cjs\\'" . js-mode)
 
   :custom
-  (mode-name "JS")
   (js-indent-level 2)
 
   :bind
@@ -1021,16 +1023,11 @@
 (use-package typescript-mode
   :straight t
 
-  :mode
-  ("\\.ts\\'" . typescript-mode)
-  ("\\.tsx\\'" . typescript-mode)
-
   :custom
   (prettify-symbols-alist '(("function" . "ƒ")))
 
   :hook
   (typescript-ts-base-mode . (lambda ()
-                               (message "start ts hoook")
                                (flycheck-mode 1)
                                (setq flycheck-check-syntax-automatically '(save mode-enabled))
                                (eglot-ensure)
@@ -1041,10 +1038,9 @@
                                (hs-minor-mode 1)
                                (whitespace-mode 1)
                                (prettier-js-mode 1)
-                               (company-mode-on)
+                               (company-mode 1)
                                (yas-minor-mode 1)
-                               (yas-reload-all)
-                               (message "end ts hoook"))))
+                               (yas-reload-all))))
 
 
 (use-package esh-mode
@@ -1088,27 +1084,28 @@
   (css-indent-offset 2)
 
   :hook
-  (css-mode . (lambda ()
-                (abbrev-mode 1)
-                (whitespace-mode 1)
-                (hs-minor-mode 1)
-                (company-mode-on)
-                (flycheck-mode 1)
-                (eglot-ensure)
-                (flycheck-eglot-mode 1))))
+  (css-base-mode . (lambda ()
+                     (abbrev-mode 1)
+                     (whitespace-mode 1)
+                     (hs-minor-mode 1)
+                     (company-mode 1)
+                     (flycheck-mode 1)
+                     (eglot-ensure)
+                     (flycheck-eglot-mode 1))))
 
 
 (use-package sh-script
   :hook
-  (sh-mode . (lambda ()
-               (company-mode 1)
-               (flycheck-mode 1))))
+  (bash-ts-mode . (lambda ()
+                    (company-mode 1)
+                    (flycheck-mode 1)
+                    (eglot-ensure))))
 
 
 (use-package elisp-mode
   :hook
   (emacs-lisp-mode . (lambda ()
-                       (company-mode-on)
+                       (company-mode 1)
                        (rainbow-delimiters-mode 1)
                        (prettify-symbols-mode 1)
                        (abbrev-mode 1)
