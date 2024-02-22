@@ -431,6 +431,11 @@
    `(magit-diff-file-heading ((t (:foreground "wheat3" :background "gray15"))))
    `(magit-diff-file-heading-highlight ((t (:foreground "wheat3"  :weight bold :background "gray20"))))
 
+   `(transient-key-exit ((t (:foreground "DarkOrange" :weight bold))))
+   `(transient-key-stay ((t (:foreground "gray45" :weight bold))))
+   `(transient-inactive-argument ((t (:foreground "gray55" :weight light))))
+
+
    `(magit-reflog-commit ((t (:foreground "gray60"))))
    `(magit-reflog-merge ((t (:foreground "LimeGreen"))))
    `(magit-reflog-amend ((t (:foreground "gray65"))))
