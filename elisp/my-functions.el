@@ -200,5 +200,23 @@
   (interactive)
   (mapc #'treesit-install-language-grammar (mapcar #'car treesit-language-source-alist)))
 
+(defun my-delete-lines-containing-pattern (pattern filename)
+  "Delete lines containing PATTERN from FILENAME."
+  (with-temp-buffer
+    (insert-file-contents filename)
+    (goto-char (point-min))
+    (while (re-search-forward pattern nil t)
+      (beginning-of-line)
+      (kill-line))
+    (write-region nil nil filename)))
+
+(defun my-delete-husky ()
+  "Deletes .husky from .git/config."
+  (interactive)
+  (let ((dir (locate-dominating-file default-directory ".git")))
+    (when dir
+        (my-delete-lines-containing-pattern "hooksPath = \\.husky" (concat dir "/.git/config")))))
+
+
 (provide 'my-functions)
 ;;; my-functions.el ends here

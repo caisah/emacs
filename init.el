@@ -571,7 +571,7 @@
                          ;; disable line mode
                          (visual-line-mode nil)
                          ;; show full width lines in shell mode
-                         (setq truncate-lines t)
+                         (toggle-truncate-lines 1)
                          ;; start company
                          (company-mode 1))))
 
@@ -581,13 +581,14 @@
 
   :config
   (keymap-global-set "C-x m" 'magit-status)
+  (remove-hook 'magit-refs-sections-hook 'magit-insert-tags)
 
   :custom
   (magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1)
   (transient-default-level 5)
 
   :hook (magit-mode . (lambda ()
-                        "Make left frige 20px."
+                        "Make left fringe 20 pixels."
                         (setq left-fringe-width 20
                               right-fringe-width 0))))
 
