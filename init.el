@@ -964,7 +964,8 @@
   :mode
   ("\\.js\\'" . js-mode)
   ("\\.jsx\\'" . js-mode)
-  ("mjs" . js-mode)
+  ("\\.mjs\\" . js-mode)
+  ("\\.cjs\\" . js-mode)
 
   :custom
   (mode-name "JS")
@@ -1107,7 +1108,7 @@
 (use-package elisp-mode
   :hook
   (emacs-lisp-mode . (lambda ()
-                       (company-mode 1)
+                       (company-mode-on)
                        (rainbow-delimiters-mode 1)
                        (prettify-symbols-mode 1)
                        (abbrev-mode 1)
