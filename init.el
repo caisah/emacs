@@ -919,6 +919,8 @@
   (add-to-list 'eglot-server-programs '((js-mode tsx-ts-mode typescript-mode) . ("typescript-language-server" "--stdio")))
   (add-to-list 'eglot-server-programs '((bash-ts-mode) . ("bash-language-server" "start")))
   (add-to-list 'eglot-server-programs '((json-mode) . ("vscode-json-language-server" "--stdio")))
+  (add-to-list 'eglot-server-programs '((astro-ts-mode) . ("astro-ls" "--stdio" :initializationOptions
+                                                           (:typescript (:tsdk "./node_modules/typescript/lib")))))
 
   :custom
   (eglot-events-buffer-size 0))
