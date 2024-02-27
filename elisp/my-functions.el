@@ -218,5 +218,21 @@
         (my-delete-lines-containing-pattern "hooksPath = \\.husky" (concat dir "/.git/config")))))
 
 
+(defun my-prog-modes ()
+  (abbrev-mode 1)
+  (company-mode 1)
+  (editorconfig-mode 1)
+  (eglot-ensure)
+  (hs-minor-mode 1)
+  (flycheck-mode 1)
+  (flycheck-eglot-mode 1)
+  (prettify-symbols-mode 1)
+  (rainbow-delimiters-mode 1)
+  (subword-mode 1)
+  (superword-mode 1
+  (whitespace-mode 1)
+  (yas-minor-mode 1)
+  (yas-reload-all)))
+
 (provide 'my-functions)
 ;;; my-functions.el ends here
