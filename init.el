@@ -1074,7 +1074,8 @@
 
 (use-package elisp-mode
   :hook
-  (emacs-lisp-mode . my-prog-modes))
+  (emacs-lisp-mode . my-prog-modes)
+  (emacs-lisp-mode . rainbow-delimiters-mode))
 
 
 (use-package elisp-slime-nav
