@@ -918,6 +918,7 @@
   (add-to-list 'eglot-server-programs '(css-mode . ("vscode-css-language-server" "--stdio")))
   (add-to-list 'eglot-server-programs '((js-mode tsx-ts-mode typescript-mode) . ("typescript-language-server" "--stdio")))
   (add-to-list 'eglot-server-programs '((bash-ts-mode) . ("bash-language-server" "start")))
+  (add-to-list 'eglot-server-programs '((json-mode) . ("vscode-json-language-server" "--stdio")))
 
   :custom
   (eglot-events-buffer-size 0))
@@ -944,7 +945,8 @@
 
   :custom
   (treesit-language-source-alist
-   '((bash . ("https://github.com/tree-sitter/tree-sitter-bash"))
+   '((astro "https://github.com/virchau13/tree-sitter-astro")
+     (bash . ("https://github.com/tree-sitter/tree-sitter-bash"))
      (css . ("https://github.com/tree-sitter/tree-sitter-css"))
      (html . ("https://github.com/tree-sitter/tree-sitter-html"))
      (javascript "https://github.com/tree-sitter/tree-sitter-javascript")
@@ -984,19 +986,7 @@
         ("C-c C-c" . 'my-js-repl-reset))
 
   :hook
-  ((js-mode . (lambda ()
-                (abbrev-mode 1)
-                (company-mode 1)
-                (whitespace-mode 1)
-                (hs-minor-mode 1)
-                (eglot-ensure)
-                (flycheck-mode 1)
-                (flycheck-eglot-mode 1)
-                (subword-mode 1)
-                (superword-mode 1)
-                (editorconfig-mode 1)
-                (yas-minor-mode 1)
-                (yas-reload-all)))))
+  ((js-ts-mode . my-prog-modes)))
 
 
 (use-package prettier-js
@@ -1016,8 +1006,7 @@
         ("C-c C-b" . json-mode-beautify))
 
   :hook
-  (json-mode . flycheck-mode)
-  (json-mode . hs-minor-mode))
+  (json-mode . my-prog-modes))
 
 
 (use-package typescript-mode
@@ -1028,19 +1017,8 @@
 
   :hook
   (typescript-ts-base-mode . (lambda ()
-                               (flycheck-mode 1)
                                (setq flycheck-check-syntax-automatically '(save mode-enabled))
-                               (eglot-ensure)
-                               (flycheck-eglot-mode 1)
-                               (rainbow-delimiters-mode 1)
-                               (prettify-symbols-mode 1)
-                               (abbrev-mode 1)
-                               (hs-minor-mode 1)
-                               (whitespace-mode 1)
-                               (prettier-js-mode 1)
-                               (company-mode 1)
-                               (yas-minor-mode 1)
-                               (yas-reload-all))))
+                               (my-prog-modes))))
 
 
 (use-package esh-mode
@@ -1084,35 +1062,17 @@
   (css-indent-offset 2)
 
   :hook
-  (css-base-mode . (lambda ()
-                     (abbrev-mode 1)
-                     (whitespace-mode 1)
-                     (hs-minor-mode 1)
-                     (company-mode 1)
-                     (flycheck-mode 1)
-                     (eglot-ensure)
-                     (flycheck-eglot-mode 1))))
+  (css-base-mode . my-prog-modes))
 
 
 (use-package sh-script
   :hook
-  (bash-ts-mode . (lambda ()
-                    (company-mode 1)
-                    (flycheck-mode 1)
-                    (eglot-ensure))))
+  (bash-ts-mode . my-prog-modes))
 
 
 (use-package elisp-mode
   :hook
-  (emacs-lisp-mode . (lambda ()
-                       (company-mode 1)
-                       (rainbow-delimiters-mode 1)
-                       (prettify-symbols-mode 1)
-                       (abbrev-mode 1)
-                       (flycheck-mode 1)
-                       (whitespace-mode 1)
-                       (hs-minor-mode 1)
-                       (whitespace-mode 1))))
+  (emacs-lisp-mode . my-prog-modes))
 
 
 (use-package elisp-slime-nav
@@ -1123,5 +1083,11 @@
 
 (use-package terraform-mode
   :straight t)
+
+(use-package astro-ts-mode
+  :straight t
+
+  :hook
+  (astro-ts-mode . my-prog-modes))
 
 ;;; init.el ends here
