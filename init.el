@@ -933,7 +933,6 @@
   :after (flycheck eglot))
 
 
-
 (use-package avy
   :straight t
 
@@ -958,8 +957,8 @@
      (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
      (yaml . ("https://github.com/ikatyang/tree-sitter-yaml"))
      (elixir . ("https://github.com/elixir-lang/tree-sitter-elixir"))
+     (heex . ("https://github.com/phoenixframework/tree-sitter-heex.git"))
      )))
-
 
 
 
@@ -1101,12 +1100,8 @@
 (use-package heex-ts-mode
   :straight t)
 
-(use-package elixir-mode
-  :straight t)
-
 (use-package elixir-ts-mode
   :hook
   (elixir-ts-mode . my-prog-modes))
-
 
 ;;; init.el ends here
