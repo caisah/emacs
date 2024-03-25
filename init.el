@@ -919,6 +919,7 @@
   (add-to-list 'eglot-server-programs '((js-mode tsx-ts-mode typescript-mode) . ("typescript-language-server" "--stdio")))
   (add-to-list 'eglot-server-programs '((bash-ts-mode) . ("bash-language-server" "start")))
   (add-to-list 'eglot-server-programs '((json-mode) . ("vscode-json-language-server" "--stdio")))
+  (add-to-list 'eglot-server-programs '((elixir-ts-mode) . ("/opt/homebrew/Cellar/elixir-ls/0.20.0/libexec/language_server.sh")))
   (add-to-list 'eglot-server-programs '((astro-ts-mode) . ("astro-ls" "--stdio" :initializationOptions
                                                            (:typescript (:tsdk "./node_modules/typescript/lib")))))
 
@@ -955,7 +956,11 @@
      (json . ("https://github.com/tree-sitter/tree-sitter-json"))
      (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
      (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
-     (yaml . ("https://github.com/ikatyang/tree-sitter-yaml")))))
+     (yaml . ("https://github.com/ikatyang/tree-sitter-yaml"))
+     (elixir . ("https://github.com/elixir-lang/tree-sitter-elixir"))
+     )))
+
+
 
 
 (use-package js-comint
@@ -1092,5 +1097,16 @@
 
   :hook
   (astro-ts-mode . my-prog-modes))
+
+(use-package heex-ts-mode
+  :straight t)
+
+(use-package elixir-mode
+  :straight t)
+
+(use-package elixir-ts-mode
+  :hook
+  (elixir-ts-mode . my-prog-modes))
+
 
 ;;; init.el ends here
