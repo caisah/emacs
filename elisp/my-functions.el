@@ -228,10 +228,10 @@
   (flycheck-eglot-mode 1)
   (prettify-symbols-mode 1)
   (subword-mode 1)
-  (superword-mode 1
+  (superword-mode 1)
   (whitespace-mode 1)
   (yas-minor-mode 1)
-  (yas-reload-all)))
+  (yas-reload-all))
 
 (provide 'my-functions)
 ;;; my-functions.el ends here
