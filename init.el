@@ -944,7 +944,6 @@
   (avy-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)))
 
 (use-package treesit
-
   :custom
   (treesit-language-source-alist
    '((astro "https://github.com/virchau13/tree-sitter-astro")
@@ -958,7 +957,7 @@
      (yaml . ("https://github.com/ikatyang/tree-sitter-yaml"))
      (elixir . ("https://github.com/elixir-lang/tree-sitter-elixir"))
      (heex . ("https://github.com/phoenixframework/tree-sitter-heex.git"))
-     )))
+     (dockerfile . ("https://github.com/camdencheek/tree-sitter-dockerfile")))))
 
 
 
