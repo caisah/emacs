@@ -80,7 +80,9 @@
   ;; Start server - Now we can open any file with emacsclient
   (unless (and (fboundp 'server-running-p)
                (server-running-p))
-    (server-start))
+    (progn
+      (server-force-delete)
+      (server-start)))
 
   ;; Enable default disabled stuff
   (put 'downcase-region 'disabled nil)
