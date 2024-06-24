@@ -530,9 +530,7 @@
 (use-package epa
   :custom
   ;; can export to text
-  (epa-armor t)
-  ;; Use gpg2 by default
-  (epg-gpg-program "gpg2"))
+  (epa-armor t))
 
 
 (use-package company
