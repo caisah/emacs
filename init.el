@@ -961,15 +961,12 @@
 
 
 
-(use-package js-comint
-  :straight t)
-
 (use-package js
-  :after js-comint
   :config
   ;; for lsp-javascript
   ;; (make-local-variable 'company-transformers)
   ;; (push 'my-company-transformer company-transformers)
+  (require 'my-deno)
 
   :mode
   ("\\.js\\'" . js-mode)
@@ -984,11 +981,7 @@
   (:map js-mode-map
         ("C-c C-f" . hs-toggle-hiding)
         ("M-." . 'xref-find-definitions)
-        ("C-," . lsp-find-references)
-        ("C-c C-r" . 'my-js-repl-open-other-window)
-        ("C-c C-e" . 'js-comint-send-last-sexp)
-        ("C-c C-b" . 'js-comint-send-buffer)
-        ("C-c C-c" . 'my-js-repl-reset))
+        ("C-," . lsp-find-references))
 
   :hook
   ((js-ts-mode . my-prog-modes)))
@@ -1025,6 +1018,17 @@
                                (setq flycheck-check-syntax-automatically '(save mode-enabled))
                                (my-prog-modes))))
 
+
+
+(use-package my-deno
+  :defer t
+
+  :bind
+  (:map js-ts-mode-map
+        ("C-c C-r" . 'my-deno-run-repl)
+        ("C-c C-e" . 'my-deno-send-region-to-repl)
+        ("C-c C-b" . 'my-deno-send-buffer-to-repl)
+        ("C-c C-c" . 'my-deno-reset-repl)))
 
 (use-package esh-mode
   :config
