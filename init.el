@@ -916,7 +916,7 @@
 
   :config
   (add-to-list 'eglot-server-programs '(css-mode . ("vscode-css-language-server" "--stdio")))
-  (add-to-list 'eglot-server-programs '((js-mode tsx-ts-mode typescript-mode) . ("typescript-language-server" "--stdio")))
+  (add-to-list 'eglot-server-programs '((js-mode js-ts-mode tsx-ts-mode typescript-ts-mode typescript-mode) . my-ts-server-program))
   (add-to-list 'eglot-server-programs '((bash-ts-mode) . ("bash-language-server" "start")))
   (add-to-list 'eglot-server-programs '((json-mode) . ("vscode-json-language-server" "--stdio")))
   (add-to-list 'eglot-server-programs '((elixir-ts-mode) . ("/opt/homebrew/Cellar/elixir-ls/0.20.0/libexec/language_server.sh")))

@@ -168,21 +168,6 @@
   (erc-tls :server "irc.snoonet.org" :port 6697 :nick "caisah" :full-name "Caisah")
   (erc-tls :server "irc.freenode.net" :port 6697 :nick "caisah" :full-name "Caisah"))
 
-
-(defun my-js-repl-open-other-window ()
-  "Open js REPL in a new window."
-  (interactive)
-  (js-comint-repl js-comint-module-paths)
-  (other-window -1))
-
-(defun my-js-repl-reset ()
-  "Reset and clears js REPL."
-  (interactive)
-  (let ((my-last-window (selected-window)))
-    (js-comint-reset-repl)
-    (js-comint-clear)
-    (select-windo my-last-window)))
-
 (defun my-open-file-in-browser (file)
   "Open FILE in the default web browser."
   (interactive)
@@ -217,6 +202,14 @@
     (when dir
         (my-delete-lines-containing-pattern "hooksPath = \\.husky" (concat dir "/.git/config")))))
 
+(defun deno-project-p ()
+  "Determine if inside a deno project."
+  (when (locate-dominating-file "." "deno.json") t))
+
+(defun my-ts-server-program (&rest _)
+  "Decide which server to use based on project characteristics."
+  (cond ((deno-project-p) '("deno" "lsp" :initializationOptions '(:enable t :lint t)))
+        (t '("typescript-language-server" "--stdio"))))
 
 (defun my-prog-modes ()
   (abbrev-mode 1)
