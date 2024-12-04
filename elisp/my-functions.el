@@ -185,23 +185,6 @@
   (interactive)
   (mapc #'treesit-install-language-grammar (mapcar #'car treesit-language-source-alist)))
 
-(defun my-delete-lines-containing-pattern (pattern filename)
-  "Delete lines containing PATTERN from FILENAME."
-  (with-temp-buffer
-    (insert-file-contents filename)
-    (goto-char (point-min))
-    (while (re-search-forward pattern nil t)
-      (beginning-of-line)
-      (kill-line))
-    (write-region nil nil filename)))
-
-(defun my-delete-husky ()
-  "Deletes .husky from .git/config."
-  (interactive)
-  (let ((dir (locate-dominating-file default-directory ".git")))
-    (when dir
-        (my-delete-lines-containing-pattern "hooksPath = \\.husky" (concat dir "/.git/config")))))
-
 (defun deno-project-p ()
   "Determine if inside a deno project."
   (when (locate-dominating-file "." "deno.json") t))
@@ -211,14 +194,19 @@
   (cond ((deno-project-p) '("deno" "lsp" :initializationOptions '(:enable t :lint t)))
         (t '("typescript-language-server" "--stdio"))))
 
+(defun my-quit-eldoc-buffer ()
+  "Quits an eldoc window."
+  (interactive)
+  (let ((eldoc-buffer (get-buffer "*eldoc*")))
+  (when eldoc-buffer
+    (quit-window (select-window (get-buffer-window eldoc-buffer))))))
+
 (defun my-prog-modes ()
   (abbrev-mode 1)
   (company-mode 1)
   (editorconfig-mode 1)
   (eglot-ensure)
   (hs-minor-mode 1)
-  (flycheck-mode 1)
-  (flycheck-eglot-mode 1)
   (prettify-symbols-mode 1)
   (subword-mode 1)
   (superword-mode 1)

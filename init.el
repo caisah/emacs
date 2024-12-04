@@ -319,8 +319,7 @@
 (use-package flycheck
   :straight t
 
-  :config
-  (global-flycheck-mode)
+  :defer t
 
   :hook
   (prog-mode . (lambda ()
@@ -841,7 +840,9 @@
   ;; max 15 chars
   (sml/mode-width 15)
   ;; don't show these modes in mode-line
-  (rm-whitelist (mapconcat 'identity '("FlyC") "\\|"))
+  (rm-whitelist (mapconcat
+                 'identity
+                 '("Flymake" "FlyC") "\\|"))
 
   :config
   (sml/setup))
@@ -930,7 +931,7 @@
 (use-package flycheck-eglot
   :straight t
 
-  :after (flycheck eglot))
+  :defer t)
 
 
 (use-package avy
@@ -960,14 +961,40 @@
      (dockerfile . ("https://github.com/camdencheek/tree-sitter-dockerfile")))))
 
 
-
-(use-package js
-  :config
-  ;; for lsp-javascript
-  ;; (make-local-variable 'company-transformers)
-  ;; (push 'my-company-transformer company-transformers)
+(use-package typescript-mode
+  :custom
+  (prettify-symbols-alist '(("function" . "ƒ")))
   (require 'my-deno)
 
+  :bind
+  (:map typescript-ts-base-mode-map
+        ("C-c C-d d" . eldoc-doc-buffer)
+        ("C-c C-d q" . my-quit-eldoc-buffer))
+
+  :hook
+  (typescript-ts-base-mode . (lambda ()
+                               (setq flycheck-check-syntax-automatically '(save mode-enabled))
+                               (when (deno-project-p)
+                                 (deno-fmt-mode))
+                               (my-prog-modes))))
+
+(use-package my-deno
+  :defer t
+
+  :bind
+  (:map js-ts-mode-map
+        ("C-c C-r" . 'my-deno-run-repl)
+        ("C-c C-e" . 'my-deno-send-region-to-repl)
+        ("C-c C-b" . 'my-deno-send-buffer-to-repl)
+        ("C-c C-c" . 'my-deno-reset-repl))
+
+  (:map typescript-ts-mode-map
+        ("C-c C-r" . 'my-deno-run-repl)
+        ("C-c C-e" . 'my-deno-send-region-to-repl)
+        ("C-c C-b" . 'my-deno-send-buffer-to-repl)
+        ("C-c C-c" . 'my-deno-reset-repl)))
+
+(use-package js
   :mode
   ("\\.js\\'" . js-mode)
   ("\\.jsx\\'" . js-mode)
@@ -977,11 +1004,13 @@
   :custom
   (js-indent-level 2)
 
+  :config
+  (require 'my-deno)
+
   :bind
-  (:map js-mode-map
-        ("C-c C-f" . hs-toggle-hiding)
-        ("M-." . 'xref-find-definitions)
-        ("C-," . lsp-find-references))
+  (:map js-ts-mode-map
+        ("C-c C-d d" . eldoc-doc-buffer)
+        ("C-c C-d q" . my-quit-eldoc-buffer))
 
   :hook
   ((js-ts-mode . my-prog-modes)))
@@ -1007,28 +1036,11 @@
   (json-mode . my-prog-modes))
 
 
-(use-package typescript-mode
+(use-package deno-fmt
   :straight t
 
-  :custom
-  (prettify-symbols-alist '(("function" . "ƒ")))
+  :defer t)
 
-  :hook
-  (typescript-ts-base-mode . (lambda ()
-                               (setq flycheck-check-syntax-automatically '(save mode-enabled))
-                               (my-prog-modes))))
-
-
-
-(use-package my-deno
-  :defer t
-
-  :bind
-  (:map js-ts-mode-map
-        ("C-c C-r" . 'my-deno-run-repl)
-        ("C-c C-e" . 'my-deno-send-region-to-repl)
-        ("C-c C-b" . 'my-deno-send-buffer-to-repl)
-        ("C-c C-c" . 'my-deno-reset-repl)))
 
 (use-package esh-mode
   :config
