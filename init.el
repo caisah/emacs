@@ -960,16 +960,25 @@
      (heex . ("https://github.com/phoenixframework/tree-sitter-heex.git"))
      (dockerfile . ("https://github.com/camdencheek/tree-sitter-dockerfile")))))
 
+(use-package my-deno
+  :defer t)
 
 (use-package typescript-mode
+  :config
+  (require 'my-deno)
+
   :custom
   (prettify-symbols-alist '(("function" . "ƒ")))
-  (require 'my-deno)
+
 
   :bind
   (:map typescript-ts-base-mode-map
         ("C-c C-d d" . eldoc-doc-buffer)
-        ("C-c C-d q" . my-quit-eldoc-buffer))
+        ("C-c C-d q" . my-quit-eldoc-buffer)
+        ("C-c C-r" . 'my-deno-run-repl)
+        ("C-c C-e" . 'my-deno-send-region-to-repl)
+        ("C-c C-b" . 'my-deno-send-buffer-to-repl)
+        ("C-c C-c" . 'my-deno-reset-repl))
 
   :hook
   (typescript-ts-base-mode . (lambda ()
@@ -977,23 +986,6 @@
                                (when (deno-project-p)
                                  (deno-fmt-mode))
                                (my-prog-modes))))
-
-(use-package my-deno
-  :defer t
-
-  :bind
-  (:map js-ts-mode-map
-        ("C-c C-r" . 'my-deno-run-repl)
-        ("C-c C-e" . 'my-deno-send-region-to-repl)
-        ("C-c C-b" . 'my-deno-send-buffer-to-repl)
-        ("C-c C-c" . 'my-deno-reset-repl))
-
-  (:map typescript-ts-mode-map
-        ("C-c C-r" . 'my-deno-run-repl)
-        ("C-c C-e" . 'my-deno-send-region-to-repl)
-        ("C-c C-b" . 'my-deno-send-buffer-to-repl)
-        ("C-c C-c" . 'my-deno-reset-repl)))
-
 (use-package js
   :mode
   ("\\.js\\'" . js-mode)
@@ -1001,16 +993,20 @@
   ("\\.mjs\\'" . js-mode)
   ("\\.cjs\\'" . js-mode)
 
-  :custom
-  (js-indent-level 2)
-
   :config
   (require 'my-deno)
+
+  :custom
+  (js-indent-level 2)
 
   :bind
   (:map js-ts-mode-map
         ("C-c C-d d" . eldoc-doc-buffer)
-        ("C-c C-d q" . my-quit-eldoc-buffer))
+        ("C-c C-d q" . my-quit-eldoc-buffer)
+        ("C-c C-r" . 'my-deno-run-repl)
+        ("C-c C-e" . 'my-deno-send-region-to-repl)
+        ("C-c C-b" . 'my-deno-send-buffer-to-repl)
+        ("C-c C-c" . 'my-deno-reset-repl))
 
   :hook
   ((js-ts-mode . my-prog-modes)))
