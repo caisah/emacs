@@ -966,7 +966,7 @@
 (use-package my-deno
   :defer t)
 
-(use-package typescript-mode
+(use-package typescript-ts-mode
   :config
   (require 'my-deno)
 
@@ -989,7 +989,7 @@
                                (when (deno-project-p)
                                  (deno-fmt-mode))
                                (my-prog-modes))))
-(use-package js
+(use-package js-ts-mode
   :mode
   ("\\.js\\'" . js-mode)
   ("\\.jsx\\'" . js-mode)
@@ -1012,8 +1012,7 @@
         ("C-c C-c" . 'my-deno-reset-repl))
 
   :hook
-  ((js-ts-mode . my-prog-modes)
-   (js-mode . my-prog-modes)))
+  ((js-ts-mode . my-prog-modes)))
 
 
 (use-package prettier-js
