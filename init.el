@@ -36,6 +36,9 @@
 (use-package no-littering
   :straight t
 
+  :init
+  (no-littering-theme-backups)
+
   :custom
   (auto-save-file-name-transforms
    `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
