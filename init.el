@@ -1009,7 +1009,8 @@
         ("C-c C-c" . 'my-deno-reset-repl))
 
   :hook
-  ((js-ts-mode . my-prog-modes)))
+  ((js-ts-mode . my-prog-modes)
+   (js-mode . my-prog-modes)))
 
 
 (use-package prettier-js
