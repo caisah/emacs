@@ -989,7 +989,7 @@
                                (when (deno-project-p)
                                  (deno-fmt-mode))
                                (my-prog-modes))))
-(use-package js-ts-mode
+(use-package js
   :mode
   ("\\.js\\'" . js-mode)
   ("\\.jsx\\'" . js-mode)
