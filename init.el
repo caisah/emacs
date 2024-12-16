@@ -668,7 +668,10 @@
   :bind
   (("C-," . embark-act)         ;; pick some comfortable binding
    ("C-;" . embark-dwim)        ;; good alternative: M-.
-   ("C-h B" . embark-bindings)) ;; alternative for `describe-bindings'
+   ("C-h B" . embark-bindings)  ;; alternative for `describe-bindings'
+
+   :map embark-collect-mode-map
+   ("m" . embark-select))
 
   :custom
   ;; Optionally replace the key help with a completing-read interface
@@ -967,6 +970,12 @@
   :defer t)
 
 (use-package typescript-ts-mode
+  :defer t
+
+  :mode
+  (("\\.jsx\\'" . tsx-ts-mode))
+  (("\\.tsx\\'" . tsx-ts-mode))
+
   :config
   (require 'my-deno)
 
@@ -992,7 +1001,6 @@
 (use-package js
   :mode
   ("\\.js\\'" . js-mode)
-  ("\\.jsx\\'" . js-mode)
   ("\\.mjs\\'" . js-mode)
   ("\\.cjs\\'" . js-mode)
 
