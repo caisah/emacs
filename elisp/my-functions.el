@@ -26,12 +26,6 @@
   "Writes  nice load message in Message buffer for the NAME package."
   (message "My init :: package \"%s\" loaded" name))
 
-(defun my-wrap-with-round-paren (&optional arg)
-  "Wrap ARG with in round parentheis ()."
-  (interactive "p")
-  (sp-select-next-thing-exchange arg)
-  (execute-kbd-macro (kbd "(")))
-
 (defun my-current-buffer-too-big-p ()
   "Check if a buffer is really big."
   (or (> (buffer-size) (* 5000 80))
