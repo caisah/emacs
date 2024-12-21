@@ -451,49 +451,9 @@
   (ibuffer . (lambda () (toggle-truncate-lines 1))))
 
 
-(use-package smartparens
-  :straight t
-
+(use-package elec-pair
   :init
-  (smartparens-global-mode t)
-
-  :custom
-  (sp-highlight-pair-overlay nil)
-  (sp-hybrid-kill-excessive-whitespace t)
-
-  :config
-  (sp-with-modes 'emacs-lisp-mode
-    ;; disable ', it's the quote character!
-    (sp-local-pair "'" nil :actions nil)
-    ;; also only use the pseudo-quote inside strings where it serves as hyperlink.
-    (sp-local-pair "`" "'" :when '(sp-in-string-p sp-in-comment-p)))
-
-
-  :bind
-  (:map smartparens-mode-map
-        ("C-M-f" . sp-forward-sexp)
-        ("C-M-b" . sp-backward-sexp)
-        ("C-M-d" . sp-down-sexp)
-        ("C-M-a" . sp-backward-down-sexp)
-        ("C-M-a" . 'sp-beginning-of-sexp)
-        ("C-M-e" . sp-end-of-sexp)
-        ("C-M-e" . sp-up-sexp)
-        ("C-M-u" . sp-backward-up-sexp)
-        ("C-M-t" . sp-transpose-sexp)
-        ("C-M-n" . sp-next-sexp)
-        ("C-M-p" . sp-previous-sexp)
-        ("C-M-k" . sp-kill-sexp)
-        ("C-M-w" . sp-copy-sexp)
-        ("M-<delete>" . sp-unwrap-sexp)
-        ("M-<backspace>" . sp-backward-unwrap-sexp)
-        ("C-M-8" . sp-forward-slurp-sexp)
-        ("C-M-7" . sp-forward-barf-sexp)
-        ("C-(" . my-wrap-with-round-paren)
-        ("M-D" . sp-splice-sexp)
-        ("C-S-d" . delete-region)
-        ("C-M-<delete>" . sp-splice-sexp-killing-forward)
-        ("C-M-<backspace>" . sp-splice-sexp-killing-backward)
-        ("C-S-<backspace>" . sp-splice-sexp-killing-around)))
+  (electric-pair-mode))
 
 
 (use-package projectile
