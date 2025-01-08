@@ -169,8 +169,8 @@
       (browse-url-firefox (concat "file://" file) "-a")
     (message "File does not exist: %s" file)))
 
-(defun my-open-buffer-fine-in-browser ()
-  "Open the file associated to the cu in default browser."
+(defun my-open-buffer-file-in-browser ()
+  "Open the file associated to the buffer in default browser."
   (interactive)
   (my-open-file-in-browser (buffer-file-name)))
 
