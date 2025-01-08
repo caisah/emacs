@@ -327,6 +327,9 @@
    `(xref-file-header ((t (:foreground "gray70" :background "gray20" :box (:line-width 4 :color "gray20")))))
    `(xref-line-number ((t (:inherit line-number))))
 
+   ;; eglot
+   `(eglot-highlight-symbol-face ((t (:inherit 'highlight))))
+
    ;; lsp
    `(lsp-ui-doc-header ((t (:inherit 'xref-file-header))))
    `(lsp-ui-doc-background ((t (:inherit 'default ))))
