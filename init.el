@@ -93,6 +93,7 @@
   (put 'erase-buffer 'disabled nil)
   (put 'narrow-to-region 'disabled nil)
   (put 'scroll-left 'disabled nil)
+  (put 'dired-find-alternate-file 'disabled nil)
 
   ;; Use y and n as confirmations
   (fset 'yes-or-no-p 'y-or-n-p)
@@ -373,7 +374,6 @@
 
   :config
   ;; Disable annoying warining
-  (put 'dired-find-alternate-file 'disabled nil)
 
   ;; Refresh dired when file changes
   :hook ((dired-mode . auto-revert-mode)
@@ -1075,6 +1075,9 @@
 
 (use-package astro-ts-mode
   :straight t
+
+  :mode
+  ("\\.astro\\'" . astro-ts-mode)
 
   :hook
   (astro-ts-mode . my-prog-modes))
