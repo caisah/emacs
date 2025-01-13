@@ -924,7 +924,8 @@
      (yaml . ("https://github.com/ikatyang/tree-sitter-yaml"))
      (elixir . ("https://github.com/elixir-lang/tree-sitter-elixir"))
      (heex . ("https://github.com/phoenixframework/tree-sitter-heex.git"))
-     (dockerfile . ("https://github.com/camdencheek/tree-sitter-dockerfile")))))
+     (dockerfile . ("https://github.com/camdencheek/tree-sitter-dockerfile"))
+     (jsdoc . ("https://github.com/tree-sitter/tree-sitter-jsdoc" "master" "src")))))
 
 (use-package my-deno
   :defer t)
