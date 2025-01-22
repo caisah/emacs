@@ -206,7 +206,8 @@
   (superword-mode 1)
   (whitespace-mode 1)
   (yas-minor-mode 1)
-  (yas-reload-all))
+  (yas-reload-all)
+  (rainbow-delimiters-mode 1))
 
 (provide 'my-functions)
 ;;; my-functions.el ends here
