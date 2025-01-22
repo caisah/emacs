@@ -1090,12 +1090,10 @@
   :hook
   (elixir-ts-mode . my-prog-modes))
 
-(use-package vundo
+(use-package undo-tree
   :straight t
 
-  :commands (vundo)
-
-  :custom
-  (vundo-compact-display t))
+  :init
+  (global-undo-tree-mode))
 
 ;;; init.el ends here
