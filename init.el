@@ -1090,4 +1090,12 @@
   :hook
   (elixir-ts-mode . my-prog-modes))
 
+(use-package vundo
+  :straight t
+
+  :commands (vundo)
+
+  :custom
+  (vundo-compact-display t))
+
 ;;; init.el ends here
