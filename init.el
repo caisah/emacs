@@ -372,9 +372,6 @@
   ;; Revert buffer on change
   (dired-auto-revert-buffer t)
 
-  :config
-  ;; Disable annoying warining
-
   ;; Refresh dired when file changes
   :hook ((dired-mode . auto-revert-mode)
          ;; Omit uninteresting files in Dired including .. and .
