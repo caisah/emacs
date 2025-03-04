@@ -234,6 +234,8 @@
   :custom
   ;; add node to the path
   (exec-path-from-shell-copy-env "NVM_DIR")
+  ;; add bash config
+  (exec-path-from-shell-variables '("PATH" "MANPATH" "BASH_ENV"))
   ;; Don't log bash profile warning
   (exec-path-from-shell-check-startup-files nil)
 
