@@ -225,7 +225,8 @@
      (js-mode . js-ts-mode)
      (json-mode . json-ts-mode)
      (typescript-mode . typescript-ts-mode)
-     (yaml-mode . yaml-ts-mode))))
+     (yaml-mode . yaml-ts-mode)
+     (html-mode . html-ts-mode))))
 
 
 (use-package exec-path-from-shell
@@ -882,6 +883,7 @@
 
   :config
   (add-to-list 'eglot-server-programs '(css-mode . ("vscode-css-language-server" "--stdio")))
+  (add-to-list 'eglot-server-programs '((web-mode html-mode) . ("vscode-html-language-server" "--stdio")))
   (add-to-list 'eglot-server-programs '((js-mode js-ts-mode tsx-ts-mode typescript-ts-mode typescript-mode) . my-ts-server-program))
   (add-to-list 'eglot-server-programs '((bash-ts-mode) . ("bash-language-server" "start")))
   (add-to-list 'eglot-server-programs '((json-mode) . ("vscode-json-language-server" "--stdio")))
@@ -1042,7 +1044,10 @@
   ("\\.jst\\'" . web-mode)
 
   :custom
-  (web-mode-markup-indent-offset 2))
+  (web-mode-markup-indent-offset 2)
+
+  :hook
+  (web-mode . my-prog-modes))
 
 
 (use-package css-mode
@@ -1051,6 +1056,10 @@
 
   :hook
   (css-base-mode . my-prog-modes))
+
+(use-package html-mode
+  :hook
+  (html-ts-mode . my-prog-modes))
 
 
 (use-package sh-script
