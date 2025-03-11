@@ -912,8 +912,8 @@
   (avy-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)))
 
 (use-package treesit
-  :custom
-  (treesit-language-source-alist
+  :init
+  (setq treesit-language-source-alist
    '((astro "https://github.com/virchau13/tree-sitter-astro")
      (bash . ("https://github.com/tree-sitter/tree-sitter-bash"))
      (css . ("https://github.com/tree-sitter/tree-sitter-css"))
