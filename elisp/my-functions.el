@@ -186,7 +186,8 @@
 (defun my-ts-server-program (&rest _)
   "Decide which server to use based on project characteristics."
   (cond ((deno-project-p) '("deno" "lsp" :initializationOptions '(:enable t :lint t)))
-        (t '("typescript-language-server" "--stdio"))))
+        (t '("typescript-language-server" "--stdio" :initializationOptions
+             (:plugins [(:name "ts-lit-plugin" :location "/Users/gi64uc/.nvm/versions/node/v22.14.0/lib/node_modules/ts-lit-plugin")])))))
 
 (defun my-quit-eldoc-buffer ()
   "Quits an eldoc window."
