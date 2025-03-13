@@ -931,6 +931,12 @@
 (use-package my-deno
   :defer t)
 
+(use-package apheleia
+  :straight t
+
+  :config
+  (apheleia-global-mode t))
+
 (use-package typescript-ts-mode
   :defer t
 
@@ -958,7 +964,7 @@
   (typescript-ts-base-mode . (lambda ()
                                (setq flycheck-check-syntax-automatically '(save mode-enabled))
                                (when (deno-project-p)
-                                 (deno-fmt-mode))
+                                 (setq-local apheleia-formatter 'denofmt))
                                (my-prog-modes))))
 (use-package js
   :mode
@@ -987,15 +993,6 @@
    (js-ts-mode . flycheck-mode)))
 
 
-(use-package prettier-js
-  :straight t
-
-  :custom
-  (prettier-js-args '("--trailing-comma" "all"
-                      "--bracket-spacing" "true"
-                      "--single-quote" "true")))
-
-
 (use-package json-mode
   :straight t
 
@@ -1005,12 +1002,6 @@
 
   :hook
   (json-mode . my-prog-modes))
-
-
-(use-package deno-fmt
-  :straight t
-
-  :defer t)
 
 
 (use-package esh-mode

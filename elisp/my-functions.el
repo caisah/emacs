@@ -200,7 +200,7 @@
       (when (and eslint (file-executable-p eslint))
         (setq-local flycheck-javascript-eslint-executable eslint)
         (setq-default flycheck-disabled-checkers '(javascript-jshint))
-        (setq-default flycheck-checker 'javascript-eslint))))
+        (flycheck-select-checker 'javascript-eslint))))
 
 (defun my-quit-eldoc-buffer ()
   "Quits an eldoc window."
