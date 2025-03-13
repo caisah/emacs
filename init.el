@@ -895,10 +895,10 @@
   (eglot-events-buffer-size 0))
 
 
-(use-package flycheck-eglot
-  :straight t
+;; (use-package flycheck-eglot
+;;   :straight t
 
-  :defer t)
+;;   :defer t)
 
 
 (use-package avy
@@ -982,7 +982,9 @@
         ("C-c C-c" . 'my-deno-reset-repl))
 
   :hook
-  ((js-ts-mode . my-prog-modes)))
+  ((js-ts-mode . my-prog-modes)
+   (js-ts-mode . my-use-eslint-from-node-modules)
+   (js-ts-mode . flycheck-mode)))
 
 
 (use-package prettier-js

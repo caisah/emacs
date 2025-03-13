@@ -189,6 +189,19 @@
         (t '("typescript-language-server" "--stdio" :initializationOptions
              (:plugins [(:name "ts-lit-plugin" :location "/Users/gi64uc/.nvm/versions/node/v22.14.0/lib/node_modules/ts-lit-plugin")])))))
 
+(defun my-use-eslint-from-node-modules ()
+    "Use local eslint from node_modules before global."
+    (let* ((root (locate-dominating-file
+                  (or (buffer-file-name) default-directory)
+                  "node_modules"))
+           (eslint (and root
+                        (expand-file-name "node_modules/.bin/eslint"
+                                          root))))
+      (when (and eslint (file-executable-p eslint))
+        (setq-local flycheck-javascript-eslint-executable eslint)
+        (setq-default flycheck-disabled-checkers '(javascript-jshint))
+        (setq-default flycheck-checker 'javascript-eslint))))
+
 (defun my-quit-eldoc-buffer ()
   "Quits an eldoc window."
   (interactive)
