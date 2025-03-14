@@ -1066,6 +1066,13 @@
   (emacs-lisp-mode . rainbow-delimiters-mode))
 
 
+(use-package drag-stuff
+  :straight t
+
+  :config
+  (drag-stuff-global-mode 1)
+  (drag-stuff-define-keys))
+
 (use-package elisp-slime-nav
   :after elisp-mode
 
