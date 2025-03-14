@@ -74,13 +74,13 @@
     (buffer-string)))
 
 (defun my-display-code-line-counts (ov)
-                  (when (eq 'code (overlay-get ov 'hs))
-                    (overlay-put ov 'display
-                                 (propertize
-                                  (format " ... %d lines ... "
-                                          (count-lines (overlay-start ov)
-                                                       (overlay-end ov)))
-                                  'face 'hs-face))))
+  (when (eq 'code (overlay-get ov 'hs))
+    (overlay-put ov 'display
+                 (propertize
+                  (format " ... %d lines ... "
+                          (count-lines (overlay-start ov)
+                                       (overlay-end ov)))
+                  'face 'hs-face))))
 
 (defun index-template (name)
   (format  (my-read-file "~/.emacs.d/config/elisp/templates/index.ts") name))
@@ -142,7 +142,7 @@
     (other-window 1)
     (split-window-below)
     (other-window 1))
-    (my-shell-here))
+  (my-shell-here))
 
 (defun my-consult-line ()
   "Call `consult-line` with the selected string."
@@ -190,24 +190,24 @@
              (:plugins [(:name "ts-lit-plugin" :location "/Users/gi64uc/.nvm/versions/node/v22.14.0/lib/node_modules/ts-lit-plugin")])))))
 
 (defun my-use-eslint-from-node-modules ()
-    "Use local eslint from node_modules before global."
-    (let* ((root (locate-dominating-file
-                  (or (buffer-file-name) default-directory)
-                  "node_modules"))
-           (eslint (and root
-                        (expand-file-name "node_modules/.bin/eslint"
-                                          root))))
-      (when (and eslint (file-executable-p eslint))
-        (setq-local flycheck-javascript-eslint-executable eslint)
-        (setq-default flycheck-disabled-checkers '(javascript-jshint))
-        (flycheck-select-checker 'javascript-eslint))))
+  "Use local eslint from node_modules before global."
+  (let* ((root (locate-dominating-file
+                (or (buffer-file-name) default-directory)
+                "node_modules"))
+         (eslint (and root
+                      (expand-file-name "node_modules/.bin/eslint"
+                                        root))))
+    (when (and eslint (file-executable-p eslint))
+      (setq-local flycheck-javascript-eslint-executable eslint)
+      (setq-default flycheck-disabled-checkers '(javascript-jshint))
+      (setq-local flycheck-checker 'javascript-eslint))))
 
 (defun my-quit-eldoc-buffer ()
   "Quits an eldoc window."
   (interactive)
   (let ((eldoc-buffer (get-buffer "*eldoc*")))
-  (when eldoc-buffer
-    (quit-window (select-window (get-buffer-window eldoc-buffer))))))
+    (when eldoc-buffer
+      (quit-window (select-window (get-buffer-window eldoc-buffer))))))
 
 (defun my-prog-modes ()
   (abbrev-mode 1)
