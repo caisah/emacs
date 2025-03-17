@@ -198,6 +198,7 @@
                       (expand-file-name "node_modules/.bin/eslint"
                                         root))))
     (when (and eslint (file-executable-p eslint))
+      (flymake-mode -1)
       (setq-local flycheck-javascript-eslint-executable eslint)
       (setq-default flycheck-disabled-checkers '(javascript-jshint))
       (setq-local flycheck-checker 'javascript-eslint))))
