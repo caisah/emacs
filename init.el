@@ -989,8 +989,7 @@
 
   :hook
   ((js-ts-mode . my-prog-modes)
-   (js-ts-mode . my-use-eslint-from-node-modules)
-   (js-ts-mode . flycheck-mode)))
+   (js-ts-mode . my-use-eslint-from-node-modules)))
 
 
 (use-package json-mode
