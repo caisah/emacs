@@ -969,7 +969,8 @@
                                (my-prog-modes))))
 (use-package js
   :mode
-  ("\\.cjs\\'" . js-mode)
+  ("\\.cjs\\'" . js-ts-mode)
+  ("\\.js\\'" . js-ts-mode)
 
   :config
   (require 'my-deno)
@@ -1101,5 +1102,9 @@
 
   :init
   (global-undo-tree-mode))
+
+(use-package special-mode
+  :bind
+  (("RET" . my-open-special-markdown-link-at-point)))
 
 ;;; init.el ends here
