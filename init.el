@@ -914,19 +914,19 @@
 (use-package treesit
   :init
   (setq treesit-language-source-alist
-   '((astro "https://github.com/virchau13/tree-sitter-astro")
-     (bash . ("https://github.com/tree-sitter/tree-sitter-bash"))
-     (css . ("https://github.com/tree-sitter/tree-sitter-css"))
-     (html . ("https://github.com/tree-sitter/tree-sitter-html"))
-     (javascript "https://github.com/tree-sitter/tree-sitter-javascript")
-     (json . ("https://github.com/tree-sitter/tree-sitter-json"))
-     (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
-     (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
-     (yaml . ("https://github.com/ikatyang/tree-sitter-yaml"))
-     (elixir . ("https://github.com/elixir-lang/tree-sitter-elixir"))
-     (heex . ("https://github.com/phoenixframework/tree-sitter-heex.git"))
-     (dockerfile . ("https://github.com/camdencheek/tree-sitter-dockerfile"))
-     (jsdoc . ("https://github.com/tree-sitter/tree-sitter-jsdoc" "master" "src")))))
+        '((astro "https://github.com/virchau13/tree-sitter-astro")
+          (bash . ("https://github.com/tree-sitter/tree-sitter-bash"))
+          (css . ("https://github.com/tree-sitter/tree-sitter-css"))
+          (html . ("https://github.com/tree-sitter/tree-sitter-html"))
+          (javascript "https://github.com/tree-sitter/tree-sitter-javascript")
+          (json . ("https://github.com/tree-sitter/tree-sitter-json"))
+          (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
+          (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
+          (yaml . ("https://github.com/ikatyang/tree-sitter-yaml"))
+          (elixir . ("https://github.com/elixir-lang/tree-sitter-elixir"))
+          (heex . ("https://github.com/phoenixframework/tree-sitter-heex.git"))
+          (dockerfile . ("https://github.com/camdencheek/tree-sitter-dockerfile"))
+          (jsdoc . ("https://github.com/tree-sitter/tree-sitter-jsdoc" "master" "src")))))
 
 (use-package my-deno
   :defer t)
@@ -941,8 +941,9 @@
   :defer t
 
   :mode
-  (("\\.jsx\\'" . tsx-ts-mode))
-  (("\\.tsx\\'" . tsx-ts-mode))
+  ("\\.jsx\\'" . tsx-ts-mode)
+  ("\\.tsx\\'" . tsx-ts-mode)
+  ("\\.mjs\\'" . typescript-ts-mode)
 
   :config
   (require 'my-deno)
@@ -968,8 +969,6 @@
                                (my-prog-modes))))
 (use-package js
   :mode
-  ("\\.js\\'" . js-mode)
-  ("\\.mjs\\'" . js-mode)
   ("\\.cjs\\'" . js-mode)
 
   :config
