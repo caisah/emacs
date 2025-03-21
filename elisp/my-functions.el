@@ -223,5 +223,13 @@
   (yas-reload-all)
   (rainbow-delimiters-mode 1))
 
+(defun my-open-special-markdown-link-at-point ()
+  "Open the Markdown link at point in the `eldoc` buffer."
+  (interactive)
+  (let ((url (get-text-property (point) 'help-echo)))
+    (if url
+        (browse-url url)
+      (message "No URL found at point"))))
+
 (provide 'my-functions)
 ;;; my-functions.el ends here
