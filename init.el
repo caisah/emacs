@@ -1105,6 +1105,7 @@
 
 (use-package special-mode
   :bind
-  (("RET" . my-open-special-markdown-link-at-point)))
+  (:map special-mode-map
+        (("RET" . my-open-special-markdown-link-at-point))))
 
 ;;; init.el ends here
