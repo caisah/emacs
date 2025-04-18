@@ -933,9 +933,7 @@
 
 (use-package apheleia
   :straight t
-
-  :config
-  (apheleia-global-mode t))
+  :defer t)
 
 (use-package typescript-ts-mode
   :defer t
@@ -962,11 +960,8 @@
         ("C-c C-c" . 'my-deno-reset-repl))
 
   :hook
-  (typescript-ts-base-mode . (lambda ()
-                               (setq flycheck-check-syntax-automatically '(save mode-enabled))
-                               (when (deno-project-p)
-                                 (setq-local apheleia-formatter 'denofmt))
-                               (my-prog-modes))))
+  (typescript-ts-base-mode . my-typescript-general-hook))
+
 (use-package js
   :mode
   ("\\.cjs\\'" . js-ts-mode)
