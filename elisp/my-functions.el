@@ -231,5 +231,12 @@
         (browse-url url)
       (message "No URL found at point"))))
 
+(defun my-typescript-general-hook ()
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (when (deno-project-p)
+    (setq-local apheleia-formatter 'denofmt)
+    (apheleia-mode 1))
+  (my-prog-modes))
+
 (provide 'my-functions)
 ;;; my-functions.el ends here
