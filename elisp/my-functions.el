@@ -174,11 +174,6 @@
   (interactive)
   (my-open-file-in-browser (buffer-file-name)))
 
-(defun my-install-treesit-languages ()
-  "Install/build all treesit languages."
-  (interactive)
-  (mapc #'treesit-install-language-grammar (mapcar #'car treesit-language-source-alist)))
-
 (defun deno-project-p ()
   "Determine if inside a deno project."
   (when (locate-dominating-file "." "deno.json") t))
