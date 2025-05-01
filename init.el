@@ -826,8 +826,6 @@
 
 
 (use-package org
-  :straight t
-
   :custom
   (org-src-fontify-natively t)
 
@@ -911,22 +909,15 @@
   :custom
   (avy-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)))
 
-(use-package treesit
-  :init
-  (setq treesit-language-source-alist
-        '((astro "https://github.com/virchau13/tree-sitter-astro")
-          (bash . ("https://github.com/tree-sitter/tree-sitter-bash"))
-          (css . ("https://github.com/tree-sitter/tree-sitter-css"))
-          (html . ("https://github.com/tree-sitter/tree-sitter-html"))
-          (javascript "https://github.com/tree-sitter/tree-sitter-javascript")
-          (json . ("https://github.com/tree-sitter/tree-sitter-json"))
-          (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
-          (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
-          (yaml . ("https://github.com/ikatyang/tree-sitter-yaml"))
-          (elixir . ("https://github.com/elixir-lang/tree-sitter-elixir"))
-          (heex . ("https://github.com/phoenixframework/tree-sitter-heex.git"))
-          (dockerfile . ("https://github.com/camdencheek/tree-sitter-dockerfile"))
-          (jsdoc . ("https://github.com/tree-sitter/tree-sitter-jsdoc" "master" "src")))))
+(use-package treesit-auto
+  :straight t
+
+  :custom
+  (treesit-auto-install 'prompt)
+
+  :config
+  (treesit-auto-add-to-auto-mode-alist 'all)
+  (global-treesit-auto-mode))
 
 (use-package my-deno
   :defer t)
