@@ -216,7 +216,8 @@
   (whitespace-mode 1)
   (yas-minor-mode 1)
   (yas-reload-all)
-  (rainbow-delimiters-mode 1))
+  (rainbow-delimiters-mode 1)
+  (flycheck-mode 1))
 
 (defun my-open-special-markdown-link-at-point ()
   "Open the Markdown link at point in the `eldoc` buffer."
