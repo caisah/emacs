@@ -1,4 +1,4 @@
-:;; init.el - Magic starts here. -*- lexical-binding: t -*-
+;;; init.el - Magic starts here. -*- lexical-binding: t -*-
 ;;; Code:
 
 (defvar *start-time* (current-time))
@@ -342,8 +342,8 @@
   :straight t
 
   :bind
-  ("C-`" . er/expand-region)
-  ("C-~" . er/contract-region))
+  ("s-U" . er/contract-region)
+  ("s-u" . er/expand-region))
 
 
 (use-package wgrep
@@ -449,12 +449,6 @@
 
   :hook
   (ibuffer . (lambda () (toggle-truncate-lines 1))))
-
-
-(use-package elec-pair
-  :init
-  (electric-pair-mode))
-
 
 (use-package projectile
   :straight t
@@ -787,6 +781,7 @@
   :bind
   ("s-o" . ace-window)
   ("C-c M-o" . ace-swap-window)
+  ("C-c s-o" . ace-delete-window)
 
   :custom
   ;; enable deleting, swapping, splitting
@@ -918,6 +913,24 @@
   :config
   (treesit-auto-add-to-auto-mode-alist 'all)
   (global-treesit-auto-mode))
+
+(use-package smartparens
+  :straight t
+
+  :config
+  ;; load default config
+  (require 'smartparens-config)
+  (smartparens-global-mode)
+
+  :bind
+  (:map smartparens-mode-map
+        ("C-c ("  . wrap-wth-parens)
+        ("C-c ["  . wrap-with-brackets)
+        ("C-c {"  . wrap-with-braces)
+        ("C-c '"  . wrap-with-single-quotes)
+        ("C-c \"" . wrap-with-double-quotes)
+        ("C-c _"  . wrap-with-underscores)
+        ("C-`"  . wrap-with-back-quotes)))
 
 (use-package my-deno
   :defer t)
