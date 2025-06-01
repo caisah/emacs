@@ -1107,4 +1107,9 @@
   (:map special-mode-map
         (("RET" . my-open-special-markdown-link-at-point))))
 
+(use-package which-key
+
+  :init
+  (which-key-mode 1))
+
 ;;; init.el ends here
