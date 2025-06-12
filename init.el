@@ -342,8 +342,8 @@
   :straight t
 
   :bind
-  ("s-U" . er/contract-region)
-  ("s-u" . er/expand-region))
+  ("s-I" . er/contract-region)
+  ("s-i" . er/expand-region))
 
 
 (use-package wgrep
