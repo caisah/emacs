@@ -111,7 +111,7 @@
 
   (keymap-global-set "C-<tab>" 'indent-relative)
 
-  (keymap-global-set "C-c C-f" 'hs-toggle-hiding)
+  (keymap-global-set "C-c C-f" 'treesit-fold-toggle)
   (keymap-global-set "s-u" 'revert-buffer)
 
   ;; Emacs
@@ -268,21 +268,6 @@
   ("\\.md\\'" . markdown-mode))
 
 
-(use-package hideshow
-  :custom
-  (hs-set-up-overlay  'my-display-code-line-counts)
-
-  :config
-  (defface hs-face nil
-    "Basic face for hide/show."
-    :group 'basic-faces)
-  (add-to-list 'hs-special-modes-alist
-               '(nxml-mode
-                 "<!--\\|<[^/>]*[^/]>"
-                 "-->\\|</[^/>]*[^/]>"
-                 "<!--"
-                 sgml-skip-tag-forward
-                 nil)))
 
 
 (use-package recentf
@@ -1014,11 +999,19 @@
                          ;; start company
                          (company-mode 1))))
 
+(use-package treesit-fold
+  :straight (treesit-fold :type git :host github :repo "emacs-tree-sitter/treesit-fold")
+
+  :custom
+  (treesit-fold-line-count-show t)
+
+  :config
+  (global-treesit-fold-mode))
+
 
 (use-package nxml-mode
   :hook
-  (nxml-mode . sgml-mode)
-  (nxml-mode . hs-minor-mode))
+  (nxml-mode . sgml-mode))
 
 (use-package web-mode
   :straight t
