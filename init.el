@@ -348,7 +348,7 @@
   :custom
   (dired-use-ls-dired t)
   ;; Show directories first
-  (dired-listing-switches "-aBhl --group-directories-first")
+  (dired-listing-switches "-lA --group-directories-first")
   ;; Don't ask for confirmation on recursion when copying
   (dired-recursive-copies 'always)
   ;; Don't ask for confirmation on recursion when deleting
