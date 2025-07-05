@@ -1101,8 +1101,17 @@
         (("RET" . my-open-special-markdown-link-at-point))))
 
 (use-package which-key
-
   :init
   (which-key-mode 1))
+
+
+(use-package man
+  :demand t
+
+  :config
+  (Man-init-defvars)
+
+  :custom
+  (Man-sed-command "gsed"))
 
 ;;; init.el ends here
