@@ -902,10 +902,8 @@
 (use-package smartparens
   :straight t
 
-  :config
-  ;; load default config
-  (require 'smartparens-config)
-  (smartparens-global-mode)
+  :init
+  (smartparens-global-mode t)
 
   :bind
   (:map smartparens-mode-map
