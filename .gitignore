@@ -17,8 +17,8 @@ recentf
 /elpa/
 /image-dired/
 /nov-places
-/config/general-modes/elfeed-settings.el
 /.DS_Store
 /straight/build
 /straight/repos
 /straight/build-cache.el
+/elisp/settings.el
