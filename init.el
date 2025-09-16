@@ -74,6 +74,11 @@
      ;; use local bash
      shell-file-name "/usr/local/bin/bash"))
 
+    (let ((file (concat my-elisp-dir "/settings.el")))
+      (if (file-exists-p file)
+          (load file)
+        (message "My init :: %s not found" file)))
+
   ;; use UTF-8
   (set-language-environment "UTF-8")
 
