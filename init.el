@@ -30,6 +30,12 @@
 (add-to-list 'load-path my-elisp-dir)
 (add-to-list 'load-path my-config-dir)
 
+;; Load settings file
+(let ((file (concat my-elisp-dir "/settings.el")))
+      (if (file-exists-p file)
+          (load file)
+        (message "My init :: %s not found" file)))
+
 ;; Load my elisp code
 (use-package my-functions)
 
@@ -73,11 +79,6 @@
      insert-directory-program "/usr/local/opt/coreutils/libexec/gnubin/ls"
      ;; use local bash
      shell-file-name "/usr/local/bin/bash"))
-
-    (let ((file (concat my-elisp-dir "/settings.el")))
-      (if (file-exists-p file)
-          (load file)
-        (message "My init :: %s not found" file)))
 
   ;; use UTF-8
   (set-language-environment "UTF-8")
@@ -140,6 +141,7 @@
   ;; Global Modes:
   ;; Use word-wrapping for continuation lines
   (global-visual-line-mode 1)
+
   ;; Show matching parens
   (show-paren-mode 1)
   ;; Disable electric indent mode
@@ -1116,5 +1118,14 @@
 
   :custom
   (Man-sed-command "gsed"))
+
+(when my-enable-copilot
+  (use-package copilot
+    :straight (copilot :type git :host github :repo "zerolfx/copilot.el" :files ("*.el" "dist"))
+    :hook (prog-mode . copilot-mode)
+    :bind (:map copilot-completion-map
+                ("<tab>" . 'copilot-accept-completion)
+                ("TAB" . 'copilot-accept-completion))
+    :config (copilot-idle-delay 200)))
 
 ;;; init.el ends here
