@@ -181,9 +181,9 @@
 (defun my-ts-server-program (&rest _)
   "Decide which server to use based on project characteristics."
   (cond ((deno-project-p) '("deno" "lsp" :initializationOptions '(:enable t :lint t)))
-        (t '("typescript-language-server" "--stdio" :initializationOptions
+        (t `("typescript-language-server" "--stdio" :initializationOptions
              (:plugins [(:name "ts-lit-plugin"
-                         :location (concat my-base-user-path ".nvm/versions/node/" my-node-version "/lib/node_modules/ts-lit-plugin"))])))))
+                         :location ,(concat my-base-user-path ".nvm/versions/node/" my-node-version "/lib/node_modules/ts-lit-plugin"))])))))
 
 (defun my-use-eslint-from-node-modules ()
   "Use local eslint from node_modules before global."
