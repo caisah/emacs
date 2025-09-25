@@ -202,6 +202,8 @@
    `(org-document-title ((t (:foreground "LemonChiffon3"))))
    `(org-meta-line ((t (:foreground "gray50"))))
    `(org-date ((t (:foreground "LemonChiffon3" :underline t :height 0.9))))
+   `(org-block-begin-line ((t (:foreground "gray25"))))
+   `(org-block-end-line ((t (:foreground "gray25"))))
 
    `(org-todo ((t (:foreground "gray75" :weight bold :underline "firebrick"))))
    `(org-done ((t (:foreground "gray75" :weight bold :underline "LimeGreen"))))
