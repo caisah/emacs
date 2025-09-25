@@ -1122,7 +1122,6 @@
 (when my-enable-copilot
   (use-package copilot
     :straight (copilot :type git :host github :repo "zerolfx/copilot.el" :files ("*.el" "dist"))
-    :hook (prog-mode . copilot-mode)
     :bind (:map copilot-completion-map
                 ("<tab>" . 'copilot-accept-completion)
                 ("TAB" . 'copilot-accept-completion))
