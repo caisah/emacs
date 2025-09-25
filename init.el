@@ -1120,11 +1120,23 @@
   (Man-sed-command "gsed"))
 
 (when my-enable-copilot
+  (use-package org
+    :straight (:type built-in))
+
+  (use-package mcp
+    :straight (:host github :repo "lizqwerscott/mcp.el"))
+
+  (use-package copilot-chat
+    :straight (:host github :repo "chep/copilot-chat.el" :files ("*.el"))
+    :after (request org markdown-mode)
+
+    :custom (copilot-chat-frontend 'markdown))
+
   (use-package copilot
     :straight (copilot :type git :host github :repo "zerolfx/copilot.el" :files ("*.el" "dist"))
     :bind (:map copilot-completion-map
                 ("<tab>" . 'copilot-accept-completion)
                 ("TAB" . 'copilot-accept-completion))
-    :config (copilot-idle-delay 200)))
+    :custom (copilot-idle-delay 200)))
 
 ;;; init.el ends here
