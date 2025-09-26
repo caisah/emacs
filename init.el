@@ -813,6 +813,9 @@
 
 
 (use-package org
+  :straight
+  (:type built-in)
+
   :custom
   (org-src-fontify-natively t)
 
@@ -847,19 +850,11 @@
 (use-package erc
   :init
   ;; Try to load ercpass file
-  (let ((ercpass "~/.ercpass"))
-    (if (file-exists-p ercpass)
-        (load ercpass)
-      (progn
-        (setq freenode-pass ""
-              snoonet-pass "")
-        (message "My init :: warn :: Could not load .ercpass"))))
-
   :custom
   (erc-nickserv-identify-mode 'both)
   (erc-nickserv-passwords
-   `((freenode (("caisah" . ,freenode-pass)))
-     (Snoonet (("caisah" . ,snoonet-pass))))
+   `((freenode (("caisah" . ,(when (boundp 'my-freenode-pass) my-freenode-pass))))
+     (Snoonet (("caisah" . ,(when (boundp 'my-snoonet-pass) my-snoonet-pass)))))
    erc-prompt-for-nickserv-password nil))
 
 
@@ -1120,9 +1115,6 @@
   (Man-sed-command "gsed"))
 
 (when my-enable-copilot
-  (use-package org
-    :straight (:type built-in))
-
   (use-package mcp
     :straight (:host github :repo "lizqwerscott/mcp.el"))
 
