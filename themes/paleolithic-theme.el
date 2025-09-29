@@ -474,6 +474,9 @@
    ;; discover key mode
    `(makey-key-mode-button-face ((t (:foreground "wheat3" :underline t))))
 
+   `(copilot-chat-list-selected-buffer-face ((t (:foreground "gray80"))))
+   `(copilot-chat-list-default-face ((t (:foreground "gray40"))))
+
    `(Info-quoted ((t (:background "gray20" :box (:line-width 2 :color "grey20") :height 1.0 :width condensed))))))
 
 (custom-theme-set-variables
