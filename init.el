@@ -138,6 +138,8 @@
 
   (keymap-global-set "C-S-s" 'query-replace-regexp)
 
+  (keymap-global-set "C-c C-t" 'copilot-chat-transient)
+
   ;; Global Modes:
   ;; Use word-wrapping for continuation lines
   (global-visual-line-mode 1)
@@ -1120,9 +1122,7 @@
 
   (use-package copilot-chat
     :straight (:host github :repo "chep/copilot-chat.el" :files ("*.el"))
-    :after (request org markdown-mode)
-
-    :custom (copilot-chat-frontend 'markdown))
+    :after (request org markdown-mode))
 
   (use-package copilot
     :straight (copilot :type git :host github :repo "zerolfx/copilot.el" :files ("*.el" "dist"))
