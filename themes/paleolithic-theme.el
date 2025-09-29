@@ -209,13 +209,13 @@
    `(org-done ((t (:foreground "gray75" :weight bold :underline "LimeGreen"))))
 
    `(outline-1 ((t (:foreground "wheat3" :weight bold))))
-   `(outline-2 ((t (:foreground "gray80" :weight bold))))
-   `(outline-3 ((t (:foreground "gray70" :weight bold))))
-   `(outline-4 ((t (:foreground "gray65" :weight bold))))
-   `(outline-5 ((t (:foreground "gray65" :weight bold))))
-   `(outline-6 ((t (:foreground "gray65" :weight bold))))
-   `(outline-7 ((t (:foreground "gray65" :weight bold))))
-   `(outline-8 ((t (:foreground "gray65" :weight bold))))
+   `(outline-2 ((t (:foreground "wheat3" :weight bold))))
+   `(outline-3 ((t (:foreground "wheat3" :weight bold))))
+   `(outline-4 ((t (:foreground "wheat3" :weight bold))))
+   `(outline-5 ((t (:foreground "wheat3" :weight bold))))
+   `(outline-6 ((t (:foreground "wheat3" :weight bold))))
+   `(outline-7 ((t (:foreground "wheat3" :weight bold))))
+   `(outline-8 ((t (:foreground "wheat3" :weight bold))))
 
    ;; diredp
    `(diredp-dir-heading ((t (:foreground "gray70" :background "gray20" :weight normal))))
