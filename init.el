@@ -378,6 +378,7 @@
               ("^" . dired-go-up-dir)
               ("k" . dired-subtree-remove)
               ("i" . dired-subtree-insert)
+              ("M-i" . my-consult-line)
               ("C-M-u" . dired-subtree-up)
               ("C-M-n" . dired-subtree-next-sibling)
               ("C-M-p" . dired-subtree-previous-sibling)))
