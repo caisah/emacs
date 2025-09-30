@@ -397,7 +397,11 @@
 (use-package dired+
   :straight t
 
-  :after dired)
+  :after dired
+
+  :config
+  ;; disable this key in order to use global key
+  (define-key dired-mode-map (kbd "M-i") nil))
 
 
 (use-package async
@@ -502,6 +506,9 @@
 (use-package company-capf
   :after company)
 
+(use-package which-key
+  :init
+  (which-key-mode 1))
 
 (use-package company-quickhelp
   :after company
@@ -814,6 +821,9 @@
         ("n" . shr-next-link)
         ("p" . shr-previous-link)))
 
+(use-package flyspell
+  :config
+  (define-key flyspell-mode-map (kbd "C-,") nil))
 
 (use-package org
   :straight
@@ -1036,7 +1046,6 @@
   :hook
   (web-mode . my-prog-modes))
 
-
 (use-package css-mode
   :custom
   (css-indent-offset 2)
@@ -1103,9 +1112,6 @@
   (:map special-mode-map
         (("RET" . my-open-special-markdown-link-at-point))))
 
-(use-package which-key
-  :init
-  (which-key-mode 1))
 
 
 (use-package man
