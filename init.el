@@ -1138,4 +1138,13 @@
                 ("TAB" . 'copilot-accept-completion))
     :custom (copilot-idle-delay 200)))
 
+(use-package gptel
+  :straight t
+
+  :config
+  (gptel-make-gh-copilot "Copilot")
+
+  :custom
+  (gptel-model 'Copilot:gpt-5-mini)
+  (gptel-default-mode 'org-mode))
 ;;; init.el ends here
