@@ -832,7 +832,11 @@
 
   :hook
   (org-mode . flyspell-mode)
-  (org-mode . turn-off-smartparens-mode))
+  (org-mode . turn-off-smartparens-mode)
+
+  :bind
+  (:map org-mode-map
+        ("C-c C-v m" . 'org-babel-mark-block)))
 
 
 (use-package multiple-cursors
@@ -1129,7 +1133,9 @@
     :straight (copilot :type git :host github :repo "zerolfx/copilot.el" :files ("*.el" "dist"))
     :bind (:map copilot-completion-map
                 ("<tab>" . 'copilot-accept-completion)
-                ("TAB" . 'copilot-accept-completion))
+                ("TAB" . 'copilot-accept-completion)
+           :map global-map
+                ("C-7" . 'copilot-complete))
     :custom (copilot-idle-delay 200)))
 
 (use-package gptel
