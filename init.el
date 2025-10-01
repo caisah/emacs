@@ -138,8 +138,6 @@
 
   (keymap-global-set "C-S-s" 'query-replace-regexp)
 
-  (keymap-global-set "C-c C-t" 'copilot-chat-transient)
-
   ;; Global Modes:
   ;; Use word-wrapping for continuation lines
   (global-visual-line-mode 1)
@@ -1142,9 +1140,7 @@
   :straight t
 
   :config
-  (gptel-make-gh-copilot "Copilot")
-
-  :custom
-  (gptel-model 'Copilot:gpt-5-mini)
-  (gptel-default-mode 'org-mode))
+  (setq gptel-backend (gptel-make-gh-copilot "Copilot"))
+  (setq gptel-model 'Copilot:gpt-5-mini)
+  (setq gptel-default-mode 'org-mode))
 ;;; init.el ends here
