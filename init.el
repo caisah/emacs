@@ -1125,10 +1125,6 @@
   (use-package mcp
     :straight (:host github :repo "lizqwerscott/mcp.el"))
 
-  (use-package copilot-chat
-    :straight (:host github :repo "chep/copilot-chat.el" :files ("*.el"))
-    :after (request org markdown-mode))
-
   (use-package copilot
     :straight (copilot :type git :host github :repo "zerolfx/copilot.el" :files ("*.el" "dist"))
     :bind (:map copilot-completion-map
