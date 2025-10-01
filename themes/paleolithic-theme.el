@@ -477,6 +477,8 @@
    `(copilot-chat-list-selected-buffer-face ((t (:foreground "gray80"))))
    `(copilot-chat-list-default-face ((t (:foreground "gray40"))))
 
+   `(gptel-context-highlight-face ((t :background unspecified)))
+
    `(Info-quoted ((t (:background "gray20" :box (:line-width 2 :color "grey20") :height 1.0 :width condensed))))))
 
 (custom-theme-set-variables
