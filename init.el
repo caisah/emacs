@@ -1114,8 +1114,6 @@
   (:map special-mode-map
         (("RET" . my-open-special-markdown-link-at-point))))
 
-
-
 (use-package man
   :demand t
 
@@ -1124,19 +1122,6 @@
 
   :custom
   (Man-sed-command "gsed"))
-
-(when my-enable-copilot
-  (use-package mcp
-    :straight (:host github :repo "lizqwerscott/mcp.el"))
-
-  (use-package copilot
-    :straight (copilot :type git :host github :repo "zerolfx/copilot.el" :files ("*.el" "dist"))
-    :bind (:map copilot-completion-map
-                ("<tab>" . 'copilot-accept-completion)
-                ("TAB" . 'copilot-accept-completion)
-           :map global-map
-                ("C-7" . 'copilot-complete))
-    :custom (copilot-idle-delay 200)))
 
 (use-package gptel
   :straight t
