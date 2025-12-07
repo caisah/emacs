@@ -252,6 +252,13 @@
   (exec-path-from-shell-initialize))
 
 
+(use-package yasnippet
+  :straight t
+
+  :custom
+  (yas-snippet-dirs '("~/.emacs.d/snippets")))
+
+
 (use-package re-builder
   :custom
   (reb-re-syntax 'string))

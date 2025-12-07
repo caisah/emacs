@@ -215,7 +215,8 @@
   (subword-mode 1)
   (superword-mode 1)
   (whitespace-mode 1)
-
+  (yas-minor-mode 1)
+  (yas-reload-all)
   (rainbow-delimiters-mode 1)
   (flycheck-mode 1))
 
