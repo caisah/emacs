@@ -30,31 +30,6 @@
  "A Dark Gray Theme")
 
 ;; Define custom faces
-(defface twittering-user-name
-  '((t (:weight bold)))
-  "Twitter user name"
-  :group 'faces)
-
-(defface twittering-time
-  '((t (:inherit (font-lock-comment-face))))
-  "Twitter time"
-  :group 'faces)
-
-(defface twittering-location
-  '((t (:inherit (font-lock-comment-face))))
-  "Twitter location"
-  :group 'faces)
-
-(defface twittering-reply
-  '((t (:inherit (font-lock-doc-face))))
-  "Twitter location"
-  :group 'faces)
-
-(defface twittering-delimiter
-  '((t (:inherit (vertical-border))))
-  "Twitter delimiter"
-  :group 'faces)
-
 (defface ibuffer-read-only-face
   '((t (:inherit default)))
   "Ibuffer face for read only buffers"
