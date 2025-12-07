@@ -329,6 +329,9 @@
 (use-package rainbow-delimiters
   :straight t)
 
+(use-package rainbow-mode
+  :straight t)
+
 
 (use-package expand-region
   :straight t
