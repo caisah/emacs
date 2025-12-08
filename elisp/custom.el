@@ -1,6 +1,9 @@
+;; -*- lexical-binding: t; -*-
+
 ;;; custom.el --- Custom file
+
 ;;; Commentary:
-;; Custom Emacs file
+;;; Custom Emacs file
 
 ;;; Code:
 (custom-set-variables
