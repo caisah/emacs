@@ -1,6 +1,6 @@
 ;; -*- lexical-binding: t -*-
-;;; my- functions.el --- My custom functions
 
+;;; my- functions.el --- My custom functions
 
 ;;; Commentary:
 ;; A bundle of unrelated functions

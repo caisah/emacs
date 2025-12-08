@@ -1,4 +1,6 @@
-;;; init.el - Magic starts here. -*- lexical-binding: t -*-
+;;-*- lexical-binding: t -*-
+
+;;; init.el - Magic starts here.
 ;;; Code:
 
 (defvar *start-time* (current-time))

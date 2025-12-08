@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*-
+
 ;;; paleolithic-theme.el --- Dark Gray Theme
 
 ;; Author: Vlad Piersec <vlad.piersec@gmail.com>
