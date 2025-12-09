@@ -1159,6 +1159,8 @@
 (use-package man
   :demand t
 
+  :defer t
+
   :config
   (Man-init-defvars)
 
@@ -1167,6 +1169,8 @@
 
 (use-package gptel
   :straight t
+
+  :defer t
 
   :config
   (setq gptel-backend (gptel-make-gh-copilot "Copilot"))
