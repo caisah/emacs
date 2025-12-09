@@ -257,11 +257,15 @@
 (use-package yasnippet
   :straight t
 
+  :defer t
+
   :custom
   (yas-snippet-dirs '("~/.emacs.d/snippets")))
 
 
 (use-package re-builder
+  :defer t
+
   :custom
   (reb-re-syntax 'string))
 
@@ -275,8 +279,6 @@
   ("\\.text\\'" . markdown-mode)
   ("\\.markdown\\'" . markdown-mode)
   ("\\.md\\'" . markdown-mode))
-
-
 
 
 (use-package recentf
@@ -299,6 +301,8 @@
 
 (use-package yaml-mode
   :straight t
+
+  :defer t
 
   :mode
   ("\\.yml$" . yaml-mode))
@@ -331,8 +335,11 @@
 (use-package rainbow-delimiters
   :straight t)
 
+
 (use-package rainbow-mode
-  :straight t)
+  :straight t
+
+  :defer t)
 
 
 (use-package expand-region
@@ -344,7 +351,9 @@
 
 
 (use-package wgrep
-  :straight t)
+  :straight t
+
+  :defer t)
 
 
 (use-package page-break-lines
@@ -431,6 +440,8 @@
 
 
 (use-package ibuffer
+  :defer t
+
   :custom
   ;; Set modified char to 'm'
   (ibuffer-modified-char 109)
@@ -455,6 +466,8 @@
 (use-package projectile
   :straight t
 
+  :defer t
+
   :custom
   ;; Use elisp
   (projectile-indexing-method 'alien)
@@ -469,6 +482,8 @@
 
 
 (use-package hippie-exp
+  :defer t
+
   :custom
   (hippie-expand-try-functions-list
    '(try-expand-dabbrev
@@ -486,6 +501,8 @@
 
 
 (use-package epa
+  :defer t
+
   :custom
   ;; can export to text
   (epa-armor t))
@@ -493,6 +510,8 @@
 
 (use-package company
   :straight t
+
+  :defer t
 
   :custom
   (company-auto-update-doc t)
@@ -507,6 +526,8 @@
 
 
 (use-package company-capf
+  :defer t
+
   :after company)
 
 (use-package which-key
@@ -517,6 +538,8 @@
   :after company
 
   :straight t
+
+  :defer t
 
   :config
   ;; show tooltip popup on key press
@@ -564,6 +587,8 @@
 
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
 (use-package savehist
+  :defer t
+
   :init
   (savehist-mode))
 
@@ -815,6 +840,8 @@
 
 
 (use-package eww
+  :defer t
+
   :custom
   (eww-search-prefix "https://duckduckgo.com/lite?q=")
   (shr-color-visible-luminance-min 77)
@@ -856,6 +883,8 @@
 
 
 (use-package tramp
+  :defer t
+
   :custom
   (tramp-default-method "ssh")
   (tramp-verbose 9)
@@ -868,6 +897,8 @@
 
 
 (use-package erc
+  :defer t
+
   :init
   ;; Try to load ercpass file
   :custom
@@ -999,6 +1030,8 @@
 (use-package json-mode
   :straight t
 
+  :defer t
+
   :bind
   (:map json-mode-map
         ("C-c C-b" . json-mode-beautify))
@@ -1030,6 +1063,8 @@
 
 
 (use-package nxml-mode
+  :defer t
+
   :hook
   (nxml-mode . sgml-mode))
 
@@ -1070,6 +1105,7 @@
   (bash-ts-mode . my-prog-modes))
 
 
+
 (use-package elisp-mode
   :hook
   (emacs-lisp-mode . my-prog-modes)
@@ -1090,10 +1126,14 @@
 
 
 (use-package terraform-mode
-  :straight t)
+  :straight t
+
+  :defer t)
 
 (use-package astro-ts-mode
   :straight t
+
+  :defer t
 
   :mode
   ("\\.astro\\'" . astro-ts-mode)
@@ -1104,9 +1144,6 @@
 (use-package heex-ts-mode
   :straight t)
 
-(use-package elixir-ts-mode
-  :hook
-  (elixir-ts-mode . my-prog-modes))
 
 (use-package undo-tree
   :straight t
