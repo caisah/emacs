@@ -416,6 +416,7 @@
    `(transient-key-exit ((t (:foreground "DarkOrange" :weight bold))))
    `(transient-key-stay ((t (:foreground "gray45" :weight bold))))
    `(transient-inactive-argument ((t (:foreground "gray55" :weight light))))
+   `(transient-argument ((t (:inherit font-lock-warning-face))))
 
 
    `(magit-reflog-commit ((t (:foreground "gray60"))))
