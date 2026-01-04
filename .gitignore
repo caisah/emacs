@@ -18,7 +18,5 @@ recentf
 /image-dired/
 /nov-places
 /.DS_Store
-/straight/build
-/straight/repos
-/straight/build-cache.el
+/straight
 /elisp/settings.el
