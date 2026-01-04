@@ -128,8 +128,8 @@
   ;; Widow resizing
   (keymap-global-set "C-S-<left>" 'shrink-window-horizontally)
   (keymap-global-set "C-S-<right>" 'enlarge-window-horizontally)
-  (keymap-global-set "C-S-<down>" 'shrink-window)
-  (keymap-global-set "C-S-<up>" 'enlarge-window)
+  (keymap-global-set "M-s-<down>" 'shrink-window)
+  (keymap-global-set "M-s-<up>" 'enlarge-window)
 
   ;; Window navigation
   (keymap-global-set "C-S-o" 'previous-window-any-frame)
@@ -235,7 +235,8 @@
      (json-mode . json-ts-mode)
      (typescript-mode . typescript-ts-mode)
      (yaml-mode . yaml-ts-mode)
-     (html-mode . html-ts-mode))))
+     (html-mode . html-ts-mode)
+     (python-mode . python-ts-mode))))
 
 
 (use-package exec-path-from-shell
@@ -1173,7 +1174,12 @@
   :defer t
 
   :config
-  (setq gptel-backend (gptel-make-gh-copilot "Copilot"))
-  (setq gptel-model 'Copilot:gpt-5-mini)
-  (setq gptel-default-mode 'org-mode))
+  ;; (setq gptel-backend (gptel-make-gh-copilot "Copilot"))
+  ;; (setq gptel-model 'gpt-4)
+  (setq gptel-default-mode 'org-mode)
+  (setq
+   gptel-model 'gemini-3-pro-preview
+   gptel-backend (gptel-make-gemini "Gemini"
+                   :key (getenv "GEMINI_API_KEY")
+                   :stream t)))
 ;;; init.el ends here
