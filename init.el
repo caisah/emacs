@@ -1190,5 +1190,7 @@
 
 ;;   :config
 ;;   (setq agent-shell-google-authentication
-;;       (agent-shell-google-make-authentication :api-key (getenv "GEMINI_API_KEY"))))
+;;       (agent-shell-google-make-authentication :api-key (getenv "GEMINI_API_KEY")))
+;;   (setopt agent-shell-file-completion-enabled t))
+;;   (setq agent-shell-google-gemini-command (append agent-shell-google-gemini-command '("--model" "gemini-3-flash-preview")))
 ;;; init.el ends here
