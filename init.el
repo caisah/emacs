@@ -1178,8 +1178,17 @@
   ;; (setq gptel-model 'gpt-4)
   (setq gptel-default-mode 'org-mode)
   (setq
-   gptel-model 'gemini-3-pro-preview
+   gptel-model 'gemini-3-flash-preview
    gptel-backend (gptel-make-gemini "Gemini"
                    :key (getenv "GEMINI_API_KEY")
                    :stream t)))
+
+;; (use-package agent-shell
+;;   :straight t
+
+;;   :defer t
+
+;;   :config
+;;   (setq agent-shell-google-authentication
+;;       (agent-shell-google-make-authentication :api-key (getenv "GEMINI_API_KEY"))))
 ;;; init.el ends here
