@@ -239,21 +239,17 @@
      (python-mode . python-ts-mode))))
 
 
+
 (use-package exec-path-from-shell
   :straight t
 
-  :custom
-  ;; add node to the path
-  (exec-path-from-shell-copy-env "NVM_DIR")
-  ;; add bash config
-  (exec-path-from-shell-variables '("PATH" "MANPATH" "BASH_ENV"))
-  ;; Don't log bash profile warning
-  (exec-path-from-shell-check-startup-files nil)
+  :init
+  (setq exec-path-from-shell-shell-name "/bin/zsh")
 
   :config
-  ;; Set exec-path as $PATH
+  (setq exec-path-from-shell-variables '("PATH" "MANPATH" "NVM_DIR" "BASH_ENV"))
+  (setq exec-path-from-shell-check-startup-files nil)
   (exec-path-from-shell-initialize))
-
 
 (use-package yasnippet
   :straight t
