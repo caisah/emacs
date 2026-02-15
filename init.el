@@ -1187,4 +1187,15 @@
 ;;       (agent-shell-google-make-authentication :api-key (getenv "GEMINI_API_KEY")))
 ;;   (setopt agent-shell-file-completion-enabled t))
 ;;   (setq agent-shell-google-gemini-command (append agent-shell-google-gemini-command '("--model" "gemini-3-flash-preview")))
+
+(use-package vterm
+  :straight t
+
+  :hook
+  (vterm-copy-mode . (lambda ()
+                       (if vterm-copy-mode
+                           ; Change to box when in copy mode
+                           (setq cursor-type 'box)
+                         (setq cursor-type 'bar)))))
+
 ;;; init.el ends here
