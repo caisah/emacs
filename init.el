@@ -326,7 +326,18 @@
   :hook
   (prog-mode . (lambda ()
                  (when (my-current-buffer-too-big-p)
-                   (flycheck-mode -1)))))
+                   (flycheck-mode -1))))
+  :config
+  (flycheck-define-checker javascript-oxlint
+    "A high-performance JavaScript/TypeScript linter using oxlint."
+    :command ("oxlint"
+              "--format" "unix"
+              source)
+    :error-patterns
+    ((error line-start (file-name) ":" line ":" column ": " (message) line-end))
+    :modes (js-mode js-ts-mode typescript-mode typescript-ts-mode))
+
+  (add-to-list 'flycheck-checkers 'javascript-oxlint))
 
 
 (use-package rainbow-delimiters
@@ -995,7 +1006,8 @@
         ("C-c C-c" . 'my-deno-reset-repl))
 
   :hook
-  (typescript-ts-base-mode . my-typescript-general-hook))
+  (typescript-ts-base-mode . my-typescript-general-hook)
+  (typescript-ts-base-mode . my-use-lint-from-node-modules))
 
 (use-package js
   :mode
@@ -1019,7 +1031,7 @@
 
   :hook
   ((js-ts-mode . my-prog-modes)
-   (js-ts-mode . my-use-eslint-from-node-modules)))
+   (js-ts-mode . my-use-lint-from-node-modules)))
 
 
 (use-package json-mode

@@ -174,27 +174,40 @@
   (interactive)
   (my-open-file-in-browser (buffer-file-name)))
 
-(defun deno-project-p ()
+(defun my-deno-project-p ()
   "Determine if inside a deno project."
   (when (locate-dominating-file "." "deno.json") t))
 
 (defun my-ts-server-program (&rest _)
   "Decide which server to use based on project characteristics."
-  (cond ((deno-project-p) '("deno" "lsp" :initializationOptions '(:enable t :lint t)))
+  (cond ((my-deno-project-p) '("deno" "lsp" :initializationOptions '(:enable t :lint t)))
         (t `("typescript-language-server" "--stdio"))))
 
-(defun my-use-eslint-from-node-modules ()
-  "Use local eslint from node_modules before global."
-  (let* ((root (locate-dominating-file
-                (or (buffer-file-name) default-directory)
-                "node_modules"))
-         (eslint (and root
-                      (expand-file-name "node_modules/.bin/eslint"
-                                        root))))
-    (when (and eslint (file-executable-p eslint))
-      (setq-local flycheck-javascript-eslint-executable eslint)
-      (setq-default flycheck-disabled-checkers '(javascript-jshint))
-      (setq-local flycheck-checker 'javascript-eslint))))
+(defun my-local-oxlint-executable ()
+  "Return local oxlint path if available, otherwise nil."
+  (when-let* ((root (locate-dominating-file default-directory "node_modules"))
+              (oxlint (expand-file-name "node_modules/.bin/oxlint" root)))
+    (and (file-executable-p oxlint) oxlint)))
+
+(defun my-use-lint-from-node-modules ()
+  "Configure Flycheck to use local oxlint or eslint from node_modules."
+  (interactive)
+  (when-let* ((root (locate-dominating-file default-directory "node_modules"))
+              (bin-dir (expand-file-name "node_modules/.bin/" root)))
+
+    (let ((oxlint (expand-file-name "oxlint" bin-dir))
+          (eslint (expand-file-name "eslint" bin-dir)))
+
+      (cond
+       ;; Priority 1: oxlint (it's faster)
+       ((file-executable-p oxlint)
+        (setq-local flycheck-javascript-oxlint-executable oxlint)
+        (flycheck-select-checker 'javascript-oxlint))
+
+       ;; Priority 2: eslint
+       ((file-executable-p eslint)
+        (setq-local flycheck-javascript-eslint-executable eslint)
+        (flycheck-select-checker 'javascript-eslint))))))
 
 (defun my-quit-eldoc-buffer ()
   "Quits an eldoc window."
@@ -228,9 +241,13 @@
 
 (defun my-typescript-general-hook ()
   (setq flycheck-check-syntax-automatically '(save mode-enabled))
-  (when (deno-project-p)
+
+  (when (my-deno-project-p)
     (setq-local apheleia-formatter 'denofmt)
     (apheleia-mode 1))
+
+  (when (my-local-oxlint-executable)
+    (setq-local eglot-stay-out-of '(flymake)))
   (my-prog-modes))
 
 (defmacro def-pairs (pairs)
