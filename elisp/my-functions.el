@@ -6,6 +6,13 @@
 ;; A bundle of unrelated functions
 
 ;;; Code:
+
+(require 'cl-lib)
+(require 'subr-x)
+
+(defvar *start-time* nil
+  "Time when Emacs startup began.")
+
 (defun dired-go-up-dir ()
   "Navigates to the parent dir."
   (interactive)
@@ -14,13 +21,7 @@
 
 (defun time-passed-since (start)
   "Return the number of seconds from START until the current time."
-  (let* ((end (current-time))
-         (s-lo (cadr start))
-         (s-us (nth 2 start))
-         (e-lo (cadr end))
-         (e-us (nth 2 end)))
-    (+ (- e-lo s-lo)
-       (/ (- e-us  s-us) 1e6))))
+  (- (float-time) (float-time start)))
 
 (defun my-init-message (name)
   "Writes  nice load message in Message buffer for the NAME package."
@@ -33,30 +34,43 @@
 
 (defun my-show-startup-time ()
   "Message the time since .init file loaded."
-  (let ((time-passed (time-passed-since *start-time*)))
-    (run-with-timer 1 nil (lambda (time) (message "My .init loaded in %.3f seconds. Happy hacking!" time)) time-passed)))
+  (if *start-time*
+      (let ((time-passed (time-passed-since *start-time*)))
+        (run-with-timer 1 nil #'message
+                        "My .init loaded in %.3f seconds. Happy hacking!"
+                        time-passed))
+    (message "My .init loaded. Happy hacking!")))
 
 (defun my-kill-other-buffer ()
   "Kill buffer in the other window."
   (interactive)
-  (other-window 1)
-  (kill-this-buffer)
-  (other-window 1))
+  (if (one-window-p)
+      (let* ((current (current-buffer))
+             (other (other-buffer current t)))
+        (if (eq current other)
+            (user-error "No other buffer to kill")
+          (switch-to-buffer other)
+          (kill-buffer current)))
+    (with-selected-window (next-window)
+      (kill-buffer (current-buffer)))))
 
 (defun my-kill-all-buffers ()
   "Kill all buffers, leaving *scratch* only."
   (interactive)
-  (mapc
-   'kill-buffer
-   (buffer-list)))
+  (let ((buffers
+         (cl-remove-if
+          (lambda (buf)
+            (let ((name (buffer-name buf)))
+              (or (string-prefix-p " " name)
+                  (member name '("*Messages*" "*scratch*")))))
+          (buffer-list))))
+    (mapc #'kill-buffer buffers)
+    (switch-to-buffer "*scratch*")))
 
 (defun my-delete-to-previous-line ()
   "Delete to previous end of line."
   (interactive)
-  (delete-horizontal-space)
-  (backward-delete-char 1)
-  (delete-horizontal-space)
-  (insert-char 32))
+  (delete-indentation))
 
 (defun my-copy-buffer-file-name ()
   "Copy buffer file name."
@@ -64,7 +78,7 @@
   (let ((buff (buffer-file-name)))
     (if buff (progn
                (kill-new buff)
-               (message "Copied: %s" buffer-file-name))
+               (message "Copied: %s" buff))
       (message "No file to copy in: %s" major-mode))))
 
 (defun my-read-file (filename)
@@ -114,11 +128,11 @@
 (defun my-shell-here ()
   "Open shell buffer in this window."
   (interactive)
-  (let* ((dir (or dired-directory default-directory))
-         (name (car (last (split-string dir "/") 2))))
+  (let* ((dir (expand-file-name (or dired-directory default-directory)))
+         (name (file-name-nondirectory (directory-file-name dir))))
 
     (eshell "")
-    (rename-buffer (concat "*" name " shell*"))))
+    (rename-buffer (generate-new-buffer-name (concat "*" name " shell*")))))
 
 (defun my-shell-other ()
   "Open shell buffer in the other window."
