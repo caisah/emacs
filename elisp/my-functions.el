@@ -196,12 +196,6 @@
         (and (file-executable-p local-stylelint) local-stylelint))
       (executable-find "stylelint")))
 
-(defun my-use-project-stylelint-config ()
-  "Use stylelint.config.mjs from the current project when available."
-  (when-let ((root (locate-dominating-file default-directory "stylelint.config.mjs")))
-    (setq-local flycheck-stylelintrc
-                (expand-file-name "stylelint.config.mjs" root))))
-
 (defun my-use-lint-from-node-modules ()
   "Configure Flycheck to use local oxlint or eslint from node_modules."
   (interactive)
@@ -249,7 +243,6 @@
   (setq-local eglot-stay-out-of '(flymake))
   (my-prog-modes)
   (when-let ((stylelint (my-stylelint-executable)))
-    (my-use-project-stylelint-config)
     (setq-local flycheck-css-stylelint-executable stylelint)
     (flycheck-select-checker 'css-stylelint)))
 
