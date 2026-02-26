@@ -216,6 +216,7 @@
     (when eldoc-buffer
       (quit-window (select-window (get-buffer-window eldoc-buffer))))))
 
+
 (defun my-prog-modes ()
   (abbrev-mode 1)
   (company-mode 1)
@@ -230,6 +231,10 @@
   (yas-reload-all)
   (rainbow-delimiters-mode 1)
   (flycheck-mode 1))
+
+(defun my-css-mode-setup ()
+  (setq-local eglot-stay-out-of '(flymake))
+  (my-prog-modes))
 
 (defun my-open-special-markdown-link-at-point ()
   "Open the Markdown link at point in the `eldoc` buffer."
