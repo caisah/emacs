@@ -225,6 +225,8 @@
   (enable-recursive-minibuffers t)
   ;; Ignore case check on completion
   (completion-ignore-case t)
+  ;; Silence legacy advice redefinition warnings
+  (ad-redefinition-action 'accept)
   ;; Open files with default browser
   (browse-url-browser-function 'browse-url-default-browser)
   ;; Use treesit modes
@@ -244,11 +246,14 @@
 (use-package exec-path-from-shell
   :straight t
 
+  :if (memq window-system '(mac ns x))
+
   :init
   (setq exec-path-from-shell-shell-name "/bin/zsh")
+  (setq exec-path-from-shell-arguments '("-l"))
 
   :config
-  (setq exec-path-from-shell-variables '("PATH" "MANPATH" "NVM_DIR" "BASH_ENV"))
+  (setq exec-path-from-shell-variables '("PATH" "MANPATH"))
   (setq exec-path-from-shell-check-startup-files nil)
   (exec-path-from-shell-initialize))
 
@@ -256,6 +261,9 @@
   :straight t
 
   :defer t
+
+  :init
+  (setq yas-verbosity 0)
 
   :custom
   (yas-snippet-dirs '("~/.emacs.d/snippets")))
@@ -368,6 +376,7 @@
   :defer t
 
   :custom
+  (dired-omit-verbose nil)
   (dired-use-ls-dired t)
   ;; Show directories first
   (dired-listing-switches "-lA --group-directories-first")
@@ -514,8 +523,14 @@
 
   :defer t
 
+  :init
+  (autoload 'company-capf "company-capf" nil t)
+
   :custom
   (company-auto-update-doc t)
+
+  :config
+  (require 'company-capf)
 
   :bind (:map company-active-map
               ("M-n" . nil)
@@ -524,12 +539,6 @@
               ("C-p" . company-select-previous)
               :map  company-mode-map
               ("C-o" . company-capf)))
-
-
-(use-package company-capf
-  :defer t
-
-  :after company)
 
 (use-package which-key
   :init
@@ -1147,6 +1156,9 @@
 
 (use-package undo-tree
   :straight t
+
+  :custom
+  (undo-tree-enable-undo-in-region nil)
 
   :init
   (global-undo-tree-mode))
