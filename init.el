@@ -1169,8 +1169,6 @@
   :defer t
 
   :config
-  ;; (setq gptel-backend (gptel-make-gh-copilot "Copilot"))
-  ;; (setq gptel-model 'gpt-4)
   (setq gptel-default-mode 'org-mode)
   (setq
    gptel-model 'gemini-3-flash-preview
