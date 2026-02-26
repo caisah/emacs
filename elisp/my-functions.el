@@ -189,6 +189,19 @@
               (oxlint (expand-file-name "node_modules/.bin/oxlint" root)))
     (and (file-executable-p oxlint) oxlint)))
 
+(defun my-stylelint-executable ()
+  "Return project stylelint if present, otherwise global stylelint."
+  (or (when-let* ((root (locate-dominating-file default-directory "node_modules"))
+                  (local-stylelint (expand-file-name "node_modules/.bin/stylelint" root)))
+        (and (file-executable-p local-stylelint) local-stylelint))
+      (executable-find "stylelint")))
+
+(defun my-use-project-stylelint-config ()
+  "Use stylelint.config.mjs from the current project when available."
+  (when-let ((root (locate-dominating-file default-directory "stylelint.config.mjs")))
+    (setq-local flycheck-stylelintrc
+                (expand-file-name "stylelint.config.mjs" root))))
+
 (defun my-use-lint-from-node-modules ()
   "Configure Flycheck to use local oxlint or eslint from node_modules."
   (interactive)
@@ -234,7 +247,11 @@
 
 (defun my-css-mode-setup ()
   (setq-local eglot-stay-out-of '(flymake))
-  (my-prog-modes))
+  (my-prog-modes)
+  (when-let ((stylelint (my-stylelint-executable)))
+    (my-use-project-stylelint-config)
+    (setq-local flycheck-css-stylelint-executable stylelint)
+    (flycheck-select-checker 'css-stylelint)))
 
 (defun my-open-special-markdown-link-at-point ()
   "Open the Markdown link at point in the `eldoc` buffer."
