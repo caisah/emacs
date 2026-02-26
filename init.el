@@ -323,6 +323,9 @@
 
   :defer t
 
+  :custom
+  (flycheck-stylelintrc "stylelint.config.mjs")
+
   :hook
   (prog-mode . (lambda ()
                  (when (my-current-buffer-too-big-p)
