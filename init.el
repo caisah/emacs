@@ -326,18 +326,7 @@
   :hook
   (prog-mode . (lambda ()
                  (when (my-current-buffer-too-big-p)
-                   (flycheck-mode -1))))
-  :config
-  (flycheck-define-checker javascript-oxlint
-    "A high-performance JavaScript/TypeScript linter using oxlint."
-    :command ("oxlint"
-              "--format" "unix"
-              source)
-    :error-patterns
-    ((error line-start (file-name) ":" line ":" column ": " (message) line-end))
-    :modes (js-mode js-ts-mode typescript-mode typescript-ts-mode))
-
-  (add-to-list 'flycheck-checkers 'javascript-oxlint))
+                   (flycheck-mode -1)))))
 
 
 (use-package rainbow-delimiters
@@ -1100,7 +1089,7 @@
   (css-indent-offset 2)
 
   :hook
-  (css-base-mode . my-prog-modes))
+  ((css-base-mode . my-css-mode-setup)))
 
 (use-package html-mode
   :hook
