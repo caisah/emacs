@@ -230,7 +230,8 @@
   ;; Use treesit modes
   (major-mode-remap-alist
    '((sh-mode . bash-ts-mode)
-     (css-mode . css-ts-mode)
+     ;; css-ts-mode has some highlight problems
+     ;; (css-mode . css-ts-mode)
      (js-mode . js-ts-mode)
      (json-mode . json-ts-mode)
      (typescript-mode . typescript-ts-mode)
@@ -1092,7 +1093,7 @@
   (css-indent-offset 2)
 
   :hook
-  ((css-base-mode . my-css-mode-setup)))
+  ((css-mode . my-css-mode-setup)))
 
 (use-package html-mode
   :hook
