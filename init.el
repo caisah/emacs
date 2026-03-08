@@ -230,8 +230,12 @@
   ;; Open files with default browser
   (browse-url-browser-function 'browse-url-default-browser)
   ;; Use treesit modes
+  (treesit-language-source-alist
+   (append '((bash "https://github.com/tree-sitter/tree-sitter-bash"))
+           treesit-language-source-alist))
   (major-mode-remap-alist
    '((sh-mode . bash-ts-mode)
+     (shell-script-mode . bash-ts-mode)
      ;; css-ts-mode has some highlight problems
      ;; (css-mode . css-ts-mode)
      (js-mode . js-ts-mode)
@@ -924,7 +928,7 @@
   (add-to-list 'eglot-server-programs '(css-mode . ("vscode-css-language-server" "--stdio")))
   (add-to-list 'eglot-server-programs '((web-mode html-mode) . ("vscode-html-language-server" "--stdio")))
   (add-to-list 'eglot-server-programs '((js-mode js-ts-mode tsx-ts-mode typescript-ts-mode typescript-mode) . my-ts-server-program))
-  (add-to-list 'eglot-server-programs '((bash-ts-mode) . ("bash-language-server" "start")))
+  (add-to-list 'eglot-server-programs '((sh-mode shell-script-mode bash-ts-mode) . ("bash-language-server" "start")))
   (add-to-list 'eglot-server-programs '((json-mode json-ts-mode) . ("vscode-json-languageserver" "--stdio")))
   (add-to-list 'eglot-server-programs '((elixir-ts-mode) . ("/opt/homebrew/Cellar/elixir-ls/0.20.0/libexec/language_server.sh")))
   (add-to-list 'eglot-server-programs '((astro-ts-mode) . ("astro-ls" "--stdio" :initializationOptions
@@ -1110,7 +1114,10 @@
   (html-ts-mode . my-prog-modes))
 
 
-(use-package sh-script
+(use-package bash-ts-mode
+  :mode
+  ("/\\.aliases\\(?:\\..*\\)?\\'" . bash-ts-mode)
+
   :hook
   (bash-ts-mode . my-prog-modes))
 
