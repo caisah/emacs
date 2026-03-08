@@ -1046,7 +1046,8 @@
         ("C-c C-b" . json-mode-beautify))
 
   :hook
-  (json-mode . my-prog-modes))
+  ((json-mode . my-prog-modes)
+   (json-ts-mode . my-prog-modes)))
 
 
 (use-package esh-mode
