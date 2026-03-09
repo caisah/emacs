@@ -230,9 +230,6 @@
   ;; Open files with default browser
   (browse-url-browser-function 'browse-url-default-browser)
   ;; Use treesit modes
-  (treesit-language-source-alist
-   (append '((bash "https://github.com/tree-sitter/tree-sitter-bash"))
-           treesit-language-source-alist))
   (major-mode-remap-alist
    '((sh-mode . bash-ts-mode)
      (shell-script-mode . bash-ts-mode)
