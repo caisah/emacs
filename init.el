@@ -104,7 +104,9 @@
   (put 'dired-find-alternate-file 'disabled nil)
 
   ;; Use y and n as confirmations
-  (fset 'yes-or-no-p 'y-or-n-p)
+  (if (boundp 'use-short-answers)
+      (setopt use-short-answers t)
+    (fset 'yes-or-no-p 'y-or-n-p))
 
   ;; Global common keys
   (keymap-global-set "C-x K" 'my-kill-other-buffer)
