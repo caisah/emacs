@@ -929,6 +929,7 @@
   (add-to-list 'eglot-server-programs '((js-mode js-ts-mode tsx-ts-mode typescript-ts-mode typescript-mode) . my-ts-server-program))
   (add-to-list 'eglot-server-programs '((sh-mode shell-script-mode bash-ts-mode) . ("bash-language-server" "start")))
   (add-to-list 'eglot-server-programs '((json-mode json-ts-mode) . ("vscode-json-languageserver" "--stdio")))
+  (add-to-list 'eglot-server-programs '((sql-mode) . ("sqls")))
   (add-to-list 'eglot-server-programs '((elixir-ts-mode) . ("/opt/homebrew/Cellar/elixir-ls/0.20.0/libexec/language_server.sh")))
   (add-to-list 'eglot-server-programs '((astro-ts-mode) . ("astro-ls" "--stdio" :initializationOptions
                                                            (:typescript (:tsdk "./node_modules/typescript/lib")))))
@@ -1051,6 +1052,13 @@
   :hook
   ((json-mode . my-prog-modes)
    (json-ts-mode . my-prog-modes)))
+
+
+(use-package sql
+  :defer t
+
+  :hook
+  (sql-mode . my-prog-modes))
 
 
 (use-package esh-mode
