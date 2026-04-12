@@ -48,6 +48,7 @@
   (no-littering-theme-backups)
 
   :custom
+  ;; Store auto-save files in no-littering directory
   (auto-save-file-name-transforms
    `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
   ;; Set custom file to emacs-custom.el
@@ -196,7 +197,7 @@
   (create-lockfiles nil)
   ;; Use rg
   (grep-program (executable-find "rg"))
-  ;; Calendar
+  ;; Calendar coordinates for weather display
   (calendar-latitude 46.7667)
   (calendar-longitude 23.5833)
   ;; Consider all themes safe
@@ -209,7 +210,7 @@
   (indent-tabs-mode nil)
   ;; start emacs fullscreen and maximized
   (initial-frame-alist (quote ((fullscreen . maximized))))
-  ;; don't use angle brackets
+  ;; don't use angle brackets in buffer names
   (uniquify-buffer-name-style 'post-forward)
   ;; don't put anything is *scratch*
   (initial-scratch-message "")
@@ -217,7 +218,7 @@
   (whitespace-style '(face trailing indentation::tabs))
   ;; highlight if more than 180 chars on line
   (whitespace-line-column 180)
-  ;; set language for time to Eng
+  ;; set language for time to English
   (system-time-locale "C")
   ;; Always save desktop
   (desktop-save t)
@@ -252,12 +253,12 @@
   :if (memq window-system '(mac ns x))
 
   :init
-  (setq exec-path-from-shell-shell-name "/bin/zsh")
-  (setq exec-path-from-shell-arguments '("-l"))
+  (setq exec-path-from-shell-shell-name "/bin/zsh") ; Shell to use for login
+  (setq exec-path-from-shell-arguments '("-l")) ; Login shell arguments
 
   :config
-  (setq exec-path-from-shell-variables '("PATH" "MANPATH"))
-  (setq exec-path-from-shell-check-startup-files nil)
+  (setq exec-path-from-shell-variables '("PATH" "MANPATH")) ; Variables to import
+  (setq exec-path-from-shell-check-startup-files nil) ; Skip startup file checks
   (exec-path-from-shell-initialize))
 
 (use-package yasnippet
@@ -266,10 +267,10 @@
   :defer t
 
   :init
-  (setq yas-verbosity 0)
+  (setq yas-verbosity 0) ; Suppress yasnippet messages
 
   :custom
-  (yas-snippet-dirs '("~/.emacs.d/snippets")))
+  (yas-snippet-dirs '("~/.emacs.d/snippets"))) ; Snippet directories
 
 
 (use-package re-builder
