@@ -1215,15 +1215,41 @@
                    :key (getenv "GEMINI_API_KEY")
                    :stream t)))
 
-;; (use-package agent-shell
-;;   :straight t
+(use-package agent-shell
+  :straight t
 
-;;   :defer t
+  :defer t
 
-;;   :config
-;;   (setq agent-shell-google-authentication
-;;       (agent-shell-google-make-authentication :api-key (getenv "GEMINI_API_KEY")))
-;;   (setopt agent-shell-file-completion-enabled t))
-;;   (setq agent-shell-google-gemini-command (append agent-shell-google-gemini-command '("--model" "gemini-3-flash-preview")))
+  :bind
+  (("M-g s" . agent-shell)
+   :map agent-shell-mode-map
+   ("C-c r" . agent-shell-restart))
+
+  :config
+  (defun my-agent-shell-dot-subdir (subdir)
+    "Custom function to store dotdir in no-littering var directory"
+    (expand-file-name subdir
+                      (expand-file-name no-littering-var-directory)))
+  ;; Use custom dotdir function for storing agent data
+  (setopt agent-shell-dot-subdir-function #'my-agent-shell-dot-subdir)
+  ;; Enable file path completion in agent shell
+  (setopt agent-shell-file-completion-enabled t)
+  ;; Prefer interaction in current viewport
+  (setopt agent-shell-prefer-viewport-interaction t)
+  ;; Default OpenCode model
+  (setq agent-shell-opencode-default-model-id "openai/gpt-5.4")
+  ;; Default Claude model for GitHub integration
+  (setq agent-shell-github-default-model-id "claude-opus-4.6"))
+
+(use-package agent-shell-viewport
+  :after agent-shell
+
+  :bind
+  (:map agent-shell-viewport-edit-mode-map
+        ("C-c C-c" . nil)
+        ("C-c r" . agent-shell-restart)
+        ("C-c <return>" . agent-shell-viewport-compose-send)
+   :map agent-shell-viewport-view-mode-map
+        ("C-c r" . agent-shell-restart)))
 
 ;;; init.el ends here
