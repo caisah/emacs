@@ -266,6 +266,10 @@
 
   :defer t
 
+  :hook
+  ((agent-shell-mode . yas-minor-mode)
+   (agent-shell-viewport-edit-mode . yas-minor-mode))
+
   :init
   (setq yas-verbosity 0) ; Suppress yasnippet messages
 

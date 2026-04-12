@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: commit
+# key: com
+# --
+Commit all the changes. Use multiple commits if changes belong to logical different commits.
