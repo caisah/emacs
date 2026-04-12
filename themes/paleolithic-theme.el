@@ -136,7 +136,7 @@
 
    `(line-number ((t (:foreground "gray40" :background "gray10" :weight light :height 0.9))))
    `(line-number-current-line ((t (:inherit line-number))))
-   `(linum ((t (:inherit line-humber))))
+   `(linum ((t (:inherit line-number))))
 
    `(header-line ((t (:foreground "gray70" :background "gray20"))))
 
@@ -338,9 +338,6 @@
    ;; comint
    `(comint-highlight-prompt ((t (:foreground "gray80" :background "gray20"))))
    `(comint-highlight-input ((t (:foreground "gray85" :weight bold))))
-
-   ;; hydra
-   `(hydra-face-blue ((t (:foreground "DarkRed" :weight bold))))
 
    ;; markdown
    `(markdown-header-delimiter-face ((t (:foreground "wheat3" :weight normal))))
