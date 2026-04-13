@@ -1227,7 +1227,8 @@
   :bind
   (("M-g s" . agent-shell)
    :map agent-shell-mode-map
-   ("C-c r" . agent-shell-restart))
+        ("C-c r" . agent-shell-restart)
+        ("C-c m" . agent-shell-set-session-mode))
 
   :config
   (defun my-agent-shell-dot-subdir (subdir)
@@ -1253,6 +1254,7 @@
         ("C-c C-c" . nil)
         ("C-c r" . agent-shell-restart)
         ("C-c <return>" . agent-shell-viewport-compose-send)
+        ("C-c m" . agent-shell-set-session-mode)
    :map agent-shell-viewport-view-mode-map
         ("C-c r" . agent-shell-restart)))
 
