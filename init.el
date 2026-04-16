@@ -266,10 +266,6 @@
 
   :defer t
 
-  :hook
-  ((agent-shell-mode . yas-minor-mode)
-   (agent-shell-viewport-edit-mode . yas-minor-mode))
-
   :init
   (setq yas-verbosity 0) ; Suppress yasnippet messages
 
@@ -876,7 +872,11 @@
 
 (use-package flyspell
   :config
-  (define-key flyspell-mode-map (kbd "C-,") nil))
+  (define-key flyspell-mode-map (kbd "C-,") nil)
+
+  :hook
+  ((agent-shell-mode . flyspell-mode)
+   (agent-shell-viewport-edit-mode . flyspell-mode)))
 
 (use-package org
   :straight
@@ -1239,12 +1239,17 @@
   (setopt agent-shell-dot-subdir-function #'my-agent-shell-dot-subdir)
   ;; Enable file path completion in agent shell
   (setopt agent-shell-file-completion-enabled t)
-  ;; Prefer interaction in current viewport
-  (setopt agent-shell-prefer-viewport-interaction t)
   ;; Default OpenCode model
   (setq agent-shell-opencode-default-model-id "openai/gpt-5.4")
   ;; Default Claude model for GitHub integration
-  (setq agent-shell-github-default-model-id "claude-opus-4.6"))
+  (setq agent-shell-github-default-model-id "claude-opus-4.6")
+  ;; Start Copilot ACP with auto-approval
+  (setq agent-shell-github-acp-command
+        '("copilot" "--acp" "--allow-all-tools"))
+
+  :hook
+  ((agent-shell-mode . yas-minor-mode)
+   (agent-shell-viewport-edit-mode . flyspell-mode)))
 
 (use-package agent-shell-viewport
   :after agent-shell
@@ -1256,6 +1261,10 @@
         ("C-c <return>" . agent-shell-viewport-compose-send)
         ("C-c m" . agent-shell-viewport-set-session-mode)
    :map agent-shell-viewport-view-mode-map
-        ("C-c r" . agent-shell-restart)))
+        ("C-c r" . agent-shell-restart))
+
+  :hook
+  ((agent-shell-viewport-edit-mode . yas-minor-mode)
+   (agent-shell-viewport-edit-mode . flyspell-mode)))
 
 ;;; init.el ends here
