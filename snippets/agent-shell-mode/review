@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: reivew
+# key: rev
+# --
+Review all the changes.
+Make multiple passes.
+Each pass should focus on a different type of issue in this order:
+- logic errors;
+- security;
+- operation ordering;
+- bad practices;
+- magic strings and values;
+- pattern improvements;
