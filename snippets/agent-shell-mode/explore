@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: explore codebase
+# key: explore
+# --
+
+If you have not already explored the codebase, do so to understand the current architecture, existing patterns, style, dependencies and integration layers.

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: criticism
+# key: crit
+# --
+Analyze the following criticism. Check if it makes sense for the current changes.
+$0
