@@ -119,6 +119,7 @@
   (global-unset-key (kbd "C-S-K"))
   (keymap-global-set "C-S-K" 'kill-whole-line)
   (keymap-global-set "M-i"  'my-consult-line)
+  (keymap-global-set "M-g h" 'my-agent-shell-new-session)
 
   (keymap-global-set "C-<tab>" 'indent-relative)
 
@@ -398,16 +399,9 @@
   ;; Refresh dired when file changes
   :hook ((dired-mode . auto-revert-mode)
          ;; Omit uninteresting files in Dired including .. and .
-         (dired-mode . dired-omit-mode))
-
-  :bind (:map dired-mode-map
-              ("^" . dired-go-up-dir)
-              ("k" . dired-subtree-remove)
-              ("i" . dired-subtree-insert)
-              ("M-i" . my-consult-line)
-              ("C-M-u" . dired-subtree-up)
-              ("C-M-n" . dired-subtree-next-sibling)
-              ("C-M-p" . dired-subtree-previous-sibling)))
+         (dired-mode . dired-omit-mode)
+         ;; Hide details when opening dired
+         (dired-mode . dired-hide-details-mode)))
 
 
 (use-package dired-aux
@@ -417,17 +411,18 @@
   ;; Use unzip for .zip files
   (add-to-list 'dired-compress-file-suffixes '("\\.zip\\'" ".zip" "unzip"))
   ;; Use tar for .tar.xz files
-  (add-to-list 'dired-compress-file-suffixes '("\.tar\.xz" ".tar" "tar xf %i")))
+  (add-to-list 'dired-compress-file-suffixes '("\\.tar\\.xz" ".tar" "tar xf %i")))
 
 
 (use-package dired+
   :straight t
 
   :after dired
+  :demand t
 
-  :config
-  ;; disable this key in order to use global key
-  (define-key dired-mode-map (kbd "M-i") nil))
+  :bind (:map dired-mode-map
+              ("M-i" . nil)
+              ("k" . diredp-kill-this-tree)))
 
 
 (use-package async
@@ -445,12 +440,6 @@
 
   :config
   (dired-quick-sort-setup))
-
-
-(use-package dired-subtree
-  :straight t
-
-  :after dired)
 
 
 (use-package ibuffer
@@ -1243,6 +1232,8 @@
   (setq agent-shell-opencode-default-model-id "openai/gpt-5.4")
   ;; Default Claude model for GitHub integration
   (setq agent-shell-github-default-model-id "claude-opus-4.6")
+
+  (setq agent-shell-thought-process-expand-by-default t)
   ;; Start Copilot ACP with auto-approval
   (setq agent-shell-github-acp-command
         '("copilot" "--acp" "--allow-all-tools"))

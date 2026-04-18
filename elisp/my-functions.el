@@ -292,13 +292,21 @@ respectively."
   `(progn
      ,@(cl-loop for (key . val) in pairs
                 collect
-                `(defun ,(read (concat
-                                "wrap-with-"
-                                (prin1-to-string key)
-                                "s"))
-                     (&optional arg)
-                   (interactive "p")
-                   (sp-wrap-with-pair ,val)))))
+                 `(defun ,(read (concat
+                                 "wrap-with-"
+                                 (prin1-to-string key)
+                                 "s"))
+                      (&optional arg)
+                    (interactive "p")
+                    (sp-wrap-with-pair ,val)))))
+
+(defun my-agent-shell-new-session ()
+  "Start a fresh agent-shell session without the extra shell prompt.
+
+Prompts for the agent, then immediately starts a new session in the
+current directory."
+  (interactive)
+  (agent-shell-new-shell))
 
 (def-pairs ((paren . "(")
             (bracket . "[")
