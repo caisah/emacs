@@ -443,6 +443,11 @@
 
    `(tooltip ((t (:foreground "gray80" :background "gray20"))))
 
+   ;; PI agent?
+   ;; `(md-ts-code ((t (:foreground "gray50" :background nil :weight normal :height 0.9))))
+   ;; `(pi-coding-agent-tool-block ((t (:background "gray20" :extend nil))))
+   ;; `(pi-coding-agent-tool-command ((t (:inherit markdown-code-face))))
+
    ;; Merlin
    `(merlin-compilation-error-face ((t (:inherit 'flycheck-error))))
 

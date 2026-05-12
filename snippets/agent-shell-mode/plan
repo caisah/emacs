@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: plan
+# key: plan
+# --
+Goal: Create the minimal viable plan for implementing the following functionality:
+
+$0
+
+- At any step in the process, if there are unclear specs or any unknowns, stop and ask.
+- The plan should be highly optimized for AI agent execution.
+- The plan architecture and contents should follow scientifically proven techniques that work for AI agents.
+- The plan should not contain any meta information about how it was created or the principles used.
+- Before starting the work, if you have not already explored the codebase, do so to understand the current architecture, existing patterns, style, dependencies and integration layers.
+- Before writing it, review and improve the plan you initially created. Only after you optimized it, write it down.
+- Save the plan in /mds.

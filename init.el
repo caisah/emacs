@@ -119,7 +119,6 @@
   (global-unset-key (kbd "C-S-K"))
   (keymap-global-set "C-S-K" 'kill-whole-line)
   (keymap-global-set "M-i"  'my-consult-line)
-  (keymap-global-set "M-g h" 'my-agent-shell-new-session)
 
   (keymap-global-set "C-<tab>" 'indent-relative)
 
@@ -1229,18 +1228,16 @@
   ;; Enable file path completion in agent shell
   (setopt agent-shell-file-completion-enabled t)
   ;; Default OpenCode model
-  (setq agent-shell-opencode-default-model-id "openai/gpt-5.4")
-  ;; Default Claude model for GitHub integration
-  (setq agent-shell-github-default-model-id "claude-opus-4.6")
+  (setq agent-shell-opencode-default-model-id "openai/gpt-5.5")
 
-  (setq agent-shell-thought-process-expand-by-default t)
-  ;; Start Copilot ACP with auto-approval
-  (setq agent-shell-github-acp-command
-        '("copilot" "--acp" "--allow-all-tools"))
+  (setq agent-shell-google-authentication
+      (agent-shell-google-make-authentication :login t))
+
+  ;; (setq agent-shell-pi-environment
+  ;;       (agent-shell-make-environment-variables :inherit-env t))
 
   :hook
-  ((agent-shell-mode . yas-minor-mode)
-   (agent-shell-viewport-edit-mode . flyspell-mode)))
+  ((agent-shell-mode . yas-minor-mode)))
 
 (use-package agent-shell-viewport
   :after agent-shell
