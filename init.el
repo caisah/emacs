@@ -1212,27 +1212,29 @@
 
   :defer t
 
-  :bind
-  (("M-g s" . agent-shell)
-   :map agent-shell-mode-map
-        ("C-c r" . agent-shell-restart)
-        ("C-c m" . agent-shell-set-session-mode))
-
-  :config
+  :preface
   (defun my-agent-shell-dot-subdir (subdir)
     "Custom function to store dotdir in no-littering var directory"
     (expand-file-name subdir
                       (expand-file-name no-littering-var-directory)))
-  ;; Use custom dotdir function for storing agent data
-  (setopt agent-shell-dot-subdir-function #'my-agent-shell-dot-subdir)
+
+  :bind
+  (("M-g s" . agent-shell)
+   :map agent-shell-mode-map
+         ("C-c r" . agent-shell-restart)
+         ("C-c m" . agent-shell-set-session-mode))
+
+  :custom
+  (agent-shell-dot-subdir-function #'my-agent-shell-dot-subdir)
   ;; Enable file path completion in agent shell
-  (setopt agent-shell-file-completion-enabled t)
+  (agent-shell-file-completion-enabled t)
+  ;; Expand thought process sections by default
+  (agent-shell-thought-process-expand-by-default t)
   ;; Default OpenCode model
-  (setq agent-shell-opencode-default-model-id "openai/gpt-5.5")
+  (agent-shell-opencode-default-model-id "openai/gpt-5.5")
+  (agent-shell-google-authentication '((:login . t)))
 
-  (setq agent-shell-google-authentication
-      (agent-shell-google-make-authentication :login t))
-
+  :config
   ;; (setq agent-shell-pi-environment
   ;;       (agent-shell-make-environment-variables :inherit-env t))
 
