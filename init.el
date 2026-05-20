@@ -1233,10 +1233,8 @@
   ;; Default OpenCode model
   (agent-shell-opencode-default-model-id "openai/gpt-5.5")
   (agent-shell-google-authentication '((:login . t)))
-
-  :config
-  ;; (setq agent-shell-pi-environment
-  ;;       (agent-shell-make-environment-variables :inherit-env t))
+  (agent-shell-pi-environment
+        (agent-shell-make-environment-variables :inherit-env t))
 
   :hook
   ((agent-shell-mode . yas-minor-mode)))
