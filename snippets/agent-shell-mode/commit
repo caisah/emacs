@@ -2,4 +2,4 @@
 # name: commit
 # key: com
 # --
-Commit all the changes. Use multiple commits if changes belong to logical different commits.
+Commit all the changes following the commit style of the project. Use multiple commits if changes belong to logical different commits.
