@@ -1218,6 +1218,10 @@
     (expand-file-name subdir
                       (expand-file-name no-littering-var-directory)))
 
+  :config
+  (setq agent-shell-pi-environment
+        (agent-shell-make-environment-variables :inherit-env t))
+
   :bind
   (("M-g s" . agent-shell)
    :map agent-shell-mode-map
@@ -1233,8 +1237,6 @@
   ;; Default OpenCode model
   (agent-shell-opencode-default-model-id "openai/gpt-5.5")
   (agent-shell-google-authentication '((:login . t)))
-  (agent-shell-pi-environment
-        (agent-shell-make-environment-variables :inherit-env t))
 
   :hook
   ((agent-shell-mode . yas-minor-mode)))
