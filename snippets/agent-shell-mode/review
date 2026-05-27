@@ -14,4 +14,6 @@ Each pass should focus on a different type of issue in this order:
 - bad practices;
 - magic strings and values;
 - pattern improvements;
+- reusability;
+- maintainability;
 - redundancy;
