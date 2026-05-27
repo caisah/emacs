@@ -1202,7 +1202,7 @@
   :config
   (setq gptel-default-mode 'org-mode)
   (setq
-   gptel-model 'gemini-3-flash-preview
+   gptel-model 'gemini-3.5-flash
    gptel-backend (gptel-make-gemini "Gemini"
                    :key (getenv "GEMINI_API_KEY")
                    :stream t)))
