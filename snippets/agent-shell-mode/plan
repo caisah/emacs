@@ -2,9 +2,9 @@
 # name: plan
 # key: plan
 # --
-Goal: Create the minimal viable plan for implementing the following functionality:
+Goal: Create $0 plan for implementing the following functionality:
 
-$0
+$1
 
 - At any step in the process, if there are unclear specs or any unknowns, stop and ask.
 - The plan should be highly optimized for AI agent execution.
