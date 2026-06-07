@@ -6,9 +6,9 @@
 (defvar *start-time* (current-time))
 
 ;; Define my config dirs
-(defconst my-config-dir "~/.emacs.d/config")
-(defconst my-elisp-dir "~/.emacs.d/elisp")
-(defconst my-themes-dir "~/.emacs.d/themes")
+(defconst my-config-dir (expand-file-name "config" user-emacs-directory))
+(defconst my-elisp-dir (expand-file-name "elisp" user-emacs-directory))
+(defconst my-themes-dir (expand-file-name "themes" user-emacs-directory))
 
 ;; Bootstrap Straight
 (defvar bootstrap-version)
