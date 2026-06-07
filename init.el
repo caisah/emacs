@@ -844,8 +844,7 @@
   (define-key flyspell-mode-map (kbd "C-,") nil)
 
   :hook
-  ((agent-shell-mode . flyspell-mode)
-   (agent-shell-viewport-edit-mode . flyspell-mode)))
+  ((agent-shell-viewport-edit-mode . flyspell-mode)))
 
 (use-package org
   :straight
@@ -1207,11 +1206,12 @@
   ;; Expand thought process sections by default
   (agent-shell-thought-process-expand-by-default t)
   ;; Default OpenCode model
-  (agent-shell-opencode-default-model-id "openai/gpt-5.5")
+  (agent-shell-opencode-default-model-id "opencode/deepseek-v4-flash-free")
   (agent-shell-google-authentication '((:login . t)))
 
   :hook
-  ((agent-shell-mode . yas-minor-mode)))
+  ((agent-shell-mode . yas-minor-mode)
+   (agent-shell-mode . flyspell-mode)))
 
 (use-package agent-shell-viewport
   :after agent-shell
