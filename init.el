@@ -6,7 +6,6 @@
 (defvar *start-time* (current-time))
 
 ;; Define my config dirs
-(defconst my-config-dir (expand-file-name "config" user-emacs-directory))
 (defconst my-elisp-dir (expand-file-name "elisp" user-emacs-directory))
 (defconst my-themes-dir (expand-file-name "themes" user-emacs-directory))
 
@@ -30,7 +29,6 @@
 
 ;; Add config dir
 (add-to-list 'load-path my-elisp-dir)
-(add-to-list 'load-path my-config-dir)
 
 ;; Load settings file
 (let ((file (concat my-elisp-dir "/settings.el")))
