@@ -2,4 +2,4 @@
 # name: theme
 # key: theme
 # --
-Add new recipe for $0. Add it as first entry in the @src/templates/data/pinned-themes.json and delete the last entry there.
+Add new recipe for $0 to recipes dir. Add it as first entry in the @src/templates/data/pinned-themes.json and delete the last entry there.
