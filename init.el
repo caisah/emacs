@@ -942,6 +942,9 @@
 
   :config
   (treesit-auto-add-to-auto-mode-alist 'all)
+  ;; populate treesit-language-source-alist so `treesit-install-language-grammar` gets completions.
+  (setq treesit-language-source-alist
+        (treesit-auto--build-treesit-source-alist))
   (global-treesit-auto-mode))
 
 (use-package smartparens
