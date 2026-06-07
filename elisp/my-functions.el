@@ -13,6 +13,10 @@
 (defvar *start-time* nil
   "Time when Emacs startup began.")
 
+(defvar my-eglot-disabled-modes
+  '(emacs-lisp-mode)
+  "Modes for which eglot should not be enabled.")
+
 (defun dired-go-up-dir ()
   "Navigates to the parent dir."
   (interactive)
@@ -242,7 +246,8 @@
   (abbrev-mode 1)
   (company-mode 1)
   (editorconfig-mode 1)
-  (eglot-ensure)
+  (unless (memq major-mode my-eglot-disabled-modes)
+    (eglot-ensure))
   (hs-minor-mode 1)
   (prettify-symbols-mode 1)
   (subword-mode 1)
