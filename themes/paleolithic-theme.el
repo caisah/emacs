@@ -63,12 +63,24 @@
    `(highlight ((t (:foreground "Wheat3" :background "gray25"))))
    `(hl-line ((t (:foreground "gray80" :background "gray20" :weight bold))))
    `(minibuffer-prompt ((t (:foreground "gray55" :background "gray10" :height 0.9))))
+   `(fixed-pitch ((t (:family "Ubuntu Mono"))))
+   `(variable-pitch ((t (:family "Ubuntu Mono"))))
+   `(variable-pitch-text ((t (:inherit (variable-pitch)))))
 
    ;; ibuffer
    `(ibuffer-read-only-face ((t (:foreground "gray50"))))
    `(ibuffer-modified-face ((t (:foreground "IndianRed2"))))
    `(ibuffer-emacs-buffer-face ((t (:inherit font-lock-comment-face))))
    `(ibuffer-dired-buffer-face ((t (:weight bold))))
+
+   ;; shr
+   `(shr-code ((t (:foreground "grey55" :weight normal :height 0.95 :family "Ubuntu Mono"))))
+   `(shr-h1 ((t (:height 1.3 :weight bold))))
+   `(shr-h2 ((t (:height 1.25 :weight bold))))
+   `(shr-h3 ((t (:height 1.2 :weight bold))))
+   `(shr-h4 ((t (:height 1.15 :weight bold))))
+   `(shr-h5 ((t (:height 1.1 :weight bold))))
+   `(shr-h6 ((t (:height 1.05 :weight bold))))
 
    ;; font-lock
    `(font-lock-builtin-face ((t (:foreground "gray60"))))
@@ -342,7 +354,7 @@
    ;; markdown
    `(markdown-header-delimiter-face ((t (:foreground "wheat3" :weight normal))))
    `(markdown-language-keyword-face ((t (:foreground "grey35" :weight normal))))
-   `(markdown-code-face ((t (:foreground "grey55" :weight normal :height 0.95 :family "Ubuntu Mono"))))
+   `(markdown-code-face ((t (:inherit (shr-code)))))
    ;; erc
    `(erc-notice-face ((t (:foreground "gray25"))))
    `(erc-nick-msg-face ((t (:foreground "gray70"))))
