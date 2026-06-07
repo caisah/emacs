@@ -231,20 +231,7 @@
   ;; Silence legacy advice redefinition warnings
   (ad-redefinition-action 'accept)
   ;; Open files with default browser
-  (browse-url-browser-function 'browse-url-default-browser)
-  ;; Use treesit modes
-  (major-mode-remap-alist
-   '((sh-mode . bash-ts-mode)
-     (shell-script-mode . bash-ts-mode)
-     ;; css-ts-mode has some highlight problems
-     ;; (css-mode . css-ts-mode)
-     (js-mode . js-ts-mode)
-     (json-mode . json-ts-mode)
-     (typescript-mode . typescript-ts-mode)
-     (yaml-mode . yaml-ts-mode)
-     (html-mode . html-ts-mode)
-     (python-mode . python-ts-mode))))
-
+  (browse-url-browser-function 'browse-url-default-browser))
 
 
 (use-package exec-path-from-shell
@@ -285,6 +272,9 @@
 
   :defer t
 
+  :custom
+  (markdown-command "pandoc")
+
   :mode
   ("\\.text\\'" . markdown-mode)
   ("\\.markdown\\'" . markdown-mode)
@@ -308,15 +298,8 @@
   :custom
   (eldoc-idle-delay 0.75))
 
-
-(use-package yaml-mode
-  :straight t
-
-  :defer t
-
-  :mode
-  ("\\.yml$" . yaml-mode))
-
+(use-package yaml-ts-mode
+  :mode "\\.ya?ml\\'")
 
 (use-package dotenv-mode
   :straight t
@@ -325,10 +308,6 @@
 
   :mode
   ("\\.env\\..*\\'" . dotenv-mode))
-
-
-(use-package editorconfig
-  :straight t)
 
 
 (use-package flycheck
@@ -739,10 +718,6 @@
   ;; This adds thin lines, sorting and hides the mode line of the window.
   (advice-add #'register-preview :override #'consult-register-window)
 
-  ;; Use Consult to select xref locations with preview
-  (setq xref-show-xrefs-function #'consult-xref
-        xref-show-definitions-function #'consult-xref)
-
   (setq completion-in-region-function
         (lambda (&rest args)
           (apply (if vertico-mode
@@ -790,6 +765,12 @@
   ;;;; 5. No project support
   ;; (setq consult-project-function nil)
   )
+
+(use-package xref
+  :custom
+  ;; Use Consult to select xref locations with preview
+  (xref-show-xrefs-function #'consult-xref)
+  (xref-show-definitions-function #'consult-xref))
 
 
 (use-package embark-consult
@@ -1040,18 +1021,15 @@
    (js-ts-mode . my-use-lint-from-node-modules)))
 
 
-(use-package json-mode
-  :straight t
-
+(use-package json-ts-mode
   :defer t
 
   :bind
-  (:map json-mode-map
-        ("C-c C-b" . json-mode-beautify))
+  (:map json-ts-mode-map
+        ("C-c C-b" . json-pretty-print-buffer))
 
   :hook
-  ((json-mode . my-prog-modes)
-   (json-ts-mode . my-prog-modes)))
+  ((json-ts-mode . my-prog-modes)))
 
 
 (use-package sql
@@ -1142,12 +1120,6 @@
   :config
   (drag-stuff-global-mode 1)
   (drag-stuff-define-keys))
-
-(use-package elisp-slime-nav
-  :after elisp-mode
-
-  :straight t)
-
 
 (use-package terraform-mode
   :straight t

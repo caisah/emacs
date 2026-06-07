@@ -251,7 +251,8 @@
   (yas-minor-mode 1)
   (yas-reload-all)
   (rainbow-delimiters-mode 1)
-  (flycheck-mode 1))
+  (flycheck-mode 1)
+  (editorconfig-mode 1))
 
 (defun my-css-mode-setup ()
   (setq-local eglot-stay-out-of '(flymake))
