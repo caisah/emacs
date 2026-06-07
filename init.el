@@ -178,7 +178,7 @@
   ;; clean white spaces before saving
   (before-save . whitespace-cleanup)
   ;; display startup time
-  (window-setup  . my-show-startup-time)
+  (window-setup . my-show-startup-time)
   ;; show word correcting on programming modes
   (prog-mode . flyspell-prog-mode)
 
@@ -533,7 +533,7 @@
 
   :config
   (keymap-global-set "C-x m" 'magit-status)
-  (remove-hook 'magit-refs-sections-hook 'magit-insert-tags)
+  (remove-hook 'magit-refs-sections-hook #'magit-insert-tags)
 
   :custom
   (magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1)
