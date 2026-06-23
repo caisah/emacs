@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: implement plan
+# key: impl
+# --
+
+Implement plan $1. Use tdd and red -> green technique.

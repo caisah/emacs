@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: review fix
+# key: revfix
+# --
+
+Read the code review findings from mds/code-review*.md file/s. Create an aggregate list of issues and remove duplicates.
+
+- If a finding does not make sense or it makes wrong assumptions, ignore it.
+- Fix each High or Medium importance finding and write tests before fixing it. Use tdd and red -> green technique.
+- For the Low importance finding, if it is an easy refactor, fix it. Otherwise, if implies a large refactoring, ignore it.
+- Print a summary of the fixes sorted by importance at the end.
