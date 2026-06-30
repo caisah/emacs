@@ -16,6 +16,9 @@ Each pass should focus on a different type of issue in this order:
 - pattern improvements;
 - reusability;
 - maintainability;
+- extensibility;
 - redundancy;
+- error handling;
+- accessibility;
 
-Save the findings to mds/code-review.md.
+Save the findings to mds/code-review.md. Ignore any files from that folder.
