@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: shares
+# key: shares
+# --
+Add the following notes to shares.mdx. Keep the formatting present in the shares.mdx file. Add it at the beginning after a FoundOn component with the date of today.
