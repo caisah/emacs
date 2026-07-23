@@ -1209,6 +1209,7 @@
   ;; Default OpenCode model
   (agent-shell-opencode-default-model-id "opencode/deepseek-v4-flash-free")
   (agent-shell-google-authentication '((:login . t)))
+  (agent-shell-activity-group-expand-by-default t)
 
   :hook
   ((agent-shell-mode . yas-minor-mode)
