@@ -2,14 +2,16 @@
 # name: plan
 # key: plan
 # --
-Goal: Create $1 plan for implementing the following functionality:
-
-$2
+Goal: Create a detailed plan so an AI agent will implement the desired functionality.
 
 - At any step in the process, if there are unclear specs or any unknowns, stop and ask.
 - The plan should be highly optimized for AI agent execution.
-- The plan architecture and contents should follow scientifically proven techniques that work for AI agents.
+- The plan architecture and contents should follow scientifically proven techniques that work for AI agents and subagents.
 - The plan should not contain any meta information about how it was created or the principles used.
 - Before starting the work, if you have not already explored the codebase, do so to understand the current architecture, existing patterns, style, dependencies and integration layers.
 - Before writing it, review and improve the plan you initially created. Only after you optimized it, write it down.
 - Save the plan in /mds.
+
+Desired functionality:
+$1
+
