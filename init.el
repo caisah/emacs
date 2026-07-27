@@ -183,8 +183,6 @@
   (global-auto-revert-mode 1)
   ;; Delete selected text when starting to type
   (delete-selection-mode 1)
-  ;; Save state between sessions
-  (desktop-save-mode t)
   ;; Prettify symbols
   (global-prettify-symbols-mode 1)
 
@@ -223,8 +221,6 @@
   (uniquify-buffer-name-style 'post-forward)
   ;; Don't create lock files
   (create-lockfiles nil)
-  ;; Don't save dired and outline buffers in desktop
-  (desktop-modes-not-to-save '(dired-mode outline-mode tags-table-mode))
   ;; Use rg
   (grep-program (executable-find "rg"))
   ;; Calendar coordinates for weather display
@@ -250,12 +246,6 @@
   (whitespace-line-column 180)
   ;; set language for time to English
   (system-time-locale "C")
-  ;; Always save desktop
-  (desktop-save t)
-  ;; Restore buffers lazily (on demand) instead of all at once
-  (desktop-restore-eager 0)
-  ;; Don't restore frames in daemon mode
-  (desktop-restore-frames (not (daemonp)))
   ;; Move to help buffer when opened
   (help-window-select t)
   ;; Enable recursive minibuffers
@@ -281,6 +271,23 @@
   (setq exec-path-from-shell-variables '("PATH" "MANPATH" "GEMINI_API_KEY")) ; Variables to import
   (setq exec-path-from-shell-check-startup-files nil) ; Skip startup file checks
   (exec-path-from-shell-initialize))
+
+(use-package desktop
+  :config
+  ;; Explicitly set the desktop directory to a no-littering managed location
+  (setq desktop-dirname (no-littering-expand-var-file-name "desktop/"))
+  ;; Save state between sessions
+  (desktop-save-mode 1)
+
+  :custom
+  ;; Save on exit
+  (desktop-save t)
+  ;; Automatically load locked desktop after crash
+  (desktop-load-locked-desktop t)
+  ;; Auto-save desktop after 5 seconds
+  (desktop-auto-save-timeout 5)
+  ;; Don't save dired and outline buffers in desktop
+  (desktop-modes-not-to-save '(dired-mode outline-mode tags-table-mode)))
 
 
 (use-package yasnippet
