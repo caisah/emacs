@@ -99,6 +99,10 @@
    `(font-lock-variable-name-face ((t (:foreground "wheat3"))))
    `(font-lock-warning-face ((t :foreground "DarkOrange")))
 
+
+   `(custom-button-unraised ((t (:inherit custom-button :box (:line-width (4 . 4) :color "grey20" :style released-button)))))
+
+
    ;; common
    `(match ((t (:foreground "goldenRod3" :background "gray25" :weight bold))))
    `(button ((t (:background "gray15" :foreground "gray60" :box (:style released-button)))))
