@@ -984,9 +984,15 @@
 
   :custom
   (treesit-auto-install 'prompt)
+  ;; Only enable tree-sitter for installed grammars, avoids
+  ;; iterating over all 62+ recipes (calling treesit-ready-p
+  ;; for each) on every file open, which adds ~3s delay
+  (treesit-auto-langs '(astro bash css dockerfile elisp elixir
+                        heex html javascript jsdoc json python
+                        toml tsx typescript yaml))
 
   :config
-  (treesit-auto-add-to-auto-mode-alist 'all)
+  (treesit-auto-add-to-auto-mode-alist)
   ;; populate treesit-language-source-alist so `treesit-install-language-grammar` gets completions.
   (setq treesit-language-source-alist
         (treesit-auto--build-treesit-source-alist))
