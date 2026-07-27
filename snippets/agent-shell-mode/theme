@@ -2,4 +2,4 @@
 # name: theme
 # key: theme
 # --
-Add new recipe for $0 to recipes dir. Add it as first entry in the @src/templates/data/pinned-themes.json and delete the last entry there.
+Search the internet for an emacs theme that was not added to the project. Create a recipe for it and add it to the recipes folder. Add it as first entry in the @src/templates/data/pinned-themes.json and delete the last entry there.

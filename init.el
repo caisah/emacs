@@ -1257,11 +1257,13 @@
   ;; Default OpenCode model
   (agent-shell-opencode-default-model-id "opencode/deepseek-v4-flash-free")
   (agent-shell-google-authentication '((:login . t)))
-  (agent-shell-activity-group-expand-by-default t)
-
   :hook
   ((agent-shell-mode . yas-minor-mode)
-   (agent-shell-mode . flyspell-mode)))
+   (agent-shell-mode . flyspell-mode)
+   (agent-shell-mode . (lambda () (setq-local mode-line-modified nil)))
+   (agent-shell-diff-mode . (lambda ()
+                              (setq-local bidi-paragraph-direction 'left-to-right)
+                              (setq-local bidi-inhibit-bpa t)))))
 
 (use-package agent-shell-viewport
   :after agent-shell
