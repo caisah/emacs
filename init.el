@@ -94,6 +94,36 @@
       (server-force-delete)
       (server-start)))
 
+  ;; mode-line
+  ;; Customize the mode-line to show only the size of the buffer without any other strings.
+  (ignore-errors
+    (let* ((size-spec (assq 'size-indication-mode (default-value 'mode-line-position)))
+           (inner (cadr size-spec))
+           (old (cadr inner)))
+      (when (and (stringp old) (string-prefix-p " of " old))
+        (setcar (cdr inner) (substring old 4)))))
+  ;; Configure edit indicators
+  (setq-default mode-line-modified
+                '(:eval
+                  (cond
+                   ((and (buffer-modified-p) buffer-read-only)
+                    (propertize " ⚡" 'help-echo "Modified & read-only\nmouse-1: Toggle read-only"
+                                'local-map (make-mode-line-mouse-map 'mouse-1 #'mode-line-toggle-read-only)
+
+                                'mouse-face 'mode-line-highlight))
+                   (buffer-read-only
+                    (propertize " 🔒" 'help-echo "Read-only\nmouse-1: Toggle read-only"
+                                'local-map (make-mode-line-mouse-map 'mouse-1 #'mode-line-toggle-read-only)
+                                'mouse-face 'mode-line-highlight))
+                   ((buffer-modified-p)
+                    (propertize " 📕" 'help-echo "Modified\nmouse-1: Toggle modified"
+                                'local-map (make-mode-line-mouse-map 'mouse-1 #'mode-line-toggle-modified)
+                                'mouse-face 'mode-line-highlight))
+                   (t
+                    (propertize "  " 'help-echo "Not modified\nmouse-1: Toggle modified"
+                              'local-map (make-mode-line-mouse-map 'mouse-1 #'mode-line-toggle-modified)
+                              'mouse-face 'mode-line-highlight)))))
+
   ;; Enable default disabled stuff
   (put 'downcase-region 'disabled nil)
   (put 'upcase-region 'disabled nil)
@@ -173,6 +203,8 @@
   (column-number-mode t)
   ;; prefer utf-8
   (prefer-coding-system 'utf-8)
+  ;; hide mode-line percentage
+  (setq mode-line-percent-position nil)
 
   :hook
   ;; clean white spaces before saving
@@ -246,10 +278,12 @@
   (setq exec-path-from-shell-check-startup-files nil) ; Skip startup file checks
   (exec-path-from-shell-initialize))
 
+
 (use-package yasnippet
   :straight t
 
   :defer t
+  :delight yas-minor-mode
 
   :init
   (setq yas-verbosity 0) ; Suppress yasnippet messages
@@ -323,7 +357,9 @@
 
 
 (use-package rainbow-delimiters
-  :straight t)
+  :straight t
+
+  :delight)
 
 
 (use-package rainbow-mode
@@ -452,6 +488,10 @@
   (projectile-indexing-method 'alien)
   ;; When switching a project switch to a dir
   (projectile-switch-project-action #'projectile-dired)
+  ;; configure modeline
+  (projectile-mode-line-function
+   (lambda ()
+     (format " [%s]" (projectile-project-name))))
 
   :bind (:map projectile-mode-map
               ("s-h" . projectile-command-map)
@@ -491,6 +531,7 @@
   :straight t
 
   :defer t
+  :delight
 
   :init
   (autoload 'company-capf "company-capf" nil t)
@@ -805,24 +846,25 @@
   ;; keep keys on the home row
   (aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)))
 
+(use-package delight
+     :straight t
 
-(use-package smart-mode-line
-  :straight t
-
-  :custom
-  ;; don't ask for a confirmation when loading sml theme
-  (sml/no-confirm-load-theme t)
-  ;; use default theme (it's customized in theme anyway)
-  (sml/theme 'automatic)
-  ;; max 15 chars
-  (sml/mode-width 15)
-  ;; don't show these modes in mode-line
-  (rm-whitelist (mapconcat
-                 'identity
-                 '("Flymake" "FlyC") "\\|"))
-
-  :config
-  (sml/setup))
+     :config
+     (delight
+      '(
+        (hs-minor-mode nil "hideshow")
+        (auto-revert-mode nil "autorevert")
+        (whitespace-mode nil "whitespace")
+        (subword-mode nil "subword")
+        (superword-mode nil "subword")
+        (page-break-lines-mode nil "page-break-lines")
+        (drag-stuff-mode nil "drag-stuff")
+        (visual-line-mode nil "simple")
+        (ace-window-mode nil "ace-window")
+        (abbrev-mode nil "abbrev")
+        (eldoc-mode nil "eldoc")
+        (which-key-mode nil "which-key")
+        )))
 
 
 (use-package eww
@@ -838,6 +880,7 @@
         ("p" . shr-previous-link)))
 
 (use-package flyspell
+  :delight
   :config
   (define-key flyspell-mode-map (kbd "C-,") nil)
 
@@ -948,6 +991,8 @@
 (use-package smartparens
   :straight t
 
+  :delight
+
   :init
   (smartparens-global-mode t)
 
@@ -1054,6 +1099,8 @@
 (use-package treesit-fold
   :straight (treesit-fold :type git :host github :repo "emacs-tree-sitter/treesit-fold")
 
+  :delight
+
   :custom
   (treesit-fold-line-count-show t)
 
@@ -1143,6 +1190,7 @@
 
 (use-package undo-tree
   :straight t
+  :delight
 
   :custom
   (undo-tree-enable-undo-in-region nil)
