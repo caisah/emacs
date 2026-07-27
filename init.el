@@ -211,8 +211,6 @@
   (before-save . whitespace-cleanup)
   ;; display startup time
   (window-setup . my-show-startup-time)
-  ;; show word correcting on programming modes
-  (prog-mode . flyspell-prog-mode)
 
   :custom
   ;; mainly for *scratch*
@@ -892,10 +890,7 @@
 (use-package flyspell
   :delight
   :config
-  (define-key flyspell-mode-map (kbd "C-,") nil)
-
-  :hook
-  ((agent-shell-viewport-edit-mode . flyspell-mode)))
+  (define-key flyspell-mode-map (kbd "C-,") nil))
 
 (use-package org
   :straight
@@ -905,7 +900,6 @@
   (org-src-fontify-natively t)
 
   :hook
-  (org-mode . flyspell-mode)
   (org-mode . turn-off-smartparens-mode)
 
   :bind
@@ -1276,7 +1270,6 @@
 
   :hook
   ((agent-shell-mode . yas-minor-mode)
-   (agent-shell-mode . flyspell-mode)
    (agent-shell-mode . (lambda () (setq-local mode-line-modified nil)))
    (agent-shell-diff-mode . (lambda ()
                               (setq-local bidi-paragraph-direction 'left-to-right)
@@ -1295,8 +1288,7 @@
         ("C-c r" . agent-shell-restart))
 
   :hook
-  ((agent-shell-viewport-edit-mode . yas-minor-mode)
-   (agent-shell-viewport-edit-mode . flyspell-mode)))
+  ((agent-shell-viewport-edit-mode . yas-minor-mode)))
 
 ;;; init.el ends here
 
