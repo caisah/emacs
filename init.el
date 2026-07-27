@@ -225,6 +225,8 @@
   (uniquify-buffer-name-style 'post-forward)
   ;; Don't create lock files
   (create-lockfiles nil)
+  ;; Don't save dired and outline buffers in desktop
+  (desktop-modes-not-to-save '(dired-mode outline-mode tags-table-mode))
   ;; Use rg
   (grep-program (executable-find "rg"))
   ;; Calendar coordinates for weather display
@@ -252,6 +254,10 @@
   (system-time-locale "C")
   ;; Always save desktop
   (desktop-save t)
+  ;; Restore buffers lazily (on demand) instead of all at once
+  (desktop-restore-eager 0)
+  ;; Don't restore frames in daemon mode
+  (desktop-restore-frames (not (daemonp)))
   ;; Move to help buffer when opened
   (help-window-select t)
   ;; Enable recursive minibuffers

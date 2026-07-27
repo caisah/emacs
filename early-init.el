@@ -13,8 +13,4 @@
           (cons (expand-file-name ".litter/var/eln-cache/" user-emacs-directory)
                 (cdr native-comp-eln-load-path))))
 
-;; Disable jit-lock (font-lock) during startup
-(setq jit-lock-mode nil)
-(setq font-lock-mode nil)
-
 ;;; early-init.el ends here
