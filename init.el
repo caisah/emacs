@@ -274,7 +274,7 @@
   (setq exec-path-from-shell-arguments '("-l")) ; Login shell arguments
 
   :config
-  (setq exec-path-from-shell-variables '("PATH" "MANPATH")) ; Variables to import
+  (setq exec-path-from-shell-variables '("PATH" "MANPATH" "GEMINI_API_KEY")) ; Variables to import
   (setq exec-path-from-shell-check-startup-files nil) ; Skip startup file checks
   (exec-path-from-shell-initialize))
 
@@ -392,7 +392,11 @@
 (use-package dired
   :defer t
 
+  :config
+  (setopt dired-auto-toggle-b-switch t)
+
   :custom
+  (setopt dired-auto-toggle-b-switch t)
   (dired-omit-verbose nil)
   (dired-use-ls-dired t)
   ;; Show directories first
@@ -1227,6 +1231,12 @@
                    :key (getenv "GEMINI_API_KEY")
                    :stream t)))
 
+
+(use-package vc
+  :custom
+  (vc-display-status 'no-backend))
+
+
 (use-package agent-shell
   :straight t
 
@@ -1257,6 +1267,7 @@
   ;; Default OpenCode model
   (agent-shell-opencode-default-model-id "opencode/deepseek-v4-flash-free")
   (agent-shell-google-authentication '((:login . t)))
+
   :hook
   ((agent-shell-mode . yas-minor-mode)
    (agent-shell-mode . flyspell-mode)
@@ -1282,3 +1293,9 @@
    (agent-shell-viewport-edit-mode . flyspell-mode)))
 
 ;;; init.el ends here
+
+;; Override eglot to prevent auto-starting servers during desktop restore
+(with-eval-after-load 'eglot
+  (defun eglot--connect (&rest args)
+    (message "eglot--connect BLOCKED for %s" (buffer-name (current-buffer)))
+    nil))
