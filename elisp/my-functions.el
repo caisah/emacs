@@ -313,5 +313,9 @@ respectively."
             (double-quote . "\"")
             (back-quote . "`")))
 
+(defun my-disable-mode-line-modified ()
+  "Disables the modified icons from mode-line."
+  (setq-local mode-line-modified nil))
+
 (provide 'my-functions)
 ;;; my-functions.el ends here

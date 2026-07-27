@@ -421,7 +421,9 @@
          ;; Omit uninteresting files in Dired including .. and .
          (dired-mode . dired-omit-mode)
          ;; Hide details when opening dired
-         (dired-mode . dired-hide-details-mode)))
+         (dired-mode . dired-hide-details-mode)
+         ;; Hide "modified" icon from mode-line
+         (dired-mode . my-disable-mode-line-modified)))
 
 
 (use-package dired-aux
@@ -1098,13 +1100,16 @@
   :config
   (keymap-global-set "C-c s" 'my-shell-here)
 
-  :hook (eshell-mode . (lambda ()
-                         ;; disable line mode
-                         (visual-line-mode nil)
-                         ;; show full width lines in shell mode
-                         (toggle-truncate-lines 1)
-                         ;; start company
-                         (company-mode 1))))
+  :hook
+  (eshell-mode . (lambda ()
+                   ;; disable line mode
+                   (visual-line-mode nil)
+                   ;; show full width lines in shell mode
+                   (toggle-truncate-lines 1)
+                   ;; start company
+                   (company-mode 1)))
+  ;; Hide "modified" icon from mode-line
+  (eshell-mode . my-disable-mode-line-modified))
 
 (use-package treesit-fold
   :straight (treesit-fold :type git :host github :repo "emacs-tree-sitter/treesit-fold")
@@ -1235,7 +1240,11 @@
    gptel-model 'gemini-3.5-flash
    gptel-backend (gptel-make-gemini "Gemini"
                    :key (getenv "GEMINI_API_KEY")
-                   :stream t)))
+                   :stream t))
+
+  :hook
+  ;; Hide "modified" icon from mode-line
+  ((gptel-mode . my-disable-mode-line-modified)))
 
 
 (use-package vc
@@ -1276,6 +1285,8 @@
 
   :hook
   ((agent-shell-mode . yas-minor-mode)
+   ;; Hide "modified" icon from mode-line
+   (agent-shell-mode . my-disable-mode-line-modified)
    (agent-shell-mode . (lambda () (setq-local mode-line-modified nil)))
    (agent-shell-diff-mode . (lambda ()
                               (setq-local bidi-paragraph-direction 'left-to-right)
@@ -1294,7 +1305,8 @@
         ("C-c r" . agent-shell-restart))
 
   :hook
-  ((agent-shell-viewport-edit-mode . yas-minor-mode)))
+  ((agent-shell-viewport-edit-mode . yas-minor-mode)
+   (agent-shell-viewport-edit-mode . my-disable-mode-line-modified)))
 
 ;;; init.el ends here
 
