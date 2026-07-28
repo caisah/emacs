@@ -1318,9 +1318,3 @@
    (agent-shell-viewport-edit-mode . my-disable-mode-line-modified)))
 
 ;;; init.el ends here
-
-;; Override eglot to prevent auto-starting servers during desktop restore
-(with-eval-after-load 'eglot
-  (defun eglot--connect (&rest args)
-    (message "eglot--connect BLOCKED for %s" (buffer-name (current-buffer)))
-    nil))
