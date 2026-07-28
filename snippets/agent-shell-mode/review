@@ -26,6 +26,6 @@ Each pass should focus on a different type of issue in this order:
 Save the findings to mds/<agent-name>-code-review.md. Ignore any files from that folder.
 \`\`\`
 
-Spawn multiple agents: "deepseek", "kimi", "glm", "qwen" and "mimo" each running this prompt.
+Spawn multiple agents: "deepseek", "kimi", "qwen" and "mimo" each running this prompt.
 Run one moresubagent which will execute  the command 'agy --dangerously-skip-permissions -p "<prompt>"'
 
