@@ -881,6 +881,8 @@
         (abbrev-mode nil "abbrev")
         (eldoc-mode nil "eldoc")
         (which-key-mode nil "which-key")
+        (agent-shell-ui-mode nil "agent-shell-ui")
+        (agent-shell-completion-mode nil "agent-shell-completion")
         )))
 
 
