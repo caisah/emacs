@@ -273,6 +273,36 @@
   (exec-path-from-shell-initialize))
 
 (use-package desktop
+  ;; `:hook' implies deferred loading, but Desktop must initialize at startup.
+  :demand t
+
+  :preface
+  (defun my-desktop-save-before-last-gui-frame-closes (frame)
+    "Save the desktop before FRAME closes when it is the last visible GUI frame."
+    (when (and desktop-save-mode
+               desktop-dirname
+               (frame-live-p frame)
+               (display-graphic-p frame)
+               (frame-visible-p frame)
+               (not (frame-parent frame))
+               (not (frame-parameter frame 'delete-before))
+               (not (seq-some
+                     (lambda (other-frame)
+                       (and (not (eq frame other-frame))
+                            (display-graphic-p other-frame)
+                            (frame-visible-p other-frame)
+                            (not (frame-parent other-frame))
+                            (not (frame-parameter other-frame 'delete-before))))
+                     (frame-list))))
+      (desktop-save desktop-dirname nil t)
+      ;; Prevent a pending idle save from overwriting the saved GUI frameset
+      ;; after the frame has disappeared.
+      (desktop-auto-save-cancel-timer)))
+
+  :hook
+  ;; Save before closing the GUI when the server keeps Emacs alive.
+  (delete-frame-functions . my-desktop-save-before-last-gui-frame-closes)
+
   :config
   ;; Explicitly set the desktop directory to a no-littering managed location
   (setq desktop-dirname (no-littering-expand-var-file-name "desktop/"))
