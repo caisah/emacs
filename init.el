@@ -433,7 +433,8 @@
 (use-package rainbow-mode
   :straight t
 
-  :defer t)
+  :defer t
+  :delight)
 
 
 (use-package expand-region
