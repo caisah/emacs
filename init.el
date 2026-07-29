@@ -656,9 +656,11 @@
   (transient-default-level 5)
 
   :hook (magit-mode . (lambda ()
-                        "Make left fringe 20 pixels."
+                        "Make left fringe 20 pixels and hide major mode from modeline."
                         (setq left-fringe-width 20
-                              right-fringe-width 0))))
+                              right-fringe-width 0)
+                        (setq mode-line-format
+                              (remq 'mode-line-modes mode-line-format)))))
 
 (straight-use-package '(vertico :files (:defaults "extensions/*")
                                 :includes (vertico-buffer
