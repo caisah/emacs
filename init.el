@@ -94,36 +94,6 @@
       (server-force-delete)
       (server-start)))
 
-  ;; mode-line
-  ;; Customize the mode-line to show only the size of the buffer without any other strings.
-  (ignore-errors
-    (let* ((size-spec (assq 'size-indication-mode (default-value 'mode-line-position)))
-           (inner (cadr size-spec))
-           (old (cadr inner)))
-      (when (and (stringp old) (string-prefix-p " of " old))
-        (setcar (cdr inner) (substring old 4)))))
-  ;; Configure edit indicators
-  (setq-default mode-line-modified
-                '(:eval
-                  (cond
-                   ((and (buffer-modified-p) buffer-read-only)
-                    (propertize " ⚡" 'help-echo "Modified & read-only\nmouse-1: Toggle read-only"
-                                'local-map (make-mode-line-mouse-map 'mouse-1 #'mode-line-toggle-read-only)
-
-                                'mouse-face 'mode-line-highlight))
-                   (buffer-read-only
-                    (propertize " 🔒" 'help-echo "Read-only\nmouse-1: Toggle read-only"
-                                'local-map (make-mode-line-mouse-map 'mouse-1 #'mode-line-toggle-read-only)
-                                'mouse-face 'mode-line-highlight))
-                   ((buffer-modified-p)
-                    (propertize " 📕" 'help-echo "Modified\nmouse-1: Toggle modified"
-                                'local-map (make-mode-line-mouse-map 'mouse-1 #'mode-line-toggle-modified)
-                                'mouse-face 'mode-line-highlight))
-                   (t
-                    (propertize "  " 'help-echo "Not modified\nmouse-1: Toggle modified"
-                              'local-map (make-mode-line-mouse-map 'mouse-1 #'mode-line-toggle-modified)
-                              'mouse-face 'mode-line-highlight)))))
-
   ;; Enable default disabled stuff
   (put 'downcase-region 'disabled nil)
   (put 'upcase-region 'disabled nil)
@@ -195,14 +165,8 @@
   (set-scroll-bar-mode nil)
   ;; Fringes
   (set-fringe-mode '(8 . 0))
-  ;; Show size of file
-  (size-indication-mode t)
-  ;; Show column number
-  (column-number-mode t)
   ;; prefer utf-8
   (prefer-coding-system 'utf-8)
-  ;; hide mode-line percentage
-  (setq mode-line-percent-position nil)
 
   :hook
   ;; clean white spaces before saving
@@ -256,6 +220,69 @@
   (ad-redefinition-action 'accept)
   ;; Open files with default browser
   (browse-url-browser-function 'browse-url-default-browser))
+
+
+(use-package mode-line
+  :straight nil
+  :no-require t
+
+  :config
+  ;; Show only the buffer size, without a leading "of".
+  (ignore-errors
+    (let* ((size-spec (assq 'size-indication-mode (default-value 'mode-line-position)))
+           (inner (cadr size-spec))
+           (old (cadr inner)))
+      (when (and (stringp old) (string-prefix-p " of " old))
+        (setcar (cdr inner) (substring old 4)))))
+
+  ;; Swap buffer size with line/column so the order is:
+  ;; [percentage] [line,column] [buffer size]
+  (setq-default mode-line-position
+                `(,(car (default-value 'mode-line-position))   ; percentage
+                  ,@(cddr (default-value 'mode-line-position)) ; line/column
+                  ,(cadr (default-value 'mode-line-position)))) ; size
+
+  ;; Configure edit indicators.
+  (setq-default mode-line-modified
+                '(:eval
+                  (cond
+                   ((and (buffer-modified-p) buffer-read-only)
+                    (propertize " ⚡" 'help-echo "Modified & read-only\nmouse-1: Toggle read-only"
+                                'local-map (make-mode-line-mouse-map 'mouse-1 #'mode-line-toggle-read-only)
+                                'mouse-face 'mode-line-highlight))
+                   (buffer-read-only
+                    (propertize " 🔒" 'help-echo "Read-only\nmouse-1: Toggle read-only"
+                                'local-map (make-mode-line-mouse-map 'mouse-1 #'mode-line-toggle-read-only)
+                                'mouse-face 'mode-line-highlight))
+                   ((buffer-modified-p)
+                    (propertize " 📕" 'help-echo "Modified\nmouse-1: Toggle modified"
+                                'local-map (make-mode-line-mouse-map 'mouse-1 #'mode-line-toggle-modified)
+                                'mouse-face 'mode-line-highlight))
+                   (t
+                    (propertize "  " 'help-echo "Not modified\nmouse-1: Toggle modified"
+                                'local-map (make-mode-line-mouse-map 'mouse-1 #'mode-line-toggle-modified)
+                                'mouse-face 'mode-line-highlight)))))
+
+  ;; Show the buffer size.
+  (size-indication-mode t)
+  ;; Show the current column number.
+  (column-number-mode t)
+
+  ;; Move line/column position before the buffer name.
+  (setq-default mode-line-format
+                '("%e" mode-line-front-space mode-line-mule-info mode-line-client
+                  mode-line-modified mode-line-remote mode-line-window-dedicated
+                  mode-line-frame-identification mode-line-position "   "
+                  mode-line-buffer-identification (project-mode-line project-mode-line-format)
+                  (vc-mode vc-mode) "  " mode-line-modes mode-line-misc-info
+                  mode-line-end-spaces))
+
+  :custom
+  ;; Hide the buffer position percentage.
+  (mode-line-percent-position nil)
+  ;; Don't delimit major and minor modes with parentheses.
+  (mode-line-modes-delimiters nil))
+
 
 
 (use-package exec-path-from-shell
