@@ -118,6 +118,8 @@
   (keymap-global-set "C-S-K" 'kill-whole-line)
   (keymap-global-set "M-i"  'my-consult-line)
 
+  (keymap-global-set "C-c s" 'my-shell-here)
+
   (keymap-global-set "C-<tab>" 'indent-relative)
 
   (keymap-global-set "C-c C-f" 'treesit-fold-toggle)
@@ -1168,10 +1170,13 @@
   (sql-mode . my-prog-modes))
 
 
-(use-package esh-mode
-  :config
-  (keymap-global-set "C-c s" 'my-shell-here)
+(defun my-shell-here ()
+  "Open eshell in the current buffer's directory."
+  (interactive)
+  (eshell t))
 
+
+(use-package esh-mode
   :hook
   (eshell-mode . (lambda ()
                    ;; disable line mode
