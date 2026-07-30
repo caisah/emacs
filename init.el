@@ -1097,7 +1097,9 @@
 
 (use-package apheleia
   :straight t
-  :defer t)
+  :defer t
+
+  :hook (emacs-lisp-mode . apheleia-mode))
 
 (use-package typescript-ts-mode
   :defer t
