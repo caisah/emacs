@@ -237,10 +237,13 @@
 
   ;; Swap buffer size with line/column so the order is:
   ;; [percentage] [line,column] [buffer size]
-  (setq-default mode-line-position
-                `(,(car (default-value 'mode-line-position))   ; percentage
-                  ,@(cddr (default-value 'mode-line-position)) ; line/column
-                  ,(cadr (default-value 'mode-line-position)))) ; size
+  ;; Only swap if not already in the right order (idempotent).
+  (let ((current (default-value 'mode-line-position)))
+    (when (eq (car-safe (cadr current)) 'size-indication-mode)
+      (setq-default mode-line-position
+                    `(,(car current)     ; percentage
+                      ,@(cddr current)   ; line/column
+                      ,(cadr current)))))) ; size
 
   ;; Configure edit indicators.
   (setq-default mode-line-modified
