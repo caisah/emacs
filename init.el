@@ -245,7 +245,7 @@
       (setq-default mode-line-position
                     `(,(car current)     ; percentage
                       ,@(cddr current)   ; line/column
-                      ,(cadr current)))))) ; size
+                      ,(cadr current))))) ; size
 
   ;; Configure edit indicators.
   (setq-default mode-line-modified
