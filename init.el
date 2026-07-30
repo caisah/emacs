@@ -918,7 +918,7 @@
   :bind
   ("s-o" . ace-window)
   ("C-c M-o" . ace-swap-window)
-  ("C-c s-o" . ace-delete-window)
+  ("C-c S-o" . ace-delete-window)
 
   :custom
   ;; enable deleting, swapping, splitting
