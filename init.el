@@ -1,6 +1,7 @@
-;;-*- lexical-binding: t -*-
+;;; init.el --- Magic starts here  -*- lexical-binding: t -*-
 
-;;; init.el - Magic starts here.
+;;; Commentary:
+
 ;;; Code:
 
 (defvar *start-time* (current-time))
@@ -138,8 +139,8 @@
   (keymap-global-set "C-S-o" 'previous-window-any-frame)
 
   (keymap-global-set "<f1>"
-                     '(lambda () (interactive) (switch-to-buffer "*Messages*")
-                        (end-of-buffer)))
+                     (lambda () (interactive) (switch-to-buffer "*Messages*")
+                        (goto-char (point-max))))
 
   (keymap-global-set "C-S-s" 'query-replace-regexp)
 
