@@ -938,6 +938,8 @@
       '(
         (hs-minor-mode nil "hideshow")
         (auto-revert-mode nil "autorevert")
+        (dired-async-mode nil "dired-async")
+        (dired-omit-mode nil "dired-x")
         (whitespace-mode nil "whitespace")
         (subword-mode nil "subword")
         (superword-mode nil "subword")
