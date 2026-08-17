@@ -198,8 +198,11 @@
 
 (defun my-ts-server-program (&rest _)
   "Decide which server to use based on project characteristics."
-  (cond ((my-deno-project-p) '("deno" "lsp" :initializationOptions '(:enable t :lint t)))
-        (t `("typescript-language-server" "--stdio"))))
+  (cond
+   ((my-deno-project-p)
+    '("deno" "lsp" :initializationOptions '(:enable t :lint t)))
+   (t
+    '("tsc" "--lsp" "--stdio"))))
 
 (defun my-local-oxlint-executable ()
   "Return local oxlint path if available, otherwise nil."
