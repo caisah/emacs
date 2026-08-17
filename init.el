@@ -563,16 +563,13 @@
   :straight t
 
   :defer t
+  :delight projectile-mode
 
   :custom
   ;; Use elisp
   (projectile-indexing-method 'alien)
   ;; When switching a project switch to a dir
   (projectile-switch-project-action #'projectile-dired)
-  ;; configure modeline
-  (projectile-mode-line-function
-   (lambda ()
-     (format " [%s]" (projectile-project-name))))
 
   :bind (:map projectile-mode-map
               ("s-h" . projectile-command-map)
