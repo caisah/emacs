@@ -217,6 +217,13 @@
         (and (file-executable-p local-stylelint) local-stylelint))
       (executable-find "stylelint")))
 
+(defun my-disable-flymake ()
+  "Never enable Flymake in the current buffer.
+Keep Eglot out of Flymake and turn Flymake off, so it stays off
+regardless of whether the LSP server has connected yet."
+  (setq-local eglot-stay-out-of '(flymake))
+  (flymake-mode -1))
+
 (defun my-use-lint-from-node-modules ()
   "Configure Flycheck to use local oxlint or eslint from node_modules."
   (interactive)
@@ -284,8 +291,7 @@
     (setq-local apheleia-formatter 'denofmt)
     (apheleia-mode 1))
 
-  (when (my-local-oxlint-executable)
-    (setq-local eglot-stay-out-of '(flymake)))
+  (my-disable-flymake)
   (my-prog-modes))
 
 (defmacro def-pairs (pairs)

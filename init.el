@@ -1151,7 +1151,8 @@
         ("C-c C-c" . 'my-deno-reset-repl))
 
   :hook
-  ((js-ts-mode . my-prog-modes)
+  ((js-ts-mode . my-disable-flymake)
+   (js-ts-mode . my-prog-modes)
    (js-ts-mode . my-use-lint-from-node-modules)))
 
 
