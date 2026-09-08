@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: commit
-# key: com
-# --
-Commit all the changes following the commit style of the project. Use multiple commits if changes belong to logical different commits. If changes are very intertwined create a single commit for it.
