@@ -230,6 +230,10 @@ regardless of whether the LSP server has connected yet."
   (when-let* ((root (locate-dominating-file default-directory "node_modules"))
               (bin-dir (expand-file-name "node_modules/.bin/" root)))
 
+    ;; `use-package :hook' installs pairs in reverse order, so this runs
+    ;; before `my-prog-modes' has loaded Flycheck (e.g. on desktop restore).
+    (require 'flycheck)
+
     (let ((oxlint (expand-file-name "oxlint" bin-dir))
           (eslint (expand-file-name "eslint" bin-dir)))
 
