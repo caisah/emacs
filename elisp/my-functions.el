@@ -276,7 +276,7 @@ regardless of whether the LSP server has connected yet."
 (defun my-css-mode-setup ()
   (setq-local eglot-stay-out-of '(flymake))
   (my-prog-modes)
-  (when-let ((stylelint (my-stylelint-executable)))
+  (when-let* ((stylelint (my-stylelint-executable)))
     (setq-local flycheck-css-stylelint-executable stylelint)
     (flycheck-select-checker 'css-stylelint)))
 
