@@ -1064,9 +1064,9 @@
   ;; Only enable tree-sitter for installed grammars, avoids
   ;; iterating over all 62+ recipes (calling treesit-ready-p
   ;; for each) on every file open, which adds ~3s delay
-  (treesit-auto-langs '(astro bash css dockerfile elisp elixir
-                        heex html javascript jsdoc json python
-                        toml tsx typescript yaml))
+  (treesit-auto-langs '(astro bash css dart dockerfile elisp elixir
+                              heex html javascript jsdoc json python
+                              toml tsx typescript yaml))
 
   :config
   (treesit-auto-add-to-auto-mode-alist)
@@ -1092,6 +1092,18 @@
         ("C-c \"" . wrap-with-double-quotes)
         ("C-c _"  . wrap-with-underscores)
         ("C-`"  . wrap-with-back-quotes)))
+
+(use-package dart-ts-mode
+  :straight (dart-ts-mode :type git :host github :repo "50ways2sayhard/dart-ts-mode")
+  :mode "\\.dart\\'"
+  :bind (:map dart-ts-mode-map
+              ("C-c C-c" . my-dart-compile)
+              ("C-c C-r" . my-dart-run))
+  :hook
+  (dart-ts-mode . my-prog-modes)
+  (eglot-managed-mode . (lambda ()
+                          (when (derived-mode-p 'dart-ts-mode)
+                            (flycheck-eglot-mode (if eglot-managed-mode 1 -1))))))
 
 (use-package my-deno
   :defer t)

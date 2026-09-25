@@ -256,6 +256,21 @@ regardless of whether the LSP server has connected yet."
       (quit-window (select-window (get-buffer-window eldoc-buffer))))))
 
 
+(defun my-dart-compile ()
+  "Compile the current Dart file to an executable."
+  (interactive)
+  (compile (format "dart compile exe %s"
+                   (shell-quote-argument (or (buffer-file-name)
+                                             (user-error "Save this Dart buffer first"))))))
+
+(defun my-dart-run ()
+  "Run the current Dart file and select its output buffer."
+  (interactive)
+  (pop-to-buffer
+   (compile (format "dart run %s"
+                    (shell-quote-argument (or (buffer-file-name)
+                                              (user-error "Save this Dart buffer first")))))))
+
 (defun my-prog-modes ()
   (abbrev-mode 1)
   (company-mode 1)
