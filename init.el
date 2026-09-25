@@ -33,9 +33,9 @@
 
 ;; Load settings file
 (let ((file (concat my-elisp-dir "/settings.el")))
-      (if (file-exists-p file)
-          (load file)
-        (message "My init :: %s not found" file)))
+  (if (file-exists-p file)
+      (load file)
+    (message "My init :: %s not found" file)))
 
 ;; Load my elisp code
 (use-package my-functions)
@@ -140,7 +140,7 @@
 
   (keymap-global-set "<f1>"
                      (lambda () (interactive) (switch-to-buffer "*Messages*")
-                        (goto-char (point-max))))
+                       (goto-char (point-max))))
 
   (keymap-global-set "C-S-s" 'query-replace-regexp)
 
@@ -928,28 +928,28 @@
   (aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)))
 
 (use-package delight
-     :straight t
+  :straight t
 
-     :config
-     (delight
-      '(
-        (hs-minor-mode nil "hideshow")
-        (auto-revert-mode nil "autorevert")
-        (dired-async-mode nil "dired-async")
-        (dired-omit-mode nil "dired-x")
-        (whitespace-mode nil "whitespace")
-        (subword-mode nil "subword")
-        (superword-mode nil "subword")
-        (page-break-lines-mode nil "page-break-lines")
-        (drag-stuff-mode nil "drag-stuff")
-        (visual-line-mode nil "simple")
-        (ace-window-mode nil "ace-window")
-        (abbrev-mode nil "abbrev")
-        (eldoc-mode nil "eldoc")
-        (which-key-mode nil "which-key")
-        (agent-shell-ui-mode nil "agent-shell-ui")
-        (agent-shell-completion-mode nil "agent-shell-completion")
-        )))
+  :config
+  (delight
+   '(
+     (hs-minor-mode nil "hideshow")
+     (auto-revert-mode nil "autorevert")
+     (dired-async-mode nil "dired-async")
+     (dired-omit-mode nil "dired-x")
+     (whitespace-mode nil "whitespace")
+     (subword-mode nil "subword")
+     (superword-mode nil "subword")
+     (page-break-lines-mode nil "page-break-lines")
+     (drag-stuff-mode nil "drag-stuff")
+     (visual-line-mode nil "simple")
+     (ace-window-mode nil "ace-window")
+     (abbrev-mode nil "abbrev")
+     (eldoc-mode nil "eldoc")
+     (which-key-mode nil "which-key")
+     (agent-shell-ui-mode nil "agent-shell-ui")
+     (agent-shell-completion-mode nil "agent-shell-completion")
+     )))
 
 
 (use-package eww
@@ -1351,8 +1351,8 @@
   :bind
   (("M-g s" . agent-shell)
    :map agent-shell-mode-map
-         ("C-c r" . agent-shell-restart)
-         ("C-c m" . agent-shell-set-session-mode))
+   ("C-c r" . agent-shell-restart)
+   ("C-c m" . agent-shell-set-session-mode))
 
   :custom
   (agent-shell-dot-subdir-function #'my-agent-shell-dot-subdir)
@@ -1382,7 +1382,7 @@
         ("C-c r" . agent-shell-restart)
         ("C-c <return>" . agent-shell-viewport-compose-send)
         ("C-c m" . agent-shell-viewport-set-session-mode)
-   :map agent-shell-viewport-view-mode-map
+        :map agent-shell-viewport-view-mode-map
         ("C-c r" . agent-shell-restart))
 
   :hook
