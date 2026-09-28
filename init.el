@@ -1103,6 +1103,7 @@
   (dart-ts-mode . my-prog-modes)
   (eglot-managed-mode . (lambda ()
                           (when (derived-mode-p 'dart-ts-mode)
+                            (eglot-inlay-hints-mode -1)
                             (flycheck-eglot-mode (if eglot-managed-mode 1 -1))))))
 
 (use-package my-deno
