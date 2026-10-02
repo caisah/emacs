@@ -267,7 +267,7 @@ regardless of whether the LSP server has connected yet."
   "Run the current Dart file and select its output buffer."
   (interactive)
   (pop-to-buffer
-   (compile (format "dart run %s"
+   (compile (format "dart run --enable-asserts  %s"
                     (shell-quote-argument (or (buffer-file-name)
                                               (user-error "Save this Dart buffer first")))))))
 
@@ -326,13 +326,13 @@ respectively."
   `(progn
      ,@(cl-loop for (key . val) in pairs
                 collect
-                 `(defun ,(read (concat
-                                 "wrap-with-"
-                                 (prin1-to-string key)
-                                 "s"))
-                      (&optional arg)
-                    (interactive "p")
-                    (sp-wrap-with-pair ,val)))))
+                `(defun ,(read (concat
+                                "wrap-with-"
+                                (prin1-to-string key)
+                                "s"))
+                     (&optional arg)
+                   (interactive "p")
+                   (sp-wrap-with-pair ,val)))))
 
 (def-pairs ((paren . "(")
             (bracket . "[")
