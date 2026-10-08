@@ -1040,12 +1040,6 @@
   (eglot-events-buffer-size 0))
 
 
-;; (use-package flycheck-eglot
-;;   :straight t
-
-;;   :defer t)
-
-
 (use-package avy
   :straight t
 
@@ -1104,7 +1098,7 @@
   (eglot-managed-mode . (lambda ()
                           (when (derived-mode-p 'dart-ts-mode)
                             (eglot-inlay-hints-mode -1)
-                            (flycheck-eglot-mode (if eglot-managed-mode 1 -1))))))
+                            (flycheck-eglot-mode (if (eglot-managed-p) 1 -1))))))
 
 (use-package my-deno
   :defer t)
