@@ -301,7 +301,7 @@
   (setq exec-path-from-shell-arguments '("-l")) ; Login shell arguments
 
   :config
-  (setq exec-path-from-shell-variables '("PATH" "MANPATH" "GEMINI_API_KEY")) ; Variables to import
+  (setq exec-path-from-shell-variables '("PATH" "MANPATH" "POSTHOG_PERSONAL_API_KEY")) ; Variables to import
   (setq exec-path-from-shell-check-startup-files nil) ; Skip startup file checks
   (exec-path-from-shell-initialize))
 
@@ -1107,7 +1107,7 @@
   :straight t
   :defer t
 
-  :hook (emacs-lisp-mode . apheleia-mode))
+  :hook ((emacs-lisp-mode dart-ts-mode) . apheleia-mode))
 
 (use-package typescript-ts-mode
   :defer t
